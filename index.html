@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Canterbury Cast-Iron Streetlights</title>
+<meta name="description" content="Map of historic cast-iron street lighting columns in Canterbury, from a photographic survey in 2026.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2212%22 fill=%22%231f7a4d%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="lib/leaflet.css">
+<style>
+:root{--ink:#1d1d1b;--sec:#5a5955;--mut:#8a8984;--line:#e3e2dc;--bg:#fbfbf9;--panel:#ffffff;--accent:#2a78d6}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+#app{display:flex;height:100%}
+#side{width:340px;flex:none;overflow:auto;background:var(--panel);border-right:1px solid var(--line);padding:16px 16px 24px}
+#map{flex:1;min-width:0}
+h1{font-size:19px;margin:0 0 4px;line-height:1.25}
+.sub{color:var(--sec);font-size:13px;margin:0 0 14px;line-height:1.4}
+h2{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--sec);margin:18px 0 6px}
+input[type=search]{width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:6px;font-size:14px}
+.opt{display:flex;align-items:center;gap:8px;font-size:13.5px;padding:3px 0;cursor:pointer}
+.opt input{margin:0}
+.opt .n{margin-left:auto;color:var(--mut);font-variant-numeric:tabular-nums}
+.sw{width:13px;height:13px;border-radius:50%;flex:none;border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.25)}
+.sw.hollow{background:#fff!important;border:2px dashed #666;box-shadow:none}
+.small{font-size:12.5px;color:var(--sec);line-height:1.45}
+.small p{margin:0 0 8px}
+a{color:var(--accent)}
+#count{font-size:13px;color:var(--sec);margin-top:10px}
+.btns{display:flex;gap:6px;margin-top:6px}
+.btns button{font-size:12px;padding:3px 8px;border:1px solid var(--line);background:#fff;border-radius:5px;cursor:pointer}
+#toggle{display:none}
+/* popup */
+.leaflet-popup-content{margin:12px 14px;width:300px!important}
+.pp h3{margin:0 0 2px;font-size:16px}
+.pp .st{color:var(--sec);font-size:13px;margin-bottom:8px}
+.badge{display:inline-block;font-size:11.5px;padding:2px 7px;border-radius:10px;margin:0 4px 4px 0;background:#eee}
+.pp table{border-collapse:collapse;font-size:12.5px;width:100%;margin:6px 0}
+.pp td{padding:2px 0;vertical-align:top}
+.pp td:first-child{color:var(--mut);width:92px;padding-right:8px}
+.thumbs{display:flex;gap:4px;margin-top:8px}
+.thumbs img{width:96px;height:128px;object-fit:cover;border-radius:4px;cursor:zoom-in;background:#eee}
+.note{font-size:12px;color:#8a5a00;background:#fff7e6;border-radius:4px;padding:5px 7px;margin-top:6px}
+/* lightbox */
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;z-index:2000;flex-direction:column}
+#lb img{max-width:94vw;max-height:84vh;border-radius:4px}
+#lb .cap{color:#ddd;font-size:13px;margin-top:8px}
+#lb .x{position:absolute;top:10px;right:16px;color:#fff;font-size:30px;cursor:pointer;background:none;border:0}
+#lb .nav{position:absolute;top:50%;color:#fff;font-size:40px;background:none;border:0;cursor:pointer;padding:10px}
+#lb .prev{left:6px}#lb .next{right:6px}
+.legend-conf{display:flex;gap:10px;align-items:center;font-size:12px;color:var(--sec);margin-top:4px}
+@media (max-width:760px){
+  #app{flex-direction:column}
+  #side{width:100%;max-height:45%;border-right:0;border-bottom:1px solid var(--line);display:none}
+  #side.open{display:block}
+  #toggle{display:block;position:absolute;top:10px;left:56px;z-index:1000;background:#fff;border:1px solid #bbb;border-radius:6px;padding:7px 11px;font-size:14px;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+  .leaflet-popup-content{width:250px!important}
+  .thumbs img{width:78px;height:104px}
+}
+</style>
+</head>
+<body>
+<div id="app">
+  <aside id="side">
+    <h1>Canterbury Cast-Iron Streetlights</h1>
+    <p class="sub">Historic and heritage-style lighting columns recorded in a photographic survey, February–May 2026. Click a column for photos and its likely KCC asset number.</p>
+    <input id="q" type="search" placeholder="Search asset number or street…" aria-label="Search">
+    <div id="count"></div>
+    <h2>Design variant</h2>
+    <div id="fvar"></div>
+    <div class="btns"><button data-all="fvar">All</button><button data-none="fvar">None</button></div>
+    <h2>How sure is the asset number?</h2>
+    <div id="fconf"></div>
+    <div class="legend-conf"><span class="sw" style="background:#2a78d6"></span>solid = identified <span class="sw hollow"></span>dashed = uncertain</div>
+    <h2>About</h2>
+    <div class="small">
+      <p>Each point is one column. Where the asset number is reasonably secure, the point sits at the position in Kent County Council's streetlight inventory; otherwise it sits where the phone's GPS placed the photo.</p>
+      <p><b>Confirmed</b>: asset number painted on the column, read in full. <b>Strong</b>: partly legible, only one asset fits. <b>Probable</b>: partial or hand-painted number, or the column's place in a numbered run. <b>Likely</b>: nearest KCC column by GPS (tested at 93% right). <b>Uncertain</b>: several possibilities; the first listed is the best guess. <b>No match</b>: no KCC column within 45 m.</p>
+      <p>Variant codes: A1 Biggleston standard (CCC cypher on the door); A1-alt an altered A1; A2 fluted drum without cypher; B1/B2 DW Windsor reproductions; X-stub cut-down remains; X-mod modern replacement.</p>
+      <p>Asset numbers refer to KCC's inventory extract of 26 September 2026 and may be wrong. Number plates and faces in the photos have been blurred.</p>
+      <p><a href="data/columns.geojson" download>Download the data (GeoJSON)</a></p>
+    </div>
+  </aside>
+  <div id="map"></div>
+</div>
+<button id="toggle" aria-controls="side">Filters</button>
+<div id="lb" role="dialog" aria-modal="true"><button class="x" aria-label="Close">×</button><button class="nav prev" aria-label="Previous">‹</button><img alt=""><div class="cap"></div><button class="nav next" aria-label="Next">›</button></div>
+<script src="lib/leaflet.js"></script>
+<script>
+const VARS={
+ 'A1':{name:'A1 Biggleston standard',c:'#1f7a4d'},
+ 'A1-alt':{name:'A1-alt Altered A1',c:'#e08a1e'},
+ 'A2':{name:'A2 Fluted drum (no cypher)',c:'#7b3fb5'},
+ 'B1':{name:'B1 DW Windsor swan-neck',c:'#2a78d6'},
+ 'B2':{name:'B2 DW Windsor post-top',c:'#16a3b8'},
+ 'X-stub':{name:'X-stub Cut-down stub',c:'#b23b3b'},
+ 'X-mod':{name:'X-mod Modern replacement',c:'#777777'}
+};
+const CONFS=['Confirmed','Strong','Probable','Likely','Uncertain','No match'];
+const HOLLOW=new Set(['Uncertain','No match']);
+const map=L.map('map',{zoomControl:true}).setView([51.2795,1.0800],15);
+const carto=L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{maxZoom:20,subdomains:'abcd',attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'});
+const osm=L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'});
+carto.addTo(map);
+L.control.layers({'Light':carto,'OpenStreetMap':osm},null,{position:'topright'}).addTo(map);
+L.control.scale({imperial:false}).addTo(map);
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let feats=[],markers=[];
+const state={vars:new Set(Object.keys(VARS)),confs:new Set(CONFS),q:''};
+function style(p){const v=VARS[p.variant]||{c:'#444'};const h=HOLLOW.has(p.confidence);
+ return {radius:h?6:7,color:h?v.c:'#fff',weight:h?2:1.5,dashArray:h?'3 2':null,fillColor:v.c,fillOpacity:h?0.25:0.95};}
+function popup(p){
+ const v=VARS[p.variant];const title=p.asset||'No KCC match';
+ const ph=p.photos.map((f,i)=>`<img loading="lazy" src="photos/${esc(f)}" data-i="${i}" alt="Photo ${i+1} of ${esc(title)}">`).join('');
+ const rows=[['Variant',v?v.name:p.variant],['Identified by',p.basis],p.painted?['Painted number',p.painted]:null,
+  p.candidates&&p.candidates!==p.asset?['Candidates',p.candidates]:null,['Position',p.placed],['Photographed',p.dates.join(', ')]].filter(Boolean)
+  .map(r=>`<tr><td>${esc(r[0])}</td><td>${esc(r[1])}</td></tr>`).join('');
+ return `<div class="pp"><h3>${esc(title)}</h3><div class="st">${esc(p.street)}</div>
+ <span class="badge" style="background:${v?v.c:'#444'};color:#fff">${esc(p.variant)}</span><span class="badge">${esc(p.confidence)}</span>
+ <table>${rows}</table>${p.note?`<div class="note">${esc(p.note)}</div>`:''}<div class="thumbs">${ph}</div></div>`;}
+function counts(){
+ const vis=feats.filter(f=>matchQ(f.properties));
+ for(const k of Object.keys(VARS)){const el=document.querySelector(`[data-n-var="${k}"]`);if(el)el.textContent=vis.filter(f=>f.properties.variant===k).length;}
+ for(const k of CONFS){const el=document.querySelector(`[data-n-conf="${k}"]`);if(el)el.textContent=vis.filter(f=>f.properties.confidence===k).length;}
+}
+function matchQ(p){if(!state.q)return true;const q=state.q;return [p.asset,p.candidates,p.street].join(' ').toLowerCase().includes(q);}
+function apply(){
+ let n=0;const shown=[];
+ markers.forEach(m=>{const p=m.feature.properties;const ok=state.vars.has(p.variant)&&state.confs.has(p.confidence)&&matchQ(p);
+  if(ok){if(!map.hasLayer(m))m.addTo(map);n++;shown.push(m);}else if(map.hasLayer(m))map.removeLayer(m);});
+ document.getElementById('count').textContent=`Showing ${n} of ${markers.length} columns`;
+ counts();return shown;
+}
+function buildFilters(){
+ const fv=document.getElementById('fvar');
+ fv.innerHTML=Object.entries(VARS).map(([k,v])=>`<label class="opt"><input type="checkbox" data-var="${k}" checked><span class="sw" style="background:${v.c}"></span>${esc(v.name)}<span class="n" data-n-var="${k}"></span></label>`).join('');
+ const fc=document.getElementById('fconf');
+ fc.innerHTML=CONFS.map(k=>`<label class="opt"><input type="checkbox" data-conf="${k}" checked><span class="sw${HOLLOW.has(k)?' hollow':''}" style="background:#2a78d6"></span>${k}<span class="n" data-n-conf="${k}"></span></label>`).join('');
+ document.querySelectorAll('[data-var]').forEach(cb=>cb.onchange=()=>{cb.checked?state.vars.add(cb.dataset.var):state.vars.delete(cb.dataset.var);apply();});
+ document.querySelectorAll('[data-conf]').forEach(cb=>cb.onchange=()=>{cb.checked?state.confs.add(cb.dataset.conf):state.confs.delete(cb.dataset.conf);apply();});
+ document.querySelectorAll('[data-all],[data-none]').forEach(b=>b.onclick=()=>{const all=!!b.dataset.all;
+  document.querySelectorAll('#fvar input').forEach(cb=>{cb.checked=all;all?state.vars.add(cb.dataset.var):state.vars.delete(cb.dataset.var);});apply();});
+ let t;document.getElementById('q').oninput=e=>{clearTimeout(t);t=setTimeout(()=>{state.q=e.target.value.trim().toLowerCase();const s=apply();
+  if(state.q&&s.length&&s.length<=25)map.fitBounds(L.featureGroup(s).getBounds().pad(0.3),{maxZoom:18});},200);};
+}
+// lightbox
+const lb=document.getElementById('lb'),lbi=lb.querySelector('img'),lbc=lb.querySelector('.cap');let cur=null,ci=0;
+function show(){lbi.src='photos/'+cur.photos[ci];lbc.textContent=`${cur.asset||'No KCC match'} · ${cur.street} · photo ${ci+1} of ${cur.photos.length} · ${cur.photos[ci]}`;}
+function openLb(p,i){cur=p;ci=i;show();lb.style.display='flex';}
+lb.querySelector('.x').onclick=()=>lb.style.display='none';
+lb.onclick=e=>{if(e.target===lb)lb.style.display='none';};
+lb.querySelector('.prev').onclick=e=>{e.stopPropagation();ci=(ci+cur.photos.length-1)%cur.photos.length;show();};
+lb.querySelector('.next').onclick=e=>{e.stopPropagation();ci=(ci+1)%cur.photos.length;show();};
+document.addEventListener('keydown',e=>{if(lb.style.display!=='flex')return;if(e.key==='Escape')lb.style.display='none';
+ if(e.key==='ArrowLeft')lb.querySelector('.prev').click();if(e.key==='ArrowRight')lb.querySelector('.next').click();});
+document.getElementById('toggle').onclick=()=>{document.getElementById('side').classList.toggle('open');setTimeout(()=>map.invalidateSize(),50);};
+fetch('data/columns.geojson').then(r=>r.json()).then(gj=>{
+ feats=gj.features;
+ const order=f=>(HOLLOW.has(f.properties.confidence)?0:1);
+ feats.slice().sort((a,b)=>order(a)-order(b)).forEach(f=>{
+  const [lon,lat]=f.geometry.coordinates;const p=f.properties;
+  const m=L.circleMarker([lat,lon],style(p));m.feature=f;
+  m.bindPopup(()=>popup(p),{maxWidth:330});
+  m.bindTooltip(`${p.asset||'No KCC match'} · ${p.variant}`,{direction:'top',offset:[0,-6]});
+  m.on('popupopen',e=>{const el=e.popup.getElement();el.querySelectorAll('.thumbs img').forEach(img=>img.onclick=()=>openLb(p,+img.dataset.i));
+   if(p.asset)history.replaceState(null,'','#'+p.asset);});
+  markers.push(m);
+ });
+ buildFilters();apply();
+ map.fitBounds(L.featureGroup(markers).getBounds().pad(0.05));
+ const h=decodeURIComponent(location.hash.slice(1));
+ if(h){const m=markers.find(m=>m.feature.properties.asset===h);if(m){map.setView(m.getLatLng(),18);m.openPopup();}}
+}).catch(err=>{document.getElementById('count').textContent='Could not load the data: '+err;});
+</script>
+</body>
+</html>
