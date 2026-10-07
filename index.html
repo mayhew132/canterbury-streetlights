@@ -99,7 +99,7 @@ const VARS={
 const CONFS=['Confirmed','Strong','Probable','Likely','Uncertain','No match'];
 const HOLLOW=new Set(['Uncertain','No match']);
 const map=L.map('map',{zoomControl:true}).setView([51.2795,1.0800],15);
-const carto=L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{maxZoom:20,subdomains:'abcd',attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'});
+const carto=L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?key=cb1_4cu8_1_139fe088319c64207ae97f1a',{maxZoom:20,subdomains:'abcd',attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'});
 const osm=L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'});
 carto.addTo(map);
 L.control.layers({'Light':carto,'OpenStreetMap':osm},null,{position:'topright'}).addTo(map);
