@@ -59,12 +59,54 @@ a{color:var(--accent)}
   .leaflet-popup-content{width:250px!important}
   .thumbs img{width:78px;height:104px}
 }
+
+/* landing screen */
+#intro{position:fixed;inset:0;z-index:3000;background:#1b1a17 url(media/landing-poster.jpg) center/cover no-repeat;color:#fff;overflow:hidden;
+ transition:opacity .7s ease,transform .7s ease}
+#intro video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#intro::after{content:"";position:absolute;inset:0;pointer-events:none;
+ background:linear-gradient(180deg,rgba(10,12,10,.30) 0%,rgba(10,12,10,0) 22%,rgba(10,12,10,.45) 50%,rgba(10,12,10,.88) 100%)}
+@media (min-width:761px){#intro::after{background:linear-gradient(90deg,rgba(10,12,10,.75) 0%,rgba(10,12,10,.35) 45%,rgba(10,12,10,0) 70%),linear-gradient(180deg,rgba(10,12,10,.25) 0%,rgba(10,12,10,0) 30%,rgba(10,12,10,.55) 100%)}}
+#intro .in{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:0 max(24px,6vw) max(36px,7vh);max-width:880px}
+#intro .eyebrow{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;opacity:.85;margin:0 0 14px;
+ display:flex;align-items:center;gap:10px}
+#intro .eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
+#intro h1{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-weight:400;font-size:clamp(36px,7vw,76px);
+ line-height:1.02;letter-spacing:-.01em;margin:0 0 16px;text-shadow:0 2px 24px rgba(0,0,0,.35);text-wrap:balance}
+#intro .lede{font-size:clamp(15px,1.6vw,18px);line-height:1.5;max-width:34em;margin:0 0 26px;opacity:.92}
+#intro .stats{display:flex;gap:28px;margin:0 0 30px;font-variant-numeric:tabular-nums}
+#intro .stats b{display:block;font-family:"Iowan Old Style",Palatino,Georgia,serif;font-weight:400;font-size:30px;line-height:1}
+#intro .stats span{font-size:12px;letter-spacing:.06em;text-transform:uppercase;opacity:.75}
+#intro .go{display:inline-flex;align-items:center;gap:12px;font-family:inherit;font-size:17px;font-weight:600;line-height:1;color:#1b1a17;background:#fff;
+ border:0;border-radius:999px;padding:16px 26px 16px 28px;cursor:pointer;box-shadow:0 6px 24px rgba(0,0,0,.3);transition:transform .15s ease,box-shadow .15s ease}
+#intro .go:hover{transform:translateY(-1px);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+#intro .go:focus-visible{outline:3px solid #9cc7ff;outline-offset:3px}
+#intro .go svg{transition:transform .2s ease}#intro .go:hover svg{transform:translateX(3px)}
+#intro .in>*{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+#intro .in>:nth-child(2){animation-delay:.08s}#intro .in>:nth-child(3){animation-delay:.16s}
+#intro .in>:nth-child(4){animation-delay:.24s}#intro .in>:nth-child(5){animation-delay:.32s}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+#intro.out{opacity:0;transform:scale(1.04);pointer-events:none}
+#intro.gone{display:none}
+#reintro{background:none;border:0;padding:0;font:inherit;color:inherit;cursor:pointer;text-align:left}
+@media (max-width:760px){#intro .stats{gap:22px}#intro .stats b{font-size:26px}#intro .go{width:100%;justify-content:center}}
+@media (prefers-reduced-motion:reduce){#intro video{display:none}#intro,#intro .in>*{animation:none;transition:none}}
 </style>
 </head>
 <body>
+<section id="intro" aria-label="Introduction">
+  <video autoplay muted loop playsinline preload="auto" poster="media/landing-poster.jpg" aria-hidden="true"><source src="media/landing.mp4" type="video/mp4"></video>
+  <div class="in">
+    <p class="eyebrow">Canterbury · survey 2026</p>
+    <h1>The city’s cast‑iron streetlights</h1>
+    <p class="lede">Every historic lighting column we could find, photographed, identified and placed on a map, with its design variant and likely Kent County Council asset number.</p>
+    <div class="stats"><div><b id="ic">289</b><span>columns</span></div><div><b id="ip">837</b><span>photographs</span></div><div><b id="iv">6</b><span>designs</span></div></div>
+    <button class="go" id="go">Open the map <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  </div>
+</section>
 <div id="app">
   <aside id="side">
-    <h1>Canterbury Cast-Iron Streetlights</h1>
+    <h1><button id="reintro" title="Back to the introduction">Canterbury Cast-Iron Streetlights</button></h1>
     <p class="sub">Historic and heritage-style lighting columns recorded in a photographic survey, February–May 2026. Click a column for photos and its likely KCC asset number.</p>
     <input id="q" type="search" placeholder="Search asset number or street…" aria-label="Search">
     <div id="count"></div>
@@ -167,8 +209,27 @@ lb.addEventListener('touchend',()=>{if(tx===null)return;tx=null;lbi.classList.re
 document.addEventListener('keydown',e=>{if(lb.style.display!=='flex')return;if(e.key==='Escape')lb.style.display='none';
  if(e.key==='ArrowLeft')lb.querySelector('.prev').click();if(e.key==='ArrowRight')lb.querySelector('.next').click();});
 document.getElementById('toggle').onclick=()=>{document.getElementById('side').classList.toggle('open');setTimeout(()=>map.invalidateSize(),50);};
+
+// landing screen: skipped when the link points at a column (#ASSET) or ?map
+(function(){
+ const intro=document.getElementById('intro'),vid=intro.querySelector('video');
+ const skip=location.hash.length>1||/[?&]map\b/.test(location.search);
+ const save=navigator.connection&&navigator.connection.saveData;
+ if(save||matchMedia('(prefers-reduced-motion: reduce)').matches){vid.removeAttribute('autoplay');vid.preload='none';vid.pause();}
+ function hide(){intro.classList.add('out');setTimeout(()=>{intro.classList.add('gone');vid.pause();map.invalidateSize();},700);}
+ function show(){intro.classList.remove('gone');void intro.offsetWidth;intro.classList.remove('out');if(!save)vid.play().catch(()=>{});}
+ if(skip){intro.classList.add('out','gone');vid.pause();}
+ document.getElementById('go').onclick=hide;
+ document.getElementById('reintro').onclick=show;
+ document.addEventListener('keydown',e=>{if(!intro.classList.contains('gone')&&e.key==='Escape')hide();});
+ window.introStats=gj=>{const f=gj.features;
+  document.getElementById('ic').textContent=f.length;
+  document.getElementById('ip').textContent=f.reduce((n,x)=>n+x.properties.photos.length,0);
+  document.getElementById('iv').textContent=new Set(f.map(x=>x.properties.variant).filter(v=>/^[AB]/.test(v))).size;};
+})();
 fetch('data/columns.geojson').then(r=>r.json()).then(gj=>{
  feats=gj.features;
+ introStats(gj);
  const order=f=>(HOLLOW.has(f.properties.confidence)?0:1);
  feats.slice().sort((a,b)=>order(a)-order(b)).forEach(f=>{
   const [lon,lat]=f.geometry.coordinates;const p=f.properties;
