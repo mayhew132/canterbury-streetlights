@@ -50,6 +50,15 @@ a{color:var(--accent)}
 #lb .prev{left:6px}#lb .next{right:6px}
 #lb{touch-action:pinch-zoom}#lb img{transition:transform .2s ease,opacity .2s ease;user-select:none;-webkit-user-drag:none}
 #lb img.drag{transition:none}
+.seg{display:flex;border:1px solid var(--line);border-radius:6px;overflow:hidden;margin:2px 0 8px}
+.seg button{flex:1;font-size:12.5px;padding:6px 4px;border:0;background:#fff;cursor:pointer;color:var(--sec)}
+.seg button.on{background:#1d1d1b;color:#fff}
+.cond{margin:8px 0 2px;border-top:1px solid var(--line);padding-top:7px}
+.cond .h{font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);margin-bottom:4px}
+.chips{display:flex;flex-wrap:wrap;gap:4px}
+.chip{font-size:11.5px;padding:2px 7px;border-radius:10px;background:#f1f0eb;color:#3a3935}
+.chip.bad{background:#fde8e6;color:#9b2c22}.chip.ok{background:#e6f3ea;color:#22603a}
+.defects{font-size:12px;color:#5a5955;margin-top:5px;line-height:1.4}
 .legend-conf{display:flex;gap:10px;align-items:center;font-size:12px;color:var(--sec);margin-top:4px}
 @media (max-width:760px){
   #app{flex-direction:column}
@@ -116,11 +125,15 @@ a{color:var(--accent)}
     <h2>How sure is the asset number?</h2>
     <div id="fconf"></div>
     <div class="legend-conf"><span class="sw" style="background:#2a78d6"></span>solid = identified <span class="sw hollow"></span>dashed = uncertain</div>
+    <h2>Condition</h2>
+    <div class="seg" role="group" aria-label="Colour points by"><button data-colby="variant" class="on">Colour by design</button><button data-colby="cond">Colour by condition</button></div>
+    <div id="fcond"></div>
     <h2>About</h2>
     <div class="small">
       <p>Each point is one column. Where the asset number is reasonably secure, the point sits at the position in Kent County Council's streetlight inventory; otherwise it sits where the phone's GPS placed the photo.</p>
       <p><b>Confirmed</b>: asset number painted on the column, read in full. <b>Strong</b>: partly legible, only one asset fits. <b>Probable</b>: partial or hand-painted number, or the column's place in a numbered run. <b>Likely</b>: nearest KCC column by GPS (tested at 93% right). <b>Uncertain</b>: several possibilities; the first listed is the best guess. <b>No match</b>: no KCC column matched (the riverside path columns off Westwood Drive and Ambleside Place are City Council's, so not in KCC's inventory).</p>
       <p>Variant codes: A1 Biggleston standard (CCC cypher on the door); A1-alt an altered A1; A2 fluted drum without cypher; A4 small-door pattern (short framed door, reeding all the way round the base); B1/B2 DW Windsor reproductions; X-stub cut-down remains; X-mod modern replacement.</p>
+      <p><b>Condition</b> is a visual assessment from the survey photographs (2026): overall condition, paintwork, structure (e.g. a missing ladder-bar acorn counts as damaged), lantern, access door and colour. Parts not shown in any photo are marked "Not seen".</p>
       <p>Asset numbers refer to KCC's inventory extract of 26 September 2026 and may be wrong. Number plates and faces in the photos have been blurred.</p>
       <p><a href="data/columns.geojson" download>Download the data (GeoJSON)</a></p>
     </div>
@@ -143,6 +156,7 @@ const VARS={
 };
 const CONFS=['Confirmed','Strong','Probable','Likely','Uncertain','No match'];
 const HOLLOW=new Set(['Uncertain','No match']);
+const CONDS={'Excellent':'#1a9850','Good':'#91cf60','Poor':'#d73027','Missing':'#4d4d4d'};
 const map=L.map('map',{zoomControl:true}).setView([51.2795,1.0800],15);
 const carto=L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?key=cb1_4cu8_1_139fe088319c64207ae97f1a',{maxZoom:20,subdomains:'abcd',attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'});
 const osm=L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'});
@@ -151,8 +165,8 @@ L.control.layers({'Light':carto,'OpenStreetMap':osm},null,{position:'topright'})
 L.control.scale({imperial:false}).addTo(map);
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 let feats=[],markers=[];
-const state={vars:new Set(Object.keys(VARS)),confs:new Set(CONFS),q:''};
-function style(p){const v=VARS[p.variant]||{c:'#444'};const h=HOLLOW.has(p.confidence);
+const state={vars:new Set(Object.keys(VARS)),confs:new Set(CONFS),conds:new Set(Object.keys(CONDS)),colby:'variant',q:''};
+function style(p){const v=state.colby==='cond'?{c:CONDS[p.condition&&p.condition.overall]||'#999'}:(VARS[p.variant]||{c:'#444'});const h=HOLLOW.has(p.confidence);
  return {radius:h?6:7,color:h?v.c:'#fff',weight:h?2:1.5,dashArray:h?'3 2':null,fillColor:v.c,fillOpacity:h?0.25:0.95};}
 function popup(p){
  const v=VARS[p.variant];const title=p.asset||'No KCC match';
@@ -162,16 +176,21 @@ function popup(p){
   .map(r=>`<tr><td>${esc(r[0])}</td><td>${esc(r[1])}</td></tr>`).join('');
  return `<div class="pp"><h3>${esc(title)}</h3><div class="st">${esc(p.street)}</div>
  <span class="badge" style="background:${v?v.c:'#444'};color:#fff">${esc(p.variant)}</span><span class="badge">${esc(p.confidence)}</span>
- <table>${rows}</table>${p.note?`<div class="note">${esc(p.note)}</div>`:''}<div class="thumbs">${ph}</div></div>`;}
+ <table>${rows}</table>${p.note?`<div class="note">${esc(p.note)}</div>`:''}${condHtml(p)}<div class="thumbs">${ph}</div></div>`;}
+function condHtml(p){const c=p.condition;if(!c||!c.overall)return '';
+ const bad=new Set(['Poor','Missing','Damaged']),good=new Set(['Excellent','Intact','Present']);
+ const chip=(lab,val)=>val?`<span class="chip${bad.has(val)?' bad':good.has(val)?' ok':''}">${esc(lab)}${lab?': ':''}${esc(val)}</span>`:'';
+ return `<div class="cond"><div class="h">Condition (from photos, 2026)</div><div class="chips">${chip('Overall',c.overall)}${chip('Paint',c.paint)}${chip('Structure',c.structure)}${chip('Lantern',c.lantern)}${chip('Door',c.door)}${chip('',c.colour)}</div>${p.defects?`<div class="defects">${esc(p.defects)}</div>`:''}</div>`;}
 function counts(){
  const vis=feats.filter(f=>matchQ(f.properties));
  for(const k of Object.keys(VARS)){const el=document.querySelector(`[data-n-var="${k}"]`);if(el)el.textContent=vis.filter(f=>f.properties.variant===k).length;}
  for(const k of CONFS){const el=document.querySelector(`[data-n-conf="${k}"]`);if(el)el.textContent=vis.filter(f=>f.properties.confidence===k).length;}
+ for(const k of Object.keys(CONDS)){const el=document.querySelector(`[data-n-cond="${k}"]`);if(el)el.textContent=vis.filter(f=>(f.properties.condition||{}).overall===k).length;}
 }
 function matchQ(p){if(!state.q)return true;const q=state.q;return [p.asset,p.candidates,p.street].join(' ').toLowerCase().includes(q);}
 function apply(){
  let n=0;const shown=[];
- markers.forEach(m=>{const p=m.feature.properties;const ok=state.vars.has(p.variant)&&state.confs.has(p.confidence)&&matchQ(p);
+ markers.forEach(m=>{const p=m.feature.properties;const ok=state.vars.has(p.variant)&&state.confs.has(p.confidence)&&(!p.condition||!p.condition.overall||state.conds.has(p.condition.overall))&&matchQ(p);
   if(ok){if(!map.hasLayer(m))m.addTo(map);n++;shown.push(m);}else if(map.hasLayer(m))map.removeLayer(m);});
  document.getElementById('count').textContent=`Showing ${n} of ${markers.length} columns`;
  counts();return shown;
@@ -181,6 +200,9 @@ function buildFilters(){
  fv.innerHTML=Object.entries(VARS).map(([k,v])=>`<label class="opt"><input type="checkbox" data-var="${k}" checked><span class="sw" style="background:${v.c}"></span>${esc(v.name)}<span class="n" data-n-var="${k}"></span></label>`).join('');
  const fc=document.getElementById('fconf');
  fc.innerHTML=CONFS.map(k=>`<label class="opt"><input type="checkbox" data-conf="${k}" checked><span class="sw${HOLLOW.has(k)?' hollow':''}" style="background:#2a78d6"></span>${k}<span class="n" data-n-conf="${k}"></span></label>`).join('');
+ document.getElementById('fcond').innerHTML=Object.entries(CONDS).map(([k,c])=>`<label class="opt"><input type="checkbox" data-cond="${k}" checked><span class="sw" style="background:${c}"></span>${k}<span class="n" data-n-cond="${k}"></span></label>`).join('');
+ document.querySelectorAll('[data-cond]').forEach(cb=>cb.onchange=()=>{cb.checked?state.conds.add(cb.dataset.cond):state.conds.delete(cb.dataset.cond);apply();});
+ document.querySelectorAll('[data-colby]').forEach(b=>b.onclick=()=>{state.colby=b.dataset.colby;document.querySelectorAll('[data-colby]').forEach(x=>x.classList.toggle('on',x===b));markers.forEach(m=>m.setStyle(style(m.feature.properties)));});
  document.querySelectorAll('[data-var]').forEach(cb=>cb.onchange=()=>{cb.checked?state.vars.add(cb.dataset.var):state.vars.delete(cb.dataset.var);apply();});
  document.querySelectorAll('[data-conf]').forEach(cb=>cb.onchange=()=>{cb.checked?state.confs.add(cb.dataset.conf):state.confs.delete(cb.dataset.conf);apply();});
  document.querySelectorAll('[data-all],[data-none]').forEach(b=>b.onclick=()=>{const all=!!b.dataset.all;
