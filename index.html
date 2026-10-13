@@ -256,7 +256,7 @@ fetch('data/columns.geojson').then(r=>r.json()).then(gj=>{
  feats.slice().sort((a,b)=>order(a)-order(b)).forEach(f=>{
   const [lon,lat]=f.geometry.coordinates;const p=f.properties;
   const m=L.circleMarker([lat,lon],style(p));m.feature=f;
-  m.bindPopup(()=>popup(p),{maxWidth:330});
+  m.bindPopup(()=>popup(p),{maxWidth:330,autoPanPaddingTopLeft:[60,70],autoPanPaddingBottomRight:[20,20]});
   m.bindTooltip(`${p.asset||'No KCC match'} · ${p.variant}`,{direction:'top',offset:[0,-6]});
   m.on('popupopen',e=>{const el=e.popup.getElement();el.querySelectorAll('.thumbs img').forEach(img=>img.onclick=()=>openLb(p,+img.dataset.i));
    if(p.asset)history.replaceState(null,'','#'+p.asset);});
