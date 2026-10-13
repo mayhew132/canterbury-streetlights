@@ -125,15 +125,15 @@ a{color:var(--accent)}
     <h2>How sure is the asset number?</h2>
     <div id="fconf"></div>
     <div class="legend-conf"><span class="sw" style="background:#2a78d6"></span>solid = identified <span class="sw hollow"></span>dashed = uncertain</div>
-    <h2>Condition</h2>
-    <div class="seg" role="group" aria-label="Colour points by"><button data-colby="variant" class="on">Colour by design</button><button data-colby="cond">Colour by condition</button></div>
+    <h2>Visual condition</h2>
+    <div class="seg" role="group" aria-label="Colour points by"><button data-colby="variant" class="on">Colour by design</button><button data-colby="cond">Colour by visual condition</button></div>
     <div id="fcond"></div>
     <h2>About</h2>
     <div class="small">
       <p>Each point is one column. Where the asset number is reasonably secure, the point sits at the position in Kent County Council's streetlight inventory; otherwise it sits where the phone's GPS placed the photo.</p>
       <p><b>Confirmed</b>: asset number painted on the column, read in full. <b>Strong</b>: partly legible, only one asset fits. <b>Probable</b>: partial or hand-painted number, or the column's place in a numbered run. <b>Likely</b>: nearest KCC column by GPS (tested at 93% right). <b>Uncertain</b>: several possibilities; the first listed is the best guess. <b>No match</b>: no KCC column matched (the riverside path columns off Westwood Drive and Ambleside Place are City Council's, so not in KCC's inventory).</p>
       <p>Variant codes: A1 Biggleston standard (CCC cypher on the door); A1-alt an altered A1; A2 fluted drum without cypher; A4 small-door pattern (short framed door, reeding all the way round the base); B1/B2 DW Windsor reproductions; X-stub cut-down remains; X-mod modern replacement.</p>
-      <p><b>Condition</b> is a visual assessment from the survey photographs (2026): overall condition, paintwork, structure (e.g. a missing ladder-bar acorn counts as damaged), lantern, access door and colour. Parts not shown in any photo are marked "Not seen".</p>
+      <p><b>Visual condition</b> is an assessment of what can be seen in the survey photographs (2026); it is not a structural or electrical inspection. It covers overall visual condition, paintwork, external structure (e.g. a missing ladder-bar acorn counts as damaged), lantern, access door and colour. Parts not shown in any photo are marked "Not seen".</p>
       <p>Asset numbers refer to KCC's inventory extract of 26 September 2026 and may be wrong. Number plates and faces in the photos have been blurred.</p>
       <p><a href="data/columns.geojson" download>Download the data (GeoJSON)</a></p>
     </div>
@@ -180,7 +180,7 @@ function popup(p){
 function condHtml(p){const c=p.condition;if(!c||!c.overall)return '';
  const bad=new Set(['Poor','Missing','Damaged']),good=new Set(['Excellent','Intact','Present']);
  const chip=(lab,val)=>val?`<span class="chip${bad.has(val)?' bad':good.has(val)?' ok':''}">${esc(lab)}${lab?': ':''}${esc(val)}</span>`:'';
- return `<div class="cond"><div class="h">Condition (from photos, 2026)</div><div class="chips">${chip('Overall',c.overall)}${chip('Paint',c.paint)}${chip('Structure',c.structure)}${chip('Lantern',c.lantern)}${chip('Door',c.door)}${chip('',c.colour)}</div>${p.defects?`<div class="defects">${esc(p.defects)}</div>`:''}</div>`;}
+ return `<div class="cond"><div class="h">Visual condition (from photos, 2026)</div><div class="chips">${chip('Overall',c.overall)}${chip('Paint',c.paint)}${chip('External structure',c.structure)}${chip('Lantern',c.lantern)}${chip('Door',c.door)}${chip('',c.colour)}</div>${p.defects?`<div class="defects">${esc(p.defects)}</div>`:''}</div>`;}
 function counts(){
  const vis=feats.filter(f=>matchQ(f.properties));
  for(const k of Object.keys(VARS)){const el=document.querySelector(`[data-n-var="${k}"]`);if(el)el.textContent=vis.filter(f=>f.properties.variant===k).length;}
