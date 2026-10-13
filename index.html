@@ -117,7 +117,7 @@ a{color:var(--accent)}
   <aside id="side">
     <h1><button id="reintro" title="Back to the introduction">Canterbury Cast-Iron Streetlights</button></h1>
     <p class="sub">Historic and heritage-style lighting columns recorded in a photographic survey, February–May 2026. Click a column for photos and its likely KCC asset number.</p>
-    <input id="q" type="search" placeholder="Search asset number or street…" aria-label="Search">
+    <input id="q" type="search" placeholder="Search asset number, street or map ID…" aria-label="Search">
     <div id="count"></div>
     <h2>Design variant</h2>
     <div id="fvar"></div>
@@ -171,7 +171,7 @@ function style(p){const v=state.colby==='cond'?{c:CONDS[p.condition&&p.condition
 function popup(p){
  const v=VARS[p.variant];const title=p.asset||'No KCC match';
  const ph=p.photos.map((f,i)=>`<img loading="lazy" src="photos/${esc(f)}" data-i="${i}" alt="Photo ${i+1} of ${esc(title)}">`).join('');
- const rows=[['Variant',v?v.name:p.variant],['Identified by',p.basis],p.painted?['Painted number',p.painted]:null,
+ const rows=[['Map ID','V'+p.visits[0]],['Variant',v?v.name:p.variant],['Identified by',p.basis],p.painted?['Painted number',p.painted]:null,
   p.candidates&&p.candidates!==p.asset?['Candidates',p.candidates]:null,['Position',p.placed],['Photographed',p.dates.join(', ')]].filter(Boolean)
   .map(r=>`<tr><td>${esc(r[0])}</td><td>${esc(r[1])}</td></tr>`).join('');
  return `<div class="pp"><h3>${esc(title)}</h3><div class="st">${esc(p.street)}</div>
@@ -187,7 +187,7 @@ function counts(){
  for(const k of CONFS){const el=document.querySelector(`[data-n-conf="${k}"]`);if(el)el.textContent=vis.filter(f=>f.properties.confidence===k).length;}
  for(const k of Object.keys(CONDS)){const el=document.querySelector(`[data-n-cond="${k}"]`);if(el)el.textContent=vis.filter(f=>(f.properties.condition||{}).overall===k).length;}
 }
-function matchQ(p){if(!state.q)return true;const q=state.q;return [p.asset,p.candidates,p.street].join(' ').toLowerCase().includes(q);}
+function matchQ(p){if(!state.q)return true;const q=state.q;return [p.asset,p.candidates,p.street,'v'+p.visits[0]].join(' ').toLowerCase().includes(q);}
 function apply(){
  let n=0;const shown=[];
  markers.forEach(m=>{const p=m.feature.properties;const ok=state.vars.has(p.variant)&&state.confs.has(p.confidence)&&(!p.condition||!p.condition.overall||state.conds.has(p.condition.overall))&&matchQ(p);
