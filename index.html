@@ -131,7 +131,7 @@ a{color:var(--accent)}
     <h2>About</h2>
     <div class="small">
       <p>Each point is one column. Where the asset number is reasonably secure, the point sits at the position in Kent County Council's streetlight inventory; otherwise it sits where the phone's GPS placed the photo.</p>
-      <p><b>Confirmed</b>: asset number painted on the column, read in full. <b>Strong</b>: partly legible, only one asset fits. <b>Probable</b>: partial or hand-painted number, or the column's place in a numbered run. <b>Likely</b>: nearest KCC column by GPS (tested at 93% right). <b>Uncertain</b>: several possibilities; the first listed is the best guess. <b>No match</b>: no KCC column matched (the riverside path columns off Westwood Drive and Ambleside Place are City Council's, so not in KCC's inventory).</p>
+      <p><b>Confirmed</b>: asset number painted on the column, read in full. <b>Strong</b>: partly legible, only one asset fits. <b>Probable</b>: partial or hand-painted number, or the column's place in a numbered run. <b>Likely</b>: nearest KCC column by GPS (tested at 93% right). <b>Uncertain</b>: several possibilities; the first listed is the best guess. <b>No match</b>: no KCC column matched. The riverside path columns off Westwood Drive and Ambleside Place belong to Canterbury City Council (not adopted by KCC); their numbers are the City Council's asset references and are shown with a CCC prefix.</p>
       <p>Variant codes: A1 Biggleston standard (CCC cypher on the door); A1-alt an altered A1; A2 fluted drum without cypher; A4 small-door pattern (short framed door, reeding all the way round the base); B1/B2 DW Windsor reproductions; X-stub cut-down remains; X-mod modern replacement.</p>
       <p><b>Visual condition</b> is an assessment of what can be seen in the survey photographs (2026); it is not a structural or electrical inspection. It covers overall visual condition, paintwork, external structure (e.g. a missing ladder-bar acorn counts as damaged), lantern, access door and colour. Parts not shown in any photo are marked "Not seen".</p>
       <p>Asset numbers refer to KCC's inventory extract of 26 September 2026 and may be wrong. Number plates and faces in the photos have been blurred.</p>
@@ -169,9 +169,9 @@ const state={vars:new Set(Object.keys(VARS)),confs:new Set(CONFS),conds:new Set(
 function style(p){const v=state.colby==='cond'?{c:CONDS[p.condition&&p.condition.overall]||'#999'}:(VARS[p.variant]||{c:'#444'});const h=HOLLOW.has(p.confidence);
  return {radius:h?6:7,color:h?v.c:'#fff',weight:h?2:1.5,dashArray:h?'3 2':null,fillColor:v.c,fillOpacity:h?0.25:0.95};}
 function popup(p){
- const v=VARS[p.variant];const title=p.asset||'No KCC match';
+ const v=VARS[p.variant];const title=p.asset?(p.owner&&p.owner.startsWith('Canterbury City')?'CCC '+p.asset:p.asset):'No KCC match';
  const ph=p.photos.map((f,i)=>`<img loading="lazy" src="photos/${esc(f)}" data-i="${i}" alt="Photo ${i+1} of ${esc(title)}">`).join('');
- const rows=[['Map ID','V'+p.visits[0]],['Variant',v?v.name:p.variant],['Identified by',p.basis],p.painted?['Painted number',p.painted]:null,
+ const rows=[['Map ID','V'+p.visits[0]],p.owner?['Owner',p.owner]:null,['Variant',v?v.name:p.variant],['Identified by',p.basis],p.painted?['Painted number',p.painted]:null,
   p.candidates&&p.candidates!==p.asset?['Candidates',p.candidates]:null,['Position',p.placed],['Photographed',p.dates.join(', ')]].filter(Boolean)
   .map(r=>`<tr><td>${esc(r[0])}</td><td>${esc(r[1])}</td></tr>`).join('');
  return `<div class="pp"><h3>${esc(title)}</h3><div class="st">${esc(p.street)}</div>
@@ -212,7 +212,7 @@ function buildFilters(){
 }
 // lightbox
 const lb=document.getElementById('lb'),lbi=lb.querySelector('img'),lbc=lb.querySelector('.cap');let cur=null,ci=0;
-function show(){lbi.style.transform='';lbi.style.opacity='';lbi.src='photos/'+cur.photos[ci];[1,-1].forEach(d=>{const n=cur.photos[(ci+d+cur.photos.length)%cur.photos.length];if(n)new Image().src='photos/'+n;});lbc.textContent=`${cur.asset||'No KCC match'} · ${cur.street} · photo ${ci+1} of ${cur.photos.length} · ${cur.photos[ci]}`;}
+function show(){lbi.style.transform='';lbi.style.opacity='';lbi.src='photos/'+cur.photos[ci];[1,-1].forEach(d=>{const n=cur.photos[(ci+d+cur.photos.length)%cur.photos.length];if(n)new Image().src='photos/'+n;});lbc.textContent=`${cur.asset?(cur.owner&&cur.owner.startsWith('Canterbury City')?'CCC '+cur.asset:cur.asset):'No KCC match'} · ${cur.street} · photo ${ci+1} of ${cur.photos.length} · ${cur.photos[ci]}`;}
 function openLb(p,i){cur=p;ci=i;show();lb.style.display='flex';}
 lb.querySelector('.x').onclick=()=>lb.style.display='none';
 lb.onclick=e=>{if(e.target===lb)lb.style.display='none';};
