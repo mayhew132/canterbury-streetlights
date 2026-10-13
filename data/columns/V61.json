@@ -1,0 +1,46 @@
+{
+ "id": "V61",
+ "visits": [
+  61
+ ],
+ "street": "Monastery Street",
+ "asset": "FMFR014",
+ "owner": "KCC",
+ "candidates": [
+  "FMFR014",
+  "FMFR012"
+ ],
+ "candidate_distances": "FMFR014 (16 m); FMFR012 (5 m)",
+ "confidence": "Uncertain",
+ "basis": "Painted number, partly legible + GPS (one asset per visit per day)",
+ "painted": "MFR01?",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2799633,
+  1.0870316
+ ],
+ "dates": [
+  "2026-02-24"
+ ],
+ "photos": [
+  "20260224_132718.jpg",
+  "20260224_132641.jpg",
+  "20260224_132653.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "green topcoat largely lost on base collar, shaft and lower column exposing red oxide primer; flaking on bracket and ladder bar",
+ "cond_note": "Base door painted over, cypher worn flat (132641). Parking sign and large sign panel strapped to shaft; public notice tied on (132645, 132653). Ladder bar finials present both ends.",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 58
+}

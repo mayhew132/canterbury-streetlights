@@ -1,0 +1,47 @@
+{
+ "id": "V237",
+ "visits": [
+  237
+ ],
+ "street": "The Causeway",
+ "asset": "FTBV006",
+ "owner": "KCC",
+ "candidates": [
+  "FTBV006",
+  "FTBV005",
+  "FCNW004"
+ ],
+ "candidate_distances": "FTBV006 (8 m); FTBV005 (14 m); FCNW004 (4 m)",
+ "confidence": "Uncertain",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.28344,
+  1.0786633
+ ],
+ "dates": [
+  "2026-03-19"
+ ],
+ "photos": [
+  "20260319_133201.jpg",
+  "20260319_133057.jpg",
+  "20260319_133140.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "crazed and flaking paint over base, collars and shaft (133057, 133124, 133220); rust on plinth, ladder bar collar and bracket",
+ "cond_note": "cycle route sign strapped to shaft below ladder bar; both ladder bar finials present",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 230
+}

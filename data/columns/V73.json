@@ -1,0 +1,47 @@
+{
+ "id": "V73",
+ "visits": [
+  73
+ ],
+ "street": "Vernon Place",
+ "asset": "FVAQ003",
+ "owner": "KCC",
+ "candidates": [
+  "FVAQ003"
+ ],
+ "candidate_distances": "FVAQ003 (painted; 12 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "VAQ003",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.275255,
+  1.0840916
+ ],
+ "dates": [
+  "2026-02-27"
+ ],
+ "photos": [
+  "20260227_141030.jpg",
+  "20260227_141038.jpg",
+  "20260227_141035.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "rust and paint failure across base, collars, shaft and ladder bar; black strap round base",
+ "cond_note": "Door with cypher present, strapped across (141030). Vertical line with rust in the fluting at the strap (141053) looks like the door edge/hinge rather than a crack, but not certain. Hand-painted VAQ003 on shaft; Neighbourhood Watch sign bolted on. Ladder bar finials present both ends (141038).",
+ "cond_check": [
+  "structure"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 70
+}

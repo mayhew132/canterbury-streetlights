@@ -1,0 +1,45 @@
+{
+ "id": "V130",
+ "visits": [
+  130
+ ],
+ "street": "Victoria Road",
+ "asset": "FVBC002",
+ "owner": "KCC",
+ "candidates": [
+  "FVBC002"
+ ],
+ "candidate_distances": "FVBC002 (12 m); FVBC003 (20 m)",
+ "confidence": "Confirmed",
+ "basis": "Confirmed by Guy (asset confirmation sheet, Oct 2026)",
+ "painted": "",
+ "note": "Small-door pattern (A4)",
+ "confirmed_by": "Guy (asset sheet, Oct 2026)",
+ "variant": "A4",
+ "gps": [
+  51.2724033,
+  1.070535
+ ],
+ "dates": [
+  "2026-03-04"
+ ],
+ "photos": [
+  "20260304_131758.jpg",
+  "20260304_131650.jpg",
+  "20260304_131722.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "rust/red primer showing around base plinth (131708); minor chips and scuffs on base",
+ "cond_note": "Dark green paint generally intact. Both ladder bar acorns present (131722). Parking sign mounted behind ladder bar; metal strap bands on base. Feeder pillar nearby. Modern lantern under shade intact.",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 127
+}

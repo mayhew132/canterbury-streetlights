@@ -1,0 +1,48 @@
+{
+ "id": "V189",
+ "visits": [
+  189
+ ],
+ "street": "Burgate",
+ "asset": "FBJT002",
+ "owner": "KCC",
+ "candidates": [
+  "FBJT002",
+  "FBJT001"
+ ],
+ "candidate_distances": "FBJT002 (3 m); FBJT001 (17 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A2",
+ "gps": [
+  51.2782033,
+  1.0842933
+ ],
+ "dates": [
+  "2026-03-12"
+ ],
+ "photos": [
+  "20260312_132602.jpg",
+  "20260312_132523.jpg",
+  "20260312_132540.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "widespread red primer/rust showing through worn paint on base fluting and collars; lichen on ladder bar and bracket",
+ "cond_note": "fluted door with lock present (132523); both ladder bar finials present (132540); metal V-bracket and sign strapped to shaft below ladder bar",
+ "cond_check": [
+  "overall"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 186
+}

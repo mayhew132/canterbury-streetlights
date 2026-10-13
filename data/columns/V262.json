@@ -1,0 +1,48 @@
+{
+ "id": "V262",
+ "visits": [
+  262
+ ],
+ "street": "Orient Place",
+ "asset": "FOEB008",
+ "owner": "KCC",
+ "candidates": [
+  "FOEB008"
+ ],
+ "candidate_distances": "FOEB008 (5 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "OE?, OEB??S8",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "B1",
+ "gps": [
+  51.283695,
+  1.0773283
+ ],
+ "dates": [
+  "2026-03-28"
+ ],
+ "photos": [
+  "20260328_125551.jpg",
+  "20260328_125534.jpg",
+  "20260328_125540.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Other"
+ },
+ "defects": "paint faded/chalky with orange rust spots on base collar and acanthus section; slight rust on bracket collar",
+ "cond_note": "Colour is dark slate blue-grey, not green or black (125534). Ladder bar ball ends present both sides (125540). Door panel with fixing screw in place. Moss/lichen on surrounding paving. Column number stencilled on shaft.",
+ "cond_check": [
+  "colour",
+  "paint"
+ ],
+ "cond_second_opinion": "colour=Black",
+ "outcome": "",
+ "order": 255
+}

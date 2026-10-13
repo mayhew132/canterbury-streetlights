@@ -1,0 +1,47 @@
+{
+ "id": "V62",
+ "visits": [
+  62
+ ],
+ "street": "Monastery Street",
+ "asset": "FMFR015",
+ "owner": "KCC",
+ "candidates": [
+  "FMFR015",
+  "FMFR014",
+  "FMFR013"
+ ],
+ "candidate_distances": "FMFR015 (12 m); FMFR014 (12 m); FMFR013 (27 m)",
+ "confidence": "Uncertain",
+ "basis": "GPS (one asset per visit per day)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2801783,
+  1.086825
+ ],
+ "dates": [
+  "2026-02-24"
+ ],
+ "photos": [
+  "20260224_132819.jpg",
+  "20260224_132758.jpg",
+  "20260224_132806.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "green topcoat widely lost exposing red oxide primer on base, collars and upper shaft; lichen growth and rust on shaft, ladder bar and bracket",
+ "cond_note": "Metal band strapped round base across top of door (132758); door with cypher present. Sign strapped to upper shaft; torn sticker residue on shaft (132802). Ladder bar finials present both ends.",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 59
+}

@@ -1,0 +1,46 @@
+{
+ "id": "V220",
+ "visits": [
+  220
+ ],
+ "street": "Riverside Walk",
+ "asset": "FRGS006",
+ "owner": "KCC",
+ "candidates": [
+  "FRGS006",
+  "FRGS005"
+ ],
+ "candidate_distances": "FRGS006 (5 m); FRGS005 (19 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "Small-door pattern (A4) confirmed by Guy",
+ "confirmed_by": "",
+ "variant": "A4",
+ "gps": [
+  51.2837916,
+  1.0821483
+ ],
+ "dates": [
+  "2026-03-18"
+ ],
+ "photos": [
+  "20260318_134353.jpg",
+  "20260318_134257.jpg",
+  "20260318_134327.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "minor rust at base door edge (134305); red paint mark on shaft collar; rust spots on lantern shade",
+ "cond_note": "school banners on adjacent railings; both ladder bar finials present",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 214
+}

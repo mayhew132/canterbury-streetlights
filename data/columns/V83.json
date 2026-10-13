@@ -1,0 +1,47 @@
+{
+ "id": "V83",
+ "visits": [
+  83
+ ],
+ "street": "St Dunstan's Terrace",
+ "asset": "FSHL005",
+ "owner": "KCC",
+ "candidates": [
+  "FSHL005"
+ ],
+ "candidate_distances": "FSHL005 (2 m)",
+ "confidence": "Probable",
+ "basis": "Painted number, partly legible + GPS",
+ "painted": "S?????",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2824516,
+  1.069592
+ ],
+ "dates": [
+  "2026-03-02"
+ ],
+ "photos": [
+  "20260302_153811.jpg",
+  "20260302_153816.jpg",
+  "20260302_153825.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "minor rust at foot of plinth; slight dulling",
+ "cond_note": "Glossy black, largely sound. Door with cypher present, steel strap round base (153811). Parking sign and number plate strapped to shaft. Left ladder bar finial clear; right end blends into foliage in 153825 but appears present.",
+ "cond_check": [
+  "structure"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 80
+}

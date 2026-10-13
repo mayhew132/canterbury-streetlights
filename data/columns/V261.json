@@ -1,0 +1,47 @@
+{
+ "id": "V261",
+ "visits": [
+  261
+ ],
+ "street": "Castle Row",
+ "asset": "FCCA003",
+ "owner": "KCC",
+ "candidates": [
+  "FCCA003"
+ ],
+ "candidate_distances": "FCCA003 (7 m); FCCA004 (14 m); FDAG039 (22 m)",
+ "confidence": "Confirmed",
+ "basis": "Confirmed by Guy (asset confirmation sheet, Oct 2026)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "Guy (asset sheet, Oct 2026)",
+ "variant": "X-mod",
+ "gps": [
+  51.2752838,
+  1.075948
+ ],
+ "dates": [
+  "2026-03-28"
+ ],
+ "photos": [
+  "20260328_123248.jpg"
+ ],
+ "condition": {
+  "overall": "Missing",
+  "paint": "Poor",
+  "structure": "Damaged",
+  "lantern": "None",
+  "door": "Not seen",
+  "colour": "Moss Green"
+ },
+ "defects": "no column; only a short square green modern post/stub remains against wall, scuffed with rusty top; exposed cable and orange ducting beside it",
+ "cond_note": "X-mod. Site is a fenced construction area at Castle Row (123236); a modern EV charging point and small green post visible in context. 123248 shows the green stub with cabling. No lantern or full column present.",
+ "cond_check": [
+  "overall",
+  "paint",
+  "structure"
+ ],
+ "cond_second_opinion": "paint=Good;structure=Intact",
+ "outcome": "",
+ "order": 254
+}

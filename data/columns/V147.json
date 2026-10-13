@@ -1,0 +1,45 @@
+{
+ "id": "V147",
+ "visits": [
+  147
+ ],
+ "street": "St John's Lane",
+ "asset": "FSIH005",
+ "owner": "KCC",
+ "candidates": [
+  "FSIH005"
+ ],
+ "candidate_distances": "FSIH005 (50 m)",
+ "confidence": "Probable",
+ "basis": "Painted number, partly legible + GPS",
+ "painted": "SIH00?",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.27689,
+  1.0779683
+ ],
+ "dates": [
+  "2026-03-08"
+ ],
+ "photos": [
+  "20260308_135543.jpg",
+  "20260308_135501.jpg",
+  "20260308_135518.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "extensive rust over base, door panel and plinth (135501, 135512); flaking paint on fluting and on shaft, capital and spigot around the ladder bar (135518); rust on swan-neck bracket",
+ "cond_note": "Both ladder bar acorns present. Column looks tilted in 135534 but upright in 135543, so the lean is most likely wide-angle distortion. Metal strap band on base; parking sign on shaft. Modern lantern under shade intact.",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 144
+}

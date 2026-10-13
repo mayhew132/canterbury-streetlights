@@ -1,0 +1,49 @@
+{
+ "id": "V103",
+ "visits": [
+  103
+ ],
+ "street": "Ryde Street",
+ "asset": "FRFS001",
+ "owner": "KCC",
+ "candidates": [
+  "FRFS001",
+  "FNBI004"
+ ],
+ "candidate_distances": "FRFS001 (13 m); FNBI004 (21 m)",
+ "confidence": "Uncertain",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.282965,
+  1.0701433
+ ],
+ "dates": [
+  "2026-03-03"
+ ],
+ "photos": [
+  "20260303_130409.jpg",
+  "20260303_130330.jpg",
+  "20260303_130347.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "rust on ladder bar arms and capital (130359); white scuff/paint marks on lower base",
+ "cond_note": "Both ladder bar acorns present. Very dark green-black paint. Modern lantern under shade intact.",
+ "cond_check": [
+  "colour",
+  "overall"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 100
+}

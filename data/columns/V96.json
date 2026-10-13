@@ -1,0 +1,47 @@
+{
+ "id": "V96",
+ "visits": [
+  96
+ ],
+ "street": "New Street",
+ "asset": "FNBI007",
+ "owner": "KCC",
+ "candidates": [
+  "FNBI007",
+  "FNBI008",
+  "FOBV003"
+ ],
+ "candidate_distances": "FNBI007 (17 m); FNBI008 (13 m); FOBV003 (25 m)",
+ "confidence": "Uncertain",
+ "basis": "GPS (one asset per visit per day)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2822566,
+  1.0707116
+ ],
+ "dates": [
+  "2026-03-03"
+ ],
+ "photos": [
+  "20260303_125327.jpg",
+  "20260303_125239.jpg",
+  "20260303_125300.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "extensive rust and paint loss on upper column, ladder bar and bracket base (125300, 125311); rust on base plinth",
+ "cond_note": "Base and lower shaft reasonably sound (125239, 125249); door with cypher present. Upper column heavily rusted. Ladder bar finials present both ends (125311). Parking sign strapped on.",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 93
+}

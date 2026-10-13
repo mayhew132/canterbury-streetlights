@@ -1,0 +1,48 @@
+{
+ "id": "V102",
+ "visits": [
+  102
+ ],
+ "street": "New Street",
+ "asset": "FNBI001",
+ "owner": "KCC",
+ "candidates": [
+  "FNBI001"
+ ],
+ "candidate_distances": "FNBI001 (painted; 31 m)",
+ "confidence": "Strong",
+ "basis": "Painted number, partly legible (one match nearby)",
+ "painted": "N?I001",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2830429,
+  1.069172
+ ],
+ "dates": [
+  "2026-03-03"
+ ],
+ "photos": [
+  "20260303_130116.jpg",
+  "20260303_130046.jpg",
+  "20260303_130104.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "extensive rust on capital beneath ladder bar and patches of rust on upper shaft (130125); paint worn on base",
+ "cond_note": "Both ladder bar acorns present. Dark green-grey paint visible on sunlit base (130046). Modern lantern under shade intact.",
+ "cond_check": [
+  "colour",
+  "overall"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 99
+}

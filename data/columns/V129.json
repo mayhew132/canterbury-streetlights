@@ -1,0 +1,47 @@
+{
+ "id": "V129",
+ "visits": [
+  129
+ ],
+ "street": "Victoria Road",
+ "asset": "FVBC003",
+ "owner": "KCC",
+ "candidates": [
+  "FVBC003"
+ ],
+ "candidate_distances": "FVBC003 (4 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.272295,
+  1.0708083
+ ],
+ "dates": [
+  "2026-03-04"
+ ],
+ "photos": [
+  "20260304_131555.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Not seen",
+  "colour": "Moss Green"
+ },
+ "defects": "swan-neck bracket appears rusted/brown over most of its length; worn paint on upper shaft",
+ "cond_note": "Only one distant wide-angle photo (131555). Ladder bar present with a sign fixed at it; finials too small to confirm. Door side of base not visible (fluted side faces camera). Modern green lantern under shade appears intact.",
+ "cond_check": [
+  "overall",
+  "paint",
+  "structure"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 126
+}

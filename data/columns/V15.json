@@ -1,0 +1,49 @@
+{
+ "id": "V15",
+ "visits": [
+  15,
+  1
+ ],
+ "street": "Abbots Barton Walk",
+ "asset": "FAAA003",
+ "owner": "KCC",
+ "candidates": [
+  "FAAA003"
+ ],
+ "candidate_distances": "FAAA003 (painted; 9 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "?AA003, AAA003, AAA?",
+ "note": "Small-door pattern (A4) confirmed by Guy",
+ "confirmed_by": "",
+ "variant": "A4",
+ "gps": [
+  51.2720866,
+  1.088295
+ ],
+ "dates": [
+  "2026-02-06",
+  "2026-02-21"
+ ],
+ "photos": [
+  "20260221_125633.jpg",
+  "20260221_125544.jpg",
+  "20260221_125550.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Other"
+ },
+ "defects": "paint extensively flaking/peeling with rust showing on shaft, base and ladder bar",
+ "cond_note": "Painted silver/grey (traces of older green/brown beneath). Small framed door with cypher present on base (125544). Graffiti on adjacent feeder pillar, not column. Column appears to lean slightly in whole views (likely perspective). Ladder bar end knobs appear present but small/indistinct (125550).",
+ "cond_check": [
+  "structure"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 0
+}

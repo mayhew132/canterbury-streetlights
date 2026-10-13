@@ -1,0 +1,45 @@
+{
+ "id": "V98",
+ "visits": [
+  98
+ ],
+ "street": "New Street",
+ "asset": "FNBI005",
+ "owner": "KCC",
+ "candidates": [
+  "FNBI005"
+ ],
+ "candidate_distances": "FNBI005 (painted; 36 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "NBI005",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.28273,
+  1.070575
+ ],
+ "dates": [
+  "2026-03-03"
+ ],
+ "photos": [
+  "20260303_125535.jpg",
+  "20260303_125551.jpg",
+  "20260303_125545.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "minor scuffs/chips on base fluting; slight dulling",
+ "cond_note": "Paint largely sound and glossy. Door with cypher present (125535). Ladder bar finials present both ends (125601, 125613). Parking sign strapped on; stencilled 'NBI005'. Close to Excellent.",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 95
+}

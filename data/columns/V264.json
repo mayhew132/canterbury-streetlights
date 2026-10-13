@@ -1,0 +1,47 @@
+{
+ "id": "V264",
+ "visits": [
+  264
+ ],
+ "street": "Orient Place",
+ "asset": "FOEB004",
+ "owner": "KCC",
+ "candidates": [
+  "FOEB004"
+ ],
+ "candidate_distances": "FOEB004 (6 m)",
+ "confidence": "Probable",
+ "basis": "Painted number, partly legible + GPS",
+ "painted": "O?????",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "B1",
+ "gps": [
+  51.284405,
+  1.0773933
+ ],
+ "dates": [
+  "2026-03-28"
+ ],
+ "photos": [
+  "20260328_130017.jpg",
+  "20260328_125934.jpg",
+  "20260328_125944.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Other"
+ },
+ "defects": "red primer/rust patches showing on base door panel and lower shaft (red streak); paint worn through to bare grey metal and rust along swan-neck bracket and bracket collar; rust on finial box",
+ "cond_note": "Colour is dark slate blue-grey (125934). Large private 'Parking Enforcement in Operation' sign fixed to shaft below ladder bar (125944, 130017). Ladder bar ball ends present both sides. Lantern globe and shade intact (130000).",
+ "cond_check": [
+  "colour"
+ ],
+ "cond_second_opinion": "colour=Black",
+ "outcome": "",
+ "order": 257
+}

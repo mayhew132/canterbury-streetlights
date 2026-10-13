@@ -152,7 +152,8 @@ const VARS={
  'B1':{name:'B1 DW Windsor swan-neck',c:'#2a78d6'},
  'B2':{name:'B2 DW Windsor post-top',c:'#16a3b8'},
  'X-stub':{name:'X-stub Cut-down stub',c:'#b23b3b'},
- 'X-mod':{name:'X-mod Modern replacement',c:'#777777'}
+ 'X-mod':{name:'X-mod Modern replacement',c:'#777777'},
+ 'U':{name:'U Not yet classified',c:'#b0b0aa'}
 };
 const CONFS=['Confirmed','Strong','Probable','Likely','Uncertain','No match'];
 const HOLLOW=new Set(['Uncertain','No match']);
@@ -171,7 +172,7 @@ function style(p){const v=state.colby==='cond'?{c:CONDS[p.condition&&p.condition
 function popup(p){
  const v=VARS[p.variant];const title=p.asset?(p.owner&&p.owner.startsWith('Canterbury City')?'CCC '+p.asset:p.asset):'No KCC match';
  const ph=p.photos.map((f,i)=>`<img loading="lazy" src="photos/${esc(f)}" data-i="${i}" alt="Photo ${i+1} of ${esc(title)}">`).join('');
- const rows=[['Map ID','V'+p.visits[0]],p.owner?['Owner',p.owner]:null,['Variant',v?v.name:p.variant],['Identified by',p.basis],p.painted?['Painted number',p.painted]:null,
+ const rows=[['Map ID',p.id||('V'+p.visits[0])],p.owner?['Owner',p.owner]:null,['Variant',v?v.name:p.variant],['Identified by',p.basis],p.painted?['Painted number',p.painted]:null,
   p.candidates&&p.candidates!==p.asset?['Candidates',p.candidates]:null,['Position',p.placed],['Photographed',p.dates.join(', ')]].filter(Boolean)
   .map(r=>`<tr><td>${esc(r[0])}</td><td>${esc(r[1])}</td></tr>`).join('');
  return `<div class="pp"><h3>${esc(title)}</h3><div class="st">${esc(p.street)}</div>
@@ -187,7 +188,7 @@ function counts(){
  for(const k of CONFS){const el=document.querySelector(`[data-n-conf="${k}"]`);if(el)el.textContent=vis.filter(f=>f.properties.confidence===k).length;}
  for(const k of Object.keys(CONDS)){const el=document.querySelector(`[data-n-cond="${k}"]`);if(el)el.textContent=vis.filter(f=>(f.properties.condition||{}).overall===k).length;}
 }
-function matchQ(p){if(!state.q)return true;const q=state.q;return [p.asset,p.candidates,p.street,'v'+p.visits[0]].join(' ').toLowerCase().includes(q);}
+function matchQ(p){if(!state.q)return true;const q=state.q;return [p.asset,p.candidates,p.street,(p.id||'v'+p.visits[0])].join(' ').toLowerCase().includes(q);}
 function apply(){
  let n=0;const shown=[];
  markers.forEach(m=>{const p=m.feature.properties;const ok=state.vars.has(p.variant)&&state.confs.has(p.confidence)&&(!p.condition||!p.condition.overall||state.conds.has(p.condition.overall))&&matchQ(p);

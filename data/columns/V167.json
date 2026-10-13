@@ -1,0 +1,45 @@
+{
+ "id": "V167",
+ "visits": [
+  167
+ ],
+ "street": "Stour Street",
+ "asset": "FSMV002",
+ "owner": "KCC",
+ "candidates": [
+  "FSMV002"
+ ],
+ "candidate_distances": "FSMV002 (painted; 11 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "SMV002, S?V002",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1-alt",
+ "gps": [
+  51.2794383,
+  1.0785966
+ ],
+ "dates": [
+  "2026-03-08"
+ ],
+ "photos": [
+  "20260308_144810.jpg",
+  "20260308_144700.jpg",
+  "20260308_144731.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "extensive flaking paint and rust on leaf collar and rings of base exposing white/red undercoat; rust at foot of base; lichen on ladder bar",
+ "cond_note": "tape band round base door section (144700); both ladder bar finials present (144731); duplicate whole photos 144757/144758",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 164
+}

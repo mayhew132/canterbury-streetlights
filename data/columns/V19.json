@@ -1,0 +1,46 @@
+{
+ "id": "V19",
+ "visits": [
+  19
+ ],
+ "street": "Dover Street",
+ "asset": "FDCX007",
+ "owner": "KCC",
+ "candidates": [
+  "FDCX007",
+  "FDCX009"
+ ],
+ "candidate_distances": "FDCX007 (21 m); FDCX009 (35 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2753483,
+  1.0851383
+ ],
+ "dates": [
+  "2026-02-21"
+ ],
+ "photos": [
+  "20260221_131343.jpg",
+  "20260221_131255.jpg",
+  "20260221_131302.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "chips with red primer showing on base and shaft; stickers and tape residue on shaft; metal strap round door",
+ "cond_note": "Dark green. Door with cypher (131255). Ladder bar finials present both ends (131302). Parking sign on shaft.",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 16
+}

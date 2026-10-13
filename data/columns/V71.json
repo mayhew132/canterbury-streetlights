@@ -1,0 +1,45 @@
+{
+ "id": "V71",
+ "visits": [
+  71
+ ],
+ "street": "Monastery Street",
+ "asset": "FMFR013",
+ "owner": "KCC",
+ "candidates": [
+  "FMFR013"
+ ],
+ "candidate_distances": "FMFR013 (painted; 10 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "MFR013, MF",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2799199,
+  1.086835
+ ],
+ "dates": [
+  "2026-02-26"
+ ],
+ "photos": [
+  "20260226_150556.jpg",
+  "20260226_150604.jpg",
+  "20260226_150601.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "paint flaking exposing red oxide primer on base fluting, plinth and collar; rust and flaking on upper column and bracket",
+ "cond_note": "Door with cypher present (150556); black strap round base. Stencilled 'MFR013' on shaft. Ladder bar finials present both ends (150604).",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 68
+}

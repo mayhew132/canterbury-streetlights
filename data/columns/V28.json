@@ -1,0 +1,45 @@
+{
+ "id": "V28",
+ "visits": [
+  28
+ ],
+ "street": "St Georges Terrace",
+ "asset": "FSHW005",
+ "owner": "KCC",
+ "candidates": [
+  "FSHW005"
+ ],
+ "candidate_distances": "FSHW005 (painted; 15 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "SHW005",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2761345,
+  1.0818749
+ ],
+ "dates": [
+  "2026-02-21"
+ ],
+ "photos": [
+  "20260221_132813.jpg",
+  "20260221_132750.jpg",
+  "20260221_132758.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Missing",
+  "colour": "Moss Green"
+ },
+ "defects": "door replaced by sheet-metal wrap strapped round base with electrical warning sticker; widespread flaking and rust on base, shaft and swan-neck",
+ "cond_note": "Ladder bar finials present (132758). Brackets/clamps fixed on shaft.",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 25
+}

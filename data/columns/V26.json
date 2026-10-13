@@ -1,0 +1,45 @@
+{
+ "id": "V26",
+ "visits": [
+  26
+ ],
+ "street": "St Georges Terrace",
+ "asset": "FSHW003",
+ "owner": "KCC",
+ "candidates": [
+  "FSHW003"
+ ],
+ "candidate_distances": "FSHW003 (painted; 26 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "SHW0?3, SHW003 (first pass)",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1-alt",
+ "gps": [
+  51.2765388,
+  1.08271
+ ],
+ "dates": [
+  "2026-02-21"
+ ],
+ "photos": [
+  "20260221_132605.jpg",
+  "20260221_132540.jpg",
+  "20260221_132551.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Missing",
+  "colour": "Moss Green"
+ },
+ "defects": "door replaced by a plain sheet-metal wrap strapped round the base; paint heavily flaking throughout with rust; rust at collar under ladder bar",
+ "cond_note": "Ladder bar finials present (132549). Plain tubular swan-neck. Cable ties on shaft.",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 23
+}

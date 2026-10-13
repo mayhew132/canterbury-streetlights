@@ -1,0 +1,47 @@
+{
+ "id": "V46",
+ "visits": [
+  46
+ ],
+ "street": "Church Street St Pauls",
+ "asset": "FCGC004",
+ "owner": "KCC",
+ "candidates": [
+  "FCGC004"
+ ],
+ "candidate_distances": "FCGC004 (9 m); FCGC003 (16 m)",
+ "confidence": "Confirmed",
+ "basis": "Confirmed by Guy (asset confirmation sheet, Oct 2026)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "Guy (asset sheet, Oct 2026)",
+ "variant": "A1",
+ "gps": [
+  51.278015,
+  1.085275
+ ],
+ "dates": [
+  "2026-02-24"
+ ],
+ "photos": [
+  "20260224_130159.jpg",
+  "20260224_130131.jpg",
+  "20260224_130138.jpg"
+ ],
+ "condition": {
+  "overall": "Excellent",
+  "paint": "Excellent",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "",
+ "cond_note": "Freshly painted glossy dark green. Door with cypher (130131). No ladder bar visible in any view (130138/130209) — either not fitted on this column or out of frame; not recorded as damage.",
+ "cond_check": [
+  "structure"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 43
+}

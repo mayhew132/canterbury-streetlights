@@ -1,0 +1,47 @@
+{
+ "id": "V45",
+ "visits": [
+  45
+ ],
+ "street": "Ivy Lane",
+ "asset": "FIAW012",
+ "owner": "KCC",
+ "candidates": [
+  "FIAW012"
+ ],
+ "candidate_distances": "FIAW012 (34 m)",
+ "confidence": "Uncertain",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "FIAW012 is also the top candidate for visit(s) 41 on the same day, so at most one is right; Single bracket photo; may be a second shot of a nearby column",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2772903,
+  1.085202
+ ],
+ "dates": [
+  "2026-02-24"
+ ],
+ "photos": [
+  "20260224_125702.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Not seen",
+  "colour": "Moss Green"
+ },
+ "defects": "rust and paint loss on collar at base of swan-neck; minor chips on swan-neck",
+ "cond_note": "Only one photo (bracket/lantern). Base, door and ladder bar not seen; overall judged from upper column only.",
+ "cond_check": [
+  "overall",
+  "paint",
+  "structure"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 42
+}

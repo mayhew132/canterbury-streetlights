@@ -1,0 +1,46 @@
+{
+ "id": "V285",
+ "visits": [
+  285
+ ],
+ "street": "Barton Mill Road",
+ "asset": "FBAW310",
+ "owner": "KCC",
+ "candidates": [
+  "FBAW310",
+  "FBAW309"
+ ],
+ "candidate_distances": "FBAW310 (13 m); FBAW309 (23 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2872066,
+  1.0894266
+ ],
+ "dates": [
+  "2026-05-01"
+ ],
+ "photos": [
+  "20260501_123319.jpg",
+  "20260501_122602.jpg",
+  "20260501_122608.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "flaking paint with rust/primer showing over base, shaft and ladder bar; stickers and torn paper notices on shaft",
+ "cond_note": "Door with cypher (122602); lantern intact (122615); column in overgrown bank",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 276
+}

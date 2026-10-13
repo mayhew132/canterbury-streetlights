@@ -1,0 +1,48 @@
+{
+ "id": "V50",
+ "visits": [
+  50
+ ],
+ "street": "Monastery Street",
+ "asset": "FMFR002",
+ "owner": "KCC",
+ "candidates": [
+  "FMFR002"
+ ],
+ "candidate_distances": "FMFR002 (painted; 12 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "MFR002",
+ "note": "Small-door pattern (A4)",
+ "confirmed_by": "",
+ "variant": "A4",
+ "gps": [
+  51.2782133,
+  1.0864433
+ ],
+ "dates": [
+  "2026-02-24"
+ ],
+ "photos": [
+  "20260224_131133.jpg",
+  "20260224_131047.jpg",
+  "20260224_131138.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "paint flaking on base and shaft exposing old cream/yellow layers and rust; rust on swan-neck and lantern carrier",
+ "cond_note": "Small A4 door panel with cypher on base (131100), not clearly framed. Ladder bar finials present (131103). | Adjudicated: both ladder bar acorns present (131103)",
+ "cond_check": [
+  "door",
+  "structure"
+ ],
+ "cond_second_opinion": "structure=Damaged",
+ "outcome": "",
+ "order": 47
+}

@@ -1,0 +1,47 @@
+{
+ "id": "V48",
+ "visits": [
+  48,
+  278
+ ],
+ "street": "Church Street St Pauls",
+ "asset": "FCGC002",
+ "owner": "KCC",
+ "candidates": [
+  "FCGC002"
+ ],
+ "candidate_distances": "FCGC002 (painted; 7 m)",
+ "confidence": "Strong",
+ "basis": "Painted number, partly legible (one match nearby)",
+ "painted": "?C??002, ?C???",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2779516,
+  1.0858383
+ ],
+ "dates": [
+  "2026-02-24",
+  "2026-05-01"
+ ],
+ "photos": [
+  "20260224_130541.jpg",
+  "20260224_130501.jpg",
+  "20260224_130511.jpg"
+ ],
+ "condition": {
+  "overall": "Excellent",
+  "paint": "Excellent",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "",
+ "cond_note": "Newly repainted: column wrapped in protective cling film in earlier photos (130501-130550); later photos (115715-115732) show fresh glossy green, door with cypher, ladder bar finials present. Traffic signs on shaft.",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 45
+}

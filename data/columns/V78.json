@@ -1,0 +1,46 @@
+{
+ "id": "V78",
+ "visits": [
+  78
+ ],
+ "street": "Whitehall Road",
+ "asset": "FWDS002",
+ "owner": "KCC",
+ "candidates": [
+  "FWDS002"
+ ],
+ "candidate_distances": "FWDS002 (painted; 10 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "WDS002",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "X-mod",
+ "gps": [
+  51.28098,
+  1.0738216
+ ],
+ "dates": [
+  "2026-03-02"
+ ],
+ "photos": [
+  "20260302_152614.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Not seen",
+  "door": "Present",
+  "colour": "Other"
+ },
+ "defects": "",
+ "cond_note": "Modern galvanised steel column (unpainted grey/silver), not a heritage casting. Only one photo (152614), top/lantern out of frame. Door compartment on swelled base section appears closed. Parking sign mounted on shaft; stencilled 'WDS002'. 'Paint' judged as the galvanised finish, which looks sound.",
+ "cond_check": [
+  "door",
+  "paint"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 75
+}

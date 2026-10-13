@@ -1,0 +1,50 @@
+{
+ "id": "V163",
+ "visits": [
+  163
+ ],
+ "street": "Water Lane",
+ "asset": "FWAV004",
+ "owner": "KCC",
+ "candidates": [
+  "FWAV004",
+  "FWAV003",
+  "FWAV006"
+ ],
+ "candidate_distances": "FWAV004 (9 m); FWAV003 (11 m); FWAV006 (19 m)",
+ "confidence": "Uncertain",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "Re-checked: base whitewashed; door looks tall (A1) - check",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.27865,
+  1.0769449
+ ],
+ "dates": [
+  "2026-03-08"
+ ],
+ "photos": [
+  "20260308_143811.jpg",
+  "20260308_143713.jpg",
+  "20260308_143737.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "extensive flaking paint on lower base exposing grey/white undercoat",
+ "cond_note": "both ladder bar finials present (143737); door side of base not visible in 143713 | Adjudicated: door seen on second check: Black paint. Metal strap/band round door with small plate. Both ladder-bar finia",
+ "cond_check": [
+  "door",
+  "overall"
+ ],
+ "cond_second_opinion": "overall=Good",
+ "outcome": "",
+ "order": 160
+}

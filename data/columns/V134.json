@@ -1,0 +1,48 @@
+{
+ "id": "V134",
+ "visits": [
+  134
+ ],
+ "street": "York Road",
+ "asset": "FYAH001",
+ "owner": "KCC",
+ "candidates": [
+  "FYAH001",
+  "FNBJ001"
+ ],
+ "candidate_distances": "FYAH001 (14 m); FNBJ001 (28 m)",
+ "confidence": "Uncertain",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "FYAH001 is also the top candidate for visit(s) 132 on the same day, so at most one is right; Small-door pattern (A4) confirmed by Guy",
+ "confirmed_by": "",
+ "variant": "A4",
+ "gps": [
+  51.2733383,
+  1.0725149
+ ],
+ "dates": [
+  "2026-03-04"
+ ],
+ "photos": [
+  "20260304_132949.jpg",
+  "20260304_132858.jpg",
+  "20260304_132931.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Damaged",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "ladder bar appears missing - no cross arm visible below the bracket in either whole view (132942, 132949); swan-neck bracket heavily rusted with flaking paint (132931); widespread flaking paint and rust on base and door (132858)",
+ "cond_note": "No arm photo was taken. Small sign and strap clamps on upper shaft. Galvanised feeder pillar on wall nearby (132919). Modern green lantern under shade intact; bracket top box rusty. | Adjudicated: no ladder bar visible in either whole view - verify on site",
+ "cond_check": [
+  "structure"
+ ],
+ "cond_second_opinion": "structure=Intact",
+ "outcome": "",
+ "order": 131
+}

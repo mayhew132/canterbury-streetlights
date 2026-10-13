@@ -1,0 +1,48 @@
+{
+ "id": "V36",
+ "visits": [
+  36
+ ],
+ "street": "Edward Road",
+ "asset": "FEBA003",
+ "owner": "KCC",
+ "candidates": [
+  "FEBA003"
+ ],
+ "candidate_distances": "FEBA003 (painted; 15 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "EBA003",
+ "note": "Small-door pattern (A4) confirmed by Guy",
+ "confirmed_by": "",
+ "variant": "A4",
+ "gps": [
+  51.27593,
+  1.08846
+ ],
+ "dates": [
+  "2026-02-24"
+ ],
+ "photos": [
+  "20260224_124009.jpg",
+  "20260224_123932.jpg",
+  "20260224_123939.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "paint flaking with rust streaks/patches on shaft and base; rust on lantern carrier",
+ "cond_note": "Small door with cypher (123932). Ladder bar finials present (123939). Borderline Good/Poor — base largely sound, shaft rusty.",
+ "cond_check": [
+  "overall",
+  "paint"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 33
+}

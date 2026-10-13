@@ -1,0 +1,47 @@
+{
+ "id": "V124",
+ "visits": [
+  124
+ ],
+ "street": "Norfolk Road",
+ "asset": "FNBU001",
+ "owner": "KCC",
+ "candidates": [
+  "FNBU001"
+ ],
+ "candidate_distances": "FNBU001 (16 m); FNBU002 (17 m)",
+ "confidence": "Confirmed",
+ "basis": "Confirmed by Guy (asset confirmation sheet, Oct 2026)",
+ "painted": "",
+ "note": "Small-door pattern (A4)",
+ "confirmed_by": "Guy (asset sheet, Oct 2026)",
+ "variant": "A4",
+ "gps": [
+  51.2711466,
+  1.072925
+ ],
+ "dates": [
+  "2026-03-04"
+ ],
+ "photos": [
+  "20260304_130006.jpg",
+  "20260304_125930.jpg",
+  "20260304_125958.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "widespread rust and worn paint over base, door, plinth and shaft (125930, 125939); lichen on ladder bar and bracket; rust on swan-neck bracket",
+ "cond_note": "Right ladder bar acorn present; left end partly cut off at the frame edge in 130021 but appears present. Metal strap bands on base. Rusty galvanised feeder pillar nearby (125948). Modern green lantern under shade intact.",
+ "cond_check": [
+  "structure"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 121
+}

@@ -1,0 +1,47 @@
+{
+ "id": "V84",
+ "visits": [
+  84
+ ],
+ "street": "St Dunstan's Terrace",
+ "asset": "FSHL004",
+ "owner": "KCC",
+ "candidates": [
+  "FSHL004"
+ ],
+ "candidate_distances": "FSHL004 (painted; 18 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "SHL004",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1-alt",
+ "gps": [
+  51.2824266,
+  1.0692666
+ ],
+ "dates": [
+  "2026-03-02"
+ ],
+ "photos": [
+  "20260302_153919.jpg",
+  "20260302_153915.jpg",
+  "20260302_153933.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Good",
+  "structure": "Damaged",
+  "lantern": "None",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "column truncated just above ladder bar - swan-neck bracket and lantern absent, top closed by rusty cap; paint chips on door panel",
+ "cond_note": "No lantern fitted; lighting now from adjacent galvanised column (153915, 153919). Ladder bar finials present both ends (153933). Door with cypher present. Used as sign post (parking sign, stencilled 'SHL004').",
+ "cond_check": [
+  "overall"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 81
+}

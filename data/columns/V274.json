@@ -1,0 +1,47 @@
+{
+ "id": "V274",
+ "visits": [
+  274
+ ],
+ "street": "Shepherdsgate",
+ "asset": "FSRG003",
+ "owner": "KCC",
+ "candidates": [
+  "FSRG003"
+ ],
+ "candidate_distances": "FSRG003 (3 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "B2",
+ "gps": [
+  51.2850533,
+  1.075665
+ ],
+ "dates": [
+  "2026-04-02"
+ ],
+ "photos": [
+  "20260402_142541.jpg",
+  "20260402_142452.jpg",
+  "20260402_142524.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "black topcoat peeling on base exposing large areas of red/orange primer",
+ "cond_note": "Column in garden planting; door side of base not clearly visible (142452); lantern intact (142524) | Adjudicated: door seen on second check: in private-looking garden setting; ladder bar both finials present (142524); doo",
+ "cond_check": [
+  "door"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 266
+}

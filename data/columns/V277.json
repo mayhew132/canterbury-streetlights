@@ -1,0 +1,47 @@
+{
+ "id": "V277",
+ "visits": [
+  277
+ ],
+ "street": "Coppergate",
+ "asset": "FCNO003",
+ "owner": "KCC",
+ "candidates": [
+  "FCNO003"
+ ],
+ "candidate_distances": "FCNO003 (painted; 13 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "FCNO003",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "B2",
+ "gps": [
+  51.2856383,
+  1.07603
+ ],
+ "dates": [
+  "2026-04-02"
+ ],
+ "photos": [
+  "20260402_143035.jpg",
+  "20260402_143014.jpg",
+  "20260402_143024.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "black topcoat flaking on decorative base and door exposing orange primer; metal band strapped round door",
+ "cond_note": "'No dogs' sticker and parking sign on shaft (143014, 143035); lantern intact (143024)",
+ "cond_check": [
+  "overall"
+ ],
+ "cond_second_opinion": "overall=Poor",
+ "outcome": "",
+ "order": 269
+}

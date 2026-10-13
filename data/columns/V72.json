@@ -1,0 +1,49 @@
+{
+ "id": "V72",
+ "visits": [
+  72
+ ],
+ "street": "Vernon Place",
+ "asset": "FVAQ001",
+ "owner": "KCC",
+ "candidates": [
+  "FVAQ001",
+  "FDCX006",
+  "FDCX007"
+ ],
+ "candidate_distances": "FVAQ001 (3 m); FDCX006 (21 m); FDCX007 (27 m)",
+ "confidence": "Uncertain",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2755283,
+  1.084525
+ ],
+ "dates": [
+  "2026-02-27"
+ ],
+ "photos": [
+  "20260227_140843.jpg",
+  "20260227_140853.jpg",
+  "20260227_140849.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "extensive rust over shaft, collars and base; paint largely failed; steel strap and tape wrapped round base",
+ "cond_note": "Door with cypher present (140843). Steel band and tape round base at the door edge (140922); the vertical line in the fluting appears to be the door edge/hinge rather than a crack, but cannot be confirmed. Parking sign strapped on. Ladder bar finials present both ends (140853).",
+ "cond_check": [
+  "structure"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 69
+}

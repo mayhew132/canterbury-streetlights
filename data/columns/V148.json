@@ -1,0 +1,48 @@
+{
+ "id": "V148",
+ "visits": [
+  148
+ ],
+ "street": "St John's Lane",
+ "asset": "FSIH004",
+ "owner": "KCC",
+ "candidates": [
+  "FSIH004"
+ ],
+ "candidate_distances": "FSIH004 (painted; 9 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "SIH004",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2768083,
+  1.07774
+ ],
+ "dates": [
+  "2026-03-08"
+ ],
+ "photos": [
+  "20260308_135732.jpg",
+  "20260308_135632.jpg",
+  "20260308_135639.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "rust and red primer showing through on fluted base below the collar (135659); minor chips on lower base and shaft",
+ "cond_note": "Paint coat generally intact on door side, shaft, ladder bar and bracket. Both ladder bar acorns present (135644). Modern green lantern under shade intact.",
+ "cond_check": [
+  "overall",
+  "paint"
+ ],
+ "cond_second_opinion": "overall=Poor;paint=Poor",
+ "outcome": "",
+ "order": 145
+}

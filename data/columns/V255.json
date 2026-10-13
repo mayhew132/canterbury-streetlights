@@ -1,0 +1,47 @@
+{
+ "id": "V255",
+ "visits": [
+  255
+ ],
+ "street": "St Peter's Lane",
+ "asset": "FSKI011",
+ "owner": "KCC",
+ "candidates": [
+  "FSKI011"
+ ],
+ "candidate_distances": "FSKI011 (painted; 14 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "FSKI011",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2825166,
+  1.07948
+ ],
+ "dates": [
+  "2026-03-19"
+ ],
+ "photos": [
+  "20260319_143251.jpg",
+  "20260319_143205.jpg",
+  "20260319_143222.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Excellent",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "rust/dirt staining on underside of lantern shade",
+ "cond_note": "Glossy green paint; ladder bar finials present both ends (143222); door with cypher present (143205). Shade underside stained (143231).",
+ "cond_check": [
+  "overall"
+ ],
+ "cond_second_opinion": "overall=Excellent",
+ "outcome": "",
+ "order": 248
+}

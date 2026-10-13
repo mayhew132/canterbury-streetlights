@@ -1,0 +1,45 @@
+{
+ "id": "V272",
+ "visits": [
+  272
+ ],
+ "street": "Shepherdsgate",
+ "asset": "FSRG001",
+ "owner": "KCC",
+ "candidates": [
+  "FSRG001"
+ ],
+ "candidate_distances": "FSRG001 (3 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "B2",
+ "gps": [
+  51.2852416,
+  1.075375
+ ],
+ "dates": [
+  "2026-04-02"
+ ],
+ "photos": [
+  "20260402_142238.jpg",
+  "20260402_142210.jpg",
+  "20260402_142226.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "chips and small rust spots on base and maker's plate; rust spots on ladder bar collar",
+ "cond_note": "Stickers and parking sign attached to shaft (142210, 142238); lantern panes intact",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 264
+}

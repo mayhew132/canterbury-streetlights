@@ -1,0 +1,45 @@
+{
+ "id": "V137",
+ "visits": [
+  137
+ ],
+ "street": "York Road",
+ "asset": "FYAH003",
+ "owner": "KCC",
+ "candidates": [
+  "FYAH003"
+ ],
+ "candidate_distances": "FYAH003 (1 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "X-stub",
+ "gps": [
+  51.2729216,
+  1.072955
+ ],
+ "dates": [
+  "2026-03-04"
+ ],
+ "photos": [
+  "20260304_133440.jpg",
+  "20260304_133502.jpg",
+  "20260304_133520.jpg"
+ ],
+ "condition": {
+  "overall": "Missing",
+  "paint": "Poor",
+  "structure": "Damaged",
+  "lantern": "None",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "column cut down to a base stub, shaft/ladder bar/bracket/lantern all gone, top sealed with taped cable wrap (133502, 133520); widespread flaking paint and rust; large sticker on base (133502)",
+ "cond_note": "Stub stands beside a modern galvanised replacement column (133440, 133454). Door with lock boss appears still in place on the stub (133520). Faded green paint with grey/white patches.",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 134
+}

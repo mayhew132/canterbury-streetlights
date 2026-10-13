@@ -1,0 +1,48 @@
+{
+ "id": "V279",
+ "visits": [
+  279
+ ],
+ "street": "Riverside path (near Westwood Drive)",
+ "asset": "00132681",
+ "owner": "CCC",
+ "candidates": [],
+ "candidate_distances": "",
+ "confidence": "Confirmed",
+ "basis": "Confirmed by Guy: City Council asset (Confirm system, not adopted by KCC)",
+ "painted": "",
+ "note": "City Council riverside path column (per Guy), so not in the KCC extract",
+ "confirmed_by": "Guy (asset sheet, Oct 2026)",
+ "variant": "A1",
+ "gps": [
+  51.2865266,
+  1.0876633
+ ],
+ "dates": [
+  "2026-05-01"
+ ],
+ "photos": [
+  "20260501_121947.jpg",
+  "20260501_121838.jpg",
+  "20260501_121913.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Damaged",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "lantern bowl/glass missing exposing lamp gear, shade appears displaced/askew below lantern; rust patches on base door cypher; column engulfed in vegetation",
+ "cond_note": "Lantern damage seen in 121913 (partly screened by foliage); paint dark charcoal/black | Adjudicated: shade displaced down the bracket below an open lantern (121913)",
+ "cond_check": [
+  "colour",
+  "lantern",
+  "overall",
+  "paint"
+ ],
+ "cond_second_opinion": "overall=Good;lantern=Intact",
+ "outcome": "",
+ "order": 270
+}

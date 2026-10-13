@@ -1,0 +1,45 @@
+{
+ "id": "V53",
+ "visits": [
+  53
+ ],
+ "street": "Lady Wootton's Green",
+ "asset": "FLAD004",
+ "owner": "KCC",
+ "candidates": [
+  "FLAD004"
+ ],
+ "candidate_distances": "FLAD004 (4 m)",
+ "confidence": "Probable",
+ "basis": "Painted number, partly legible + GPS",
+ "painted": "FL??0??",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2791016,
+  1.0859683
+ ],
+ "dates": [
+  "2026-02-24"
+ ],
+ "photos": [
+  "20260224_131627.jpg",
+  "20260224_131558.jpg",
+  "20260224_131605.jpg"
+ ],
+ "condition": {
+  "overall": "Excellent",
+  "paint": "Excellent",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "",
+ "cond_note": "Glossy fresh green paint; both ladder bar finials present (131605); door panel with cypher in place (131558).",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 50
+}

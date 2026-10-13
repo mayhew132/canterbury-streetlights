@@ -1,0 +1,45 @@
+{
+ "id": "V145",
+ "visits": [
+  145
+ ],
+ "street": "St Marys Street",
+ "asset": "FSJU001",
+ "owner": "KCC",
+ "candidates": [
+  "FSJU001"
+ ],
+ "candidate_distances": "FSJU001 (15 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "FSJU001 is also the top candidate for visit(s) 146 on the same day, so at most one is right; Small-door pattern (A4) confirmed by Guy",
+ "confirmed_by": "",
+ "variant": "A4",
+ "gps": [
+  51.276505,
+  1.0770416
+ ],
+ "dates": [
+  "2026-03-08"
+ ],
+ "photos": [
+  "20260308_135146.jpg",
+  "20260308_135102.jpg",
+  "20260308_135111.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "widespread flaking paint exposing white/orange undercoat and rust over base and shaft (135102, 135146); flaking and rust on swan-neck bracket and capital (135121); rust spots on ladder bar",
+ "cond_note": "Column stands inside park railings. Both ladder bar acorns present (135111). Door panel with cypher visible behind railings (135102). Modern green lantern under shade intact.",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 142
+}

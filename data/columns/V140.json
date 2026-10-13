@@ -1,0 +1,47 @@
+{
+ "id": "V140",
+ "visits": [
+  140
+ ],
+ "street": "Tudor Road",
+ "asset": "FTGA002",
+ "owner": "KCC",
+ "candidates": [
+  "FTGA002"
+ ],
+ "candidate_distances": "FTGA002 (4 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "Small-door pattern (A4)",
+ "confirmed_by": "",
+ "variant": "A4",
+ "gps": [
+  51.2737133,
+  1.0731233
+ ],
+ "dates": [
+  "2026-03-04"
+ ],
+ "photos": [
+  "20260304_134510.jpg",
+  "20260304_134409.jpg",
+  "20260304_134439.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Other"
+ },
+ "defects": "widespread flaking paint and heavy rust over base, door panel, fluting and plinth (134409, 134428); lichen on ladder bar and capital (134459)",
+ "cond_note": "Paint is a very dark navy blue (sampled approx RGB 28,53,90), not green or neutral black. Both ladder bar acorns present. Black cable tie/strap round base. Bracket and upper column paint comparatively sound. Modern lantern under shade intact.",
+ "cond_check": [
+  "colour"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 137
+}

@@ -1,0 +1,48 @@
+{
+ "id": "V115",
+ "visits": [
+  115
+ ],
+ "street": "Oxford Road",
+ "asset": "FOCO020",
+ "owner": "KCC",
+ "candidates": [
+  "FOCO020",
+  "FLAK001"
+ ],
+ "candidate_distances": "FOCO020 (33 m); FLAK001 (24 m)",
+ "confidence": "Uncertain",
+ "basis": "GPS (one asset per visit per day)",
+ "painted": "",
+ "note": "Small-door pattern (A4)",
+ "confirmed_by": "",
+ "variant": "A4",
+ "gps": [
+  51.2715066,
+  1.075095
+ ],
+ "dates": [
+  "2026-03-04"
+ ],
+ "photos": [
+  "20260304_123906.jpg",
+  "20260304_123832.jpg",
+  "20260304_123856.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "widespread flaking paint and rust over base, door and fluting (123832, 123843); heavy rust and peeling paint on swan-neck bracket and collar (123856); lichen and flaking on ladder bar and shaft (123939)",
+ "cond_note": "Ladder bar end finials appear present but are heavily lichen-covered and hard to read against the roof behind (123939). Separate black feeder pillar on wall nearby (123916). Modern lantern under shade intact.",
+ "cond_check": [
+  "structure"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 112
+}

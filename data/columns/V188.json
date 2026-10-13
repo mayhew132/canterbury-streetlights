@@ -1,0 +1,45 @@
+{
+ "id": "V188",
+ "visits": [
+  188
+ ],
+ "street": "Castle Street",
+ "asset": "FCCC007",
+ "owner": "KCC",
+ "candidates": [
+  "FCCC007"
+ ],
+ "candidate_distances": "FCCC007 (painted; 4 m)",
+ "confidence": "Strong",
+ "basis": "Painted number, partly legible (one match nearby)",
+ "painted": "CCC?07",
+ "note": "Small-door pattern (A4)",
+ "confirmed_by": "",
+ "variant": "A4",
+ "gps": [
+  51.2763516,
+  1.07617
+ ],
+ "dates": [
+  "2026-03-10"
+ ],
+ "photos": [
+  "20260310_131631.jpg",
+  "20260310_131530.jpg",
+  "20260310_131555.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "small paint chips and rust spots on shaft and base; blue tape round door section",
+ "cond_note": "small door with cypher present (131530); both ladder bar finials present (131555); dead-end sign on shaft; Biggleston maker's mark on shaft (131621)",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 185
+}

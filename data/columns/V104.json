@@ -1,0 +1,47 @@
+{
+ "id": "V104",
+ "visits": [
+  104
+ ],
+ "street": "Ryde Street",
+ "asset": "FRFS002",
+ "owner": "KCC",
+ "candidates": [
+  "FRFS002"
+ ],
+ "candidate_distances": "FRFS002 (painted; 6 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "RFS002",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2830166,
+  1.0704233
+ ],
+ "dates": [
+  "2026-03-03"
+ ],
+ "photos": [
+  "20260303_130529.jpg",
+  "20260303_130440.jpg",
+  "20260303_130457.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "heavy surface rust over the door panel with CCC cypher (130440); general paint wear on base",
+ "cond_note": "Both ladder bar acorns present (130457). Very dark green-black paint. Column number stencilled on shaft. Modern lantern under shade intact.",
+ "cond_check": [
+  "colour"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 101
+}

@@ -1,0 +1,47 @@
+{
+ "id": "V112",
+ "visits": [
+  112
+ ],
+ "street": "Heaton Road",
+ "asset": "FHCP011",
+ "owner": "KCC",
+ "candidates": [
+  "FHCP011"
+ ],
+ "candidate_distances": "FHCP011 (25 m); FZAA014 (11 m)",
+ "confidence": "Confirmed",
+ "basis": "Confirmed by Guy (asset confirmation sheet, Oct 2026)",
+ "painted": "",
+ "note": "Small-door pattern (A4)",
+ "confirmed_by": "Guy (asset sheet, Oct 2026)",
+ "variant": "A4",
+ "gps": [
+  51.2703018,
+  1.074623
+ ],
+ "dates": [
+  "2026-03-04"
+ ],
+ "photos": [
+  "20260304_123204.jpg",
+  "20260304_123139.jpg",
+  "20260304_123155.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "heavy lichen growth over base, shaft and ladder bar; flaking paint and rust, especially on shaft collar and spigot above ladder bar (123233); rust on base plinth",
+ "cond_note": "Paint is a faded blue-green / teal. Both ladder bar finials present. Small framed door with cypher in place (123139). Graffiti-tagged feeder pillar nearby (not on column). Modern lantern under shade intact.",
+ "cond_check": [
+  "colour"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 109
+}

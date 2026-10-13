@@ -1,0 +1,47 @@
+{
+ "id": "V258",
+ "visits": [
+  258
+ ],
+ "street": "St Radigunds Street",
+ "asset": "FSKP004",
+ "owner": "KCC",
+ "candidates": [
+  "FSKP004",
+  "FSKP003",
+  "FCFQ003"
+ ],
+ "candidate_distances": "FSKP004 (33 m); FSKP003 (36 m); FCFQ003 (28 m)",
+ "confidence": "Uncertain",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.282225,
+  1.0824716
+ ],
+ "dates": [
+  "2026-03-22"
+ ],
+ "photos": [
+  "20260322_143012.jpg",
+  "20260322_142923.jpg",
+  "20260322_142933.jpg"
+ ],
+ "condition": {
+  "overall": "Excellent",
+  "paint": "Excellent",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Not seen",
+  "colour": "Moss Green"
+ },
+ "defects": "",
+ "cond_note": "Very dark glossy green, recently painted. Ladder bar finials present both ends (142933). Column stands within fenced works site; surrounding ground excavated exposing concrete collar at base (142923, 143012). Door face not shown.",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 251
+}

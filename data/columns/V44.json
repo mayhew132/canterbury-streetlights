@@ -1,0 +1,45 @@
+{
+ "id": "V44",
+ "visits": [
+  44
+ ],
+ "street": "St Pauls Terrace",
+ "asset": "FSKF002",
+ "owner": "KCC",
+ "candidates": [
+  "FSKF002"
+ ],
+ "candidate_distances": "FSKF002 (painted; 9 m)",
+ "confidence": "Strong",
+ "basis": "Painted number, partly legible (one match nearby)",
+ "painted": "SK???2, SK",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2773783,
+  1.0854649
+ ],
+ "dates": [
+  "2026-02-24"
+ ],
+ "photos": [
+  "20260224_125641.jpg",
+  "20260224_125603.jpg",
+  "20260224_125610.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "paint flaking and blistered over shaft and base; rust patches on upper shaft; metal strap round door",
+ "cond_note": "Lighter green. Door with cypher (125603). Ladder bar finials present (125610). Parking signs on shaft.",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 41
+}

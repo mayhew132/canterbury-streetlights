@@ -1,0 +1,48 @@
+{
+ "id": "V271",
+ "visits": [
+  271
+ ],
+ "street": "Rheims Court",
+ "asset": "FRGT004",
+ "owner": "KCC",
+ "candidates": [
+  "FRGT004",
+  "FRGT003",
+  "FRGT005"
+ ],
+ "candidate_distances": "FRGT004 (7 m); FRGT003 (21 m); FRGT005 (21 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "B2",
+ "gps": [
+  51.2825033,
+  1.0633866
+ ],
+ "dates": [
+  "2026-04-02"
+ ],
+ "photos": [
+  "20260402_140158.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Not seen",
+  "colour": "Black"
+ },
+ "defects": "",
+ "cond_note": "Single distant photo (140158); lower column hidden by hedge",
+ "cond_check": [
+  "paint",
+  "structure"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 263
+}

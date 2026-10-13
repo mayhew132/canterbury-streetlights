@@ -1,0 +1,49 @@
+{
+ "id": "V268",
+ "visits": [
+  268
+ ],
+ "street": "London Road",
+ "asset": "FLCS302",
+ "owner": "KCC",
+ "candidates": [
+  "FLCS302",
+  "FRGT002"
+ ],
+ "candidate_distances": "FLCS302 (22 m); FRGT002 (11 m)",
+ "confidence": "Uncertain",
+ "basis": "GPS (one asset per visit per day)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "B2",
+ "gps": [
+  51.2821033,
+  1.0638466
+ ],
+ "dates": [
+  "2026-04-02"
+ ],
+ "photos": [
+  "20260402_135935.jpg",
+  "20260402_135841.jpg",
+  "20260402_135923.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "extensive peeling of black topcoat exposing red/orange primer over base, shaft and ladder bar",
+ "cond_note": "Column surrounded by ivy/undergrowth (135841); lantern panes intact (135923)",
+ "cond_check": [
+  "colour",
+  "door"
+ ],
+ "cond_second_opinion": "door=Not seen;colour=Other",
+ "outcome": "",
+ "order": 260
+}

@@ -1,0 +1,47 @@
+{
+ "id": "V206",
+ "visits": [
+  206
+ ],
+ "street": "King Street",
+ "asset": "FKAZ007",
+ "owner": "KCC",
+ "candidates": [
+  "FKAZ007"
+ ],
+ "candidate_distances": "FKAZ007 (painted; 11 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "KAZ007",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.281115,
+  1.08045
+ ],
+ "dates": [
+  "2026-03-16"
+ ],
+ "photos": [
+  "20260316_140858.jpg",
+  "20260316_140737.jpg",
+  "20260316_140804.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "extensive paint flaking exposing red primer on base and collars; heavy lichen growth on ladder bar, shaft top and bracket",
+ "cond_note": "parking sign; both ladder bar finials present | Adjudicated: both ladder bar acorns present under lichen (140804)",
+ "cond_check": [
+  "structure"
+ ],
+ "cond_second_opinion": "structure=Damaged",
+ "outcome": "",
+ "order": 200
+}

@@ -1,0 +1,49 @@
+{
+ "id": "V75",
+ "visits": [
+  75
+ ],
+ "street": "Westgate Grove",
+ "asset": "FWCU001",
+ "owner": "KCC",
+ "candidates": [
+  "FWCU001"
+ ],
+ "candidate_distances": "FWCU001 (4 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2813283,
+  1.0747566
+ ],
+ "dates": [
+  "2026-03-02"
+ ],
+ "photos": [
+  "20260302_151555.jpg",
+  "20260302_151546.jpg",
+  "20260302_151557.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Missing",
+  "colour": "Moss Green"
+ },
+ "defects": "door opening covered by plain flat plate held on with two steel straps (no cast door/cypher); paint flaking on base, collars and shaft; rust on plinth",
+ "cond_note": "Very dark green, near black in shade; green visible in sunlit areas (151617). Door replaced by strapped plate (151546). Left ladder bar finial present; right end obscured against building in 151555/151557. Round sticker residue on shaft.",
+ "cond_check": [
+  "colour",
+  "door",
+  "structure"
+ ],
+ "cond_second_opinion": "door=Present",
+ "outcome": "",
+ "order": 72
+}

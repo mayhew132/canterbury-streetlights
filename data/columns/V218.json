@@ -1,0 +1,45 @@
+{
+ "id": "V218",
+ "visits": [
+  218
+ ],
+ "street": "Riverside Walk",
+ "asset": "FRGS008",
+ "owner": "KCC",
+ "candidates": [
+  "FRGS008"
+ ],
+ "candidate_distances": "FRGS008 (10 m)",
+ "confidence": "Probable",
+ "basis": "Order along Riverside Walk between hand-painted 14 and 7 + GPS",
+ "painted": "",
+ "note": "Small-door pattern (A4) confirmed by Guy",
+ "confirmed_by": "",
+ "variant": "A4",
+ "gps": [
+  51.2841183,
+  1.0827
+ ],
+ "dates": [
+  "2026-03-18"
+ ],
+ "photos": [
+  "20260318_134030.jpg",
+  "20260318_133938.jpg",
+  "20260318_133959.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "moss on ladder bar collar and bracket; heavy rust/dirt staining on lantern shade; stickers on shaft; small cable/tie protruding from base side (133948)",
+ "cond_note": "small A4 door present with open keyhole (133938); both ladder bar finials present",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 212
+}

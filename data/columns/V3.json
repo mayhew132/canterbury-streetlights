@@ -1,0 +1,48 @@
+{
+ "id": "V3",
+ "visits": [
+  3,
+  192
+ ],
+ "street": "Burgate",
+ "asset": "FBJT006",
+ "owner": "KCC",
+ "candidates": [
+  "FBJT006"
+ ],
+ "candidate_distances": "FBJT006 (5 m)",
+ "confidence": "Probable",
+ "basis": "Hand-painted number \"6\" on shaft + GPS",
+ "painted": "\"6\" (hand-painted)",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A2",
+ "gps": [
+  51.27858,
+  1.082885
+ ],
+ "dates": [
+  "2026-02-17",
+  "2026-03-12"
+ ],
+ "photos": [
+  "20260217_132012.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Other"
+ },
+ "defects": "minor chips and rust spots at foot of base",
+ "cond_note": "Painted blue/teal (clearly blue in sunlit base 133049, not green). Ladder bar acorns present both ends (133057). No access door visible in either base view. Pedestrian zone sign and menu poster attached to shaft. | Adjudicated: door seen on second check: Paint is a blue/teal (clearly blue in sunlit 133049, darker teal in 133020) - no",
+ "cond_check": [
+  "colour",
+  "door"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 2
+}

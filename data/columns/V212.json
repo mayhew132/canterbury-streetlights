@@ -1,0 +1,47 @@
+{
+ "id": "V212",
+ "visits": [
+  212
+ ],
+ "street": "Riverside Walk",
+ "asset": "FRGS014",
+ "owner": "KCC",
+ "candidates": [
+  "FRGS014"
+ ],
+ "candidate_distances": "FRGS014 (9 m)",
+ "confidence": "Probable",
+ "basis": "Hand-painted number \"14\" on shaft + GPS",
+ "painted": "\"14\" (hand-painted)",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2853733,
+  1.0841783
+ ],
+ "dates": [
+  "2026-03-18"
+ ],
+ "photos": [
+  "20260318_133025.jpg",
+  "20260318_132931.jpg",
+  "20260318_133001.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "algae staining on base plinth; red sticker on lantern bowl (133010)",
+ "cond_note": "door panel sits slightly proud (132943); both ladder bar finials present",
+ "cond_check": [
+  "colour"
+ ],
+ "cond_second_opinion": "colour=Moss Green",
+ "outcome": "",
+ "order": 206
+}

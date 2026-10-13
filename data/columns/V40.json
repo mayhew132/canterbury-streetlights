@@ -1,0 +1,48 @@
+{
+ "id": "V40",
+ "visits": [
+  40
+ ],
+ "street": "Ivy Lane",
+ "asset": "FIAW005",
+ "owner": "KCC",
+ "candidates": [
+  "FIAW005"
+ ],
+ "candidate_distances": "FIAW005 (18 m)",
+ "confidence": "Probable",
+ "basis": "Painted number, partly legible + GPS",
+ "painted": "IAW0??",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2768133,
+  1.0871666
+ ],
+ "dates": [
+  "2026-02-24"
+ ],
+ "photos": [
+  "20260224_124820.jpg",
+  "20260224_124741.jpg",
+  "20260224_124751.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "door heavily rusted with paint flaked off around cypher; rust and flaking on collars of base and shaft",
+ "cond_note": "Rest of column dark green with chips. Ladder bar finials present (124751). Borderline — defects concentrated on door and base collars.",
+ "cond_check": [
+  "overall",
+  "paint"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 37
+}

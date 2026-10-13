@@ -1,0 +1,50 @@
+{
+ "id": "V256",
+ "visits": [
+  256
+ ],
+ "street": "St Peter's Lane",
+ "asset": "FSKI003",
+ "owner": "KCC",
+ "candidates": [
+  "FSKI003"
+ ],
+ "candidate_distances": "FSKI003 (painted; 11 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "SKI003",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2812614,
+  1.0774929
+ ],
+ "dates": [
+  "2026-03-19"
+ ],
+ "photos": [
+  "20260319_143737.jpg",
+  "20260319_143703.jpg",
+  "20260319_143805.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Not seen",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "column heavily overgrown with ivy and tree branches; dead ivy stems clinging to base and shaft; paint dull and weathered",
+ "cond_note": "Upper column and lantern buried in tree/ivy canopy (143805, 143854) - lantern only glimpsed, ladder bar and bracket not visible. Door face not visible in base photos (143703, 143714). | Adjudicated: door seen on second check: Lantern tile (143805) and whole (143737) show only foliage; ladder bar barely vi",
+ "cond_check": [
+  "door",
+  "lantern",
+  "paint",
+  "structure"
+ ],
+ "cond_second_opinion": "paint=Good",
+ "outcome": "",
+ "order": 249
+}

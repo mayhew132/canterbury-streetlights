@@ -1,0 +1,48 @@
+{
+ "id": "V228",
+ "visits": [
+  228
+ ],
+ "street": "St Radigunds Street",
+ "asset": "FSKP008",
+ "owner": "KCC",
+ "candidates": [
+  "FSKP008"
+ ],
+ "candidate_distances": "FSKP008 (painted; 8 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "FSKP008",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2825416,
+  1.0810933
+ ],
+ "dates": [
+  "2026-03-18"
+ ],
+ "photos": [
+  "20260318_140540.jpg",
+  "20260318_140428.jpg",
+  "20260318_140449.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "paint chips and scuffs on base fluting and plinth (140437); sticker residue on upper shaft; dirt under lantern shade",
+ "cond_note": "glossy, relatively recent paint elsewhere; hydrant marker plate on shaft; both ladder bar finials present",
+ "cond_check": [
+  "overall",
+  "paint"
+ ],
+ "cond_second_opinion": "overall=Excellent;paint=Excellent",
+ "outcome": "",
+ "order": 222
+}

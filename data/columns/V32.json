@@ -1,0 +1,45 @@
+{
+ "id": "V32",
+ "visits": [
+  32
+ ],
+ "street": "Albert Road",
+ "asset": "FAAT003",
+ "owner": "KCC",
+ "candidates": [
+  "FAAT003"
+ ],
+ "candidate_distances": "FAAT003 (painted; 10 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "AAT003",
+ "note": "Small-door pattern (A4)",
+ "confirmed_by": "",
+ "variant": "A4",
+ "gps": [
+  51.2765866,
+  1.0888366
+ ],
+ "dates": [
+  "2026-02-24"
+ ],
+ "photos": [
+  "20260224_123408.jpg",
+  "20260224_123321.jpg",
+  "20260224_123329.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "minor chips and small rust spots on base; wire wrapped round base above door",
+ "cond_note": "Small framed door with cypher (123321). Ladder bar finials present (123329). Traffic signs clamped to shaft.",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 29
+}

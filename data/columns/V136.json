@@ -1,0 +1,47 @@
+{
+ "id": "V136",
+ "visits": [
+  136
+ ],
+ "street": "New Street",
+ "asset": "FNBJ002",
+ "owner": "KCC",
+ "candidates": [
+  "FNBJ002"
+ ],
+ "candidate_distances": "FNBJ002 (9 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1-alt",
+ "gps": [
+  51.272955,
+  1.0720233
+ ],
+ "dates": [
+  "2026-03-04"
+ ],
+ "photos": [
+  "20260304_133142.jpg",
+  "20260304_133057.jpg",
+  "20260304_133128.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Missing",
+  "colour": "Moss Green"
+ },
+ "defects": "access door replaced by a bent metal plate held on with green/yellow earth cable wrapped round the base (133057, 133108); widespread rust streaking over base fluting and collars (133108, 133118); rust and wear on ladder bar and capital",
+ "cond_note": "Paint is a faded blue-green. Both ladder bar acorns present (133128). No-loading sign on shaft; feeder pillar nearby. Modern lantern under shade intact.",
+ "cond_check": [
+  "colour"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 133
+}

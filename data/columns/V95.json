@@ -1,0 +1,49 @@
+{
+ "id": "V95",
+ "visits": [
+  95
+ ],
+ "street": "New Street",
+ "asset": "FNBI008",
+ "owner": "KCC",
+ "candidates": [
+  "FNBI008",
+  "FOBV003",
+  "FOBV004"
+ ],
+ "candidate_distances": "FNBI008 (17 m); FOBV003 (12 m); FOBV004 (16 m)",
+ "confidence": "Uncertain",
+ "basis": "GPS (one asset per visit per day)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2821693,
+  1.071125
+ ],
+ "dates": [
+  "2026-03-03"
+ ],
+ "photos": [
+  "20260303_125204.jpg",
+  "20260303_125114.jpg",
+  "20260303_125138.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "small chips and rust spots on base and plinth; rust/flaking on bracket arm near lantern (125151)",
+ "cond_note": "Door with cypher present, steel strap round base (125114). Ladder bar finials present both ends (125138). Slight blue-green cast on base in sun - could be very dark green.",
+ "cond_check": [
+  "colour"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 92
+}

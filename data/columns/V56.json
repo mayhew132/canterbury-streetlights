@@ -1,0 +1,49 @@
+{
+ "id": "V56",
+ "visits": [
+  56
+ ],
+ "street": "Monastery Street",
+ "asset": "FMFR008",
+ "owner": "KCC",
+ "candidates": [
+  "FMFR008",
+  "FLAD003",
+  "FMFR007"
+ ],
+ "candidate_distances": "FMFR008 (4 m); FLAD003 (13 m); FMFR007 (17 m)",
+ "confidence": "Uncertain",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.279275,
+  1.0867216
+ ],
+ "dates": [
+  "2026-02-24"
+ ],
+ "photos": [
+  "20260224_132017.jpg",
+  "20260224_131957.jpg",
+  "20260224_132002.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Damaged",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "widespread paint flaking with rust/primer showing on base, shaft, ladder bar and bracket; metal strap band around base above door; lantern shade rim distorted (right side)",
+ "cond_note": "Door with cypher present but a steel band is strapped round the base (131957). Sign brackets clamped to shaft (132002). Ladder bar finials appear present but heavily flaked. Shade rim looks bent in 132025.",
+ "cond_check": [
+  "lantern"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 53
+}

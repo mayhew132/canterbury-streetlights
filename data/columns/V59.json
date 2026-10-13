@@ -1,0 +1,47 @@
+{
+ "id": "V59",
+ "visits": [
+  59
+ ],
+ "street": "Monastery Street",
+ "asset": "FMFR011",
+ "owner": "KCC",
+ "candidates": [
+  "FMFR011",
+  "FMFR012",
+  "FMFR010"
+ ],
+ "candidate_distances": "FMFR011 (8 m); FMFR012 (22 m); FMFR010 (23 m)",
+ "confidence": "Probable",
+ "basis": "Painted number, partly legible + GPS",
+ "painted": "MFR???",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.27973,
+  1.0869466
+ ],
+ "dates": [
+  "2026-02-24"
+ ],
+ "photos": [
+  "20260224_132358.jpg",
+  "20260224_132338.jpg",
+  "20260224_132344.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "green topcoat widely lost exposing red oxide primer on base, collars and upper shaft; flaking and rust on ladder bar and bracket",
+ "cond_note": "Graffiti tag ('Joyce') on shaft (132341, 132344). Sign plate clamped to shaft. Ladder bar finials present both ends (132344, 132346). Door with cypher in place (132338).",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 56
+}

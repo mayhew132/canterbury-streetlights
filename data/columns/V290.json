@@ -1,0 +1,43 @@
+{
+ "id": "V290",
+ "visits": [
+  290
+ ],
+ "street": "Riverside path (near Ambleside Place)",
+ "asset": "00132679",
+ "owner": "CCC",
+ "candidates": [],
+ "candidate_distances": "",
+ "confidence": "Confirmed",
+ "basis": "Confirmed by Guy: City Council asset (Confirm system, not adopted by KCC)",
+ "painted": "",
+ "note": "City Council riverside path column (per Guy), so not in the KCC extract",
+ "confirmed_by": "Guy (asset sheet, Oct 2026)",
+ "variant": "A1",
+ "gps": [
+  51.2862983,
+  1.0872
+ ],
+ "dates": [
+  "2026-05-01"
+ ],
+ "photos": [
+  "20260501_133408.jpg",
+  "20260501_133343.jpg",
+  "20260501_133349.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "topcoat largely peeled away exposing bright red/orange primer over most of base and shaft; graffiti tag on shaft",
+ "cond_note": "Ladder bar both ends present (133349); door with cypher (133343)",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 281
+}

@@ -1,0 +1,45 @@
+{
+ "id": "V155",
+ "visits": [
+  155
+ ],
+ "street": "Stour Street",
+ "asset": "FSMV016",
+ "owner": "KCC",
+ "candidates": [
+  "FSMV016"
+ ],
+ "candidate_distances": "FSMV016 (painted; 11 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "FSMV016",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2769966,
+  1.0752769
+ ],
+ "dates": [
+  "2026-03-08"
+ ],
+ "photos": [
+  "20260308_141509.jpg",
+  "20260308_141438.jpg",
+  "20260308_141444.jpg"
+ ],
+ "condition": {
+  "overall": "Excellent",
+  "paint": "Excellent",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Not seen",
+  "colour": "Moss Green"
+ },
+ "defects": "",
+ "cond_note": "recently repainted gloss dark green; base behind railings, fluted side only visible (141438)",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 152
+}

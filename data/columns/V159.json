@@ -1,0 +1,45 @@
+{
+ "id": "V159",
+ "visits": [
+  159
+ ],
+ "street": "Church Lane",
+ "asset": "FCFO003",
+ "owner": "KCC",
+ "candidates": [
+  "FCFO003"
+ ],
+ "candidate_distances": "FCFO003 (6 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.276335,
+  1.0743583
+ ],
+ "dates": [
+  "2026-03-08"
+ ],
+ "photos": [
+  "20260308_142146.jpg",
+  "20260308_142029.jpg",
+  "20260308_142057.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "extensive paint loss exposing red oxide primer on base and shaft; rust on ladder bar and bracket; algae on shaft",
+ "cond_note": "strap band on base; both ladder bar finials present (142057)",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 156
+}

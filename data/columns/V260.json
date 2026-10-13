@@ -1,0 +1,47 @@
+{
+ "id": "V260",
+ "visits": [
+  260
+ ],
+ "street": "Pound Lane",
+ "asset": "FPEM015",
+ "owner": "KCC",
+ "candidates": [
+  "FPEM015"
+ ],
+ "candidate_distances": "FPEM015 (painted; 7 m)",
+ "confidence": "Strong",
+ "basis": "Painted number, partly legible (one match nearby)",
+ "painted": "?EM015",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2825766,
+  1.0801916
+ ],
+ "dates": [
+  "2026-03-26"
+ ],
+ "photos": [
+  "20260326_140645.jpg",
+  "20260326_140631.jpg",
+  "20260326_140652.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "widespread flaking/peeling paint exposing rust and old paint layers on base, shaft, ladder bar and bracket; rust on bracket scrolls and finial box; heavy soiling and rust staining on lantern shade and globe",
+ "cond_note": "Badly neglected (140652, 140731, 140736). Ladder bar finials present both ends. Parking sign clamped to shaft below ladder bar. Column enclosed by Heras fencing at time of survey; door panel only partly visible through fencing (140731).",
+ "cond_check": [
+  "door"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 253
+}

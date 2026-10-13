@@ -1,0 +1,50 @@
+{
+ "id": "V231",
+ "visits": [
+  231
+ ],
+ "street": "St Radigunds Street",
+ "asset": "FSKP003",
+ "owner": "KCC",
+ "candidates": [
+  "FSKP003",
+  "FSKP004"
+ ],
+ "candidate_distances": "FSKP003 (16 m); FSKP004 (22 m)",
+ "confidence": "Uncertain",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2826583,
+  1.0826416
+ ],
+ "dates": [
+  "2026-03-18"
+ ],
+ "photos": [
+  "20260318_141339.jpg",
+  "20260318_141252.jpg",
+  "20260318_141305.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "heavy rust on upper shaft above ladder bar and on lower swan-neck of bracket (141305, 141312); paint faded/chalky on base; metal band strapped around base over door (141252); rust staining on lantern shade",
+ "cond_note": "faded pale green finish; column enclosed by Heras fencing beside works; left ladder bar end appears as a smaller rounded knob than the right acorn - treated as present",
+ "cond_check": [
+  "door",
+  "overall",
+  "structure"
+ ],
+ "cond_second_opinion": "door=Not seen",
+ "outcome": "",
+ "order": 225
+}

@@ -1,0 +1,48 @@
+{
+ "id": "V63",
+ "visits": [
+  63
+ ],
+ "street": "Havelock Street",
+ "asset": "FHBV001",
+ "owner": "KCC",
+ "candidates": [
+  "FHBV001"
+ ],
+ "candidate_distances": "FHBV001 (painted; 3 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "HBV001",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2802696,
+  1.08623
+ ],
+ "dates": [
+  "2026-02-24"
+ ],
+ "photos": [
+  "20260224_133146.jpg",
+  "20260224_133049.jpg",
+  "20260224_133200.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "paint chips and flaking on door panel; rust at base plinth; lichen and flaking on upper column, ladder bar and bracket",
+ "cond_note": "TV aerial stay wire attached near ladder bar (133146); no-waiting sign and small plate strapped to shaft. Ladder bar finials present both ends. Borderline Good/Poor - coat mostly intact on shaft but worn at top and base.",
+ "cond_check": [
+  "overall",
+  "paint"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 60
+}

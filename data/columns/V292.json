@@ -1,0 +1,48 @@
+{
+ "id": "V292",
+ "visits": [
+  292
+ ],
+ "street": "Ambleside Place",
+ "asset": "FAFG301",
+ "owner": "KCC",
+ "candidates": [
+  "FAFG301"
+ ],
+ "candidate_distances": "FAFG301 (37 m)",
+ "confidence": "Likely",
+ "basis": "Order along footpath (KCC: 1st–5th towards Kingsmead Road) + GPS",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2862616,
+  1.08658
+ ],
+ "dates": [
+  "2026-05-01"
+ ],
+ "photos": [
+  "20260501_133613.jpg",
+  "20260501_133556.jpg",
+  "20260501_133601.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "extensive flaking exposing red/orange primer on base and shaft; graffiti tag on shaft; dirty lantern shade",
+ "cond_note": "Lantern and ladder bar screened by tree foliage (133601); ladder bar ends appear present",
+ "cond_check": [
+  "lantern",
+  "structure"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 283
+}

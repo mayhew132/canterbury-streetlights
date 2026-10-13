@@ -1,0 +1,47 @@
+{
+ "id": "V267",
+ "visits": [
+  267
+ ],
+ "street": "Rheims Court",
+ "asset": "FRGT001",
+ "owner": "KCC",
+ "candidates": [
+  "FRGT001"
+ ],
+ "candidate_distances": "FRGT001 (painted; 8 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "RGT001",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "B2",
+ "gps": [
+  51.2819983,
+  1.0639049
+ ],
+ "dates": [
+  "2026-04-02"
+ ],
+ "photos": [
+  "20260402_135759.jpg",
+  "20260402_135705.jpg",
+  "20260402_135733.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "patches of flaking paint exposing red primer on base door and decorative base",
+ "cond_note": "Lantern panes intact (135733); ladder bar ball finials present",
+ "cond_check": [
+  "paint"
+ ],
+ "cond_second_opinion": "paint=Poor",
+ "outcome": "",
+ "order": 259
+}

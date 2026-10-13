@@ -1,0 +1,45 @@
+{
+ "id": "V64",
+ "visits": [
+  64
+ ],
+ "street": "Havelock Street",
+ "asset": "FHBV002",
+ "owner": "KCC",
+ "candidates": [
+  "FHBV002"
+ ],
+ "candidate_distances": "FHBV002 (painted; 5 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "HBV002, HBV00?",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2803116,
+  1.0864349
+ ],
+ "dates": [
+  "2026-02-24"
+ ],
+ "photos": [
+  "20260224_133510.jpg",
+  "20260224_133534.jpg",
+  "20260224_133528.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Not seen",
+  "colour": "Moss Green"
+ },
+ "defects": "paint chips with red primer/rust spots on base plinth, collar and lower shaft",
+ "cond_note": "Base photos (133510, 133528) show only fluted faces; door side faces the railings and is not visible. White stencilled 'HBV002' on shaft; no-waiting sign strapped on. Ladder bar finials present both ends (133534).",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 61
+}

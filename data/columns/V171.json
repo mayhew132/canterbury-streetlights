@@ -1,0 +1,45 @@
+{
+ "id": "V171",
+ "visits": [
+  171
+ ],
+ "street": "St Margaret's Street",
+ "asset": "FSIY006",
+ "owner": "KCC",
+ "candidates": [
+  "FSIY006"
+ ],
+ "candidate_distances": "FCCC001 (22 m); FWBB015 (23 m); FSIY006 (38 m)",
+ "confidence": "Confirmed",
+ "basis": "Confirmed by Guy (asset confirmation sheet, Oct 2026)",
+ "painted": "",
+ "note": "Earlier best guess was FCCC001 (Uncertain)",
+ "confirmed_by": "Guy (asset sheet, Oct 2026)",
+ "variant": "A1",
+ "gps": [
+  51.2776216,
+  1.0787783
+ ],
+ "dates": [
+  "2026-03-08"
+ ],
+ "photos": [
+  "20260308_145731.jpg",
+  "20260308_145655.jpg",
+  "20260308_145711.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "rust chips on lower base and fluting",
+ "cond_note": "metal strap band round base; litter bin alongside; both ladder bar finials present (145711)",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 168
+}

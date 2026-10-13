@@ -1,0 +1,48 @@
+{
+ "id": "V38",
+ "visits": [
+  38
+ ],
+ "street": "Edward Road",
+ "asset": "FEBA001",
+ "owner": "KCC",
+ "candidates": [
+  "FEBA001"
+ ],
+ "candidate_distances": "FEBA001 (painted; 7 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "EBA001",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1-alt",
+ "gps": [
+  51.2762716,
+  1.0879583
+ ],
+ "dates": [
+  "2026-02-24"
+ ],
+ "photos": [
+  "20260224_124358.jpg",
+  "20260224_124315.jpg",
+  "20260224_124329.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Damaged",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "left ladder bar acorn missing (124329); minor chips and small rust spots; lichen on upper swan-neck; rust on lantern carrier",
+ "cond_note": "Door present on base (124315). Ladder bar finials present (124329). Signs clamped to shaft. | Adjudicated: left ladder bar acorn missing (124329); right present",
+ "cond_check": [
+  "overall",
+  "structure"
+ ],
+ "cond_second_opinion": "overall=Poor",
+ "outcome": "",
+ "order": 35
+}

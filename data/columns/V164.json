@@ -1,0 +1,49 @@
+{
+ "id": "V164",
+ "visits": [
+  164
+ ],
+ "street": "Water Lane",
+ "asset": "FWAV003",
+ "owner": "KCC",
+ "candidates": [
+  "FWAV003",
+  "FWAV004",
+  "FWAV002"
+ ],
+ "candidate_distances": "FWAV003 (7 m); FWAV004 (9 m); FWAV002 (19 m)",
+ "confidence": "Uncertain",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "Small-door pattern (A4)",
+ "confirmed_by": "",
+ "variant": "A4",
+ "gps": [
+  51.2786099,
+  1.0768033
+ ],
+ "dates": [
+  "2026-03-08"
+ ],
+ "photos": [
+  "20260308_143910.jpg",
+  "20260308_143841.jpg",
+  "20260308_143853.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "worn black paint with older green and rust showing on base; rust on bracket and collar above ladder bar; algae on shaft",
+ "cond_note": "black overpaint over earlier green; both ladder bar finials present (143853); litter at base | Adjudicated: black overpaint over earlier green",
+ "cond_check": [
+  "colour"
+ ],
+ "cond_second_opinion": "colour=Moss Green",
+ "outcome": "",
+ "order": 161
+}

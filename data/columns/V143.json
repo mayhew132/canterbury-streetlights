@@ -1,0 +1,48 @@
+{
+ "id": "V143",
+ "visits": [
+  143
+ ],
+ "street": "Marlowe Avenue",
+ "asset": "FMBL004",
+ "owner": "KCC",
+ "candidates": [
+  "FMBL004"
+ ],
+ "candidate_distances": "FMBL004 (painted; 4 m)",
+ "confidence": "Strong",
+ "basis": "Painted number, partly legible (one match nearby)",
+ "painted": "M??004",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2763366,
+  1.0782883
+ ],
+ "dates": [
+  "2026-03-08"
+ ],
+ "photos": [
+  "20260308_134812.jpg",
+  "20260308_134731.jpg",
+  "20260308_134754.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "heavy moss/lichen on ladder bar, spigot and swan-neck bracket (134754, 134804); peeling paint on upper shaft below ladder bar (134804); flaking paint and graffiti tag on fluted base (134743)",
+ "cond_note": "Door-side base paint in good order (134731) but upper column neglected. Ladder bar end finials present but moss-covered and blunt-looking. Modern lantern under shade intact.",
+ "cond_check": [
+  "overall",
+  "structure"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 140
+}

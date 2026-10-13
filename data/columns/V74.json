@@ -1,0 +1,48 @@
+{
+ "id": "V74",
+ "visits": [
+  74
+ ],
+ "street": "Vernon Place",
+ "asset": "FVAQ006",
+ "owner": "KCC",
+ "candidates": [
+  "FVAQ006"
+ ],
+ "candidate_distances": "FVAQ006 (62 m)",
+ "confidence": "Probable",
+ "basis": "Painted number, partly legible + GPS",
+ "painted": "VAQ00?",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2748909,
+  1.0832699
+ ],
+ "dates": [
+  "2026-02-27"
+ ],
+ "photos": [
+  "20260227_141222.jpg",
+  "20260227_141228.jpg",
+  "20260227_141225.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "faded, streaky paint on shaft; rust on base plinth and small rust spots on base; wear on bracket",
+ "cond_note": "Door with cypher present (141222); door edge/hinge visible from side (141253). Hand-painted 'VAQ006' on shaft. Ladder bar finials present both ends (141228). Borderline Good/Poor.",
+ "cond_check": [
+  "overall",
+  "paint"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 71
+}

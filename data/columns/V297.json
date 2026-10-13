@@ -1,0 +1,48 @@
+{
+ "id": "V297",
+ "visits": [
+  297
+ ],
+ "street": "Dover Street",
+ "asset": "FDCX001",
+ "owner": "KCC",
+ "candidates": [
+  "FDCX001"
+ ],
+ "candidate_distances": "FDCX001 (painted; no GPS)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "FDCX001",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.276327,
+  1.083466
+ ],
+ "dates": [
+  "2026-10-04"
+ ],
+ "photos": [
+  "IMG_20261004_131410.jpg",
+  "IMG_20261004_131324.jpg",
+  "IMG_20261004_131308.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "faded, chalky green paint with widespread rust spotting on base and shaft; black tape strapped around base/door",
+ "cond_note": "Parking restriction signs and dental practice sign attached to shaft (131332, 131410); door with cypher held by tape (131324)",
+ "cond_check": [
+  "door"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "gps_note": "no photo GPS; position from KCC asset",
+ "order": 288
+}

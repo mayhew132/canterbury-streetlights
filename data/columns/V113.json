@@ -1,0 +1,45 @@
+{
+ "id": "V113",
+ "visits": [
+  113
+ ],
+ "street": "Lancaster Road",
+ "asset": "FLAK003",
+ "owner": "KCC",
+ "candidates": [
+  "FLAK003"
+ ],
+ "candidate_distances": "FLAK003 (11 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "Small-door pattern (A4)",
+ "confirmed_by": "",
+ "variant": "A4",
+ "gps": [
+  51.2710549,
+  1.0755066
+ ],
+ "dates": [
+  "2026-03-04"
+ ],
+ "photos": [
+  "20260304_123554.jpg",
+  "20260304_123509.jpg",
+  "20260304_123533.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "severe peeling paint and rust on upper shaft below ladder bar (123533); widespread flaking paint and rust over base, door and fluting (123509, 123521); flaking on spigot above ladder bar",
+ "cond_note": "Both ladder bar acorns present. Metal strap bands on base; small sign on shaft. Modern lantern under shade intact.",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 110
+}

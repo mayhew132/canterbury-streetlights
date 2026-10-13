@@ -1,0 +1,45 @@
+{
+ "id": "V202",
+ "visits": [
+  202
+ ],
+ "street": "St Alphege Lane",
+ "asset": "FSGV003",
+ "owner": "KCC",
+ "candidates": [
+  "FSGV003"
+ ],
+ "candidate_distances": "FSGV003 (painted; 5 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "SGV003",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2808075,
+  1.081037
+ ],
+ "dates": [
+  "2026-03-16"
+ ],
+ "photos": [
+  "20260316_134934.jpg",
+  "20260316_134811.jpg",
+  "20260316_134833.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "paint chips and rust on door edges and lower base ring",
+ "cond_note": "door sits slightly proud/ajar on its frame (134821); black bracket fitted on shaft below ladder bar; parking sign on shaft; both ladder bar finials present",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 196
+}

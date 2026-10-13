@@ -1,0 +1,45 @@
+{
+ "id": "V67",
+ "visits": [
+  67
+ ],
+ "street": "Havelock Street",
+ "asset": "FHBV005",
+ "owner": "KCC",
+ "candidates": [
+  "FHBV005"
+ ],
+ "candidate_distances": "FHBV005 (12 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2805449,
+  1.08714
+ ],
+ "dates": [
+  "2026-02-24"
+ ],
+ "photos": [
+  "20260224_133952.jpg",
+  "20260224_134006.jpg",
+  "20260224_133955.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "paint chips and minor flaking/rust on base door panel and collar; political stickers on shaft",
+ "cond_note": "Metal band strapped round base across door; door with cypher present (133952). 'Revolution' stickers on shaft (133955, 134000). Sign panels strapped on. Ladder bar finials present both ends (134006).",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 64
+}

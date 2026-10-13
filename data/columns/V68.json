@@ -1,0 +1,46 @@
+{
+ "id": "V68",
+ "visits": [
+  68
+ ],
+ "street": "Havelock Street",
+ "asset": "FHBV006",
+ "owner": "KCC",
+ "candidates": [
+  "FHBV006",
+  "FHBV005"
+ ],
+ "candidate_distances": "FHBV006 (5 m); FHBV005 (15 m)",
+ "confidence": "Uncertain",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2806699,
+  1.0874616
+ ],
+ "dates": [
+  "2026-02-24"
+ ],
+ "photos": [
+  "20260224_134133.jpg",
+  "20260224_134149.jpg",
+  "20260224_134146.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "heavy paint flaking and peeling across base, collar, shaft, ladder bar and bracket, exposing white/pink undercoats and primer",
+ "cond_note": "Door with cypher present (134133). Sign panels strapped and cable-tied to shaft (134146, 134149). Ladder bar finials present both ends (134149, 134153).",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 65
+}

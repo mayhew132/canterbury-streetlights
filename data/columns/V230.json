@@ -1,0 +1,47 @@
+{
+ "id": "V230",
+ "visits": [
+  230
+ ],
+ "street": "St Radigunds Street",
+ "asset": "FSKP004",
+ "owner": "KCC",
+ "candidates": [
+  "FSKP004"
+ ],
+ "candidate_distances": "FSKP004 (33 m)",
+ "confidence": "Probable",
+ "basis": "Painted number, partly legible + GPS",
+ "painted": "????004",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2822316,
+  1.0822816
+ ],
+ "dates": [
+  "2026-03-18"
+ ],
+ "photos": [
+  "20260318_141204.jpg",
+  "20260318_141050.jpg",
+  "20260318_141143.jpg"
+ ],
+ "condition": {
+  "overall": "Excellent",
+  "paint": "Excellent",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "",
+ "cond_note": "recently repainted, glossy; column enclosed by temporary Heras fencing around adjacent works, base views partly obscured - door edge visible obliquely through fence (141050); both ladder bar finials present",
+ "cond_check": [
+  "door"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 224
+}

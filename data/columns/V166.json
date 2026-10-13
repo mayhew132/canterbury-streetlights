@@ -1,0 +1,46 @@
+{
+ "id": "V166",
+ "visits": [
+  166
+ ],
+ "street": "Water Lane",
+ "asset": "FWAV001",
+ "owner": "KCC",
+ "candidates": [
+  "FWAV001",
+  "FWAV002"
+ ],
+ "candidate_distances": "FWAV001 (8 m); FWAV002 (13 m)",
+ "confidence": "Uncertain",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2788016,
+  1.0765283
+ ],
+ "dates": [
+  "2026-03-08"
+ ],
+ "photos": [
+  "20260308_144131.jpg",
+  "20260308_144042.jpg",
+  "20260308_144108.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "minor rust at foot of base; lantern shade weathered/discoloured",
+ "cond_note": "both ladder bar finials present (144108); column partly overhung by trees",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 163
+}

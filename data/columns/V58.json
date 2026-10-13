@@ -1,0 +1,48 @@
+{
+ "id": "V58",
+ "visits": [
+  58
+ ],
+ "street": "Monastery Street",
+ "asset": "FMFR010",
+ "owner": "KCC",
+ "candidates": [
+  "FMFR010"
+ ],
+ "candidate_distances": "FMFR010 (9 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1-alt",
+ "gps": [
+  51.2794566,
+  1.0870016
+ ],
+ "dates": [
+  "2026-02-24"
+ ],
+ "photos": [
+  "20260224_132243.jpg",
+  "20260224_132215.jpg",
+  "20260224_132224.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Missing",
+  "colour": "Moss Green"
+ },
+ "defects": "base and door area encased in galvanised steel sleeve with warning sticker; extensive paint loss, rust, lichen and white over-paint on bracket, ladder bar and shaft",
+ "cond_note": "Galvanised wrap over the base (132215) hides the door and any base damage - possibly a repair over a cracked base. Public notice cable-tied to shaft and sign panel strapped on (132218, 132224). Ladder bar finials appear present but heavily encrusted.",
+ "cond_check": [
+  "door",
+  "structure"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 55
+}

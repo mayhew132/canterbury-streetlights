@@ -1,0 +1,45 @@
+{
+ "id": "V132",
+ "visits": [
+  132
+ ],
+ "street": "York Road",
+ "asset": "FYAH001",
+ "owner": "KCC",
+ "candidates": [
+  "FYAH001"
+ ],
+ "candidate_distances": "FYAH001 (13 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "FYAH001 is also the top candidate for visit(s) 134 on the same day, so at most one is right",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2735216,
+  1.0725766
+ ],
+ "dates": [
+  "2026-03-04"
+ ],
+ "photos": [
+  "20260304_132558.jpg",
+  "20260304_132435.jpg",
+  "20260304_132535.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Damaged",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "lantern hanging badly askew (tilted roughly 45 degrees) with shade bent and debris/cobwebs in the bowl (132549, 132558); rust and flaking paint on capital, spigot and swan-neck (132535, 132549); flaking paint and rust spots on base; graffiti tags/stickers on door panel (132435)",
+ "cond_note": "Both ladder bar acorns present. Lantern is a green bulkhead-style fitting with glass bowl rather than the usual shade-and-globe lantern. Letting agent board fixed nearby.",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 129
+}

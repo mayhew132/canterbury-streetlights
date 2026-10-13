@@ -1,0 +1,46 @@
+{
+ "id": "V80",
+ "visits": [
+  80
+ ],
+ "street": "St Dunstan's Terrace",
+ "asset": "FSHL007",
+ "owner": "KCC",
+ "candidates": [
+  "FSHL007",
+  "FSHL008"
+ ],
+ "candidate_distances": "FSHL007 (9 m); FSHL008 (19 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.28206,
+  1.0701433
+ ],
+ "dates": [
+  "2026-03-02"
+ ],
+ "photos": [
+  "20260302_153334.jpg",
+  "20260302_153338.jpg",
+  "20260302_153350.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "dulled paint with minor chips; lichen on bracket neck",
+ "cond_note": "Door with cypher present (153334). Ladder bar finials present both ends (153400). School-time parking sign and sign panel strapped to shaft. Reads neutral black in sun.",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 77
+}

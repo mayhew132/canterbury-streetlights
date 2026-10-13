@@ -1,0 +1,47 @@
+{
+ "id": "V127",
+ "visits": [
+  127
+ ],
+ "street": "Cogans Terrace",
+ "asset": "FCIN001",
+ "owner": "KCC",
+ "candidates": [
+  "FCIN001"
+ ],
+ "candidate_distances": "FCIN001 (16 m); FVBC004 (12 m)",
+ "confidence": "Confirmed",
+ "basis": "Confirmed by Guy (asset confirmation sheet, Oct 2026)",
+ "painted": "",
+ "note": "Small-door pattern (A4)",
+ "confirmed_by": "Guy (asset sheet, Oct 2026)",
+ "variant": "A4",
+ "gps": [
+  51.2720333,
+  1.0708783
+ ],
+ "dates": [
+  "2026-03-04"
+ ],
+ "photos": [
+  "20260304_131400.jpg",
+  "20260304_131302.jpg",
+  "20260304_131323.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "swan-neck bracket and collar rusted with flaking paint (131323); worn paint with red primer/rust exposed around base plinth (131302, 131312); lichen and rust on ladder bar and spigot (131341)",
+ "cond_note": "Paint is a faded blue-green. Both ladder bar acorns present. Parking sign on shaft; feeder pillar beside column. Modern green lantern under shade intact.",
+ "cond_check": [
+  "colour"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 124
+}

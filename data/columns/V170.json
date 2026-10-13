@@ -1,0 +1,47 @@
+{
+ "id": "V170",
+ "visits": [
+  170
+ ],
+ "street": "St Margaret's Street",
+ "asset": "FSIY008",
+ "owner": "KCC",
+ "candidates": [
+  "FSIY008"
+ ],
+ "candidate_distances": "FSIY008 (25 m)",
+ "confidence": "Probable",
+ "basis": "Hand-painted number \"8\" on shaft + GPS",
+ "painted": "\"8\" (hand-painted)",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2777633,
+  1.07857
+ ],
+ "dates": [
+  "2026-03-08"
+ ],
+ "photos": [
+  "20260308_145536.jpg",
+  "20260308_145446.jpg",
+  "20260308_145504.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Excellent",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "underside of lantern shade crazed/discoloured",
+ "cond_note": "column recently repainted, glossy; door with cypher present (145446); both ladder bar finials present (145504); shade defect in 145512",
+ "cond_check": [
+  "overall"
+ ],
+ "cond_second_opinion": "overall=Excellent",
+ "outcome": "",
+ "order": 167
+}

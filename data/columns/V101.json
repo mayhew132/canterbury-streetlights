@@ -1,0 +1,48 @@
+{
+ "id": "V101",
+ "visits": [
+  101
+ ],
+ "street": "New Street",
+ "asset": "FNBI002",
+ "owner": "KCC",
+ "candidates": [
+  "FNBI002"
+ ],
+ "candidate_distances": "FNBI002 (13 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2832216,
+  1.06927
+ ],
+ "dates": [
+  "2026-03-03"
+ ],
+ "photos": [
+  "20260303_130001.jpg",
+  "20260303_125928.jpg",
+  "20260303_125946.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "lichen/yellow growth over ladder bar, capital and upper shaft; worn and chipped paint with rust spots on base",
+ "cond_note": "Modern lantern under shade on swan-neck, looks intact. Parking sign attached to shaft. Very dark green-black paint, green cast only faint on base. | Adjudicated: right acorn present; left end out of frame in 130009 - not verified",
+ "cond_check": [
+  "colour",
+  "structure"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 98
+}

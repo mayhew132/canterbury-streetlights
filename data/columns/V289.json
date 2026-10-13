@@ -1,0 +1,47 @@
+{
+ "id": "V289",
+ "visits": [
+  289
+ ],
+ "street": "Riverside path (near Ambleside Place)",
+ "asset": "00132680",
+ "owner": "CCC",
+ "candidates": [],
+ "candidate_distances": "",
+ "confidence": "Confirmed",
+ "basis": "Confirmed by Guy: City Council asset (Confirm system, not adopted by KCC)",
+ "painted": "",
+ "note": "City Council riverside path column (per Guy), so not in the KCC extract",
+ "confirmed_by": "Guy (asset sheet, Oct 2026)",
+ "variant": "A1",
+ "gps": [
+  51.2864849,
+  1.0873766
+ ],
+ "dates": [
+  "2026-05-01"
+ ],
+ "photos": [
+  "20260501_133301.jpg",
+  "20260501_133233.jpg",
+  "20260501_133240.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "dull weathered paint with rust/primer showing at foot of base; plastic cable tie/label at ladder bar; dirty lantern shade",
+ "cond_note": "Dark blue-black paint; column in overgrown bank; door visible (133233)",
+ "cond_check": [
+  "colour",
+  "overall",
+  "paint"
+ ],
+ "cond_second_opinion": "overall=Poor;paint=Poor",
+ "outcome": "",
+ "order": 280
+}

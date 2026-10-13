@@ -1,0 +1,47 @@
+{
+ "id": "V161",
+ "visits": [
+  161
+ ],
+ "street": "Church Lane",
+ "asset": "FCFO005",
+ "owner": "KCC",
+ "candidates": [
+  "FCFO005"
+ ],
+ "candidate_distances": "FCFO005 (painted; 7 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "CFO005",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1-alt",
+ "gps": [
+  51.2759333,
+  1.07361
+ ],
+ "dates": [
+  "2026-03-08"
+ ],
+ "photos": [
+  "20260308_142454.jpg",
+  "20260308_142350.jpg",
+  "20260308_142410.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Good",
+  "structure": "Damaged",
+  "lantern": "None",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "swan-neck bracket and lantern removed, column capped above ladder bar; minor rust spots on base",
+ "cond_note": "redundant column standing beside modern galvanised column (142454/142507); paint is a dull blue-green/teal; both ladder bar finials present (142410)",
+ "cond_check": [
+  "colour"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 158
+}

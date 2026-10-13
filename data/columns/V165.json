@@ -1,0 +1,47 @@
+{
+ "id": "V165",
+ "visits": [
+  165
+ ],
+ "street": "Water Lane",
+ "asset": "FWAV002",
+ "owner": "KCC",
+ "candidates": [
+  "FWAV002",
+  "FWAV001",
+  "FWAV003"
+ ],
+ "candidate_distances": "FWAV002 (3 m); FWAV001 (10 m); FWAV003 (13 m)",
+ "confidence": "Uncertain",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "Re-checked: tall door with large cypher (A1), not small-door",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2787616,
+  1.0766716
+ ],
+ "dates": [
+  "2026-03-08"
+ ],
+ "photos": [
+  "20260308_144026.jpg",
+  "20260308_143930.jpg",
+  "20260308_143953.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "chips with red/pink primer showing at foot of base; small hole in shaft",
+ "cond_note": "both ladder bar finials present (144006)",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 162
+}

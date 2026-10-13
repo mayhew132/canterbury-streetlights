@@ -1,0 +1,45 @@
+{
+ "id": "V287",
+ "visits": [
+  287
+ ],
+ "street": "Riverside path (near Westwood Drive)",
+ "asset": "00132687",
+ "owner": "CCC",
+ "candidates": [],
+ "candidate_distances": "",
+ "confidence": "Confirmed",
+ "basis": "Confirmed by Guy: City Council asset (Confirm system, not adopted by KCC)",
+ "painted": "",
+ "note": "City Council riverside path column (per Guy), so not in the KCC extract",
+ "confirmed_by": "Guy (asset sheet, Oct 2026)",
+ "variant": "A1",
+ "gps": [
+  51.28768,
+  1.0894933
+ ],
+ "dates": [
+  "2026-05-01"
+ ],
+ "photos": [
+  "20260501_123535.jpg",
+  "20260501_123508.jpg",
+  "20260501_123518.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "dull weathered paint with minor rust at base collar and foot; small sticker on shaft",
+ "cond_note": "Column behind Heras fencing (123508-123535); ladder bar both ends present (123518)",
+ "cond_check": [
+  "paint"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 278
+}

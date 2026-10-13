@@ -1,0 +1,47 @@
+{
+ "id": "V221",
+ "visits": [
+  221
+ ],
+ "street": "Riverside Walk",
+ "asset": "FRGS005",
+ "owner": "KCC",
+ "candidates": [
+  "FRGS005"
+ ],
+ "candidate_distances": "FRGS005 (2 m)",
+ "confidence": "Probable",
+ "basis": "Painted number, partly legible + GPS",
+ "painted": "FRGS???",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1-alt",
+ "gps": [
+  51.2836783,
+  1.0819016
+ ],
+ "dates": [
+  "2026-03-18"
+ ],
+ "photos": [
+  "20260318_134516.jpg",
+  "20260318_134421.jpg",
+  "20260318_134450.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Missing",
+  "colour": "Black"
+ },
+ "defects": "base front/door covered by galvanised sheet with electrical warning label, secured by metal band (134421, 134431); rust/dirt on lantern shade",
+ "cond_note": "same temporary base wrap as FRGS011; base front hidden by the sheet so door aperture condition cannot be confirmed; paint otherwise sound; both ladder bar finials present",
+ "cond_check": [
+  "structure"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 215
+}

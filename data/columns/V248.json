@@ -1,0 +1,48 @@
+{
+ "id": "V248",
+ "visits": [
+  248
+ ],
+ "street": "Westgate Hall Road",
+ "asset": "FWCV001",
+ "owner": "KCC",
+ "candidates": [
+  "FWCV001"
+ ],
+ "candidate_distances": "FWCV001 (painted; 5 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "WCV001",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2813616,
+  1.0778333
+ ],
+ "dates": [
+  "2026-03-19"
+ ],
+ "photos": [
+  "20260319_135936.jpg",
+  "20260319_135850.jpg",
+  "20260319_135908.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "metal band strapped round base over door (135850, 135901); paint chips and rust spots on door edge and base collars; yellow lichen on ladder bar and bracket collars",
+ "cond_note": "both ladder bar finials present",
+ "cond_check": [
+  "overall",
+  "paint"
+ ],
+ "cond_second_opinion": "overall=Poor;paint=Poor",
+ "outcome": "",
+ "order": 241
+}

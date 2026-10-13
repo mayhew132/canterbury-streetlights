@@ -1,0 +1,47 @@
+{
+ "id": "V280",
+ "visits": [
+  280
+ ],
+ "street": "Riverside path (near New Town Street)",
+ "asset": "00132682",
+ "owner": "CCC",
+ "candidates": [],
+ "candidate_distances": "",
+ "confidence": "Confirmed",
+ "basis": "Confirmed by Guy: City Council asset (Confirm system, not adopted by KCC)",
+ "painted": "",
+ "note": "City Council riverside path column (per Guy), so not in the KCC extract",
+ "confirmed_by": "Guy (asset sheet, Oct 2026)",
+ "variant": "A1",
+ "gps": [
+  51.2865966,
+  1.0880783
+ ],
+ "dates": [
+  "2026-05-01"
+ ],
+ "photos": [
+  "20260501_122053.jpg",
+  "20260501_122030.jpg",
+  "20260501_122042.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "stickers/labels on shaft; column surrounded by dense vegetation",
+ "cond_note": "Lantern and bracket only partly visible through tree foliage (122042); paint dark charcoal/blue-black",
+ "cond_check": [
+  "colour",
+  "door",
+  "lantern"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 271
+}

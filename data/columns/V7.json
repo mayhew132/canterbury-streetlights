@@ -1,0 +1,45 @@
+{
+ "id": "V7",
+ "visits": [
+  7
+ ],
+ "street": "Cossington Road",
+ "asset": "FCKD002",
+ "owner": "KCC",
+ "candidates": [
+  "FCKD002"
+ ],
+ "candidate_distances": "FCKD002 (4 m)",
+ "confidence": "Probable",
+ "basis": "Hand-painted number \"2\" on shaft + GPS",
+ "painted": "C?????, \"2\" (hand-painted)",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2740288,
+  1.0851999
+ ],
+ "dates": [
+  "2026-02-21"
+ ],
+ "photos": [
+  "20260221_124022.jpg",
+  "20260221_124005.jpg",
+  "20260221_124015.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "paint weathered and flaking; rust on base foot, collars, upper shaft and swan-neck",
+ "cond_note": "Door with cypher on base (124005); wire tied round shaft. Ladder bar finials appear present both ends (124015).",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 6
+}

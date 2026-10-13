@@ -1,0 +1,48 @@
+{
+ "id": "V222",
+ "visits": [
+  222
+ ],
+ "street": "Riverside Walk",
+ "asset": "FRGS004",
+ "owner": "KCC",
+ "candidates": [
+  "FRGS004"
+ ],
+ "candidate_distances": "FRGS004 (6 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "Close-ups at 13:46 and the whole view at 13:47 are one column (door missing)",
+ "confirmed_by": "",
+ "variant": "A1-alt",
+ "gps": [
+  51.2835916,
+  1.0815533
+ ],
+ "dates": [
+  "2026-03-18"
+ ],
+ "photos": [
+  "20260318_134708.jpg",
+  "20260318_134602.jpg",
+  "20260318_134632.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Missing",
+  "colour": "Black"
+ },
+ "defects": "base door missing - aperture open with exposed wiring and cut-out, metal band across opening (134602); metal band around base side (134616); rust staining on lantern shade; red mark/sticker on lantern bowl",
+ "cond_note": "right end of ladder bar hidden behind adjacent wooden pole (134632) - left finial present; right finial not verified",
+ "cond_check": [
+  "paint",
+  "structure"
+ ],
+ "cond_second_opinion": "paint=Poor",
+ "outcome": "",
+ "order": 216
+}

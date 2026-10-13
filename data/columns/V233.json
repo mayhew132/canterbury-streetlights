@@ -1,0 +1,45 @@
+{
+ "id": "V233",
+ "visits": [
+  233
+ ],
+ "street": "Knott's Lane",
+ "asset": "FKCB001",
+ "owner": "KCC",
+ "candidates": [
+  "FKCB001"
+ ],
+ "candidate_distances": "FKCB001 (21 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2826033,
+  1.0818516
+ ],
+ "dates": [
+  "2026-03-18"
+ ],
+ "photos": [
+  "20260318_141901.jpg",
+  "20260318_141758.jpg",
+  "20260318_141837.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "paint flaking on lower shaft and base collars (141758); rust on base collars, plinth and bracket swan-neck (141808, 141847); chalky faded finish",
+ "cond_note": "thin wire runs from ladder bar to building (141837); both ladder bar finials present",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 227
+}

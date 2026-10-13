@@ -1,0 +1,46 @@
+{
+ "id": "V146",
+ "visits": [
+  146
+ ],
+ "street": "St Marys Street",
+ "asset": "FSJU001",
+ "owner": "KCC",
+ "candidates": [
+  "FSJU001"
+ ],
+ "candidate_distances": "FSJU001 (28 m)",
+ "confidence": "Uncertain",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "FSJU001 is also the top candidate for visit(s) 145 on the same day, so at most one is right; Small-door pattern (A4) - probable, check; Single base photo; may be a second shot of the previous column",
+ "confirmed_by": "",
+ "variant": "A4",
+ "gps": [
+  51.2762642,
+  1.077315
+ ],
+ "dates": [
+  "2026-03-08"
+ ],
+ "photos": [
+  "20260308_135258.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Not seen",
+  "door": "Not seen",
+  "colour": "Moss Green"
+ },
+ "defects": "flaking paint with exposed light undercoat and rust patches on base collars, fluting and plinth (135258)",
+ "cond_note": "Only one photo, of the fluted (non-door) side of the base behind railings; upper column, ladder bar and lantern not photographed, so structure judged on base only.",
+ "cond_check": [
+  "overall",
+  "structure"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 143
+}

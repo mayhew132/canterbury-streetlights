@@ -1,0 +1,43 @@
+{
+ "id": "V282",
+ "visits": [
+  282
+ ],
+ "street": "Riverside path (near New Town Street)",
+ "asset": "00132684",
+ "owner": "CCC",
+ "candidates": [],
+ "candidate_distances": "",
+ "confidence": "Confirmed",
+ "basis": "Confirmed by Guy: City Council asset (Confirm system, not adopted by KCC)",
+ "painted": "",
+ "note": "City Council riverside path column (per Guy), so not in the KCC extract",
+ "confirmed_by": "Guy (asset sheet, Oct 2026)",
+ "variant": "A1",
+ "gps": [
+  51.2868999,
+  1.08863
+ ],
+ "dates": [
+  "2026-05-01"
+ ],
+ "photos": [
+  "20260501_122259.jpg",
+  "20260501_122228.jpg",
+  "20260501_122235.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "peeling paint exposing red/orange primer on base and shaft; rust at foot",
+ "cond_note": "Door with cypher visible (122228); ladder bar both ends present (122235)",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 273
+}

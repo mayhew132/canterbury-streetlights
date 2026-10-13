@@ -1,0 +1,45 @@
+{
+ "id": "V169",
+ "visits": [
+  169
+ ],
+ "street": "Hawks Lane",
+ "asset": "FHCC004",
+ "owner": "KCC",
+ "candidates": [
+  "FHCC004"
+ ],
+ "candidate_distances": "FHCC004 (painted; 12 m)",
+ "confidence": "Strong",
+ "basis": "Painted number, partly legible (one match nearby)",
+ "painted": "?CC004",
+ "note": "Small-door pattern (A4)",
+ "confirmed_by": "",
+ "variant": "A4",
+ "gps": [
+  51.2783683,
+  1.0787666
+ ],
+ "dates": [
+  "2026-03-08"
+ ],
+ "photos": [
+  "20260308_145258.jpg",
+  "20260308_145206.jpg",
+  "20260308_145229.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "chipped paint/rust at foot of base; lichen on ladder bar and bracket",
+ "cond_note": "small framed door present (145206); both ladder bar finials present (145229)",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 166
+}

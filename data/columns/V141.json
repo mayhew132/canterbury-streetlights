@@ -1,0 +1,46 @@
+{
+ "id": "V141",
+ "visits": [
+  141
+ ],
+ "street": "Tudor Road",
+ "asset": "FTGA005",
+ "owner": "KCC",
+ "candidates": [
+  "FTGA005"
+ ],
+ "candidate_distances": "FTGA005 (painted; 6 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "FTGA005",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "X-mod",
+ "gps": [
+  51.27324,
+  1.073945
+ ],
+ "dates": [
+  "2026-03-04"
+ ],
+ "photos": [
+  "20260304_134802.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Not seen",
+  "door": "Not seen",
+  "colour": "Black"
+ },
+ "defects": "",
+ "cond_note": "Modern plain black-painted steel replacement column with yellow FTGA005 number label; appears sound and upright. Only one photo; lantern out of frame and door not discernible at this distance.",
+ "cond_check": [
+  "overall",
+  "paint"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 138
+}

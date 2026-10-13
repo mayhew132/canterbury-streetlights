@@ -1,0 +1,48 @@
+{
+ "id": "V195",
+ "visits": [
+  195
+ ],
+ "street": "Burgate",
+ "asset": "FBJT012",
+ "owner": "KCC",
+ "candidates": [
+  "FBJT012",
+  "FBJT011"
+ ],
+ "candidate_distances": "FBJT012 (9 m); FBJT011 (20 m)",
+ "confidence": "Probable",
+ "basis": "Painted number, partly legible + GPS",
+ "painted": "?BJT0??",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1-alt",
+ "gps": [
+  51.2791816,
+  1.081185
+ ],
+ "dates": [
+  "2026-03-12"
+ ],
+ "photos": [
+  "20260312_133759.jpg",
+  "20260312_133722.jpg",
+  "20260312_133731.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Good",
+  "structure": "Damaged",
+  "lantern": "None",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "swan-neck bracket and lantern removed, rusty cap on column top above ladder bar; minor chips and rust spots on base",
+ "cond_note": "dark teal-green finish (blue cast); no lantern (133731/133759); both ladder bar finials present; door with cypher present (133722); notices fixed to shaft",
+ "cond_check": [
+  "colour"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 189
+}

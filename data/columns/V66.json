@@ -1,0 +1,48 @@
+{
+ "id": "V66",
+ "visits": [
+  66
+ ],
+ "street": "Havelock Street",
+ "asset": "FHBV004",
+ "owner": "KCC",
+ "candidates": [
+  "FHBV004"
+ ],
+ "candidate_distances": "FHBV004 (painted; 17 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "?004, HBV004 (first pass)",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2804599,
+  1.0868083
+ ],
+ "dates": [
+  "2026-02-24"
+ ],
+ "photos": [
+  "20260224_133851.jpg",
+  "20260224_133831.jpg",
+  "20260224_133837.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "rust streaking and lichen on upper shaft; paint flaking and lichen on bracket; chips and rust spots on base and plinth",
+ "cond_note": "Metal band strapped round base above door; door with cypher present (133831). Parking signs strapped to shaft; hand-painted '004'. Ladder bar finials present both ends (133837). Borderline Good/Poor - lower shaft coat largely intact.",
+ "cond_check": [
+  "overall",
+  "paint"
+ ],
+ "cond_second_opinion": "overall=Good;paint=Good",
+ "outcome": "",
+ "order": 63
+}

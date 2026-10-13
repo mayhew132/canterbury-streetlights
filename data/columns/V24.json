@@ -1,0 +1,45 @@
+{
+ "id": "V24",
+ "visits": [
+  24
+ ],
+ "street": "St Georges Terrace",
+ "asset": "FSHW001",
+ "owner": "KCC",
+ "candidates": [
+  "FSHW001"
+ ],
+ "candidate_distances": "FSHW001 (3 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2765866,
+  1.08306
+ ],
+ "dates": [
+  "2026-02-21"
+ ],
+ "photos": [
+  "20260221_132409.jpg",
+  "20260221_132344.jpg",
+  "20260221_132350.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Other"
+ },
+ "defects": "paint extensively flaking/peeling over shaft and base exposing older blue paint and rust; door unpainted and rusted, held on with tape bands; swan-neck and collar rusted",
+ "cond_note": "Painted cream/off-white over earlier blue (green only on lantern). Ladder bar finials present (crop of 132350). Door with cypher present but taped (132344).",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 21
+}

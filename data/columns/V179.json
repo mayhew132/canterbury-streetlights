@@ -1,0 +1,45 @@
+{
+ "id": "V179",
+ "visits": [
+  179
+ ],
+ "street": "Castle Street",
+ "asset": "FCCC012",
+ "owner": "KCC",
+ "candidates": [
+  "FCCC012"
+ ],
+ "candidate_distances": "FCCC012 (painted; 20 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "CCC012",
+ "note": "Small-door pattern (A4)",
+ "confirmed_by": "",
+ "variant": "A4",
+ "gps": [
+  51.2756283,
+  1.0755916
+ ],
+ "dates": [
+  "2026-03-09"
+ ],
+ "photos": [
+  "20260309_133345.jpg",
+  "20260309_133249.jpg",
+  "20260309_133315.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "widespread flaking paint and lichen on ladder bar, bracket and shaft; worn/chipped paint on base with rust at foot",
+ "cond_note": "small door with cypher present, tie wrapped round base (133249); both ladder bar finials present (133315)",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 176
+}

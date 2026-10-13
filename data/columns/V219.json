@@ -1,0 +1,45 @@
+{
+ "id": "V219",
+ "visits": [
+  219
+ ],
+ "street": "Riverside Walk",
+ "asset": "FRGS007",
+ "owner": "KCC",
+ "candidates": [
+  "FRGS007"
+ ],
+ "candidate_distances": "FRGS007 (4 m)",
+ "confidence": "Probable",
+ "basis": "Hand-painted number \"7\" on shaft + GPS",
+ "painted": "\"7\" (hand-painted)",
+ "note": "Small-door pattern (A4) confirmed by Guy",
+ "confirmed_by": "",
+ "variant": "A4",
+ "gps": [
+  51.2838566,
+  1.0823883
+ ],
+ "dates": [
+  "2026-03-18"
+ ],
+ "photos": [
+  "20260318_134222.jpg",
+  "20260318_134103.jpg",
+  "20260318_134133.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "door on base side held shut by a wire/metal band (134122); lichen on ladder bar and bracket; heavy rust staining on lantern shade",
+ "cond_note": "both ladder bar finials present",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 213
+}

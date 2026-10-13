@@ -1,0 +1,47 @@
+{
+ "id": "V9",
+ "visits": [
+  9
+ ],
+ "street": "Cossington Road",
+ "asset": "FCKD004",
+ "owner": "KCC",
+ "candidates": [
+  "FCKD004"
+ ],
+ "candidate_distances": "FCKD004 (painted; 3 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "CKD004",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2737083,
+  1.08561
+ ],
+ "dates": [
+  "2026-02-21"
+ ],
+ "photos": [
+  "20260221_124322.jpg",
+  "20260221_124259.jpg",
+  "20260221_124333.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "base paint dull but intact; upper shaft, top and ladder bar heavily weathered with paint loss and rust",
+ "cond_note": "Door with cypher present (124259). Ladder bar finials present both ends (124333). Parking sign on shaft.",
+ "cond_check": [
+  "paint"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 8
+}

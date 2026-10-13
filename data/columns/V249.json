@@ -1,0 +1,48 @@
+{
+ "id": "V249",
+ "visits": [
+  249
+ ],
+ "street": "St Peter's Lane",
+ "asset": "FSKI004",
+ "owner": "KCC",
+ "candidates": [
+  "FSKI004"
+ ],
+ "candidate_distances": "FSKI004 (33 m)",
+ "confidence": "Probable",
+ "basis": "Painted number, partly legible + GPS",
+ "painted": "???004",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2813166,
+  1.0783483
+ ],
+ "dates": [
+  "2026-03-19"
+ ],
+ "photos": [
+  "20260319_142303.jpg",
+  "20260319_140522.jpg",
+  "20260319_140551.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "minor dulling and small chips on swan-neck and capital (140551); dirt staining on lantern shade",
+ "cond_note": "paint largely sound and fairly glossy - borderline Excellent; both ladder bar finials present",
+ "cond_check": [
+  "overall",
+  "paint"
+ ],
+ "cond_second_opinion": "overall=Excellent;paint=Excellent",
+ "outcome": "",
+ "order": 242
+}

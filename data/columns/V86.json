@@ -1,0 +1,45 @@
+{
+ "id": "V86",
+ "visits": [
+  86
+ ],
+ "street": "St Dunstan's Terrace",
+ "asset": "FSHL002",
+ "owner": "KCC",
+ "candidates": [
+  "FSHL002"
+ ],
+ "candidate_distances": "FSHL002 (6 m)",
+ "confidence": "Probable",
+ "basis": "Painted number, partly legible + GPS",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2829466,
+  1.06891
+ ],
+ "dates": [
+  "2026-03-02"
+ ],
+ "photos": [
+  "20260302_154118.jpg",
+  "20260302_154123.jpg",
+  "20260302_154141.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "widespread flaking exposing white/grey undercoat on shaft and bracket neck; rust patches on door panel and collar",
+ "cond_note": "Door with cypher present (154118). Ladder bar finials present both ends (154141). Parking sign strapped to shaft.",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 83
+}

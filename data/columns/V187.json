@@ -1,0 +1,49 @@
+{
+ "id": "V187",
+ "visits": [
+  187
+ ],
+ "street": "Castle Street",
+ "asset": "FCCC301",
+ "owner": "KCC",
+ "candidates": [
+  "FCCC301"
+ ],
+ "candidate_distances": "FCCC301 (painted; 24 m)",
+ "confidence": "Strong",
+ "basis": "Painted number, partly legible (one match nearby)",
+ "painted": "CCC3?1",
+ "note": "Checked by Guy: large-door A1, not A4",
+ "confirmed_by": "",
+ "variant": "A1-alt",
+ "gps": [
+  51.2773049,
+  1.07807
+ ],
+ "dates": [
+  "2026-03-09"
+ ],
+ "photos": [
+  "20260309_135417.jpg",
+  "20260309_135328.jpg",
+  "20260309_135401.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Missing",
+  "colour": "Moss Green"
+ },
+ "defects": "widespread rust over base and shaft with little green paint remaining; door section wrapped in silver metal sheet with electrical warning sticker, held by black straps",
+ "cond_note": "column inside scaffolding; upper column, ladder bar and bracket hidden by scaffold sheeting so not assessed (135348/135417); lantern shade appears slightly tilted in 135401",
+ "cond_check": [
+  "door",
+  "lantern",
+  "structure"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 184
+}

@@ -1,0 +1,48 @@
+{
+ "id": "V108",
+ "visits": [
+  108
+ ],
+ "street": "Church Street",
+ "asset": "FCGB002",
+ "owner": "KCC",
+ "candidates": [
+  "FCGB002"
+ ],
+ "candidate_distances": "FCGB002 (6 m)",
+ "confidence": "Probable",
+ "basis": "Painted number, partly legible + GPS",
+ "painted": "C?B00?",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2827415,
+  1.071682
+ ],
+ "dates": [
+  "2026-03-03"
+ ],
+ "photos": [
+  "20260303_131255.jpg",
+  "20260303_131203.jpg",
+  "20260303_131226.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Other"
+ },
+ "defects": "heavy rust on capital beneath ladder bar and on ladder bar arms (131236); base paint faded but largely intact",
+ "cond_note": "Slate blue / blue-grey paint. Both ladder bar acorns present. Parking sign on shaft. Modern lantern under shade intact.",
+ "cond_check": [
+  "colour",
+  "overall"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 105
+}

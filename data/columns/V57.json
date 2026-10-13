@@ -1,0 +1,45 @@
+{
+ "id": "V57",
+ "visits": [
+  57
+ ],
+ "street": "Monastery Street",
+ "asset": "FMFR009",
+ "owner": "KCC",
+ "candidates": [
+  "FMFR009"
+ ],
+ "candidate_distances": "FMFR009 (painted; 4 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "MFR?09, MFR009 (first pass)",
+ "note": "Re-checked: tall door with large cypher (A1), not small-door",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2792866,
+  1.0868466
+ ],
+ "dates": [
+  "2026-02-24"
+ ],
+ "photos": [
+  "20260224_132117.jpg",
+  "20260224_132059.jpg",
+  "20260224_132126.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "extensive paint flaking with rust/old primer showing on bracket, collar and base; white paint/patches on base and shaft decoration",
+ "cond_note": "Hand-painted white 'MFR009' number and small white tag on shaft (132059, 132106). Ladder bar finials present both ends (132106). Door with cypher in place.",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 54
+}

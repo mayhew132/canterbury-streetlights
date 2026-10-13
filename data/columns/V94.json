@@ -1,0 +1,46 @@
+{
+ "id": "V94",
+ "visits": [
+  94
+ ],
+ "street": "Orchard Street",
+ "asset": "FOBV002",
+ "owner": "KCC",
+ "candidates": [
+  "FOBV002",
+  "FOBV003"
+ ],
+ "candidate_distances": "FOBV002 (2 m); FOBV003 (13 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2820091,
+  1.070868
+ ],
+ "dates": [
+  "2026-03-03"
+ ],
+ "photos": [
+  "20260303_124936.jpg",
+  "20260303_124942.jpg",
+  "20260303_124954.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "flaking paint and lichen on upper column/bracket neck above ladder bar (125012); minor scuffs on base",
+ "cond_note": "Door with cypher present, steel strap round base (124936). Ladder bar finials present both ends (125012). Parking sign strapped on.",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 91
+}

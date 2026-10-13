@@ -1,0 +1,46 @@
+{
+ "id": "V100",
+ "visits": [
+  100
+ ],
+ "street": "New Street",
+ "asset": "FNBI003",
+ "owner": "KCC",
+ "candidates": [
+  "FNBI003",
+  "FNBI004"
+ ],
+ "candidate_distances": "FNBI003 (37 m); FNBI004 (20 m)",
+ "confidence": "Uncertain",
+ "basis": "Painted number, partly legible + GPS (one asset per visit per day)",
+ "painted": "NBI00? (last 3 or 8)",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2826716,
+  1.0698216
+ ],
+ "dates": [
+  "2026-03-03"
+ ],
+ "photos": [
+  "20260303_125844.jpg",
+  "20260303_125815.jpg",
+  "20260303_125831.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "heavy yellow lichen on bracket neck, ladder bar and collars; lichen on base; ivy growing up the shaft (125831)",
+ "cond_note": "Door with cypher present (125815). Ladder bar finials present both ends (125851). Parking sign strapped on. Paint coat intact under the growth.",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 97
+}

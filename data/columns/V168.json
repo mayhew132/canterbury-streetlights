@@ -1,0 +1,48 @@
+{
+ "id": "V168",
+ "visits": [
+  168
+ ],
+ "street": "Stour Street",
+ "asset": "FSMV001",
+ "owner": "KCC",
+ "candidates": [
+  "FSMV001"
+ ],
+ "candidate_distances": "FSMV001 (painted; 21 m)",
+ "confidence": "Strong",
+ "basis": "Painted number, partly legible (one match nearby)",
+ "painted": "S?V001",
+ "note": "Small-door pattern (A4)",
+ "confirmed_by": "",
+ "variant": "A4",
+ "gps": [
+  51.2793884,
+  1.078753
+ ],
+ "dates": [
+  "2026-03-08"
+ ],
+ "photos": [
+  "20260308_144909.jpg",
+  "20260308_144832.jpg",
+  "20260308_144848.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "chipped paint with white/rust showing on fluted base and foot; small chips on bracket; lichen on ladder bar; hole in shaft",
+ "cond_note": "small framed door present (144832); both ladder bar finials present (144858)",
+ "cond_check": [
+  "overall",
+  "paint"
+ ],
+ "cond_second_opinion": "overall=Poor;paint=Poor",
+ "outcome": "",
+ "order": 165
+}

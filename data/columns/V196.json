@@ -1,0 +1,48 @@
+{
+ "id": "V196",
+ "visits": [
+  196,
+  236
+ ],
+ "street": "Best Lane",
+ "asset": "FBDG005",
+ "owner": "KCC",
+ "candidates": [
+  "FBDG005"
+ ],
+ "candidate_distances": "FBDG005 (8 m)",
+ "confidence": "Probable",
+ "basis": "Painted number, partly legible + GPS",
+ "painted": "???005",
+ "note": "Post-top by the K6 phone boxes; photographed again on 18 Mar",
+ "confirmed_by": "",
+ "variant": "B2",
+ "gps": [
+  51.279955,
+  1.0791333
+ ],
+ "dates": [
+  "2026-03-13",
+  "2026-03-18"
+ ],
+ "photos": [
+  "20260313_151454.jpg",
+  "20260313_151452.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Not seen",
+  "colour": "Black"
+ },
+ "defects": "minor scuffs and dulling on lower base",
+ "cond_note": "post-top lantern with ladder bar; column standing in active excavation/works site with base exposed (151452/144655); no close-up photos, door side not visible",
+ "cond_check": [
+  "paint"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 190
+}

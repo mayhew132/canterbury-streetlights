@@ -1,0 +1,47 @@
+{
+ "id": "V184",
+ "visits": [
+  184
+ ],
+ "street": "Castle Street",
+ "asset": "FCCC006",
+ "owner": "KCC",
+ "candidates": [
+  "FCCC006"
+ ],
+ "candidate_distances": "FCCC007 (19 m); FCCC006 (22 m); FCCC005 (33 m)",
+ "confidence": "Confirmed",
+ "basis": "Confirmed by Guy (asset confirmation sheet, Oct 2026)",
+ "painted": "CCC???",
+ "note": "Small-door pattern (A4); Earlier best guess was FCCC007 (Uncertain)",
+ "confirmed_by": "Guy (asset sheet, Oct 2026)",
+ "variant": "A4",
+ "gps": [
+  51.276305,
+  1.0764533
+ ],
+ "dates": [
+  "2026-03-09"
+ ],
+ "photos": [
+  "20260309_134329.jpg",
+  "20260309_134239.jpg",
+  "20260309_134301.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "rust at foot of base and round small door; rust and paint loss on collar above ladder bar and on bracket",
+ "cond_note": "small door with cypher present (134239); both ladder bar finials present (134301); parking sign on shaft",
+ "cond_check": [
+  "overall"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 181
+}

@@ -1,0 +1,47 @@
+{
+ "id": "V276",
+ "visits": [
+  276
+ ],
+ "street": "Coppergate",
+ "asset": "FCNO001",
+ "owner": "KCC",
+ "candidates": [
+  "FCNO001"
+ ],
+ "candidate_distances": "FCNO001 (7 m)",
+ "confidence": "Probable",
+ "basis": "Painted number, partly legible + GPS",
+ "painted": "FCNO00?",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "B2",
+ "gps": [
+  51.2857116,
+  1.0758249
+ ],
+ "dates": [
+  "2026-04-02"
+ ],
+ "photos": [
+  "20260402_142913.jpg",
+  "20260402_142854.jpg",
+  "20260402_142903.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "rust spots and chips on base collar and foot ring",
+ "cond_note": "Lantern panes intact (142903); ladder bar ball finials present; label on shaft",
+ "cond_check": [
+  "door"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 268
+}

@@ -1,0 +1,49 @@
+{
+ "id": "V185",
+ "visits": [
+  185
+ ],
+ "street": "Castle Street",
+ "asset": "FCCC004",
+ "owner": "KCC",
+ "candidates": [
+  "FCCC004",
+  "FCCC005"
+ ],
+ "candidate_distances": "FCCC004 (23 m); FCCC005 (35 m)",
+ "confidence": "Probable",
+ "basis": "Painted number, partly legible + GPS",
+ "painted": "CCC0??",
+ "note": "Small-door pattern (A4); altered (plate or strap over door)",
+ "confirmed_by": "",
+ "variant": "A4",
+ "gps": [
+  51.2766866,
+  1.076985
+ ],
+ "dates": [
+  "2026-03-09"
+ ],
+ "photos": [
+  "20260309_134847.jpg",
+  "20260309_134728.jpg",
+  "20260309_134804.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Missing",
+  "colour": "Moss Green"
+ },
+ "defects": "extensive flaking paint and lichen on base, shaft, ladder bar and bracket; door opening covered by a plain grey metal plate held by strap band",
+ "cond_note": "plate over door seen in 134728; both ladder bar finials present (134804); hanging sign bracket attached near ladder bar | Adjudicated: left acorn present; right end lichen-covered, not clear (134804)",
+ "cond_check": [
+  "door",
+  "structure"
+ ],
+ "cond_second_opinion": "structure=Damaged",
+ "outcome": "",
+ "order": 182
+}

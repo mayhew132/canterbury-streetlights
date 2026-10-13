@@ -1,0 +1,46 @@
+{
+ "id": "V82",
+ "visits": [
+  82
+ ],
+ "street": "St Dunstan's Terrace",
+ "asset": "FSHL006",
+ "owner": "KCC",
+ "candidates": [
+  "FSHL006",
+  "FSHL005"
+ ],
+ "candidate_distances": "FSHL006 (9 m); FSHL005 (19 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2823216,
+  1.0697366
+ ],
+ "dates": [
+  "2026-03-02"
+ ],
+ "photos": [
+  "20260302_153643.jpg",
+  "20260302_153648.jpg",
+  "20260302_153700.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "flaking paint and lichen on bracket neck above ladder bar (153737); rust at base plinth edge",
+ "cond_note": "Door with cypher present (153643). Ladder bar finials present both ends (153737). Sign panel strapped to shaft.",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 79
+}

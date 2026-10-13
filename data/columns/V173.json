@@ -1,0 +1,48 @@
+{
+ "id": "V173",
+ "visits": [
+  173
+ ],
+ "street": "Castle Row",
+ "asset": "FCCA008",
+ "owner": "KCC",
+ "candidates": [
+  "FCCA008"
+ ],
+ "candidate_distances": "FCCA008 (16 m)",
+ "confidence": "Probable",
+ "basis": "Painted number, partly legible + GPS",
+ "painted": "CCA00?",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1-alt",
+ "gps": [
+  51.2757883,
+  1.0765866
+ ],
+ "dates": [
+  "2026-03-09"
+ ],
+ "photos": [
+  "20260309_132140.jpg",
+  "20260309_132035.jpg",
+  "20260309_132102.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Missing",
+  "colour": "Moss Green"
+ },
+ "defects": "door section covered by silver metal/foil sheet held with green tape; rust chips on base and collars; heavy lichen on ladder bar and bracket; plastic wrap/debris tied round collar",
+ "cond_note": "door appears covered by a makeshift plate rather than the cast door (132035/132055); lantern shade underside discoloured; CCTV pole adjacent; both ladder bar finials present (132102)",
+ "cond_check": [
+  "door",
+  "paint"
+ ],
+ "cond_second_opinion": "paint=Good",
+ "outcome": "",
+ "order": 170
+}

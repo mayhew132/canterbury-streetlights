@@ -1,0 +1,48 @@
+{
+ "id": "V199",
+ "visits": [
+  199
+ ],
+ "street": "The Friars",
+ "asset": "FTCS003",
+ "owner": "KCC",
+ "candidates": [
+  "FTCS003"
+ ],
+ "candidate_distances": "FTCS003 (painted; 19 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "FTCS003",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2807149,
+  1.0787166
+ ],
+ "dates": [
+  "2026-03-13"
+ ],
+ "photos": [
+  "20260313_152543.jpg",
+  "20260313_152510.jpg",
+  "20260313_152530.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Excellent",
+  "structure": "Intact",
+  "lantern": "Damaged",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "lantern bowl wrapped/blacked out in a dark cover tied round its side; rust staining inside shade",
+ "cond_note": "column recently repainted gloss green; door with cypher present (152510); both ladder bar finials present (152530); lantern cover seen in 152530, may be a deliberate blackout rather than damage",
+ "cond_check": [
+  "lantern",
+  "overall"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 193
+}

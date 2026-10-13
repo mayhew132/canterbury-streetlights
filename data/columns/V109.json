@@ -1,0 +1,46 @@
+{
+ "id": "V109",
+ "visits": [
+  109
+ ],
+ "street": "Cambridge Road",
+ "asset": "FCAJ003",
+ "owner": "KCC",
+ "candidates": [
+  "FCAJ003"
+ ],
+ "candidate_distances": "FCAJ003 (painted; 7 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "FCAJ003",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "X-mod",
+ "gps": [
+  51.2713316,
+  1.07668
+ ],
+ "dates": [
+  "2026-03-04"
+ ],
+ "photos": [
+  "20260304_122524.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Not seen",
+  "door": "Not seen",
+  "colour": "Other"
+ },
+ "defects": "",
+ "cond_note": "Modern plain galvanised steel replacement column (unpainted, silver/grey) with yellow FCAJ003 number label; looks sound and upright. Only one photo; top of column and lantern out of frame, door not visible. Paint graded on galvanised finish (no paint).",
+ "cond_check": [
+  "overall",
+  "paint"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 106
+}

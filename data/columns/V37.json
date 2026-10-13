@@ -1,0 +1,47 @@
+{
+ "id": "V37",
+ "visits": [
+  37
+ ],
+ "street": "Edward Road",
+ "asset": "FEBA002",
+ "owner": "KCC",
+ "candidates": [
+  "FEBA002"
+ ],
+ "candidate_distances": "FEBA002 (painted; 13 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "EBA002",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.276215,
+  1.0879666
+ ],
+ "dates": [
+  "2026-02-24"
+ ],
+ "photos": [
+  "20260224_124143.jpg",
+  "20260224_124114.jpg",
+  "20260224_124155.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "paint widely flaking exposing red primer and old layers on base and shaft; rust on lantern carrier; metal strap round door",
+ "cond_note": "Door with cypher (124114). Ladder bar visible only small in 124143; finials appear present.",
+ "cond_check": [
+  "structure"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 34
+}

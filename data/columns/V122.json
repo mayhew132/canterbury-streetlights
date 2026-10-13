@@ -1,0 +1,46 @@
+{
+ "id": "V122",
+ "visits": [
+  122
+ ],
+ "street": "Guildford Road",
+ "asset": "FGEU003",
+ "owner": "KCC",
+ "candidates": [
+  "FGEU003",
+  "FGEU004"
+ ],
+ "candidate_distances": "FGEU003 (11 m); FGEU004 (19 m)",
+ "confidence": "Uncertain",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "Small-door pattern (A4)",
+ "confirmed_by": "",
+ "variant": "A4",
+ "gps": [
+  51.2711283,
+  1.0745883
+ ],
+ "dates": [
+  "2026-03-04"
+ ],
+ "photos": [
+  "20260304_125517.jpg",
+  "20260304_125448.jpg",
+  "20260304_125507.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "widespread flaking paint with rust over base, door and fluting (125448, 125501); peeling paint on lower and upper shaft; rust on swan-neck bracket (125507) and spigot; lichen on spigot",
+ "cond_note": "Both ladder bar acorns present (125530). Metal strap bands on base and shaft. Modern green lantern under shade intact.",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 119
+}

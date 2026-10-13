@@ -1,0 +1,45 @@
+{
+ "id": "V126",
+ "visits": [
+  126
+ ],
+ "street": "Norfolk Road",
+ "asset": "FNBU003",
+ "owner": "KCC",
+ "candidates": [
+  "FNBU003"
+ ],
+ "candidate_distances": "FNBU003 (painted; 13 m)",
+ "confidence": "Strong",
+ "basis": "Painted number, partly legible (one match nearby)",
+ "painted": "?BU0?3",
+ "note": "Small-door pattern (A4)",
+ "confirmed_by": "",
+ "variant": "A4",
+ "gps": [
+  51.2708116,
+  1.07246
+ ],
+ "dates": [
+  "2026-03-04"
+ ],
+ "photos": [
+  "20260304_130333.jpg",
+  "20260304_130242.jpg",
+  "20260304_130306.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "widespread flaking paint and rust on base, door and plinth (130242); flaking on fluting and shaft (130257); rust and worn paint on swan-neck bracket",
+ "cond_note": "Both ladder bar acorns present (130306). Neighbourhood Watch sign and metal strap bands on column. Modern green lantern under shade intact.",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 123
+}

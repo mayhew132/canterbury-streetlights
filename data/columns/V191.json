@@ -1,0 +1,50 @@
+{
+ "id": "V191",
+ "visits": [
+  191,
+  4
+ ],
+ "street": "Burgate",
+ "asset": "FBJT005",
+ "owner": "KCC",
+ "candidates": [
+  "FBJT005"
+ ],
+ "candidate_distances": "FBJT005 (painted; 15 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "FBJT005",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2785266,
+  1.0834016
+ ],
+ "dates": [
+  "2026-02-17",
+  "2026-03-12"
+ ],
+ "photos": [
+  "20260312_132941.jpg",
+  "20260312_132851.jpg",
+  "20260312_132914.jpg"
+ ],
+ "condition": {
+  "overall": "Excellent",
+  "paint": "Excellent",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "",
+ "cond_note": "Freshly painted glossy dark green; door with cypher on base (132851); ladder bar finials present both ends (132914). Pedestrian zone sign and notice attached; construction fencing around it in 132131.",
+ "cond_check": [
+  "overall",
+  "paint"
+ ],
+ "cond_second_opinion": "overall=Good;paint=Good",
+ "outcome": "",
+ "order": 3
+}

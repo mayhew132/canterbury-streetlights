@@ -1,0 +1,45 @@
+{
+ "id": "V153",
+ "visits": [
+  153
+ ],
+ "street": "Hospital Lane",
+ "asset": "FHGV002",
+ "owner": "KCC",
+ "candidates": [
+  "FHGV002"
+ ],
+ "candidate_distances": "FHGV002 (painted; 27 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "HGV002",
+ "note": "Small-door pattern (A4)",
+ "confirmed_by": "",
+ "variant": "A4",
+ "gps": [
+  51.2772549,
+  1.0765633
+ ],
+ "dates": [
+  "2026-03-08"
+ ],
+ "photos": [
+  "20260308_140923.jpg",
+  "20260308_140839.jpg",
+  "20260308_140901.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Damaged",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "left ladder bar arm cut short against building wall (finial missing); extensive flaking paint on base, shaft and ladder bar exposing pink/white undercoat",
+ "cond_note": "cut-down ladder bar seen in 140901; graffiti on adjacent feeder pillar, not on column",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 150
+}

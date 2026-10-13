@@ -1,0 +1,49 @@
+{
+ "id": "V204",
+ "visits": [
+  204
+ ],
+ "street": "King Street",
+ "asset": "FKAZ009",
+ "owner": "KCC",
+ "candidates": [
+  "FKAZ009",
+  "FKAZ008"
+ ],
+ "candidate_distances": "FKAZ009 (8 m); FKAZ008 (21 m)",
+ "confidence": "Probable",
+ "basis": "Painted number, partly legible + GPS",
+ "painted": "KAZ00?",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2807916,
+  1.0800033
+ ],
+ "dates": [
+  "2026-03-16"
+ ],
+ "photos": [
+  "20260316_140500.jpg",
+  "20260316_140403.jpg",
+  "20260316_140426.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "crazed/flaking paint on base door side (140413); flaking exposing red on ladder bar right arm and collar",
+ "cond_note": "stickers on shaft; parking sign; both finials present",
+ "cond_check": [
+  "overall",
+  "paint"
+ ],
+ "cond_second_opinion": "overall=Good;paint=Good",
+ "outcome": "",
+ "order": 198
+}

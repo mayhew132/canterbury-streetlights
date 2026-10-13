@@ -1,0 +1,49 @@
+{
+ "id": "V259",
+ "visits": [
+  259
+ ],
+ "street": "St Radigunds Street",
+ "asset": "FSKP003",
+ "owner": "KCC",
+ "candidates": [
+  "FSKP003",
+  "FCFQ003",
+  "FSKP004"
+ ],
+ "candidate_distances": "FSKP003 (9 m); FCFQ003 (2 m); FSKP004 (13 m)",
+ "confidence": "Uncertain",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2824669,
+  1.082592
+ ],
+ "dates": [
+  "2026-03-22"
+ ],
+ "photos": [
+  "20260322_143151.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Not seen",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "small paint chip at top-left of door panel",
+ "cond_note": "Only one photo (143151 base): glossy green base with cypher door in place; ground around base excavated within works site. Shaft top, ladder bar, bracket and lantern not photographed.",
+ "cond_check": [
+  "overall",
+  "paint",
+  "structure"
+ ],
+ "cond_second_opinion": "overall=Excellent;paint=Excellent",
+ "outcome": "",
+ "order": 252
+}

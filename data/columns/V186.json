@@ -1,0 +1,48 @@
+{
+ "id": "V186",
+ "visits": [
+  186
+ ],
+ "street": "Castle Street",
+ "asset": "FCCC303",
+ "owner": "KCC",
+ "candidates": [
+  "FCCC303"
+ ],
+ "candidate_distances": "FCCC303 (painted; 26 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "X-stub",
+ "gps": [
+  51.2770883,
+  1.0773583
+ ],
+ "dates": [
+  "2026-03-09"
+ ],
+ "photos": [
+  "20260309_135108.jpg",
+  "20260309_134939.jpg",
+  "20260309_135015.jpg"
+ ],
+ "condition": {
+  "overall": "Missing",
+  "paint": "Poor",
+  "structure": "Damaged",
+  "lantern": "None",
+  "door": "Missing",
+  "colour": "Moss Green"
+ },
+ "defects": "column cut down to rusted base stub wrapped in hazard tape and plastic; no shaft, bracket or lantern",
+ "cond_note": "stub stands beside modern galvanised column carrying the number plate (134939/135108); traces of dark green paint on stub top",
+ "cond_check": [
+  "colour",
+  "door"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 183
+}

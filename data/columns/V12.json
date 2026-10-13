@@ -1,0 +1,45 @@
+{
+ "id": "V12",
+ "visits": [
+  12
+ ],
+ "street": "Cossington Road",
+ "asset": "FCKD008",
+ "owner": "KCC",
+ "candidates": [
+  "FCKD008"
+ ],
+ "candidate_distances": "FCKD008 (painted; 12 m)",
+ "confidence": "Strong",
+ "basis": "Painted number, partly legible (one match nearby)",
+ "painted": "?K?008, \"8\" (hand-painted)",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1-alt",
+ "gps": [
+  51.2731716,
+  1.0865516
+ ],
+ "dates": [
+  "2026-02-21"
+ ],
+ "photos": [
+  "20260221_124904.jpg",
+  "20260221_124846.jpg",
+  "20260221_124854.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Damaged",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "column leaning markedly (consistent in all views); upper shaft and swan-neck rusted with heavy paint loss; base paint weathered",
+ "cond_note": "A1-alt with no ladder bar visible (swan-neck straight off shaft). Door with cypher present (124846). Parking sign on shaft.",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 11
+}

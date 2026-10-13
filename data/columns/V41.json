@@ -1,0 +1,45 @@
+{
+ "id": "V41",
+ "visits": [
+  41
+ ],
+ "street": "Ivy Lane",
+ "asset": "FIAW012",
+ "owner": "KCC",
+ "candidates": [
+  "FIAW012"
+ ],
+ "candidate_distances": "FIAW012 (2 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "FIAW012 is also the top candidate for visit(s) 45 on the same day, so at most one is right",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.277045,
+  1.0848866
+ ],
+ "dates": [
+  "2026-02-24"
+ ],
+ "photos": [
+  "20260224_125132.jpg",
+  "20260224_125055.jpg",
+  "20260224_125140.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "faded paint with small chips; white paint splashes on base; minor rust on swan-neck",
+ "cond_note": "Door with cypher (125055). Ladder bar finials present (125201). 20mph sign on shaft.",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 38
+}

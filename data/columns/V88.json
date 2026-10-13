@@ -1,0 +1,46 @@
+{
+ "id": "V88",
+ "visits": [
+  88
+ ],
+ "street": "Orchard Street",
+ "asset": "FOBV008",
+ "owner": "KCC",
+ "candidates": [
+  "FOBV008"
+ ],
+ "candidate_distances": "FOBV008 (5 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "X-mod",
+ "gps": [
+  51.2829816,
+  1.0722333
+ ],
+ "dates": [
+  "2026-03-03"
+ ],
+ "photos": [
+  "20260303_123025.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Not seen",
+  "colour": "Black"
+ },
+ "defects": "",
+ "cond_note": "Modern replacement post-top column with plain ladder bar and lantern, black. Single distant photo (123025) - detail limited; no door discernible at this resolution. Paper notice tied to shaft; yellow number label and no-waiting sign.",
+ "cond_check": [
+  "overall",
+  "paint"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 85
+}

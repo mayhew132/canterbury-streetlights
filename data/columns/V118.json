@@ -1,0 +1,47 @@
+{
+ "id": "V118",
+ "visits": [
+  118
+ ],
+ "street": "Lancaster Road",
+ "asset": "FLAK001",
+ "owner": "KCC",
+ "candidates": [
+  "FLAK001",
+  "FOCO019",
+  "FOCO020"
+ ],
+ "candidate_distances": "FLAK001 (16 m); FOCO019 (22 m); FOCO020 (27 m)",
+ "confidence": "Uncertain",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "Small-door pattern (A4)",
+ "confirmed_by": "",
+ "variant": "A4",
+ "gps": [
+  51.2717333,
+  1.0750966
+ ],
+ "dates": [
+  "2026-03-04"
+ ],
+ "photos": [
+  "20260304_124528.jpg",
+  "20260304_124442.jpg",
+  "20260304_124515.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "severe peeling paint and rust on shaft below ladder bar, capital and spigot (124541); swan-neck bracket rusted and flaking (124515); widespread flaking and rust on base and door (124442, 124455); remnants of stickers on lower shaft",
+ "cond_note": "Both ladder bar finials present though lichen-covered. Feeder pillar on wall nearby (124507). Modern green lantern under shade intact.",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 115
+}

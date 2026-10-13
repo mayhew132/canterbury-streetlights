@@ -1,0 +1,45 @@
+{
+ "id": "V142",
+ "visits": [
+  142
+ ],
+ "street": "Marlowe Avenue",
+ "asset": "FMBL003",
+ "owner": "KCC",
+ "candidates": [
+  "FMBL003"
+ ],
+ "candidate_distances": "FMBL003 (painted; 5 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "MBL003",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2764066,
+  1.0786016
+ ],
+ "dates": [
+  "2026-03-08"
+ ],
+ "photos": [
+  "20260308_134640.jpg",
+  "20260308_134527.jpg",
+  "20260308_134552.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "extensive flaking of top coat exposing orange/red primer and rust over base, door and shaft (134527, 134539); lichen and rust on swan-neck bracket, spigot and ladder bar (134552, 134610)",
+ "cond_note": "Both ladder bar acorns present. Column number stencilled on shaft. Modern green lantern under shade intact.",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 139
+}

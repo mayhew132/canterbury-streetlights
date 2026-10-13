@@ -1,0 +1,49 @@
+{
+ "id": "V16",
+ "visits": [
+  16,
+  2
+ ],
+ "street": "Abbots Barton Walk",
+ "asset": "FAAA001",
+ "owner": "KCC",
+ "candidates": [
+  "FAAA001"
+ ],
+ "candidate_distances": "FAAA001 (painted; 9 m)",
+ "confidence": "Strong",
+ "basis": "Painted number, partly legible (one match nearby)",
+ "painted": "A??0?1, A???",
+ "note": "Small-door pattern (A4)",
+ "confirmed_by": "",
+ "variant": "A4",
+ "gps": [
+  51.2729766,
+  1.0895916
+ ],
+ "dates": [
+  "2026-02-06",
+  "2026-02-21"
+ ],
+ "photos": [
+  "20260221_125931.jpg",
+  "20260221_125841.jpg",
+  "20260221_125847.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Other"
+ },
+ "defects": "silver paint heavily flaked exposing red-brown primer/rust along whole shaft and base and ladder bar; door held shut with metal strap band",
+ "cond_note": "Painted silver/grey. Lantern and bracket seen in 125847/125931; door (small framed with keyhole) visible in 125841. Ladder bar end knobs appear present but indistinct (125847).",
+ "cond_check": [
+  "structure"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 1
+}

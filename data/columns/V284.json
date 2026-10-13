@@ -1,0 +1,45 @@
+{
+ "id": "V284",
+ "visits": [
+  284
+ ],
+ "street": "Riverside path (near Westwood Drive)",
+ "asset": "00132686",
+ "owner": "CCC",
+ "candidates": [],
+ "candidate_distances": "",
+ "confidence": "Confirmed",
+ "basis": "Confirmed by Guy: City Council asset (Confirm system, not adopted by KCC)",
+ "painted": "",
+ "note": "City Council riverside path column (per Guy), so not in the KCC extract",
+ "confirmed_by": "Guy (asset sheet, Oct 2026)",
+ "variant": "A1",
+ "gps": [
+  51.2872283,
+  1.089025
+ ],
+ "dates": [
+  "2026-05-01"
+ ],
+ "photos": [
+  "20260501_122524.jpg",
+  "20260501_122458.jpg",
+  "20260501_122505.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "very extensive peeling of topcoat with most of shaft and base showing red/orange primer; cord tied around shaft below ladder bar",
+ "cond_note": "Base partly screened by vegetation (122458); ladder bar both ends present (122505) | Adjudicated: door seen on second check: ladder bar both finials present (122503/122505); modern round lantern with glass",
+ "cond_check": [
+  "door"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 275
+}

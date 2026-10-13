@@ -1,0 +1,47 @@
+{
+ "id": "V194",
+ "visits": [
+  194
+ ],
+ "street": "Burgate",
+ "asset": "FBJT011",
+ "owner": "KCC",
+ "candidates": [
+  "FBJT011"
+ ],
+ "candidate_distances": "FBJT011 (8 m); FBJT010 (16 m)",
+ "confidence": "Confirmed",
+ "basis": "Confirmed by Guy (asset confirmation sheet, Oct 2026)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "Guy (asset sheet, Oct 2026)",
+ "variant": "A1",
+ "gps": [
+  51.2791683,
+  1.081445
+ ],
+ "dates": [
+  "2026-03-12"
+ ],
+ "photos": [
+  "20260312_133636.jpg",
+  "20260312_133514(0).jpg",
+  "20260312_133540.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Other"
+ },
+ "defects": "widespread chipping and flaking paint with rust on base, especially fluting and foot; black tape over door lock area; loose metal strap round base collar",
+ "cond_note": "painted slate blue/blue-grey rather than green (base and shaft in 514(0)/133540); door with cypher present; both ladder bar finials present (133540); pedestrian zone sign and hanging-basket hook on shaft",
+ "cond_check": [
+  "colour"
+ ],
+ "cond_second_opinion": "colour=Black",
+ "outcome": "",
+ "order": 188
+}

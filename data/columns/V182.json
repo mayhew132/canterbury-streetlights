@@ -1,0 +1,46 @@
+{
+ "id": "V182",
+ "visits": [
+  182
+ ],
+ "street": "Castle Street Car Park",
+ "asset": "FCNZ001",
+ "owner": "KCC",
+ "candidates": [
+  "FCNZ001"
+ ],
+ "candidate_distances": "FCNZ001 (19 m); FCCC011 (14 m)",
+ "confidence": "Confirmed",
+ "basis": "Confirmed by Guy (asset confirmation sheet, Oct 2026)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "Guy (asset sheet, Oct 2026)",
+ "variant": "A1",
+ "gps": [
+  51.2759476,
+  1.075803
+ ],
+ "dates": [
+  "2026-03-09"
+ ],
+ "photos": [
+  "20260309_133830.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Not seen",
+  "colour": "Moss Green"
+ },
+ "defects": "rust and flaking paint on shaft and collar above ladder bar; lichen on ladder bar; lantern shade dirty",
+ "cond_note": "only one photo (133830 arm); base and door not photographed; both ladder bar finials present",
+ "cond_check": [
+  "overall",
+  "paint"
+ ],
+ "cond_second_opinion": "overall=Good;paint=Good",
+ "outcome": "",
+ "order": 179
+}

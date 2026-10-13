@@ -1,0 +1,45 @@
+{
+ "id": "V65",
+ "visits": [
+  65
+ ],
+ "street": "Havelock Street",
+ "asset": "FHBV003",
+ "owner": "KCC",
+ "candidates": [
+  "FHBV003"
+ ],
+ "candidate_distances": "FHBV003 (painted; 4 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "?003, HBV003 (first pass)",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2804316,
+  1.0866833
+ ],
+ "dates": [
+  "2026-02-24"
+ ],
+ "photos": [
+  "20260224_133745.jpg",
+  "20260224_133633.jpg",
+  "20260224_133706.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "widespread paint flaking with rust and red primer showing on base (plinth heavily rusted), shaft, bracket and ladder bar",
+ "cond_note": "Door with cypher present (133633). Hand-painted '003' on shaft. Ladder bar finials present both ends (133640).",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 62
+}

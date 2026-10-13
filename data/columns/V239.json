@@ -1,0 +1,47 @@
+{
+ "id": "V239",
+ "visits": [
+  239
+ ],
+ "street": "The Causeway",
+ "asset": "FTBV004",
+ "owner": "KCC",
+ "candidates": [
+  "FTBV004"
+ ],
+ "candidate_distances": "FTBV004 (painted; 2 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "TBV004",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2831649,
+  1.0786883
+ ],
+ "dates": [
+  "2026-03-19"
+ ],
+ "photos": [
+  "20260319_133851.jpg",
+  "20260319_133806.jpg",
+  "20260319_133829.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "widespread flaking paint and rust on shaft, collars, ladder bar (red primer showing) and bracket (133829, 133838); door sits proud, held by metal band round base (133819)",
+ "cond_note": "cluttered location among utility cabinets, sign and timber pole; right ladder bar finial seen obliquely - appears present | Adjudicated: right acorn present behind branch (133829)",
+ "cond_check": [
+  "structure"
+ ],
+ "cond_second_opinion": "structure=Damaged",
+ "outcome": "",
+ "order": 232
+}

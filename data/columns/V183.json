@@ -1,0 +1,47 @@
+{
+ "id": "V183",
+ "visits": [
+  183
+ ],
+ "street": "St Marys Street",
+ "asset": "FSJU001",
+ "owner": "KCC",
+ "candidates": [
+  "FSJU001",
+  "FCCC006",
+  "FCCC007"
+ ],
+ "candidate_distances": "FSJU001 (27 m); FCCC006 (28 m); FCCC007 (29 m)",
+ "confidence": "Uncertain",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "Small-door pattern (A4) confirmed by Guy",
+ "confirmed_by": "",
+ "variant": "A4",
+ "gps": [
+  51.276295,
+  1.0765966
+ ],
+ "dates": [
+  "2026-03-09"
+ ],
+ "photos": [
+  "20260309_134214.jpg",
+  "20260309_134048.jpg",
+  "20260309_134057.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Damaged",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "ladder bar finial missing on one end (right end as viewed in 134057, blunt cut end); extensive flaking paint across base, shaft, ladder bar and bracket exposing pink undercoat and rust",
+ "cond_note": "left ladder bar end retains its finial; small door with cypher present (134048); lichen on upper shaft",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 180
+}

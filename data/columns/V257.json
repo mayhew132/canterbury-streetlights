@@ -1,0 +1,47 @@
+{
+ "id": "V257",
+ "visits": [
+  257
+ ],
+ "street": "St Peter's Lane",
+ "asset": "FSKI002",
+ "owner": "KCC",
+ "candidates": [
+  "FSKI002"
+ ],
+ "candidate_distances": "FSKI002 (9 m)",
+ "confidence": "Probable",
+ "basis": "Painted number, partly legible + GPS",
+ "painted": "???002",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2810364,
+  1.077653
+ ],
+ "dates": [
+  "2026-03-19"
+ ],
+ "photos": [
+  "20260319_144018.jpg",
+  "20260319_143932.jpg",
+  "20260319_143958.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "paint faded with lichen/algae growth on shaft and bracket; red primer/rust patches on base foot; flaking paint on shaft top; redundant rusty bracket frame strapped to shaft below ladder bar",
+ "cond_note": "Ladder bar finials present both ends (143958). Lantern globe and shade intact; finial box on bracket top rusty (144006). Base photos show fluted faces only, door face not visible (143932, 143943). | Adjudicated: door seen on second check: Both ladder bar acorns present (143958). Lantern intact (144006). Borderline Goo",
+ "cond_check": [
+  "door"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 250
+}

@@ -1,0 +1,45 @@
+{
+ "id": "V178",
+ "visits": [
+  178
+ ],
+ "street": "Castle Row",
+ "asset": "FCCA001",
+ "owner": "KCC",
+ "candidates": [
+  "FCCA001"
+ ],
+ "candidate_distances": "FCCA001 (painted; 43 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "CCA001",
+ "note": "Small-door pattern (A4)",
+ "confirmed_by": "",
+ "variant": "A4",
+ "gps": [
+  51.2750666,
+  1.076305
+ ],
+ "dates": [
+  "2026-03-09"
+ ],
+ "photos": [
+  "20260309_133022.jpg",
+  "20260309_132911.jpg",
+  "20260309_132939.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "extensive paint loss exposing red primer/rust on base, leaf collars and bracket; lichen on ladder bar; drilled holes in shaft",
+ "cond_note": "blue tape round base door section (132911/132924); both ladder bar finials present (132939)",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 175
+}

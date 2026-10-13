@@ -1,0 +1,45 @@
+{
+ "id": "V135",
+ "visits": [
+  135
+ ],
+ "street": "New Street",
+ "asset": "FNBJ001",
+ "owner": "KCC",
+ "candidates": [
+  "FNBJ001",
+  "FYAH003",
+  "FYAH002"
+ ],
+ "candidate_distances": "FNBJ001 (23 m); FYAH003 (28 m); FYAH002 (35 m)",
+ "confidence": "Uncertain",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2729263,
+  1.0725369
+ ],
+ "dates": [
+  "2026-03-04"
+ ],
+ "photos": [
+  "20260304_133005.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Not seen",
+  "colour": "Moss Green"
+ },
+ "defects": "heavy lichen and rust on spigot and ladder bar; flaking paint with exposed undercoat and rust on capital and upper shaft (133005)",
+ "cond_note": "Only one photo (arm view). Both ladder bar acorns present though rusty. Lantern shade and globe visible and intact; underside of shade discoloured. Base/door not photographed.",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 132
+}

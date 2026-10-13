@@ -1,0 +1,47 @@
+{
+ "id": "V20",
+ "visits": [
+  20
+ ],
+ "street": "Dover Street",
+ "asset": "FDCX006",
+ "owner": "KCC",
+ "candidates": [
+  "FDCX006"
+ ],
+ "candidate_distances": "FDCX006 (painted; 7 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "FDCX006",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2756316,
+  1.0846616
+ ],
+ "dates": [
+  "2026-02-21"
+ ],
+ "photos": [
+  "20260221_131515.jpg",
+  "20260221_131417.jpg",
+  "20260221_131433.jpg"
+ ],
+ "condition": {
+  "overall": "Excellent",
+  "paint": "Excellent",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "",
+ "cond_note": "Freshly painted glossy green. Small tape/sticker remnants on shaft (131423/131428). Door with cypher (131417). Ladder bar finials present (131433). Traffic signs fixed to shaft.",
+ "cond_check": [
+  "overall"
+ ],
+ "cond_second_opinion": "overall=Good",
+ "outcome": "",
+ "order": 17
+}

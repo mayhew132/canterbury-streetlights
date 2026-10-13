@@ -1,0 +1,47 @@
+{
+ "id": "V200",
+ "visits": [
+  200
+ ],
+ "street": "The Friars",
+ "asset": "FTCS002",
+ "owner": "KCC",
+ "candidates": [
+  "FTCS002"
+ ],
+ "candidate_distances": "FTCS002 (painted; 29 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "FTCS002",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2806383,
+  1.0783983
+ ],
+ "dates": [
+  "2026-03-13"
+ ],
+ "photos": [
+  "20260313_152714.jpg",
+  "20260313_152637.jpg",
+  "20260313_152644.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Excellent",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "white sticker/paper residue on shaft",
+ "cond_note": "column recently repainted gloss green; door with cypher present (152637); both ladder bar finials present (152644)",
+ "cond_check": [
+  "overall"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 194
+}

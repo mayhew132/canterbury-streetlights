@@ -1,0 +1,48 @@
+{
+ "id": "V158",
+ "visits": [
+  158
+ ],
+ "street": "Church Lane",
+ "asset": "FCFO002",
+ "owner": "KCC",
+ "candidates": [
+  "FCFO002"
+ ],
+ "candidate_distances": "FCFO002 (painted; 2 m)",
+ "confidence": "Strong",
+ "basis": "Painted number, partly legible (one match nearby)",
+ "painted": "CFO?02",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2765416,
+  1.074425
+ ],
+ "dates": [
+  "2026-03-08"
+ ],
+ "photos": [
+  "20260308_141954.jpg",
+  "20260308_141903.jpg",
+  "20260308_141925.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "patchy over-painting and chipped paint on fluted base",
+ "cond_note": "patchy multi-shade paint on base (141912); upper column in fair order; cycle route sign on shaft",
+ "cond_check": [
+  "overall",
+  "paint"
+ ],
+ "cond_second_opinion": "overall=Poor",
+ "outcome": "",
+ "order": 155
+}

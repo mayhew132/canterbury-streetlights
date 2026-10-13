@@ -1,0 +1,47 @@
+{
+ "id": "V151",
+ "visits": [
+  151
+ ],
+ "street": "Watling Street",
+ "asset": "FWBB013",
+ "owner": "KCC",
+ "candidates": [
+  "FWBB013"
+ ],
+ "candidate_distances": "FWBB013 (7 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2769165,
+  1.078945
+ ],
+ "dates": [
+  "2026-03-08"
+ ],
+ "photos": [
+  "20260308_140318.jpg",
+  "20260308_140228.jpg",
+  "20260308_140252.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "widespread flaking paint on shaft, ladder bar and bracket; rust on base fluting and collars",
+ "cond_note": "heavy lichen on ladder bar (140252); 'No loading' sign on shaft; tape band on base; right ladder bar end partly out of frame in 140252 but appears present in whole view",
+ "cond_check": [
+  "structure"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 148
+}

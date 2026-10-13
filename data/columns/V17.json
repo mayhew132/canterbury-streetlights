@@ -1,0 +1,47 @@
+{
+ "id": "V17",
+ "visits": [
+  17
+ ],
+ "street": "Oaten Hill Place",
+ "asset": "FOAP002",
+ "owner": "KCC",
+ "candidates": [
+  "FOAP002"
+ ],
+ "candidate_distances": "FOAP002 (7 m)",
+ "confidence": "Probable",
+ "basis": "Painted number, partly legible + GPS",
+ "painted": "?AP???, ?AP",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2748583,
+  1.0845666
+ ],
+ "dates": [
+  "2026-02-21"
+ ],
+ "photos": [
+  "20260221_130919.jpg",
+  "20260221_130833.jpg",
+  "20260221_130840.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "paint faded and mottled with minor chips/rust spots",
+ "cond_note": "Door with cypher (130833). Ladder bar finials present both ends (130836). Parking sign on shaft. Borderline Good/Poor paint — dull but largely intact.",
+ "cond_check": [
+  "paint"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 14
+}

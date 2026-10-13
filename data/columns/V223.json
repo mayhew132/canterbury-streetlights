@@ -1,0 +1,46 @@
+{
+ "id": "V223",
+ "visits": [
+  223
+ ],
+ "street": "Riverside Walk",
+ "asset": "FRGS003",
+ "owner": "KCC",
+ "candidates": [
+  "FRGS003",
+  "FRGS004"
+ ],
+ "candidate_distances": "FRGS003 (16 m); FRGS004 (12 m)",
+ "confidence": "Uncertain",
+ "basis": "GPS (one asset per visit per day)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2835066,
+  1.0813466
+ ],
+ "dates": [
+  "2026-03-18"
+ ],
+ "photos": [
+  "20260318_134902.jpg",
+  "20260318_134742.jpg",
+  "20260318_134839.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "small yellow graffiti mark on base collar (134804); algae on bracket swan-neck; rust staining on lantern shade",
+ "cond_note": "both ladder bar finials present",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 217
+}

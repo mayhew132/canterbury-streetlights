@@ -1,0 +1,46 @@
+{
+ "id": "V49",
+ "visits": [
+  49
+ ],
+ "street": "Monastery Street",
+ "asset": "FMFR001",
+ "owner": "KCC",
+ "candidates": [
+  "FMFR001",
+  "FCGC001"
+ ],
+ "candidate_distances": "FMFR001 (10 m); FCGC001 (21 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.27808,
+  1.086415
+ ],
+ "dates": [
+  "2026-02-24"
+ ],
+ "photos": [
+  "20260224_130928.jpg",
+  "20260224_130810.jpg",
+  "20260224_130816.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "paint flaking/blistered on shaft and upper column; rust on swan-neck and collar; metal strap round door",
+ "cond_note": "Door with cypher (130810). Ladder bar finials present (130816). Graffiti on adjacent fence, not column.",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 46
+}

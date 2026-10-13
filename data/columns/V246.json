@@ -1,0 +1,48 @@
+{
+ "id": "V246",
+ "visits": [
+  246
+ ],
+ "street": "Pound Lane",
+ "asset": "FPEM009",
+ "owner": "KCC",
+ "candidates": [
+  "FPEM009",
+  "FPEM008"
+ ],
+ "candidate_distances": "FPEM009 (9 m); FPEM008 (19 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2825966,
+  1.0776616
+ ],
+ "dates": [
+  "2026-03-19"
+ ],
+ "photos": [
+  "20260319_135253.jpg",
+  "20260319_135153.jpg",
+  "20260319_135222.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "dulled/faded paint with small chips on base and plinth; minor rust spots on bracket; dirt and rust staining on lantern shade; sticker/sign on shaft (135253)",
+ "cond_note": "both ladder bar finials present",
+ "cond_check": [
+  "paint"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 239
+}

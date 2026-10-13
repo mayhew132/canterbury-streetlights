@@ -1,0 +1,47 @@
+{
+ "id": "V60",
+ "visits": [
+  60
+ ],
+ "street": "Monastery Street",
+ "asset": "FMFR012",
+ "owner": "KCC",
+ "candidates": [
+  "FMFR012",
+  "FMFR011",
+  "FMFR013"
+ ],
+ "candidate_distances": "FMFR012 (8 m); FMFR011 (15 m); FMFR013 (20 m)",
+ "confidence": "Uncertain",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2798653,
+  1.086938
+ ],
+ "dates": [
+  "2026-02-24"
+ ],
+ "photos": [
+  "20260224_132553.jpg",
+  "20260224_132511.jpg",
+  "20260224_132541.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "widespread rust and paint loss on shaft, bracket and upper column (red rust/primer showing); faded chalky paint on base",
+ "cond_note": "Large sign panel strapped to shaft (132537, 132541). Ladder bar finials present both ends (132541). Door with cypher in place (132511, 132533).",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 57
+}

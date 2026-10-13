@@ -1,0 +1,45 @@
+{
+ "id": "V217",
+ "visits": [
+  217
+ ],
+ "street": "Riverside Walk",
+ "asset": "FRGS009",
+ "owner": "KCC",
+ "candidates": [
+  "FRGS009"
+ ],
+ "candidate_distances": "FRGS009 (30 m)",
+ "confidence": "Probable",
+ "basis": "Order along Riverside Walk between hand-painted 14 and 7 + GPS",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2843933,
+  1.0829883
+ ],
+ "dates": [
+  "2026-03-18"
+ ],
+ "photos": [
+  "20260318_133909.jpg",
+  "20260318_133751.jpg",
+  "20260318_133831.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "moss on ladder bar collar and bracket; rust/dirt staining on lantern shade",
+ "cond_note": "both ladder bar finials present",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 211
+}

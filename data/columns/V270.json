@@ -1,0 +1,49 @@
+{
+ "id": "V270",
+ "visits": [
+  270
+ ],
+ "street": "Rheims Court",
+ "asset": "FRGT003",
+ "owner": "KCC",
+ "candidates": [
+  "FRGT003",
+  "FRGT004"
+ ],
+ "candidate_distances": "FRGT003 (8 m); FRGT004 (14 m)",
+ "confidence": "Uncertain",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "B2",
+ "gps": [
+  51.2824033,
+  1.0634599
+ ],
+ "dates": [
+  "2026-04-02"
+ ],
+ "photos": [
+  "20260402_140127.jpg",
+  "20260402_140137.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "small rust/primer patch on decorative base",
+ "cond_note": "Base largely hidden by shrubs (140137); lantern only seen at distance (140127) | Adjudicated: door seen on second check: largely obscured by shrub; ladder bar both finials present in whole shot; base d",
+ "cond_check": [
+  "door",
+  "lantern",
+  "paint"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 262
+}

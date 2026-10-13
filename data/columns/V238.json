@@ -1,0 +1,45 @@
+{
+ "id": "V238",
+ "visits": [
+  238
+ ],
+ "street": "The Causeway",
+ "asset": "FTBV005",
+ "owner": "KCC",
+ "candidates": [
+  "FTBV005"
+ ],
+ "candidate_distances": "FTBV005 (4 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2833137,
+  1.0787279
+ ],
+ "dates": [
+  "2026-03-19"
+ ],
+ "photos": [
+  "20260319_133618.jpg",
+  "20260319_133340.jpg",
+  "20260319_133348.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "severe flaking and paint loss exposing red primer and rust on ladder bar, shaft, collars and bracket (133348, 133603); lichen on shaft; metal band strapped round base over door (133340, 133545); heavily soiled lantern bowl and rusty shade",
+ "cond_note": "both ladder bar finials present",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 231
+}

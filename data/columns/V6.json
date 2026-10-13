@@ -1,0 +1,45 @@
+{
+ "id": "V6",
+ "visits": [
+  6
+ ],
+ "street": "Cossington Road",
+ "asset": "FCKD001",
+ "owner": "KCC",
+ "candidates": [
+  "FCKD001"
+ ],
+ "candidate_distances": "FCKD001 (6 m)",
+ "confidence": "Probable",
+ "basis": "Painted number, partly legible + GPS",
+ "painted": "CK????, C?????",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2741356,
+  1.0850169
+ ],
+ "dates": [
+  "2026-02-21"
+ ],
+ "photos": [
+  "20260221_123857.jpg",
+  "20260221_123707.jpg",
+  "20260221_123823.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "green paint heavily weathered and flaking with rust/primer showing on base, shaft, ladder bar and swan-neck; door tied with wire around top",
+ "cond_note": "Ladder bar finials present both ends (123823). Parking sign clamped to shaft.",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 5
+}

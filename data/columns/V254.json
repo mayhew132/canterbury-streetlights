@@ -1,0 +1,47 @@
+{
+ "id": "V254",
+ "visits": [
+  254
+ ],
+ "street": "St Peter's Lane",
+ "asset": "FSKI010",
+ "owner": "KCC",
+ "candidates": [
+  "FSKI010"
+ ],
+ "candidate_distances": "FSKI010 (8 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2824416,
+  1.0794883
+ ],
+ "dates": [
+  "2026-03-19"
+ ],
+ "photos": [
+  "20260319_143128.jpg",
+  "20260319_143031.jpg",
+  "20260319_143051.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "paint faded/chalky throughout; rust on base foot ring; paint chipped with rust spots on shaft top above ladder bar and on bracket",
+ "cond_note": "Much more weathered than neighbouring columns (143031, 143039, 143051). Ladder bar finials present both ends. Lantern shade glossy green, appears newer; slight soiling under shade. Column surrounded by planting.",
+ "cond_check": [
+  "overall"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 247
+}

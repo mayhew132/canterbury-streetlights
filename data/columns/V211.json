@@ -1,0 +1,47 @@
+{
+ "id": "V211",
+ "visits": [
+  211
+ ],
+ "street": "Riverside Walk",
+ "asset": "FRGS015",
+ "owner": "KCC",
+ "candidates": [
+  "FRGS015"
+ ],
+ "candidate_distances": "FRGS015 (4 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "\"?5\" (hand-painted)",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2854916,
+  1.084535
+ ],
+ "dates": [
+  "2026-03-18"
+ ],
+ "photos": [
+  "20260318_132746.jpg",
+  "20260318_132656.jpg",
+  "20260318_132705.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "algae/green staining on base front; dulled paint; dirt and rust spots on lantern shade underside",
+ "cond_note": "very dark finish under blue sky; reads as black with no clear green cast; both ladder bar finials present",
+ "cond_check": [
+  "colour"
+ ],
+ "cond_second_opinion": "colour=Moss Green",
+ "outcome": "",
+ "order": 205
+}

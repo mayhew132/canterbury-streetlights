@@ -1,0 +1,47 @@
+{
+ "id": "V144",
+ "visits": [
+  144
+ ],
+ "street": "Marlowe Avenue",
+ "asset": "FMBL005",
+ "owner": "KCC",
+ "candidates": [
+  "FMBL005"
+ ],
+ "candidate_distances": "FMBL005 (9 m)",
+ "confidence": "Probable",
+ "basis": "Painted number, partly legible + GPS",
+ "painted": "MBL00?",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2762083,
+  1.0782283
+ ],
+ "dates": [
+  "2026-03-08"
+ ],
+ "photos": [
+  "20260308_134925.jpg",
+  "20260308_134841.jpg",
+  "20260308_134906.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "minor rust spots and chips on ladder bar, capital and spigot (134916); some dulling and minor scuffs on base",
+ "cond_note": "Comparatively well-maintained: paint coat intact on base and shaft. Paint is a dark blue-green/teal. Both ladder bar acorns present. Bracket in shadow against branches but looks sound. Modern lantern under shade intact.",
+ "cond_check": [
+  "colour"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 141
+}

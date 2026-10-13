@@ -1,0 +1,50 @@
+{
+ "id": "V190",
+ "visits": [
+  190,
+  5
+ ],
+ "street": "Burgate",
+ "asset": "FBJT004",
+ "owner": "KCC",
+ "candidates": [
+  "FBJT004"
+ ],
+ "candidate_distances": "FBJT004 (painted; 3 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "F?, FBJT004",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1-alt",
+ "gps": [
+  51.2783583,
+  1.0836316
+ ],
+ "dates": [
+  "2026-02-17",
+  "2026-03-12"
+ ],
+ "photos": [
+  "20260312_132816.jpg",
+  "20260312_132733.jpg",
+  "20260312_132756.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Missing",
+  "colour": "Moss Green"
+ },
+ "defects": "door side of base covered by a plain curved sheet plate held on with a strap, gap/opening at its lower edge; scratches/scuffs on base; minor rust spots at foot",
+ "cond_note": "Dark green, reasonably recent paint. Fluted base visible on other side (132742). Ladder bar finials present both ends (132756). 'No loading' sign fixed to shaft. Overall otherwise sound.",
+ "cond_check": [
+  "door",
+  "overall"
+ ],
+ "cond_second_opinion": "door=Present",
+ "outcome": "",
+ "order": 4
+}

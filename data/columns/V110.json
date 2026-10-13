@@ -1,0 +1,45 @@
+{
+ "id": "V110",
+ "visits": [
+  110
+ ],
+ "street": "Zealand Road",
+ "asset": "FZAA012",
+ "owner": "KCC",
+ "candidates": [
+  "FZAA012"
+ ],
+ "candidate_distances": "FZAA012 (painted; 6 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "ZAA012",
+ "note": "Small-door pattern (A4)",
+ "confirmed_by": "",
+ "variant": "A4",
+ "gps": [
+  51.2707483,
+  1.0758516
+ ],
+ "dates": [
+  "2026-03-04"
+ ],
+ "photos": [
+  "20260304_122854.jpg",
+  "20260304_122810.jpg",
+  "20260304_122832.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "widespread flaking/peeling paint with rust and exposed undercoat over base, door and lower shaft (122810, 122824); peeling paint on shaft collar below ladder bar (122832); lichen on ladder bar",
+ "cond_note": "Both ladder bar acorns present. Metal strap bands around base and shaft, signs attached. Modern lantern under shade intact.",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 107
+}

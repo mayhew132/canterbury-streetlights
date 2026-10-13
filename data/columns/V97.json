@@ -1,0 +1,47 @@
+{
+ "id": "V97",
+ "visits": [
+  97
+ ],
+ "street": "New Street",
+ "asset": "FNBI006",
+ "owner": "KCC",
+ "candidates": [
+  "FNBI006"
+ ],
+ "candidate_distances": "FNBI006 (painted; 22 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "NBI006",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.282285,
+  1.0704466
+ ],
+ "dates": [
+  "2026-03-03"
+ ],
+ "photos": [
+  "20260303_125408.jpg",
+  "20260303_125412.jpg",
+  "20260303_125437.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Not seen",
+  "colour": "Black"
+ },
+ "defects": "rust and flaking on ladder bar and upper column; minor chips on base",
+ "cond_note": "Only fluted (non-door) side of base photographed (125408); door side faces the wall. Ladder bar finials present both ends (125437). Parking sign strapped on; stencilled 'NBI006'.",
+ "cond_check": [
+  "paint"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 94
+}

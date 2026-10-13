@@ -1,0 +1,48 @@
+{
+ "id": "V242",
+ "visits": [
+  242
+ ],
+ "street": "The Causeway",
+ "asset": "FTBV001",
+ "owner": "KCC",
+ "candidates": [
+  "FTBV001"
+ ],
+ "candidate_distances": "FTBV001 (painted; 6 m)",
+ "confidence": "Strong",
+ "basis": "Painted number, partly legible (one match nearby)",
+ "painted": "TBV0?1",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2828416,
+  1.0790266
+ ],
+ "dates": [
+  "2026-03-19"
+ ],
+ "photos": [
+  "20260319_134338.jpg",
+  "20260319_134246.jpg",
+  "20260319_134311.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "crazed and flaking paint on upper shaft and capital (134311); red primer showing on ladder bar and bracket collar (134321); paint loss at door edge and base collar (134256); rust staining on lantern shade",
+ "cond_note": "right ladder bar end cut off at frame edge in arm view (134311) - left finial present; right not verified | Adjudicated: left acorn present; right end out of frame (134311) - not verified",
+ "cond_check": [
+  "paint",
+  "structure"
+ ],
+ "cond_second_opinion": "paint=Good;structure=Damaged",
+ "outcome": "",
+ "order": 235
+}

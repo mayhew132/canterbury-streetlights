@@ -1,0 +1,45 @@
+{
+ "id": "V70",
+ "visits": [
+  70
+ ],
+ "street": "Havelock Street",
+ "asset": "FHBV008",
+ "owner": "KCC",
+ "candidates": [
+  "FHBV008"
+ ],
+ "candidate_distances": "FHBV008 (painted; 14 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "?8, HBV008",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2808647,
+  1.0877499
+ ],
+ "dates": [
+  "2026-02-24"
+ ],
+ "photos": [
+  "20260224_134525.jpg",
+  "20260224_134440.jpg",
+  "20260224_134609.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "rust patches on upper column above ladder bar; lichen and minor flaking on bracket and collar",
+ "cond_note": "Door with cypher present (134440). Stencilled 'HBV008' on shaft; no-waiting sign strapped on. Ladder bar finials present both ends (134453).",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 67
+}

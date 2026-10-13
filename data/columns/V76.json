@@ -1,0 +1,48 @@
+{
+ "id": "V76",
+ "visits": [
+  76
+ ],
+ "street": "Westgate Grove",
+ "asset": "FWCU002",
+ "owner": "KCC",
+ "candidates": [
+  "FWCU002"
+ ],
+ "candidate_distances": "FWCU002 (3 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2811266,
+  1.074385
+ ],
+ "dates": [
+  "2026-03-02"
+ ],
+ "photos": [
+  "20260302_151734.jpg",
+  "20260302_151741.jpg",
+  "20260302_151753.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "numerous chips and flaking exposing red primer on base, collars and lower shaft; rust on plinth; sticker residue on shaft",
+ "cond_note": "Very dark green reading near-black; green cast visible in sunlit areas. Door with cypher present, steel strap round base (151734). Round sign strapped to shaft; stickers on lower shaft (151753). Ladder bar finials present both ends (151741).",
+ "cond_check": [
+  "colour",
+  "paint"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 73
+}

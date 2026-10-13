@@ -1,0 +1,47 @@
+{
+ "id": "V123",
+ "visits": [
+  123
+ ],
+ "street": "Guildford Road",
+ "asset": "FGEU001",
+ "owner": "KCC",
+ "candidates": [
+  "FGEU001"
+ ],
+ "candidate_distances": "FGEU001 (4 m)",
+ "confidence": "Probable",
+ "basis": "Painted number, partly legible + GPS",
+ "painted": "GE????",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1-alt",
+ "gps": [
+  51.2718566,
+  1.0742049
+ ],
+ "dates": [
+  "2026-03-04"
+ ],
+ "photos": [
+  "20260304_125643.jpg",
+  "20260304_125623.jpg",
+  "20260304_125631.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Damaged",
+  "lantern": "None",
+  "door": "Missing",
+  "colour": "Moss Green"
+ },
+ "defects": "column truncated above the shaft: ladder bar, swan-neck bracket and lantern all missing, top capped (125643); access door missing with internal cut-out/electrics exposed (125623); rust showing through paint on base, fluting and capital; flyer/poster cable-tied to shaft",
+ "cond_note": "Redundant column standing beside a modern black replacement column (125649), which carries the light. Heavy graffiti on fence behind and on adjacent feeder pillar (not on column). Not graded Missing because the base and most of the shaft remain standing.",
+ "cond_check": [
+  "overall"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 120
+}

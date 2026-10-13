@@ -1,0 +1,46 @@
+{
+ "id": "V172",
+ "visits": [
+  172
+ ],
+ "street": "St Margaret's Street",
+ "asset": "FSIY002",
+ "owner": "KCC",
+ "candidates": [
+  "FSIY002",
+  "FSIY003"
+ ],
+ "candidate_distances": "FSIY002 (5 m); FSIY003 (17 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2782133,
+  1.0799533
+ ],
+ "dates": [
+  "2026-03-08"
+ ],
+ "photos": [
+  "20260308_145957.jpg",
+  "20260308_145905.jpg",
+  "20260308_145922.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "paint faded and chalky with widespread red-brown rust staining on base; chips on shaft above ladder bar",
+ "cond_note": "metal strap bands round base (145905); sign fixed to shaft; both ladder bar finials present (145922)",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 169
+}

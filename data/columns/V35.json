@@ -1,0 +1,45 @@
+{
+ "id": "V35",
+ "visits": [
+  35
+ ],
+ "street": "Edward Road",
+ "asset": "FEBA004",
+ "owner": "KCC",
+ "candidates": [
+  "FEBA004"
+ ],
+ "candidate_distances": "FEBA004 (painted; 26 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "EBA004",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2761216,
+  1.0886083
+ ],
+ "dates": [
+  "2026-02-24"
+ ],
+ "photos": [
+  "20260224_123855.jpg",
+  "20260224_123805.jpg",
+  "20260224_123811.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "minor chips and small rust spots; rust on lantern carrier block at top of swan-neck",
+ "cond_note": "Door with cypher (123805). Ladder bar finials present (123811). Parking sign on shaft; column inside fenced site edge.",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 32
+}

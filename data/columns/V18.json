@@ -1,0 +1,48 @@
+{
+ "id": "V18",
+ "visits": [
+  18
+ ],
+ "street": "Dover Street",
+ "asset": "FDCX009",
+ "owner": "KCC",
+ "candidates": [
+  "FDCX009"
+ ],
+ "candidate_distances": "FDCX009 (6 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2750516,
+  1.08539
+ ],
+ "dates": [
+  "2026-02-21"
+ ],
+ "photos": [
+  "20260221_131149.jpg",
+  "20260221_131022.jpg",
+  "20260221_131029.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Other"
+ },
+ "defects": "paint extensively flaking on base, shaft and door, red primer and rust showing; ladder bar largely stripped to red primer; rust at foot",
+ "cond_note": "Painted blue-grey (could be heavily faded dark green). Door with cypher present (131022). Ladder bar ends appear present but image soft. Parking/no-waiting signs on shaft.",
+ "cond_check": [
+  "colour",
+  "structure"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 15
+}

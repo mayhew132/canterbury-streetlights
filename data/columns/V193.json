@@ -1,0 +1,49 @@
+{
+ "id": "V193",
+ "visits": [
+  193
+ ],
+ "street": "Burgate",
+ "asset": "FBJT010",
+ "owner": "KCC",
+ "candidates": [
+  "FBJT010"
+ ],
+ "candidate_distances": "FBJT010 (4 m); FBJT011 (14 m)",
+ "confidence": "Confirmed",
+ "basis": "Confirmed by Guy (asset confirmation sheet, Oct 2026)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "Guy (asset sheet, Oct 2026)",
+ "variant": "A1-alt",
+ "gps": [
+  51.2790483,
+  1.0816216
+ ],
+ "dates": [
+  "2026-03-12"
+ ],
+ "photos": [
+  "20260312_133435.jpg",
+  "20260312_133344.jpg",
+  "20260312_133409.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Damaged",
+  "door": "Missing",
+  "colour": "Black"
+ },
+ "defects": "extensive flaking paint with red primer showing on base collars and fluting; door area covered by a galvanised metal plate; lantern shade edge bent/drooping on left side; scuffed bowl",
+ "cond_note": "blue-black finish (blue cast, no green) (133403); plate over door (133344); both ladder bar finials present (133409); shade damage in 133418",
+ "cond_check": [
+  "colour",
+  "door",
+  "lantern"
+ ],
+ "cond_second_opinion": "lantern=Intact",
+ "outcome": "",
+ "order": 187
+}

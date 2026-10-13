@@ -1,0 +1,47 @@
+{
+ "id": "V77",
+ "visits": [
+  77
+ ],
+ "street": "Whitehall Road",
+ "asset": "FWDS001",
+ "owner": "KCC",
+ "candidates": [
+  "FWDS001"
+ ],
+ "candidate_distances": "FWDS001 (painted; 10 m)",
+ "confidence": "Confirmed",
+ "basis": "Painted asset number (full)",
+ "painted": "WDS001",
+ "note": "Small-door pattern (A4)",
+ "confirmed_by": "",
+ "variant": "A4",
+ "gps": [
+  51.281335,
+  1.073995
+ ],
+ "dates": [
+  "2026-03-02"
+ ],
+ "photos": [
+  "20260302_151904.jpg",
+  "20260302_151911.jpg",
+  "20260302_151908.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "widespread flaking exposing pink/white undercoats on base and shaft; lichen and moss growth on base; rust staining",
+ "cond_note": "Small framed door with cypher present (151904). Dog-fouling signs fixed to shaft; faded painted number on shaft (151908). Ladder bar ends appear complete (151911) but silhouetted.",
+ "cond_check": [
+  "structure"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 74
+}

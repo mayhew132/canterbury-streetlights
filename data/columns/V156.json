@@ -1,0 +1,45 @@
+{
+ "id": "V156",
+ "visits": [
+  156
+ ],
+ "street": "Stour Street",
+ "asset": "FSMV017",
+ "owner": "KCC",
+ "candidates": [
+  "FSMV017"
+ ],
+ "candidate_distances": "FSMV017 (painted; 12 m)",
+ "confidence": "Strong",
+ "basis": "Painted number, partly legible (one match nearby)",
+ "painted": "S?V017",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2768366,
+  1.0753533
+ ],
+ "dates": [
+  "2026-03-08"
+ ],
+ "photos": [
+  "20260308_141644.jpg",
+  "20260308_141602.jpg",
+  "20260308_141612.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Not seen",
+  "colour": "Moss Green"
+ },
+ "defects": "lower base heavily rusted; rust/paint loss along top of ladder bar and on bracket",
+ "cond_note": "base largely hidden by conifer behind railings (141602); both ladder bar finials present (141612)",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 153
+}

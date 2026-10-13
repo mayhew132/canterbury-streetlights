@@ -1,0 +1,43 @@
+{
+ "id": "V283",
+ "visits": [
+  283
+ ],
+ "street": "Riverside path (near Westwood Drive)",
+ "asset": "00132685",
+ "owner": "CCC",
+ "candidates": [],
+ "candidate_distances": "",
+ "confidence": "Confirmed",
+ "basis": "Confirmed by Guy: City Council asset (Confirm system, not adopted by KCC)",
+ "painted": "",
+ "note": "City Council riverside path column (per Guy), so not in the KCC extract",
+ "confirmed_by": "Guy (asset sheet, Oct 2026)",
+ "variant": "A1",
+ "gps": [
+  51.2870466,
+  1.0887583
+ ],
+ "dates": [
+  "2026-05-01"
+ ],
+ "photos": [
+  "20260501_122401.jpg",
+  "20260501_122333.jpg",
+  "20260501_122339.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "extensive peeling exposing red/orange primer on base collars, shaft and below ladder bar; rust at foot",
+ "cond_note": "Council PSPO notice fixed to shaft (122336, 122339); door with cypher (122333)",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 274
+}

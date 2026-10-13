@@ -1,0 +1,48 @@
+{
+ "id": "V81",
+ "visits": [
+  81
+ ],
+ "street": "Orchard Street",
+ "asset": "FOBV001",
+ "owner": "KCC",
+ "candidates": [
+  "FOBV001",
+  "FSHL008"
+ ],
+ "candidate_distances": "FOBV001 (7 m); FSHL008 (19 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2818316,
+  1.0705333
+ ],
+ "dates": [
+  "2026-03-02"
+ ],
+ "photos": [
+  "20260302_153501.jpg",
+  "20260302_153507.jpg",
+  "20260302_153530.jpg"
+ ],
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "patches of paint loss exposing red primer on base plinth and fluting (153501, 153530)",
+ "cond_note": "Door with cypher present, steel strap round base. Ladder bar finials present both ends (153507). Sign panel strapped to shaft. Upper column glossy and sound.",
+ "cond_check": [
+  "paint"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 78
+}

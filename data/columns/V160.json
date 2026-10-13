@@ -1,0 +1,47 @@
+{
+ "id": "V160",
+ "visits": [
+  160
+ ],
+ "street": "Church Lane",
+ "asset": "FCFO004",
+ "owner": "KCC",
+ "candidates": [
+  "FCFO004"
+ ],
+ "candidate_distances": "FCFO004 (4 m)",
+ "confidence": "Likely",
+ "basis": "GPS (nearest column)",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "A1",
+ "gps": [
+  51.2761983,
+  1.0740049
+ ],
+ "dates": [
+  "2026-03-08"
+ ],
+ "photos": [
+  "20260308_142252.jpg",
+  "20260308_142218.jpg",
+  "20260308_142224.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
+ "defects": "widespread rust and red primer showing on base, ladder bar and bracket",
+ "cond_note": "very dark finish with blue-grey cast, may be heavily weathered dark green; fingerpost signs clamped to shaft; both ladder bar finials present (142224)",
+ "cond_check": [
+  "colour"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 157
+}

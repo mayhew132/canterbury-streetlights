@@ -1,0 +1,47 @@
+{
+ "id": "V29",
+ "visits": [
+  29
+ ],
+ "street": "St Georges Terrace",
+ "asset": "FSHW006",
+ "owner": "KCC",
+ "candidates": [
+  "FSHW006"
+ ],
+ "candidate_distances": "FSHW006 (49 m)",
+ "confidence": "Probable",
+ "basis": "Painted number, partly legible + GPS",
+ "painted": "SHW0??, SH????",
+ "note": "Fluted base (A2), per Guy",
+ "confirmed_by": "",
+ "variant": "A2",
+ "gps": [
+  51.2760849,
+  1.081787
+ ],
+ "dates": [
+  "2026-02-21"
+ ],
+ "photos": [
+  "20260221_132921.jpg",
+  "20260221_132903.jpg",
+  "20260221_132910.jpg"
+ ],
+ "condition": {
+  "overall": "Poor",
+  "paint": "Poor",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
+ "defects": "paint widely flaking with extensive rust on fluted base and shaft; hole in base fluting; redundant sign bracket clamped to shaft",
+ "cond_note": "A2 fluted base; no access door visible in 132903 (round hole only). Ladder bar finials present (132910). | Adjudicated: door seen on second check: Blue-green/teal paint. Both ladder bar finials present (132910). Fluted door wit",
+ "cond_check": [
+  "door"
+ ],
+ "cond_second_opinion": "",
+ "outcome": "",
+ "order": 26
+}
