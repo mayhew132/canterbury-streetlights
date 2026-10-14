@@ -95,6 +95,16 @@ details.panel[open] summary{margin-bottom:10px}
 .seg button{flex:1;font-size:12.5px;padding:7px 4px;border:0;background:transparent;cursor:pointer;color:var(--sec);border-radius:7px}
 .seg button.on{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
 .about .small p{margin:0 0 9px}
+.about h3{font-size:12.5px;font-weight:600;margin:14px 0 5px;color:#2b2a27}
+.about h3:first-child{margin-top:4px}
+.about ul{list-style:none;margin:0 0 9px;padding:0}
+.about .sure li{padding:5px 0;border-top:1px solid #eeebe4;display:grid;grid-template-columns:76px 1fr;gap:6px}
+.about .sure li:first-child{border-top:0}
+.about .sure b{font-weight:600}
+.about .dz li{display:flex;gap:10px;align-items:center;padding:5px 0}
+.about .dz img{width:26px;height:35px;object-fit:cover;border-radius:4px;flex:none;background:#161512}
+.about .dz b{display:block}
+
 .hint .lg{display:inline-flex;align-items:center;gap:5px;margin-right:10px}
 @media (max-width:760px){#toggle,#homeFab{top:auto!important;bottom:30px}#side.open~#toggle,#side.open~#homeFab{bottom:30px}}
 .sfoot{margin:14px 20px 0;font-size:12px;color:var(--mut);line-height:1.5}
@@ -229,11 +239,32 @@ details.panel[open] summary{margin-bottom:10px}
     <details class="panel about">
       <summary><h2>About this atlas</h2></summary>
       <div class="small">
-        <p>Each point is one lighting column. Where we are reasonably sure of its Kent County Council asset number, the point sits at KCC's recorded position; otherwise it sits where the survey photograph was taken.</p>
-        <p><b>How sure is the asset number?</b> <b>Confirmed</b>: the number painted on the column was read in full. <b>Strong</b>: partly legible, and only one asset fits. <b>Probable</b>: a partial or hand-painted number, or the column's place in a numbered run. <b>Likely</b>: the nearest KCC column to where the photo was taken. <b>Uncertain</b>: several possibilities.</p>
-        <p>The riverside path columns near Westwood Drive and Ambleside Place belong to Canterbury City Council rather than KCC, and carry the City Council's own reference, shown with a CCC prefix.</p>
-        <p><b>Designs.</b> A1 Biggleston standard, with the CC monogram on the door. A2 fluted drum, without the monogram. A4 small-door pattern, with a short framed door and fluting all round the base. B1 and B2 are DW Windsor reproductions. Cut-down stubs and modern replacements are shown where they stand in place of an original.</p>
-        <p>Asset numbers come from KCC's inventory of 26 September 2026 and may occasionally be wrong. Faces and number plates in the photographs have been blurred.</p>
+        <h3>What the map shows</h3>
+        <p>Each dot is one street lighting column that has been photographed. Select a dot to see its photos, design and condition.</p>
+
+        <h3>Which column is which?</h3>
+        <p>Kent County Council gives every column an asset number. We’ve matched each one we photographed as best we can:</p>
+        <ul class="sure">
+          <li><b>Confirmed</b><span>the full number was readable on the column</span></li>
+          <li><b>Strong</b><span>part of the number was readable, and only one column fits</span></li>
+          <li><b>Probable</b><span>worked out from a faded or hand-painted number, or its place in a numbered row</span></li>
+          <li><b>Likely</b><span>the KCC column closest to where the photo was taken</span></li>
+          <li><b>Uncertain</b><span>it could be one of several, so the dot is dashed</span></li>
+        </ul>
+        <p>Once we have a match, the dot sits on KCC’s mapped position. Uncertain columns sit where the photo was taken instead, so they may be a few metres out.</p>
+
+        <h3>The designs</h3>
+        <ul class="dz">
+          <li><img src="media/variants/A1.jpg" alt=""><span><b>Biggleston standard (A1)</b> the classic Canterbury column, with the city’s CC monogram on the door</span></li>
+          <li><img src="media/variants/A2.jpg" alt=""><span><b>Fluted drum (A2)</b> a similar column without the monogram</span></li>
+          <li><img src="media/variants/A4.jpg" alt=""><span><b>Small-door (A4)</b> a short framed door, with fluting all round the base</span></li>
+          <li><img src="media/variants/B1.jpg" alt=""><span><b>Reproductions (B1, B2)</b> modern heritage-style columns by DW Windsor</span></li>
+          <li><img src="media/variants/X-stub.jpg" alt=""><span><b>Stubs and replacements</b> shown where they now stand in place of an original</span></li>
+        </ul>
+
+        <h3>Good to know</h3>
+        <p>The riverside path columns near Westwood Drive and Ambleside Place belong to Canterbury City Council, not KCC, so their numbers start with CCC.</p>
+        <p>Asset numbers come from KCC’s list of 26 September 2026 and may occasionally be wrong. Faces and number plates in the photos have been blurred.</p>
       </div>
     </details>
 
