@@ -15,7 +15,7 @@
  "painted": "SHW005",
  "note": "",
  "confirmed_by": "",
- "variant": "A1",
+ "variant": "A4",
  "gps": [
   51.2761345,
   1.0818749
@@ -41,5 +41,6 @@
  "cond_check": [],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 25
+ "order": 25,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
