@@ -4,22 +4,21 @@
   275
  ],
  "street": "Roper Road",
- "asset": "FREQ016",
+ "asset": "FCNO001",
  "owner": "KCC",
  "candidates": [
-  "FREQ016",
   "FCNO001"
  ],
  "candidate_distances": "FREQ016 (17 m); FCNO001 (1 m)",
- "confidence": "Uncertain",
+ "confidence": "Confirmed",
  "basis": "GPS (one asset per visit per day)",
  "painted": "F??????",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "B2",
  "gps": [
-  51.2857666,
-  1.0758533
+  51.285769,
+  1.075839
  ],
  "dates": [
   "2026-04-02"
@@ -42,5 +41,6 @@
  "cond_check": [],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 267
+ "order": 267,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
