@@ -4,22 +4,21 @@
   122
  ],
  "street": "Guildford Road",
- "asset": "FGEU003",
+ "asset": "FGEU002",
  "owner": "KCC",
  "candidates": [
-  "FGEU003",
-  "FGEU004"
+  "FGEU002"
  ],
  "candidate_distances": "FGEU003 (11 m); FGEU004 (19 m)",
- "confidence": "Uncertain",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "Small-door pattern (A4)",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A4",
  "gps": [
-  51.2711283,
-  1.0745883
+  51.271561,
+  1.0743
  ],
  "dates": [
   "2026-03-04"
@@ -42,5 +41,6 @@
  "cond_check": [],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 119
+ "order": 119,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
