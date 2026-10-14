@@ -10,12 +10,12 @@
   "FVBC003"
  ],
  "candidate_distances": "FVBC003 (4 m)",
- "confidence": "Likely",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "",
- "confirmed_by": "",
- "variant": "A1",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
+ "variant": "A4",
  "gps": [
   51.272295,
   1.0708083
@@ -43,5 +43,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 126
+ "order": 126,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
