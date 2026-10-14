@@ -10,15 +10,15 @@
   "FNBI001"
  ],
  "candidate_distances": "FNBI001 (painted; 31 m)",
- "confidence": "Strong",
+ "confidence": "Confirmed",
  "basis": "Painted number, partly legible (one match nearby)",
  "painted": "N?I001",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A1",
  "gps": [
-  51.2830429,
-  1.069172
+  51.28332,
+  1.069171
  ],
  "dates": [
   "2026-03-03"
@@ -44,5 +44,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 99
+ "order": 99,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
