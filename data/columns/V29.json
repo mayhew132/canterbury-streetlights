@@ -10,15 +10,15 @@
   "FSHW006"
  ],
  "candidate_distances": "FSHW006 (49 m)",
- "confidence": "Probable",
+ "confidence": "Confirmed",
  "basis": "Painted number, partly legible + GPS",
  "painted": "SHW0??, SH????",
  "note": "Fluted base (A2), per Guy",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A2",
  "gps": [
-  51.2760849,
-  1.081787
+  51.275904,
+  1.081139
  ],
  "dates": [
   "2026-02-21"
