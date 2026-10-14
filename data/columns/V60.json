@@ -7,16 +7,14 @@
  "asset": "FMFR012",
  "owner": "KCC",
  "candidates": [
-  "FMFR012",
-  "FMFR011",
-  "FMFR013"
+  "FMFR012"
  ],
  "candidate_distances": "FMFR012 (8 m); FMFR011 (15 m); FMFR013 (20 m)",
- "confidence": "Uncertain",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A1",
  "gps": [
   51.279924,
