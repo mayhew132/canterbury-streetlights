@@ -4,21 +4,21 @@
   127
  ],
  "street": "Cogans Terrace",
- "asset": "FCIN001",
+ "asset": "FVBC004",
  "owner": "KCC",
  "candidates": [
-  "FCIN001"
+  "FVBC004"
  ],
  "candidate_distances": "FCIN001 (16 m); FVBC004 (12 m)",
  "confidence": "Confirmed",
  "basis": "Confirmed by Guy (asset confirmation sheet, Oct 2026)",
  "painted": "",
  "note": "Small-door pattern (A4)",
- "confirmed_by": "Guy (asset sheet, Oct 2026)",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A4",
  "gps": [
-  51.2720333,
-  1.0708783
+  51.272035,
+  1.070834
  ],
  "dates": [
   "2026-03-04"
@@ -43,5 +43,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 124
+ "order": 124,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
