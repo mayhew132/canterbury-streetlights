@@ -10,15 +10,15 @@
   "FRGS004"
  ],
  "candidate_distances": "FRGS004 (6 m)",
- "confidence": "Likely",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "Close-ups at 13:46 and the whole view at 13:47 are one column (door missing)",
- "confirmed_by": "",
- "variant": "A1-alt",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
+ "variant": "A1",
  "gps": [
-  51.2835916,
-  1.0815533
+  51.283555,
+  1.08152
  ],
  "dates": [
   "2026-03-18"
@@ -44,5 +44,6 @@
  ],
  "cond_second_opinion": "paint=Poor",
  "outcome": "",
- "order": 216
+ "order": 216,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
