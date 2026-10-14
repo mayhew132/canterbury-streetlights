@@ -10,11 +10,11 @@
   "FSIY008"
  ],
  "candidate_distances": "FSIY008 (25 m)",
- "confidence": "Probable",
+ "confidence": "Confirmed",
  "basis": "Hand-painted number \"8\" on shaft + GPS",
  "painted": "\"8\" (hand-painted)",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A1",
  "gps": [
   51.2777633,
@@ -43,5 +43,6 @@
  ],
  "cond_second_opinion": "overall=Excellent",
  "outcome": "",
- "order": 167
+ "order": 167,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
