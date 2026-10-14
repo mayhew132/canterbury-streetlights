@@ -10,11 +10,11 @@
   "FDCX009"
  ],
  "candidate_distances": "FDCX009 (6 m)",
- "confidence": "Likely",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A4",
  "gps": [
   51.2750516,
