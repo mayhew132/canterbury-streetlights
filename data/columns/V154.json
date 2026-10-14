@@ -15,7 +15,7 @@
  "painted": "F, FSMV015",
  "note": "",
  "confirmed_by": "",
- "variant": "A1",
+ "variant": "A4",
  "gps": [
   51.2771633,
   1.0756433
@@ -33,7 +33,7 @@
   "paint": "Excellent",
   "structure": "Intact",
   "lantern": "Intact",
-  "door": "Not seen",
+  "door": "Present",
   "colour": "Moss Green"
  },
  "defects": "",
@@ -41,5 +41,6 @@
  "cond_check": [],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 151
+ "order": 151,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
