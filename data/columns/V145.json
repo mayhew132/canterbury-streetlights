@@ -10,11 +10,11 @@
   "FSJU001"
  ],
  "candidate_distances": "FSJU001 (15 m)",
- "confidence": "Likely",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "FSJU001 is also the top candidate for visit(s) 146 on the same day, so at most one is right; Small-door pattern (A4) confirmed by Guy",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A4",
  "gps": [
   51.276505,
@@ -41,5 +41,6 @@
  "cond_check": [],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 142
+ "order": 142,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
