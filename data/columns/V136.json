@@ -10,15 +10,15 @@
   "FNBJ002"
  ],
  "candidate_distances": "FNBJ002 (9 m)",
- "confidence": "Likely",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "",
- "confirmed_by": "",
- "variant": "A1-alt",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
+ "variant": "A4",
  "gps": [
-  51.272955,
-  1.0720233
+  51.272877,
+  1.071972
  ],
  "dates": [
   "2026-03-04"
@@ -43,5 +43,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 133
+ "order": 133,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
