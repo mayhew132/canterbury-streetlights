@@ -10,12 +10,12 @@
   "FRGS005"
  ],
  "candidate_distances": "FRGS005 (2 m)",
- "confidence": "Probable",
+ "confidence": "Confirmed",
  "basis": "Painted number, partly legible + GPS",
  "painted": "FRGS???",
  "note": "",
- "confirmed_by": "",
- "variant": "A1-alt",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
+ "variant": "A4",
  "gps": [
   51.2836783,
   1.0819016
@@ -43,5 +43,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 215
+ "order": 215,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
