@@ -10,15 +10,15 @@
   "FCGB002"
  ],
  "candidate_distances": "FCGB002 (6 m)",
- "confidence": "Probable",
+ "confidence": "Confirmed",
  "basis": "Painted number, partly legible + GPS",
  "painted": "C?B00?",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A1",
  "gps": [
-  51.2827415,
-  1.071682
+  51.282776,
+  1.071612
  ],
  "dates": [
   "2026-03-03"
@@ -34,7 +34,7 @@
   "structure": "Intact",
   "lantern": "Intact",
   "door": "Present",
-  "colour": "Other"
+  "colour": "Black"
  },
  "defects": "heavy rust on capital beneath ladder bar and on ladder bar arms (131236); base paint faded but largely intact",
  "cond_note": "Slate blue / blue-grey paint. Both ladder bar acorns present. Parking sign on shaft. Modern lantern under shade intact.",
@@ -44,5 +44,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 105
+ "order": 105,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
