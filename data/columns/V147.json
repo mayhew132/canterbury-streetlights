@@ -10,15 +10,15 @@
   "FSIH005"
  ],
  "candidate_distances": "FSIH005 (50 m)",
- "confidence": "Probable",
+ "confidence": "Confirmed",
  "basis": "Painted number, partly legible + GPS",
  "painted": "SIH00?",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A1",
  "gps": [
-  51.27689,
-  1.0779683
+  51.276948,
+  1.077261
  ],
  "dates": [
   "2026-03-08"
@@ -41,5 +41,6 @@
  "cond_check": [],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 144
+ "order": 144,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
