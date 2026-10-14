@@ -17,7 +17,7 @@ ROOT = Path(__file__).resolve().parent.parent
 COLS = ROOT / 'data' / 'columns'
 KCC = ROOT / 'data' / 'kcc.json'
 
-VARIANTS = {'A1', 'A1-alt', 'A2', 'A3', 'A4', 'B1', 'B2', 'C', 'X-stub', 'X-mod', 'U'}
+VARIANTS = {'A1', 'A2', 'A3', 'A4', 'B1', 'B2', 'C', 'X-stub', 'X-mod', 'U'}
 CONF_ORDER = ['Confirmed', 'Strong', 'Probable', 'Likely', 'Uncertain', 'No match']
 ASSET_OK = {'Confirmed', 'Strong', 'Probable', 'Likely'}   # secure enough to sit at the KCC position
 COND = {
