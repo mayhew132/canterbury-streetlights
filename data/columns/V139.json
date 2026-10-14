@@ -10,15 +10,15 @@
   "FIAX002"
  ],
  "candidate_distances": "FIAX002 (10 m)",
- "confidence": "Likely",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "",
- "confirmed_by": "",
- "variant": "A1",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
+ "variant": "A4",
  "gps": [
-  51.2724033,
-  1.0727133
+  51.272474,
+  1.072626
  ],
  "dates": [
   "2026-03-04"
@@ -43,5 +43,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 136
+ "order": 136,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
