@@ -227,7 +227,8 @@ function vprev(im,on){const p=document.getElementById('vprev');if(!on){p.style.d
 document.addEventListener('click',()=>{const p=document.getElementById('vprev');if(p)p.style.display='none';});
 function buildFilters(){
  const fv=document.getElementById('fvar');
- fv.innerHTML=Object.entries(VARS).map(([k,v])=>`<label class="opt"><input type="checkbox" data-var="${k}" checked><span class="sw" style="background:${v.c}"></span>${VIMG.has(k)?`<img class="vimg" src="media/variants/${k}.jpg" alt="" data-v="${k}">`:'<span class="vimg none"></span>'}${esc(v.name)}<span class="n" data-n-var="${k}"></span></label>`).join('');
+ const hasU=markers.some(m=>m.feature.properties.variant==='U');
+ fv.innerHTML=Object.entries(VARS).filter(([k])=>k!=='U'||hasU).map(([k,v])=>`<label class="opt"><input type="checkbox" data-var="${k}" checked><span class="sw" style="background:${v.c}"></span>${VIMG.has(k)?`<img class="vimg" src="media/variants/${k}.jpg" alt="" data-v="${k}">`:'<span class="vimg none"></span>'}${esc(v.name)}<span class="n" data-n-var="${k}"></span></label>`).join('');
  const fc=document.getElementById('fconf');
  fc.innerHTML=CONFS.map(k=>`<label class="opt"><input type="checkbox" data-conf="${k}" checked><span class="sw${HOLLOW.has(k)?' hollow':''}" style="background:#2a78d6"></span>${k}<span class="n" data-n-conf="${k}"></span></label>`).join('');
  document.getElementById('fcond').innerHTML=Object.entries(CONDS).map(([k,c])=>`<label class="opt"><input type="checkbox" data-cond="${k}" checked><span class="sw" style="background:${c}"></span>${k}<span class="n" data-n-cond="${k}"></span></label>`).join('');
