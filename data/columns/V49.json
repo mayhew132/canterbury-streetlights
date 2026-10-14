@@ -30,7 +30,7 @@
   "20260224_130816.jpg"
  ],
  "condition": {
-  "overall": "Poor",
+  "overall": "Good",
   "paint": "Poor",
   "structure": "Intact",
   "lantern": "Intact",
@@ -42,5 +42,6 @@
  "cond_check": [],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 46
+ "order": 46,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
