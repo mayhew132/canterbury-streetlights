@@ -16,10 +16,10 @@
  "painted": "F?, FBJT004",
  "note": "",
  "confirmed_by": "",
- "variant": "A1-alt",
+ "variant": "A1",
  "gps": [
-  51.2783583,
-  1.0836316
+  51.278358,
+  1.083632
  ],
  "dates": [
   "2026-02-17",
@@ -46,5 +46,6 @@
  ],
  "cond_second_opinion": "door=Present",
  "outcome": "",
- "order": 4
+ "order": 4,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
