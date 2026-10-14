@@ -10,11 +10,11 @@
   "FLAD004"
  ],
  "candidate_distances": "FLAD004 (4 m)",
- "confidence": "Probable",
+ "confidence": "Confirmed",
  "basis": "Painted number, partly legible + GPS",
  "painted": "FL??0??",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A1",
  "gps": [
   51.2791016,
@@ -40,6 +40,6 @@
  "cond_note": "Glossy fresh green paint; both ladder bar finials present (131605); door panel with cypher in place (131558).",
  "cond_check": [],
  "cond_second_opinion": "",
- "outcome": "",
+ "outcome": "Confirmed on site",
  "order": 50
 }
