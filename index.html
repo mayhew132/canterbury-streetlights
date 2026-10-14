@@ -218,7 +218,7 @@ function apply(){
  document.getElementById('count').textContent=`Showing ${n} of ${markers.length} columns`;
  counts();return shown;
 }
-const VIMG=new Set(['A1','A2','A4','B1','B2']);
+const VIMG=new Set(['A1','A2','A4','B1','B2','X-stub','X-mod']);
 function vprev(im,on){const p=document.getElementById('vprev');if(!on){p.style.display='none';return;}
  const k=im.dataset.v;p.dataset.v=k;p.innerHTML=`<img src="media/variants/${k}-lg.jpg" alt=""><div>${esc(VARS[k].name)}</div>`;
  const r=im.getBoundingClientRect();p.style.display='block';const h=p.offsetHeight;
