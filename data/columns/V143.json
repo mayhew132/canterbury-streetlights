@@ -10,11 +10,11 @@
   "FMBL004"
  ],
  "candidate_distances": "FMBL004 (painted; 4 m)",
- "confidence": "Strong",
+ "confidence": "Confirmed",
  "basis": "Painted number, partly legible (one match nearby)",
  "painted": "M??004",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A1",
  "gps": [
   51.2763366,
@@ -44,5 +44,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 140
+ "order": 140,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
