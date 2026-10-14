@@ -11,15 +11,15 @@
   "FAAA001"
  ],
  "candidate_distances": "FAAA001 (painted; 9 m)",
- "confidence": "Strong",
+ "confidence": "Confirmed",
  "basis": "Painted number, partly legible (one match nearby)",
  "painted": "A??0?1, A???",
  "note": "Small-door pattern (A4)",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A4",
  "gps": [
-  51.272977,
-  1.089592
+  51.272907,
+  1.089642
  ],
  "dates": [
   "2026-02-06",
