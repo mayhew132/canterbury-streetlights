@@ -15,10 +15,10 @@
  "painted": "CFO005",
  "note": "",
  "confirmed_by": "",
- "variant": "A1-alt",
+ "variant": "A1",
  "gps": [
-  51.2759333,
-  1.07361
+  51.275944,
+  1.073688
  ],
  "dates": [
   "2026-03-08"
@@ -43,5 +43,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 158
+ "order": 158,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
