@@ -15,7 +15,7 @@
  "painted": "SHL004",
  "note": "",
  "confirmed_by": "",
- "variant": "A1-alt",
+ "variant": "A1",
  "gps": [
   51.2824266,
   1.0692666
@@ -30,7 +30,7 @@
  ],
  "condition": {
   "overall": "Poor",
-  "paint": "Good",
+  "paint": "Poor",
   "structure": "Damaged",
   "lantern": "None",
   "door": "Present",
@@ -43,5 +43,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 81
+ "order": 81,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
