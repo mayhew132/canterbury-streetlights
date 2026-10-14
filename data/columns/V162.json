@@ -15,7 +15,7 @@
  "painted": "SMV00?",
  "note": "",
  "confirmed_by": "",
- "variant": "A1-alt",
+ "variant": "A4",
  "gps": [
   51.2780916,
   1.0768816
@@ -33,7 +33,7 @@
   "paint": "Poor",
   "structure": "Intact",
   "lantern": "Intact",
-  "door": "Present",
+  "door": "Missing",
   "colour": "Moss Green"
  },
  "defects": "flaking paint on small base door panel; paint loss and rust/red primer at foot of base; drilled holes in shaft",
@@ -44,5 +44,6 @@
  ],
  "cond_second_opinion": "paint=Good",
  "outcome": "",
- "order": 159
+ "order": 159,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
