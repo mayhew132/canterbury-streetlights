@@ -4,22 +4,21 @@
   270
  ],
  "street": "Rheims Court",
- "asset": "FRGT003",
+ "asset": "FRGT004",
  "owner": "KCC",
  "candidates": [
-  "FRGT003",
   "FRGT004"
  ],
  "candidate_distances": "FRGT003 (8 m); FRGT004 (14 m)",
- "confidence": "Uncertain",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "B2",
  "gps": [
-  51.2824033,
-  1.0634599
+  51.282481,
+  1.063271
  ],
  "dates": [
   "2026-04-02"
@@ -45,5 +44,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 262
+ "order": 262,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
