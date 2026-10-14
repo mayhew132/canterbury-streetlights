@@ -30,6 +30,12 @@ a{color:var(--accent)}
 .btns{display:flex;gap:6px;margin-top:6px}
 .btns button{font-size:12px;padding:3px 8px;border:1px solid var(--line);background:#fff;border-radius:5px;cursor:pointer}
 #toggle{display:none}
+.topnav{display:flex;gap:8px;margin:-4px 0 12px;flex-wrap:wrap}
+.topnav a,.topnav button{display:inline-flex;align-items:center;gap:6px;font:inherit;font-size:12.5px;color:var(--sec);background:transparent;border:1px solid var(--line);border-radius:999px;padding:4px 11px;cursor:pointer;text-decoration:none;line-height:1.3}
+.topnav a:hover,.topnav button:hover{color:inherit;border-color:currentColor}
+.topnav svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+#homeFab{display:none}
+
 /* popup */
 .leaflet-popup-content{margin:12px 14px;width:300px!important}
 .pp h3{margin:0 0 2px;font-size:16px}
@@ -64,6 +70,7 @@ a{color:var(--accent)}
   #app{flex-direction:column}
   #side{width:100%;max-height:45%;border-right:0;border-bottom:1px solid var(--line);display:none}
   #side.open{display:block}
+  #homeFab{display:block;position:absolute;top:10px;left:126px;z-index:1000;background:#fff;border:1px solid #bbb;border-radius:6px;padding:7px 11px;font-size:14px;box-shadow:0 1px 4px rgba(0,0,0,.2)}
   #toggle{display:block;position:absolute;top:10px;left:56px;z-index:1000;background:#fff;border:1px solid #bbb;border-radius:6px;padding:7px 11px;font-size:14px;box-shadow:0 1px 4px rgba(0,0,0,.2)}
   .leaflet-popup-content{width:250px!important}
   .thumbs img{width:78px;height:104px}
@@ -119,6 +126,10 @@ a{color:var(--accent)}
 <div id="app">
   <aside id="side">
     <h1><button id="reintro" title="Back to the introduction">Canterbury’s Heritage Streetlights</button></h1>
+    <nav class="topnav" aria-label="Site">
+      <button type="button" id="navHome"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>Home</button>
+      <a href="https://streetlights-admin.guy-j-mayhew.workers.dev/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Administration</a>
+    </nav>
     <p class="sub">Historic and heritage-style lighting columns recorded in a photographic survey, February–May 2026. Click a column for photos and its likely KCC asset number.</p>
     <input id="q" type="search" placeholder="Search asset number, street or map ID…" aria-label="Search">
     <div id="count"></div>
@@ -144,6 +155,7 @@ a{color:var(--accent)}
   <div id="map"></div>
 </div>
 <button id="toggle" aria-controls="side">Filters</button>
+<button id="homeFab" type="button">Home</button>
 <div id="lb" role="dialog" aria-modal="true"><button class="x" aria-label="Close">×</button><button class="nav prev" aria-label="Previous">‹</button><img alt=""><div class="cap"></div><button class="nav next" aria-label="Next">›</button></div>
 <script src="lib/leaflet.js"></script>
 <script>
@@ -247,6 +259,7 @@ document.getElementById('toggle').onclick=()=>{document.getElementById('side').c
  if(skip){intro.classList.add('out','gone');vid.pause();}
  document.getElementById('go').onclick=hide;
  document.getElementById('reintro').onclick=show;
+ document.getElementById('navHome').onclick=show;document.getElementById('homeFab').onclick=show;
  document.addEventListener('keydown',e=>{if(!intro.classList.contains('gone')&&e.key==='Escape')hide();});
  window.introStats=gj=>{const f=gj.features;
   document.getElementById('ic').textContent=f.length;
