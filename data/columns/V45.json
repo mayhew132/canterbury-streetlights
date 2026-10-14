@@ -4,21 +4,21 @@
   45
  ],
  "street": "Ivy Lane",
- "asset": "FIAW012",
+ "asset": "FSKF002",
  "owner": "KCC",
  "candidates": [
-  "FIAW012"
+  "FSKF002"
  ],
  "candidate_distances": "FIAW012 (34 m)",
- "confidence": "Uncertain",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "FIAW012 is also the top candidate for visit(s) 41 on the same day, so at most one is right; Single bracket photo; may be a second shot of a nearby column",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A1",
  "gps": [
-  51.2772903,
-  1.085202
+  51.277438,
+  1.085377
  ],
  "dates": [
   "2026-02-24"
@@ -43,5 +43,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 42
+ "order": 42,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
