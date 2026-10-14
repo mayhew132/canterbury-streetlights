@@ -7,19 +7,18 @@
  "asset": "FBJT012",
  "owner": "KCC",
  "candidates": [
-  "FBJT012",
-  "FBJT011"
+  "FBJT012"
  ],
  "candidate_distances": "FBJT012 (9 m); FBJT011 (20 m)",
- "confidence": "Probable",
+ "confidence": "Confirmed",
  "basis": "Painted number, partly legible + GPS",
  "painted": "?BJT0??",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A1",
  "gps": [
-  51.2791816,
-  1.081185
+  51.279112,
+  1.081118
  ],
  "dates": [
   "2026-03-12"
