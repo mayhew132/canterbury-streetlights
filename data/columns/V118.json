@@ -4,7 +4,7 @@
   118
  ],
  "street": "Lancaster Road",
- "asset": "FLAK001",
+ "asset": "FOCO020",
  "owner": "KCC",
  "candidates": [
   "FLAK001",
@@ -19,8 +19,8 @@
  "confirmed_by": "",
  "variant": "A4",
  "gps": [
-  51.2717333,
-  1.0750966
+  51.271686,
+  1.074708
  ],
  "dates": [
   "2026-03-04"
@@ -43,5 +43,6 @@
  "cond_check": [],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 115
+ "order": 115,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
