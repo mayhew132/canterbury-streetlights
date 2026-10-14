@@ -7,16 +7,14 @@
  "asset": "FNBJ001",
  "owner": "KCC",
  "candidates": [
-  "FNBJ001",
-  "FYAH003",
-  "FYAH002"
+  "FNBJ001"
  ],
  "candidate_distances": "FNBJ001 (23 m); FYAH003 (28 m); FYAH002 (35 m)",
- "confidence": "Uncertain",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A1",
  "gps": [
   51.273102,
