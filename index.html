@@ -42,6 +42,65 @@ a{color:var(--accent)}
 .topnav svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 #homeFab{display:none}
 
+
+/* ---- sidebar (atlas styling) ---- */
+#side{width:352px;background:#fbfaf7;padding:0 0 20px}
+#side .sh{padding:18px 20px 14px;border-bottom:1px solid var(--line);background:#fff}
+#side .sh-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}
+#side .eyebrow{display:flex;align-items:center;gap:8px;margin:0;font-size:11px;letter-spacing:.14em;white-space:nowrap;text-transform:uppercase;color:var(--sec)}
+#side .eyebrow .bnd{height:20px;width:auto;fill:none;stroke:currentColor;stroke-width:3.4;stroke-linejoin:round}
+#side h1{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-weight:400;font-size:25px;line-height:1.12;letter-spacing:-.005em;margin:0 0 8px}
+#reintro{background:none;border:0;padding:0;font:inherit;color:inherit;cursor:pointer;text-align:left}
+#side .lead{font-size:13.5px;line-height:1.5;color:var(--sec);margin:0}
+.topnav{display:flex;gap:4px;margin:0}
+.topnav a,.topnav button{display:inline-flex;align-items:center;justify-content:center;gap:5px;font:inherit;font-size:12px;color:var(--sec);background:transparent;border:1px solid var(--line);border-radius:999px;width:30px;height:30px;padding:0;cursor:pointer;text-decoration:none;line-height:1.2}
+.topnav a:hover,.topnav button:hover{color:var(--ink);border-color:var(--line);background:#f6f5f1}
+.topnav svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.topnav span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.searchwrap{position:relative;margin:14px 20px 0}
+.searchwrap svg{position:absolute;left:11px;top:50%;width:16px;height:16px;transform:translateY(-50%);fill:none;stroke:var(--mut);stroke-width:2;stroke-linecap:round}
+#side input[type=search]{width:100%;padding:10px 12px 10px 34px;border:1px solid #dcdad3;border-radius:10px;font-size:14px;background:#fff;outline:none}
+#side input[type=search]:focus{border-color:#9a988f;box-shadow:0 0 0 3px rgba(0,0,0,.06)}
+.countbar{margin:8px 20px 4px;font-size:12.5px;color:var(--sec);min-height:18px}
+.countbar button{font:inherit;color:var(--accent);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:2px}
+.panel{margin:10px 12px 0;padding:12px 12px 12px;background:#fff;border:1px solid var(--line);border-radius:12px}
+.panel h2{font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--sec);font-weight:600;margin:0}
+.panel .ph{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.panel>h2{margin-bottom:10px}
+details.panel summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between}
+details.panel summary::-webkit-details-marker{display:none}
+details.panel summary::after{content:"\203A";font-size:18px;line-height:1;color:var(--mut);transform:rotate(90deg);transition:transform .15s;margin-right:4px}
+details.panel[open] summary::after{transform:rotate(-90deg)}
+details.panel[open] summary{margin-bottom:10px}
+.btns{display:flex;gap:2px;margin:0}
+.btns button{font:inherit;font-size:12px;padding:3px 8px;border:0;background:none;border-radius:6px;cursor:pointer;color:var(--accent)}
+.btns button:hover{background:#eef3fb}
+.vgrid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.vcard{position:relative;display:flex;gap:9px;align-items:center;padding:6px;border:1px solid var(--line);border-radius:9px;cursor:pointer;background:#fff;transition:opacity .15s,border-color .15s,box-shadow .15s;user-select:none}
+.vcard:hover{border-color:#cfcdc5}
+.vcard input{position:absolute;opacity:0;pointer-events:none}
+.vcard input:focus-visible+img,.vcard input:focus-visible+.noimg{outline:2px solid var(--accent);outline-offset:2px}
+.vcard img,.vcard .noimg{width:34px;height:46px;border-radius:5px;object-fit:cover;flex:none;background:#16150f}
+.vcard .vt{min-width:0;display:flex;flex-direction:column;gap:3px}
+.vcard .vn{font-size:12.5px;line-height:1.2;color:var(--ink)}
+.vcard .vc{display:flex;align-items:center;gap:5px;font-size:11.5px;color:var(--mut);font-variant-numeric:tabular-nums}
+.vcard .vc i{width:9px;height:9px;border-radius:50%;flex:none}
+.vcard:has(input:not(:checked)){opacity:.42}
+.vcard:has(input:not(:checked)) img{filter:grayscale(1)}
+.rows .opt{padding:5px 2px;border-radius:6px}
+.rows .opt:hover{background:#f6f5f1}
+.opt input{accent-color:#1d1d1b}
+.hint{font-size:12px;color:var(--mut);line-height:1.45;margin:8px 2px 0;display:flex;flex-wrap:wrap;align-items:center;gap:5px}
+.seg{display:flex;background:#f1f0eb;border-radius:9px;padding:3px;border:0;margin:0}
+.seg button{flex:1;font-size:12.5px;padding:7px 4px;border:0;background:transparent;cursor:pointer;color:var(--sec);border-radius:7px}
+.seg button.on{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.about .small p{margin:0 0 9px}
+.hint .lg{display:inline-flex;align-items:center;gap:5px;margin-right:10px}
+@media (max-width:760px){#toggle,#homeFab{top:auto!important;bottom:30px}#side.open~#toggle,#side.open~#homeFab{bottom:30px}}
+.sfoot{margin:14px 20px 0;font-size:12px;color:var(--mut);line-height:1.5}
+.sfoot p{margin:0 0 4px}
+@media (max-width:760px){#side{width:100%}#side .sh{padding:14px 16px 12px}.searchwrap{margin:12px 16px 0}.countbar{margin:8px 16px 4px}}
+
 /* popup */
 .leaflet-popup-content{margin:12px 14px;width:300px!important}
 .pp h3{margin:0 0 2px;font-size:16px}
@@ -131,32 +190,57 @@ a{color:var(--accent)}
 </section>
 <div id="app">
   <aside id="side">
-    <h1><button id="reintro" title="Back to the introduction">Canterbury’s Heritage Streetlights</button></h1>
-    <nav class="topnav" aria-label="Site">
-      <button type="button" id="navHome"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>Home</button>
-      <a href="https://streetlights-admin.guy-j-mayhew.workers.dev/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Administration</a>
-    </nav>
-    <p class="sub">Historic and heritage-style lighting columns recorded in a photographic survey, February–May 2026. Click a column for photos and its likely KCC asset number.</p>
-    <input id="q" type="search" placeholder="Search asset number, street or map ID…" aria-label="Search">
-    <div id="count"></div>
-    <h2>Design variant</h2>
-    <div id="fvar"></div>
-    <div class="btns"><button data-all="fvar">All</button><button data-none="fvar">None</button></div>
-    <h2>How sure is the asset number?</h2>
-    <div id="fconf"></div>
-    <div class="legend-conf"><span class="sw" style="background:#2a78d6"></span>solid = identified <span class="sw hollow"></span>dashed = uncertain</div>
-    <h2>Visual condition</h2>
-    <div class="seg" role="group" aria-label="Colour points by"><button data-colby="variant" class="on">Colour by design</button><button data-colby="cond">Colour by visual condition</button></div>
-    <div id="fcond"></div>
-    <h2>About</h2>
-    <div class="small">
-      <p>Each point is one column. Where the asset number is reasonably secure, the point sits at the position in Kent County Council's streetlight inventory; otherwise it sits where the phone's GPS placed the photo.</p>
-      <p><b>Confirmed</b>: asset number painted on the column, read in full. <b>Strong</b>: partly legible, only one asset fits. <b>Probable</b>: partial or hand-painted number, or the column's place in a numbered run. <b>Likely</b>: nearest KCC column by GPS (tested at 93% right). <b>Uncertain</b>: several possibilities; the first listed is the best guess. <b>No match</b>: no KCC column matched. The riverside path columns off Westwood Drive and Ambleside Place belong to Canterbury City Council (not adopted by KCC); their numbers are the City Council's asset references and are shown with a CCC prefix.</p>
-      <p>Variant codes: A1 Biggleston standard (CCC cypher on the door); A2 fluted drum without cypher; A4 small-door pattern (short framed door, reeding all the way round the base); B1/B2 DW Windsor reproductions; X-stub cut-down remains; X-mod modern replacement.</p>
-      <p><b>Visual condition</b> is an assessment of what can be seen in the survey photographs (2026); it is not a structural or electrical inspection. It covers overall visual condition, paintwork, external structure (e.g. a missing ladder-bar acorn counts as damaged), lantern, access door and colour. Parts not shown in any photo are marked "Not seen".</p>
-      <p>Asset numbers refer to KCC's inventory extract of 26 September 2026 and may be wrong. Number plates and faces in the photos have been blurred.</p>
-      <p><a href="data/columns.geojson" download>Download the data (GeoJSON)</a></p>
-    </div>
+    <header class="sh">
+      <div class="sh-top">
+        <p class="eyebrow"><svg class="bnd" viewBox="-2 -2 96.8 104.0" aria-hidden="true"><path d="M92.8 24.7 L87.3 23.3 L87.8 26.3 L83.6 27.5 L86.4 31.3 L78.8 38.8 L77.2 43.4 L81.0 47.8 L75.6 54.4 L75.0 60.4 L80.8 62.8 L72.8 79.9 L76.4 79.0 L84.1 85.1 L75.6 96.6 L71.3 93.4 L65.9 96.5 L62.9 93.2 L61.0 100.0 L51.3 94.8 L51.9 90.5 L49.1 95.2 L43.6 94.2 L33.4 86.2 L30.7 96.1 L16.6 98.6 L12.1 93.6 L17.0 84.5 L11.1 71.0 L14.8 63.3 L7.1 54.8 L17.2 47.3 L17.4 34.5 L20.6 32.9 L6.7 20.3 L2.4 20.5 L0.0 16.7 L17.0 14.9 L25.6 6.8 L64.8 2.3 L84.7 0.0 L84.9 0.0 L86.3 7.0 L81.2 6.6 L81.5 11.1 L92.8 24.7Z"/></svg>An interactive atlas</p>
+        <nav class="topnav" aria-label="Site">
+          <button type="button" id="navHome" title="Back to the introduction"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg><span>Home</span></button>
+          <a href="https://streetlights-admin.guy-j-mayhew.workers.dev/" target="_blank" rel="noopener" title="Administration (sign-in required)"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span>Admin</span></a>
+        </nav>
+      </div>
+      <h1><button id="reintro" title="Back to the introduction">Canterbury’s Heritage Streetlights</button></h1>
+      <p class="lead">Every historic and heritage-style lighting column we have recorded across the city. Select a point on the map to see its photographs and details.</p>
+    </header>
+    <div class="searchwrap"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="q" type="search" placeholder="Search a street, asset number or map ID" aria-label="Search"></div>
+    <div id="count" class="countbar" aria-live="polite"></div>
+
+    <section class="panel">
+      <div class="ph"><h2>Design</h2><div class="btns"><button data-all="fvar">Show all</button><button data-none="fvar">Hide all</button></div></div>
+      <div id="fvar" class="vgrid"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Colour points by</h2>
+      <div class="seg" role="group" aria-label="Colour points by"><button data-colby="variant" class="on">Design</button><button data-colby="cond">Visual condition</button></div>
+    </section>
+
+    <details class="panel" open>
+      <summary><h2>Visual condition</h2></summary>
+      <div id="fcond" class="rows"></div>
+      <p class="hint">Judged from the 2026 survey photographs only; not a structural or electrical inspection.</p>
+    </details>
+
+    <details class="panel">
+      <summary><h2>How sure is the asset number?</h2></summary>
+      <div id="fconf" class="rows"></div>
+      <p class="hint"><span class="lg"><span class="sw" style="background:#2a78d6"></span>Solid point: identified</span><span class="lg"><span class="sw hollow"></span>Dashed point: uncertain</span></p>
+    </details>
+
+    <details class="panel about">
+      <summary><h2>About this atlas</h2></summary>
+      <div class="small">
+        <p>Each point is one lighting column. Where we are reasonably sure of its Kent County Council asset number, the point sits at KCC's recorded position; otherwise it sits where the survey photograph was taken.</p>
+        <p><b>How sure is the asset number?</b> <b>Confirmed</b>: the number painted on the column was read in full. <b>Strong</b>: partly legible, and only one asset fits. <b>Probable</b>: a partial or hand-painted number, or the column's place in a numbered run. <b>Likely</b>: the nearest KCC column to where the photo was taken. <b>Uncertain</b>: several possibilities. <b>No match</b>: no KCC column matched.</p>
+        <p>The riverside path columns near Westwood Drive and Ambleside Place belong to Canterbury City Council rather than KCC, and carry the City Council's own reference, shown with a CCC prefix.</p>
+        <p><b>Designs.</b> A1 Biggleston standard, with the CC monogram on the door. A2 fluted drum, without the monogram. A4 small-door pattern, with a short framed door and fluting all round the base. B1 and B2 are DW Windsor reproductions. Cut-down stubs and modern replacements are shown where they stand in place of an original.</p>
+        <p>Asset numbers come from KCC's inventory of 26 September 2026 and may occasionally be wrong. Faces and number plates in the photographs have been blurred.</p>
+      </div>
+    </details>
+
+    <footer class="sfoot">
+      <p>With thanks to Jenny and Allen MacDonald for the initial survey of over 800 photographs.</p>
+      <p><a href="data/columns.geojson" download>Download the data</a> (GeoJSON)</p>
+    </footer>
   </aside>
   <div id="map"></div>
 </div>
@@ -176,6 +260,7 @@ const VARS={
  'X-mod':{name:'X-mod Modern replacement',c:'#777777'},
  'U':{name:'U Not yet classified',c:'#b0b0aa'}
 };
+const VLAB={'A1':'Biggleston standard','A2':'Fluted drum','A4':'Small-door','B1':'Reproduction swan-neck','B2':'Reproduction post-top','X-stub':'Cut-down stub','X-mod':'Modern replacement','U':'Not yet classified'};
 const CONFS=['Confirmed','Strong','Probable','Likely','Uncertain','No match'];
 const HOLLOW=new Set(['Uncertain','No match']);
 const CONDS={'Excellent':'#1a9850','Good':'#91cf60','Poor':'#d73027','Missing':'#4d4d4d'};
@@ -210,11 +295,16 @@ function counts(){
  for(const k of Object.keys(CONDS)){const el=document.querySelector(`[data-n-cond="${k}"]`);if(el)el.textContent=vis.filter(f=>(f.properties.condition||{}).overall===k).length;}
 }
 function matchQ(p){if(!state.q)return true;const q=state.q;return [p.asset,p.candidates,p.street,(p.id||'v'+p.visits[0])].join(' ').toLowerCase().includes(q);}
+function clearFilters(){state.q='';document.getElementById('q').value='';
+ document.querySelectorAll('#side input[type=checkbox]').forEach(cb=>{cb.checked=true;});
+ state.vars=new Set(Object.keys(VARS));state.confs=new Set(CONFS);state.conds=new Set(Object.keys(CONDS));apply();}
 function apply(){
  let n=0;const shown=[];
  markers.forEach(m=>{const p=m.feature.properties;const ok=state.vars.has(p.variant)&&state.confs.has(p.confidence)&&(!p.condition||!p.condition.overall||state.conds.has(p.condition.overall))&&matchQ(p);
   if(ok){if(!map.hasLayer(m))m.addTo(map);n++;shown.push(m);}else if(map.hasLayer(m))map.removeLayer(m);});
- document.getElementById('count').textContent=`Showing ${n} of ${markers.length} columns`;
+ const filtered=n!==markers.length;const cEl=document.getElementById('count');
+ cEl.innerHTML=filtered?`Showing ${n} of ${markers.length} columns · <button type="button" id="clearF">Clear filters</button>`:`Showing all ${markers.length} columns`;
+ const cb=document.getElementById('clearF');if(cb)cb.onclick=clearFilters;
  counts();return shown;
 }
 const VIMG=new Set(['A1','A2','A4','B1','B2','X-stub','X-mod']);
@@ -227,15 +317,13 @@ document.addEventListener('click',()=>{const p=document.getElementById('vprev');
 function buildFilters(){
  const fv=document.getElementById('fvar');
  const hasU=markers.some(m=>m.feature.properties.variant==='U');
- fv.innerHTML=Object.entries(VARS).filter(([k])=>k!=='U'||hasU).map(([k,v])=>`<label class="opt"><input type="checkbox" data-var="${k}" checked><span class="sw" style="background:${v.c}"></span>${VIMG.has(k)?`<img class="vimg" src="media/variants/${k}.jpg" alt="" data-v="${k}">`:'<span class="vimg none"></span>'}${esc(v.name)}<span class="n" data-n-var="${k}"></span></label>`).join('');
+ fv.innerHTML=Object.entries(VARS).filter(([k])=>k!=='U'||hasU).map(([k,v])=>`<label class="vcard" title="${esc(v.name)}"><input type="checkbox" data-var="${k}" checked>${VIMG.has(k)?`<img src="media/variants/${k}.jpg" alt="" data-v="${k}">`:'<span class="noimg"></span>'}<span class="vt"><span class="vn">${esc(VLAB[k]||v.name)}</span><span class="vc"><i style="background:${v.c}"></i>${esc(k)} · <span data-n-var="${k}"></span></span></span></label>`).join('');
  const fc=document.getElementById('fconf');
  fc.innerHTML=CONFS.map(k=>`<label class="opt"><input type="checkbox" data-conf="${k}" checked><span class="sw${HOLLOW.has(k)?' hollow':''}" style="background:#2a78d6"></span>${k}<span class="n" data-n-conf="${k}"></span></label>`).join('');
  document.getElementById('fcond').innerHTML=Object.entries(CONDS).map(([k,c])=>`<label class="opt"><input type="checkbox" data-cond="${k}" checked><span class="sw" style="background:${c}"></span>${k}<span class="n" data-n-cond="${k}"></span></label>`).join('');
  document.querySelectorAll('[data-cond]').forEach(cb=>cb.onchange=()=>{cb.checked?state.conds.add(cb.dataset.cond):state.conds.delete(cb.dataset.cond);apply();});
  document.querySelectorAll('[data-colby]').forEach(b=>b.onclick=()=>{state.colby=b.dataset.colby;document.querySelectorAll('[data-colby]').forEach(x=>x.classList.toggle('on',x===b));markers.forEach(m=>m.setStyle(style(m.feature.properties)));});
- fv.querySelectorAll('.vimg[data-v]').forEach(im=>{
-  im.addEventListener('mouseenter',()=>vprev(im,true));im.addEventListener('mouseleave',()=>vprev(im,false));
-  im.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();const p=document.getElementById('vprev');vprev(im,!(p.style.display==='block'&&p.dataset.v===im.dataset.v));});});
+ if(matchMedia('(hover:hover)').matches)fv.querySelectorAll('img[data-v]').forEach(im=>{im.addEventListener('mouseenter',()=>vprev(im,true));im.addEventListener('mouseleave',()=>vprev(im,false));});
  document.querySelectorAll('[data-var]').forEach(cb=>cb.onchange=()=>{cb.checked?state.vars.add(cb.dataset.var):state.vars.delete(cb.dataset.var);apply();});
  document.querySelectorAll('[data-conf]').forEach(cb=>cb.onchange=()=>{cb.checked?state.confs.add(cb.dataset.conf):state.confs.delete(cb.dataset.conf);apply();});
  document.querySelectorAll('[data-all],[data-none]').forEach(b=>b.onclick=()=>{const all=!!b.dataset.all;
