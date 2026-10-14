@@ -10,11 +10,11 @@
   "FNBU002"
  ],
  "candidate_distances": "FNBU002 (2 m)",
- "confidence": "Likely",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "Small-door pattern (A4)",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A4",
  "gps": [
   51.2709961,
@@ -43,5 +43,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 122
+ "order": 122,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }

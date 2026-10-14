@@ -10,15 +10,15 @@
   "FOBV007"
  ],
  "candidate_distances": "FOBV007 (painted; 3 m)",
- "confidence": "Strong",
+ "confidence": "Confirmed",
  "basis": "Painted number, partly legible (one match nearby)",
  "painted": "??V007",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A1",
  "gps": [
-  51.2828783,
-  1.0719283
+  51.28285,
+  1.071945
  ],
  "dates": [
   "2026-03-03"
@@ -41,5 +41,6 @@
  "cond_check": [],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 86
+ "order": 86,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }

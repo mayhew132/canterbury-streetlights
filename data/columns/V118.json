@@ -4,23 +4,21 @@
   118
  ],
  "street": "Lancaster Road",
- "asset": "FLAK001",
+ "asset": "FOCO020",
  "owner": "KCC",
  "candidates": [
-  "FLAK001",
-  "FOCO019",
   "FOCO020"
  ],
  "candidate_distances": "FLAK001 (16 m); FOCO019 (22 m); FOCO020 (27 m)",
- "confidence": "Uncertain",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "Small-door pattern (A4)",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A4",
  "gps": [
-  51.2717333,
-  1.0750966
+  51.271686,
+  1.074708
  ],
  "dates": [
   "2026-03-04"
@@ -43,5 +41,6 @@
  "cond_check": [],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 115
+ "order": 115,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }

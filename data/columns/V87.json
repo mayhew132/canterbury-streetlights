@@ -7,20 +7,18 @@
  "asset": "FSHL001",
  "owner": "KCC",
  "candidates": [
-  "FSHL001",
-  "FSHL002",
-  "FSHL003"
+  "FSHL001"
  ],
  "candidate_distances": "FSHL001 (33 m); FSHL002 (13 m); FSHL003 (23 m)",
- "confidence": "Uncertain",
+ "confidence": "Confirmed",
  "basis": "Painted number, partly legible + GPS (one asset per visit per day)",
  "painted": "SHL00?",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A1",
  "gps": [
-  51.2828516,
-  1.0687783
+  51.283112,
+  1.068592
  ],
  "dates": [
   "2026-03-02"
@@ -46,5 +44,6 @@
  ],
  "cond_second_opinion": "overall=Good;paint=Good",
  "outcome": "",
- "order": 84
+ "order": 84,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }

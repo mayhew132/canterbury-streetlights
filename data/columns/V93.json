@@ -7,16 +7,14 @@
  "asset": "FOBV003",
  "owner": "KCC",
  "candidates": [
-  "FOBV003",
-  "FOBV002",
-  "FNBI008"
+  "FOBV003"
  ],
  "candidate_distances": "FOBV003 (3 m); FOBV002 (15 m); FNBI008 (16 m)",
- "confidence": "Likely",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A1",
  "gps": [
   51.28209,
@@ -46,5 +44,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 90
+ "order": 90,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }

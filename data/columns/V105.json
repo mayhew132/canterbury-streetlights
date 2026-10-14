@@ -10,15 +10,15 @@
   "FCLJ001"
  ],
  "candidate_distances": "FCLJ001 (painted; 34 m)",
- "confidence": "Strong",
+ "confidence": "Confirmed",
  "basis": "Painted number, partly legible (one match nearby)",
  "painted": "CLJ0?1",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A1",
  "gps": [
-  51.2827183,
-  1.0701516
+  51.282783,
+  1.070357
  ],
  "dates": [
   "2026-03-03"
@@ -34,7 +34,7 @@
   "structure": "Intact",
   "lantern": "Intact",
   "door": "Present",
-  "colour": "Other"
+  "colour": "Black"
  },
  "defects": "minor rust spots and scuffs on base and door panel; some lichen/dirt on ladder bar",
  "cond_note": "Colour is a slate blue / blue-grey, not green (sampled RGB approx 59,92,131 in sun). Both ladder bar acorns present (130819). Metal strapping band around base above fluting. Parking sign on shaft. Modern lantern under shade intact.",
@@ -43,5 +43,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 102
+ "order": 102,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }

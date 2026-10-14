@@ -17,8 +17,8 @@
  "confirmed_by": "Guy (asset sheet, Oct 2026)",
  "variant": "A1",
  "gps": [
-  51.2828865,
-  1.0714299
+  51.28287,
+  1.071269
  ],
  "dates": [
   "2026-03-03"
@@ -34,7 +34,7 @@
   "structure": "Intact",
   "lantern": "Intact",
   "door": "Present",
-  "colour": "Other"
+  "colour": "Black"
  },
  "defects": "extensive rust streaking over door panel and base fluting (131027, 131038); faded paint",
  "cond_note": "Slate blue / blue-grey paint. Both ladder bar acorns present (131105). Metal strap band around base. Lantern has a rear shield on the bowl (fitting, not damage). Parking sign on shaft.",
@@ -43,5 +43,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 104
+ "order": 104,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }

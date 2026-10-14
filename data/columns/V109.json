@@ -17,8 +17,8 @@
  "confirmed_by": "",
  "variant": "X-mod",
  "gps": [
-  51.2713316,
-  1.07668
+  51.271394,
+  1.076676
  ],
  "dates": [
   "2026-03-04"
@@ -42,5 +42,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 106
+ "order": 106,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }

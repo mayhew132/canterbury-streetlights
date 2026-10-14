@@ -7,19 +7,18 @@
  "asset": "FOBV005",
  "owner": "KCC",
  "candidates": [
-  "FOBV005",
-  "FOBV006"
+  "FOBV005"
  ],
  "candidate_distances": "FOBV005 (13 m); FOBV006 (26 m)",
- "confidence": "Probable",
+ "confidence": "Confirmed",
  "basis": "Painted number, partly legible + GPS",
  "painted": "??V0??",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A1",
  "gps": [
-  51.2824554,
-  1.071578
+  51.282508,
+  1.071408
  ],
  "dates": [
   "2026-03-03"
@@ -45,5 +44,6 @@
  ],
  "cond_second_opinion": "overall=Poor;paint=Poor",
  "outcome": "",
- "order": 88
+ "order": 88,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }

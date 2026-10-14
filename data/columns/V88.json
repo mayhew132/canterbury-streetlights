@@ -10,15 +10,15 @@
   "FOBV008"
  ],
  "candidate_distances": "FOBV008 (5 m)",
- "confidence": "Likely",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "X-mod",
  "gps": [
-  51.2829816,
-  1.0722333
+  51.283014,
+  1.072159
  ],
  "dates": [
   "2026-03-03"
@@ -42,5 +42,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 85
+ "order": 85,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }

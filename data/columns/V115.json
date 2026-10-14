@@ -4,22 +4,21 @@
   115
  ],
  "street": "Oxford Road",
- "asset": "FOCO020",
+ "asset": "FLAK001",
  "owner": "KCC",
  "candidates": [
-  "FOCO020",
   "FLAK001"
  ],
  "candidate_distances": "FOCO020 (33 m); FLAK001 (24 m)",
- "confidence": "Uncertain",
+ "confidence": "Confirmed",
  "basis": "GPS (one asset per visit per day)",
  "painted": "",
  "note": "Small-door pattern (A4)",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A4",
  "gps": [
-  51.2715066,
-  1.075095
+  51.271823,
+  1.075078
  ],
  "dates": [
   "2026-03-04"
@@ -44,5 +43,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 112
+ "order": 112,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }

@@ -4,23 +4,21 @@
   119
  ],
  "street": "Zealand Road",
- "asset": "FZAA014",
+ "asset": "FGEU005",
  "owner": "KCC",
  "candidates": [
-  "FZAA014",
-  "FGEU005",
-  "FZAA013"
+  "FGEU005"
  ],
  "candidate_distances": "FZAA014 (21 m); FGEU005 (21 m); FZAA013 (24 m)",
- "confidence": "Uncertain",
+ "confidence": "Confirmed",
  "basis": "GPS (one asset per visit per day)",
  "painted": "",
  "note": "Small-door pattern (A4)",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A4",
  "gps": [
-  51.2705666,
-  1.0748033
+  51.270702,
+  1.075003
  ],
  "dates": [
   "2026-03-04"
@@ -46,5 +44,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 116
+ "order": 116,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
