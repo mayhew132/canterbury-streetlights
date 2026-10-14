@@ -15,7 +15,7 @@
  "painted": "",
  "note": "",
  "confirmed_by": "",
- "variant": "A1",
+ "variant": "A4",
  "gps": [
   51.2750516,
   1.08539
@@ -34,7 +34,7 @@
   "structure": "Intact",
   "lantern": "Intact",
   "door": "Present",
-  "colour": "Other"
+  "colour": "Moss Green"
  },
  "defects": "paint extensively flaking on base, shaft and door, red primer and rust showing; ladder bar largely stripped to red primer; rust at foot",
  "cond_note": "Painted blue-grey (could be heavily faded dark green). Door with cypher present (131022). Ladder bar ends appear present but image soft. Parking/no-waiting signs on shaft.",
@@ -44,5 +44,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 15
+ "order": 15,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
