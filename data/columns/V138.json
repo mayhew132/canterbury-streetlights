@@ -7,20 +7,18 @@
  "asset": "FIAX001",
  "owner": "KCC",
  "candidates": [
-  "FIAX001",
-  "FIAX002",
-  "FYAH003"
+  "FIAX001"
  ],
  "candidate_distances": "FIAX001 (13 m); FIAX002 (23 m); FYAH003 (37 m)",
- "confidence": "Uncertain",
+ "confidence": "Confirmed",
  "basis": "GPS (one asset per visit per day)",
  "painted": "",
  "note": "",
- "confirmed_by": "",
- "variant": "A1",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
+ "variant": "A4",
  "gps": [
-  51.2725944,
-  1.072893
+  51.272592,
+  1.073061
  ],
  "dates": [
   "2026-03-04"
@@ -46,5 +44,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 135
+ "order": 135,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
