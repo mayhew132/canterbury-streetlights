@@ -10,15 +10,15 @@
   "FZAA013"
  ],
  "candidate_distances": "FZAA013 (20 m)",
- "confidence": "Likely",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "Small-door pattern (A4)",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A4",
  "gps": [
-  51.27037,
-  1.0753533
+  51.270454,
+  1.07511
  ],
  "dates": [
   "2026-03-04"
@@ -41,5 +41,6 @@
  "cond_check": [],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 108
+ "order": 108,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
