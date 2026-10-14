@@ -7,19 +7,18 @@
  "asset": "FPEM008",
  "owner": "KCC",
  "candidates": [
-  "FPEM008",
-  "FPEN001"
+  "FPEM008"
  ],
  "candidate_distances": "FPEM008 (17 m); FPEN001 (16 m)",
- "confidence": "Uncertain",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A1",
  "gps": [
-  51.282275,
-  1.0775583
+  51.282421,
+  1.077615
  ],
  "dates": [
   "2026-03-19"
@@ -44,5 +43,6 @@
  ],
  "cond_second_opinion": "overall=Good",
  "outcome": "",
- "order": 240
+ "order": 240,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
