@@ -10,15 +10,15 @@
   "FGEU001"
  ],
  "candidate_distances": "FGEU001 (4 m)",
- "confidence": "Probable",
+ "confidence": "Confirmed",
  "basis": "Painted number, partly legible + GPS",
  "painted": "GE????",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A1-alt",
  "gps": [
-  51.2718566,
-  1.0742049
+  51.271874,
+  1.07415
  ],
  "dates": [
   "2026-03-04"
@@ -43,5 +43,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 120
+ "order": 120,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
