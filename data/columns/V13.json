@@ -7,15 +7,14 @@
  "asset": "FCKD009",
  "owner": "KCC",
  "candidates": [
-  "FCKD009",
-  "FCKD007"
+  "FCKD009"
  ],
  "candidate_distances": "FCKD009 (10 m); FCKD007 (20 m)",
- "confidence": "Probable",
+ "confidence": "Confirmed",
  "basis": "Painted number, partly legible + GPS",
  "painted": "CKD0??",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A1",
  "gps": [
   51.2730183,
