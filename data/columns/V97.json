@@ -33,7 +33,7 @@
   "paint": "Good",
   "structure": "Intact",
   "lantern": "Intact",
-  "door": "Not seen",
+  "door": "Present",
   "colour": "Black"
  },
  "defects": "rust and flaking on ladder bar and upper column; minor chips on base",
@@ -43,5 +43,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 94
+ "order": 94,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
