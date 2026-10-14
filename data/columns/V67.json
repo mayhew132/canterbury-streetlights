@@ -17,8 +17,8 @@
  "confirmed_by": "",
  "variant": "A1",
  "gps": [
-  51.2805449,
-  1.08714
+  51.280585,
+  1.087303
  ],
  "dates": [
   "2026-02-24"
@@ -41,5 +41,6 @@
  "cond_check": [],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 64
+ "order": 64,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
