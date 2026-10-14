@@ -15,7 +15,7 @@
  "painted": "SHW0?3, SHW003 (first pass)",
  "note": "",
  "confirmed_by": "",
- "variant": "A1-alt",
+ "variant": "A4",
  "gps": [
   51.2765388,
   1.08271
@@ -41,5 +41,6 @@
  "cond_check": [],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 23
+ "order": 23,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
