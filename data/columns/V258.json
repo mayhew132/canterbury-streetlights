@@ -4,23 +4,21 @@
   258
  ],
  "street": "St Radigunds Street",
- "asset": "FSKP004",
+ "asset": "FCFQ003",
  "owner": "KCC",
  "candidates": [
-  "FSKP004",
-  "FSKP003",
   "FCFQ003"
  ],
  "candidate_distances": "FSKP004 (33 m); FSKP003 (36 m); FCFQ003 (28 m)",
- "confidence": "Uncertain",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A1",
  "gps": [
-  51.282225,
-  1.0824716
+  51.282454,
+  1.082625
  ],
  "dates": [
   "2026-03-22"
@@ -43,5 +41,6 @@
  "cond_check": [],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 251
+ "order": 251,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
