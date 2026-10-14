@@ -15,7 +15,7 @@
  "painted": "",
  "note": "",
  "confirmed_by": "",
- "variant": "A1-alt",
+ "variant": "A1",
  "gps": [
   51.2848816,
   1.0833916
@@ -44,5 +44,6 @@
  ],
  "cond_second_opinion": "paint=Poor",
  "outcome": "",
- "order": 209
+ "order": 209,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
