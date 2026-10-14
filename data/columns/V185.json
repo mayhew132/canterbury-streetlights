@@ -7,15 +7,14 @@
  "asset": "FCCC004",
  "owner": "KCC",
  "candidates": [
-  "FCCC004",
-  "FCCC005"
+  "FCCC004"
  ],
  "candidate_distances": "FCCC004 (23 m); FCCC005 (35 m)",
- "confidence": "Probable",
+ "confidence": "Confirmed",
  "basis": "Painted number, partly legible + GPS",
  "painted": "CCC0??",
  "note": "Small-door pattern (A4); altered (plate or strap over door)",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A4",
  "gps": [
   51.276827,
