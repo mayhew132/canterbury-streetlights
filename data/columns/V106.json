@@ -10,15 +10,15 @@
   "FCLJ003"
  ],
  "candidate_distances": "FCLJ003 (painted; 15 m)",
- "confidence": "Strong",
+ "confidence": "Confirmed",
  "basis": "Painted number, partly legible (one match nearby)",
  "painted": "?LJ003",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A1",
  "gps": [
-  51.2830086,
-  1.071103
+  51.28288,
+  1.071033
  ],
  "dates": [
   "2026-03-03"
@@ -34,7 +34,7 @@
   "structure": "Intact",
   "lantern": "Intact",
   "door": "Present",
-  "colour": "Other"
+  "colour": "Black"
  },
  "defects": "door panel heavily rusted (red-brown) around CCC cypher (130916); faded, chalky paint with rust spots on ladder bar finials and upper shaft (130943)",
  "cond_note": "Colour is a faded slate blue / blue-grey. Both ladder bar finials present though weathered. Parking sign on shaft, pay machine adjacent. Modern lantern under shade intact.",
@@ -43,5 +43,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 103
+ "order": 103,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
