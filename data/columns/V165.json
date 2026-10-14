@@ -7,17 +7,15 @@
  "asset": "FWAV002",
  "owner": "KCC",
  "candidates": [
-  "FWAV002",
-  "FWAV001",
-  "FWAV003"
+  "FWAV002"
  ],
  "candidate_distances": "FWAV002 (3 m); FWAV001 (10 m); FWAV003 (13 m)",
- "confidence": "Uncertain",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "Re-checked: tall door with large cypher (A1), not small-door",
- "confirmed_by": "",
- "variant": "A1",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
+ "variant": "A4",
  "gps": [
   51.2787616,
   1.0766716
@@ -43,5 +41,6 @@
  "cond_check": [],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 162
+ "order": 162,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
