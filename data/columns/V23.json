@@ -7,15 +7,14 @@
  "asset": "FDCX002",
  "owner": "KCC",
  "candidates": [
-  "FDCX002",
-  "FDCX001"
+  "FDCX002"
  ],
  "candidate_distances": "FDCX002 (8 m); FDCX001 (19 m)",
- "confidence": "Likely",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A1",
  "gps": [
   51.2764091,
