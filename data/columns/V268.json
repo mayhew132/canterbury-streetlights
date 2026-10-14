@@ -7,19 +7,18 @@
  "asset": "FLCS302",
  "owner": "KCC",
  "candidates": [
-  "FLCS302",
-  "FRGT002"
+  "FLCS302"
  ],
  "candidate_distances": "FLCS302 (22 m); FRGT002 (11 m)",
- "confidence": "Uncertain",
+ "confidence": "Confirmed",
  "basis": "GPS (one asset per visit per day)",
  "painted": "",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "B2",
  "gps": [
-  51.2821033,
-  1.0638466
+  51.281981,
+  1.064086
  ],
  "dates": [
   "2026-04-02"
@@ -45,5 +44,6 @@
  ],
  "cond_second_opinion": "door=Not seen;colour=Other",
  "outcome": "",
- "order": 260
+ "order": 260,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
