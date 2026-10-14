@@ -7,19 +7,18 @@
  "asset": "FSHL007",
  "owner": "KCC",
  "candidates": [
-  "FSHL007",
-  "FSHL008"
+  "FSHL007"
  ],
  "candidate_distances": "FSHL007 (9 m); FSHL008 (19 m)",
- "confidence": "Likely",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A1",
  "gps": [
-  51.28206,
-  1.0701433
+  51.282078,
+  1.07003
  ],
  "dates": [
   "2026-03-02"
@@ -42,5 +41,6 @@
  "cond_check": [],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 77
+ "order": 77,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
