@@ -10,15 +10,15 @@
   "FIAW005"
  ],
  "candidate_distances": "FIAW005 (18 m)",
- "confidence": "Probable",
+ "confidence": "Confirmed",
  "basis": "Painted number, partly legible + GPS",
  "painted": "IAW0??",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A1",
  "gps": [
-  51.2768133,
-  1.0871666
+  51.276867,
+  1.086944
  ],
  "dates": [
   "2026-02-24"
