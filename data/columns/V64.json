@@ -15,10 +15,10 @@
  "painted": "HBV002, HBV00?",
  "note": "",
  "confirmed_by": "",
- "variant": "A1",
+ "variant": "A4",
  "gps": [
-  51.2803116,
-  1.0864349
+  51.28028,
+  1.086466
  ],
  "dates": [
   "2026-02-24"
@@ -33,7 +33,7 @@
   "paint": "Good",
   "structure": "Intact",
   "lantern": "Intact",
-  "door": "Not seen",
+  "door": "Missing",
   "colour": "Moss Green"
  },
  "defects": "paint chips with red primer/rust spots on base plinth, collar and lower shaft",
@@ -41,5 +41,6 @@
  "cond_check": [],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 61
+ "order": 61,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }

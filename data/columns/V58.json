@@ -10,15 +10,15 @@
   "FMFR010"
  ],
  "candidate_distances": "FMFR010 (9 m)",
- "confidence": "Likely",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "",
- "confirmed_by": "",
- "variant": "A1-alt",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
+ "variant": "A1",
  "gps": [
-  51.2794566,
-  1.0870016
+  51.279535,
+  1.08703
  ],
  "dates": [
   "2026-02-24"
@@ -44,5 +44,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 55
+ "order": 55,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }

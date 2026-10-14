@@ -7,20 +7,18 @@
  "asset": "FVAQ001",
  "owner": "KCC",
  "candidates": [
-  "FVAQ001",
-  "FDCX006",
-  "FDCX007"
+  "FVAQ001"
  ],
  "candidate_distances": "FVAQ001 (3 m); FDCX006 (21 m); FDCX007 (27 m)",
- "confidence": "Uncertain",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A1",
  "gps": [
-  51.2755283,
-  1.084525
+  51.275505,
+  1.084481
  ],
  "dates": [
   "2026-02-27"
@@ -45,5 +43,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 69
+ "order": 69,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }

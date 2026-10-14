@@ -7,20 +7,18 @@
  "asset": "FMFR008",
  "owner": "KCC",
  "candidates": [
-  "FMFR008",
-  "FLAD003",
-  "FMFR007"
+  "FMFR008"
  ],
  "candidate_distances": "FMFR008 (4 m); FLAD003 (13 m); FMFR007 (17 m)",
- "confidence": "Uncertain",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A1",
  "gps": [
-  51.279275,
-  1.0867216
+  51.27925,
+  1.086756
  ],
  "dates": [
   "2026-02-24"
@@ -45,5 +43,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 53
+ "order": 53,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }

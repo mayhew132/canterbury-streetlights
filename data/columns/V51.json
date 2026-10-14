@@ -10,15 +10,15 @@
   "FMFR003"
  ],
  "candidate_distances": "FMFR003 (12 m)",
- "confidence": "Probable",
+ "confidence": "Confirmed",
  "basis": "Painted number, partly legible + GPS",
  "painted": "MFR00?, MFR00",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A1",
  "gps": [
-  51.2784533,
-  1.0867016
+  51.278555,
+  1.086627
  ],
  "dates": [
   "2026-02-24"
@@ -41,5 +41,6 @@
  "cond_check": [],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 48
+ "order": 48,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }

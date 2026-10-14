@@ -11,11 +11,11 @@
   "FCGC002"
  ],
  "candidate_distances": "FCGC002 (painted; 7 m)",
- "confidence": "Strong",
+ "confidence": "Confirmed",
  "basis": "Painted number, partly legible (one match nearby)",
  "painted": "?C??002, ?C???",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A1",
  "gps": [
   51.2779516,
@@ -43,5 +43,6 @@
  "cond_check": [],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 45
+ "order": 45,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }

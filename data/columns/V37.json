@@ -15,7 +15,7 @@
  "painted": "EBA002",
  "note": "",
  "confirmed_by": "",
- "variant": "A1",
+ "variant": "A4",
  "gps": [
   51.276215,
   1.0879666
@@ -29,7 +29,7 @@
   "20260224_124155.jpg"
  ],
  "condition": {
-  "overall": "Poor",
+  "overall": "Good",
   "paint": "Poor",
   "structure": "Intact",
   "lantern": "Intact",
@@ -43,5 +43,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 34
+ "order": 34,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }

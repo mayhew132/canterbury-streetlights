@@ -29,8 +29,8 @@
   "20260224_125257.jpg"
  ],
  "condition": {
-  "overall": "Poor",
-  "paint": "Poor",
+  "overall": "Good",
+  "paint": "Good",
   "structure": "Intact",
   "lantern": "Intact",
   "door": "Present",
@@ -44,5 +44,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 39
+ "order": 39,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }

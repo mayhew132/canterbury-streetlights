@@ -15,7 +15,7 @@
  "painted": "EBA004",
  "note": "",
  "confirmed_by": "",
- "variant": "A1",
+ "variant": "A4",
  "gps": [
   51.2761216,
   1.0886083
@@ -41,5 +41,6 @@
  "cond_check": [],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 32
+ "order": 32,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }

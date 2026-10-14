@@ -34,12 +34,13 @@
   "structure": "Intact",
   "lantern": "Intact",
   "door": "Present",
-  "colour": "Other"
+  "colour": "Moss Green"
  },
  "defects": "paint extensively flaking/peeling over shaft and base exposing older blue paint and rust; door unpainted and rusted, held on with tape bands; swan-neck and collar rusted",
  "cond_note": "Painted cream/off-white over earlier blue (green only on lantern). Ladder bar finials present (crop of 132350). Door with cypher present but taped (132344).",
  "cond_check": [],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 21
+ "order": 21,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
