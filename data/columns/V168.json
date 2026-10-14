@@ -10,11 +10,11 @@
   "FSMV001"
  ],
  "candidate_distances": "FSMV001 (painted; 21 m)",
- "confidence": "Strong",
+ "confidence": "Confirmed",
  "basis": "Painted number, partly legible (one match nearby)",
  "painted": "S?V001",
  "note": "Small-door pattern (A4)",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A4",
  "gps": [
   51.2793884,
@@ -44,5 +44,6 @@
  ],
  "cond_second_opinion": "overall=Poor;paint=Poor",
  "outcome": "",
- "order": 165
+ "order": 165,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
