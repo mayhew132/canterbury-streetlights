@@ -10,15 +10,15 @@
   "FRGS011"
  ],
  "candidate_distances": "FRGS011 (14 m)",
- "confidence": "Probable",
+ "confidence": "Confirmed",
  "basis": "Order along Riverside Walk between hand-painted 14 and 7 + GPS",
  "painted": "",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A1",
  "gps": [
-  51.2848816,
-  1.0833916
+  51.284763,
+  1.083328
  ],
  "dates": [
   "2026-03-18"
