@@ -15,7 +15,7 @@
  "painted": "SMV002, S?V002",
  "note": "",
  "confirmed_by": "",
- "variant": "A1-alt",
+ "variant": "A4",
  "gps": [
   51.2794383,
   1.0785966
@@ -33,7 +33,7 @@
   "paint": "Poor",
   "structure": "Intact",
   "lantern": "Intact",
-  "door": "Present",
+  "door": "Missing",
   "colour": "Moss Green"
  },
  "defects": "extensive flaking paint and rust on leaf collar and rings of base exposing white/red undercoat; rust at foot of base; lichen on ladder bar",
@@ -41,5 +41,6 @@
  "cond_check": [],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 164
+ "order": 164,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
