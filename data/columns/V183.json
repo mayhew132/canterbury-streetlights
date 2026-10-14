@@ -4,23 +4,21 @@
   183
  ],
  "street": "St Marys Street",
- "asset": "FSJU001",
+ "asset": "FCCC005",
  "owner": "KCC",
  "candidates": [
-  "FSJU001",
-  "FCCC006",
-  "FCCC007"
+  "FCCC005"
  ],
  "candidate_distances": "FSJU001 (27 m); FCCC006 (28 m); FCCC007 (29 m)",
- "confidence": "Uncertain",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "Small-door pattern (A4) confirmed by Guy",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A4",
  "gps": [
-  51.276295,
-  1.0765966
+  51.276595,
+  1.076515
  ],
  "dates": [
   "2026-03-09"
@@ -43,5 +41,6 @@
  "cond_check": [],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 180
+ "order": 180,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
