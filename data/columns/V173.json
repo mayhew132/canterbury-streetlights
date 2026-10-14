@@ -10,15 +10,15 @@
   "FCCA008"
  ],
  "candidate_distances": "FCCA008 (16 m)",
- "confidence": "Probable",
+ "confidence": "Confirmed",
  "basis": "Painted number, partly legible + GPS",
  "painted": "CCA00?",
  "note": "",
- "confirmed_by": "",
- "variant": "A1-alt",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
+ "variant": "A4",
  "gps": [
-  51.2757883,
-  1.0765866
+  51.275914,
+  1.076682
  ],
  "dates": [
   "2026-03-09"
@@ -44,5 +44,6 @@
  ],
  "cond_second_opinion": "paint=Good",
  "outcome": "",
- "order": 170
+ "order": 170,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
