@@ -10,15 +10,15 @@
   "FWCU001"
  ],
  "candidate_distances": "FWCU001 (4 m)",
- "confidence": "Likely",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "",
- "confirmed_by": "",
- "variant": "A1",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
+ "variant": "A4",
  "gps": [
-  51.2813283,
-  1.0747566
+  51.2813,
+  1.074809
  ],
  "dates": [
   "2026-03-02"
@@ -45,5 +45,6 @@
  ],
  "cond_second_opinion": "door=Present",
  "outcome": "",
- "order": 72
+ "order": 72,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
