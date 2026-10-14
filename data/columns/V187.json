@@ -15,7 +15,7 @@
  "painted": "CCC3?1",
  "note": "Checked by Guy: large-door A1, not A4",
  "confirmed_by": "",
- "variant": "A1-alt",
+ "variant": "A1",
  "gps": [
   51.2773049,
   1.07807
@@ -45,5 +45,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 184
+ "order": 184,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
