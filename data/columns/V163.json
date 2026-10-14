@@ -7,20 +7,18 @@
  "asset": "FWAV004",
  "owner": "KCC",
  "candidates": [
-  "FWAV004",
-  "FWAV003",
-  "FWAV006"
+  "FWAV004"
  ],
  "candidate_distances": "FWAV004 (9 m); FWAV003 (11 m); FWAV006 (19 m)",
- "confidence": "Uncertain",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "Re-checked: base whitewashed; door looks tall (A1) - check",
- "confirmed_by": "",
- "variant": "A1",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
+ "variant": "A4",
  "gps": [
-  51.27865,
-  1.0769449
+  51.278579,
+  1.076923
  ],
  "dates": [
   "2026-03-08"
@@ -35,7 +33,7 @@
   "paint": "Poor",
   "structure": "Intact",
   "lantern": "Intact",
-  "door": "Present",
+  "door": "Missing",
   "colour": "Black"
  },
  "defects": "extensive flaking paint on lower base exposing grey/white undercoat",
@@ -46,5 +44,6 @@
  ],
  "cond_second_opinion": "overall=Good",
  "outcome": "",
- "order": 160
+ "order": 160,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
