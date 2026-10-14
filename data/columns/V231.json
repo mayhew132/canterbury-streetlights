@@ -7,19 +7,18 @@
  "asset": "FSKP003",
  "owner": "KCC",
  "candidates": [
-  "FSKP003",
-  "FSKP004"
+  "FSKP003"
  ],
  "candidate_distances": "FSKP003 (16 m); FSKP004 (22 m)",
- "confidence": "Uncertain",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A1",
  "gps": [
-  51.2826583,
-  1.0826416
+  51.282521,
+  1.08269
  ],
  "dates": [
   "2026-03-18"
@@ -46,5 +45,6 @@
  ],
  "cond_second_opinion": "door=Not seen",
  "outcome": "",
- "order": 225
+ "order": 225,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
