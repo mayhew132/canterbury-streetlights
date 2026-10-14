@@ -15,10 +15,10 @@
  "painted": "",
  "note": "",
  "confirmed_by": "Guy (asset sheet, Oct 2026)",
- "variant": "A1-alt",
+ "variant": "A4",
  "gps": [
-  51.2790483,
-  1.0816216
+  51.279089,
+  1.081628
  ],
  "dates": [
   "2026-03-12"
@@ -45,5 +45,6 @@
  ],
  "cond_second_opinion": "lantern=Intact",
  "outcome": "",
- "order": 187
+ "order": 187,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
