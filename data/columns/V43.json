@@ -29,7 +29,7 @@
   "20260224_125444.jpg"
  ],
  "condition": {
-  "overall": "Poor",
+  "overall": "Good",
   "paint": "Poor",
   "structure": "Intact",
   "lantern": "Intact",
@@ -43,5 +43,6 @@
  ],
  "cond_second_opinion": "structure=Damaged",
  "outcome": "",
- "order": 40
+ "order": 40,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
