@@ -10,11 +10,11 @@
   "FYAH001"
  ],
  "candidate_distances": "FYAH001 (13 m)",
- "confidence": "Likely",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "FYAH001 is also the top candidate for visit(s) 134 on the same day, so at most one is right",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
  "variant": "A1",
  "gps": [
   51.2735216,
@@ -41,5 +41,6 @@
  "cond_check": [],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 129
+ "order": 129,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
 }
