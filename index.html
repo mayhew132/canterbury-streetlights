@@ -230,12 +230,6 @@ details.panel[open] summary{margin-bottom:10px}
       <p class="hint">Judged from the 2026 survey photographs only; not a structural or electrical inspection.</p>
     </details>
 
-    <details class="panel">
-      <summary><h2>How sure is the asset number?</h2></summary>
-      <div id="fconf" class="rows"></div>
-      <p class="hint"><span class="lg"><span class="sw" style="background:#2a78d6"></span>Solid point: identified</span><span class="lg"><span class="sw hollow"></span>Dashed point: uncertain</span></p>
-    </details>
-
     <details class="panel about">
       <summary><h2>About this atlas</h2></summary>
       <div class="small">
@@ -243,7 +237,7 @@ details.panel[open] summary{margin-bottom:10px}
         <p>Each dot is one street lighting column that has been photographed. Select a dot to see its photos, design, condition and asset number.</p>
 
         <h3>Asset numbers</h3>
-        <p>Kent County Council gives every column an asset number. Each dot sits on KCC’s mapped position for that column.</p>
+        <p>Kent County Council gives every column an asset number, and each dot sits on KCC’s mapped position for that column.</p>
 
         <h3>The designs</h3>
         <ul class="dz">
@@ -255,7 +249,7 @@ details.panel[open] summary{margin-bottom:10px}
         </ul>
 
         <h3>Good to know</h3>
-        <p>The riverside path columns near Westwood Drive and Ambleside Place belong to Canterbury City Council, not KCC, so their numbers start with CCC.</p>
+        <p>The riverside path columns near Westwood Drive and Ambleside Place belong to Canterbury City Council, not KCC, so their numbers start with CCC and their dots sit where they were photographed.</p>
         <p>Asset numbers come from KCC’s list of 26 September 2026 and may occasionally be wrong. Faces and number plates in the photos have been blurred.</p>
       </div>
     </details>
@@ -305,7 +299,7 @@ function popup(p){
   p.candidates&&p.candidates!==p.asset?['Candidates',p.candidates]:null,['Position',p.placed],['Photographed',p.dates.map(ukDate).join(', ')]].filter(Boolean)
   .map(r=>`<tr><td>${esc(r[0])}</td><td>${esc(r[1])}</td></tr>`).join('');
  return `<div class="pp"><h3>${esc(title)}</h3><div class="st">${esc(p.street)}</div>
- <span class="badge" style="background:${v?v.c:'#444'};color:#fff">${esc(p.variant)}</span><span class="badge">${esc(p.confidence)}</span>
+ <span class="badge" style="background:${v?v.c:'#444'};color:#fff">${esc(p.variant)}</span>
  <table>${rows}</table>${p.note?`<div class="note">${esc(p.note)}</div>`:''}${condHtml(p)}<div class="thumbs">${ph}</div></div>`;}
 function condHtml(p){const c=p.condition;if(!c||!c.overall)return '';
  const bad=new Set(['Poor','Missing','Damaged']),good=new Set(['Excellent','Intact','Present']);
@@ -324,7 +318,7 @@ function clearFilters(){state.q='';document.getElementById('q').value='';
  state.vars=new Set(Object.keys(VARS));state.confs=new Set(CONFS);state.conds=new Set(Object.keys(CONDS));apply();}
 function apply(){
  let n=0;const shown=[];
- markers.forEach(m=>{const p=m.feature.properties;const ok=state.vars.has(p.variant)&&state.confs.has(p.confidence)&&(!p.condition||!p.condition.overall||state.conds.has(p.condition.overall))&&matchQ(p);
+ markers.forEach(m=>{const p=m.feature.properties;const ok=state.vars.has(p.variant)&&(!p.condition||!p.condition.overall||state.conds.has(p.condition.overall))&&matchQ(p);
   if(ok){if(!map.hasLayer(m))m.addTo(map);n++;shown.push(m);}else if(map.hasLayer(m))map.removeLayer(m);});
  const filtered=n!==markers.length;const cEl=document.getElementById('count');
  cEl.innerHTML=filtered?`Showing ${n} of ${markers.length} columns · <button type="button" id="clearF">Clear filters</button>`:`Showing all ${markers.length} columns`;
@@ -342,8 +336,6 @@ function buildFilters(){
  const fv=document.getElementById('fvar');
  const hasU=markers.some(m=>m.feature.properties.variant==='U');
  fv.innerHTML=Object.entries(VARS).filter(([k])=>k!=='U'||hasU).map(([k,v])=>`<label class="vcard" title="${esc(v.name)}"><input type="checkbox" data-var="${k}" checked>${VIMG.has(k)?`<img src="media/variants/${k}.jpg" alt="" data-v="${k}">`:'<span class="noimg"></span>'}<span class="vt"><span class="vn">${esc(VLAB[k]||v.name)}</span><span class="vc"><i style="background:${v.c}"></i>${esc(k)} · <span data-n-var="${k}"></span></span></span></label>`).join('');
- const fc=document.getElementById('fconf');
- fc.innerHTML=CONFS.filter(k=>markers.some(m=>m.feature.properties.confidence===k)).map(k=>`<label class="opt"><input type="checkbox" data-conf="${k}" checked><span class="sw${HOLLOW.has(k)?' hollow':''}" style="background:#2a78d6"></span>${k}<span class="n" data-n-conf="${k}"></span></label>`).join('');
  document.getElementById('fcond').innerHTML=Object.entries(CONDS).map(([k,c])=>`<label class="opt"><input type="checkbox" data-cond="${k}" checked><span class="sw" style="background:${c}"></span>${k}<span class="n" data-n-cond="${k}"></span></label>`).join('');
  document.querySelectorAll('[data-cond]').forEach(cb=>cb.onchange=()=>{cb.checked?state.conds.add(cb.dataset.cond):state.conds.delete(cb.dataset.cond);apply();});
  document.querySelectorAll('[data-colby]').forEach(b=>b.onclick=()=>{state.colby=b.dataset.colby;document.querySelectorAll('[data-colby]').forEach(x=>x.classList.toggle('on',x===b));markers.forEach(m=>m.setStyle(style(m.feature.properties)));});
