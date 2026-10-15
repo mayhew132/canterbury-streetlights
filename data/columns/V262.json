@@ -10,15 +10,15 @@
   "FOEB008"
  ],
  "candidate_distances": "FOEB008 (5 m)",
- "confidence": "Likely",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "OE?, OEB??S8",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-15",
  "variant": "B1",
  "gps": [
-  51.283695,
-  1.0773283
+  51.283722,
+  1.0774
  ],
  "dates": [
   "2026-03-28"
@@ -34,7 +34,7 @@
   "structure": "Intact",
   "lantern": "Intact",
   "door": "Present",
-  "colour": "Other"
+  "colour": "Black"
  },
  "defects": "paint faded/chalky with orange rust spots on base collar and acanthus section; slight rust on bracket collar",
  "cond_note": "Colour is dark slate blue-grey, not green or black (125534). Ladder bar ball ends present both sides (125540). Door panel with fixing screw in place. Moss/lichen on surrounding paving. Column number stencilled on shaft.",
@@ -44,5 +44,6 @@
  ],
  "cond_second_opinion": "colour=Black",
  "outcome": "",
- "order": 255
+ "order": 255,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-15"
 }
