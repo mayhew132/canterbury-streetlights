@@ -241,6 +241,17 @@ details.panel[open] summary{margin-bottom:10px}
       <p class="hint">Judged from the 2026 survey photographs only; not a structural or electrical inspection.</p>
     </details>
 
+    <details class="panel" open>
+      <summary><h2>Paint colour</h2></summary>
+      <div id="fx-col" class="rows"></div>
+    </details>
+
+    <details class="panel" open>
+      <summary><h2>Ownership</h2></summary>
+      <div id="fx-own" class="rows"></div>
+      <p class="hint">City Council columns on the riverside path have not been adopted by KCC.</p>
+    </details>
+
     <details class="panel about">
       <summary><h2>About this atlas</h2></summary>
       <div class="small">
@@ -316,20 +327,26 @@ function condHtml(p){const c=p.condition;if(!c||!c.overall)return '';
  const bad=new Set(['Poor','Missing','Damaged']),good=new Set(['Excellent','Intact','Present']);
  const chip=(lab,val)=>val?`<span class="chip${bad.has(val)?' bad':good.has(val)?' ok':''}">${esc(lab)}${lab?': ':''}${esc(val)}</span>`:'';
  return `<div class="cond"><div class="h">Visual condition (from photos, 2026)</div><div class="chips">${chip('Overall',c.overall)}${chip('Paint',c.paint)}${chip('External structure',c.structure)}${chip('Lantern',c.lantern)}${chip('Door',c.door)}${chip('',c.colour)}</div>${p.defects?`<div class="defects">${esc(p.defects)}</div>`:''}</div>`;}
+const XG=[
+ {k:'col',get:p=>(p.condition||{}).colour,opts:[['Moss Green','Moss green','#3d5a3a'],['Black','Black','#1d1d1b'],['Other','Another colour','#b39b6b']]},
+ {k:'own',get:p=>p.owner,opts:[['Kent County Council','Kent County Council',null],['Canterbury City Council (not adopted)','Canterbury City Council',null]]}];
+state.x={};XG.forEach(g=>state.x[g.k]=new Set(g.opts.map(o=>o[0])));
+function xOk(p){return XG.every(g=>{const v=g.get(p);return !v||!g.opts.some(o=>o[0]===v)||state.x[g.k].has(v);});}
 function counts(){
  const vis=feats.filter(f=>matchQ(f.properties));
  for(const k of Object.keys(VARS)){const el=document.querySelector(`[data-n-var="${k}"]`);if(el)el.textContent=vis.filter(f=>f.properties.variant===k).length;}
  for(const k of CONFS){const el=document.querySelector(`[data-n-conf="${k}"]`);if(el)el.textContent=vis.filter(f=>f.properties.confidence===k).length;}
  for(const k of Object.keys(CONDS)){const el=document.querySelector(`[data-n-cond="${k}"]`);if(el)el.textContent=vis.filter(f=>(f.properties.condition||{}).overall===k).length;}
+ XG.forEach(g=>g.opts.forEach(([v],i)=>{const el=document.querySelector(`[data-n-x="${g.k}-${i}"]`);if(el)el.textContent=vis.filter(f=>g.get(f.properties)===v).length;}));
 }
 function ukDate(d){const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(d||'');if(!m)return d;return new Date(Date.UTC(+m[1],+m[2]-1,+m[3])).toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'});}
 function matchQ(p){if(!state.q)return true;const q=state.q;return [p.asset,p.candidates,p.street,(p.id||'v'+p.visits[0])].join(' ').toLowerCase().includes(q);}
 function clearFilters(){state.q='';document.getElementById('q').value='';
  document.querySelectorAll('#side input[type=checkbox]').forEach(cb=>{cb.checked=true;});
- state.vars=new Set(Object.keys(VARS));state.confs=new Set(CONFS);state.conds=new Set(Object.keys(CONDS));apply();}
+ state.vars=new Set(Object.keys(VARS));state.confs=new Set(CONFS);state.conds=new Set(Object.keys(CONDS));XG.forEach(g=>state.x[g.k]=new Set(g.opts.map(o=>o[0])));apply();}
 function apply(){
  let n=0;const shown=[];
- markers.forEach(m=>{const p=m.feature.properties;const ok=state.vars.has(p.variant)&&(!p.condition||!p.condition.overall||state.conds.has(p.condition.overall))&&matchQ(p);
+ markers.forEach(m=>{const p=m.feature.properties;const ok=state.vars.has(p.variant)&&(!p.condition||!p.condition.overall||state.conds.has(p.condition.overall))&&xOk(p)&&matchQ(p);
   if(ok){if(!map.hasLayer(m))m.addTo(map);n++;shown.push(m);}else if(map.hasLayer(m))map.removeLayer(m);});
  const filtered=n!==markers.length;const cEl=document.getElementById('count');
  cEl.innerHTML=filtered?`Showing ${n} of ${markers.length} columns · <button type="button" id="clearF">Clear filters</button>`:`Showing all ${markers.length} columns`;
@@ -348,6 +365,9 @@ function buildFilters(){
  const hasU=markers.some(m=>m.feature.properties.variant==='U');
  fv.innerHTML=Object.entries(VARS).filter(([k])=>k!=='U'||hasU).map(([k,v])=>`<label class="vcard" title="${esc(v.name)}"><input type="checkbox" data-var="${k}" checked>${VIMG.has(k)?`<img src="media/variants/${k}.jpg" alt="" data-v="${k}">`:'<span class="noimg"></span>'}<span class="vt"><span class="vn">${esc(VLAB[k]||v.name)}</span><span class="vc"><i style="background:${v.c}"></i>${esc(k)} · <span data-n-var="${k}"></span></span></span></label>`).join('');
  document.getElementById('fcond').innerHTML=Object.entries(CONDS).map(([k,c])=>`<label class="opt"><input type="checkbox" data-cond="${k}" checked><span class="sw" style="background:${c}"></span>${k}<span class="n" data-n-cond="${k}"></span></label>`).join('');
+ XG.forEach(g=>{const el=document.getElementById('fx-'+g.k);if(!el)return;
+  el.innerHTML=g.opts.filter(([v])=>feats.some(f=>g.get(f.properties)===v)).map(([v,lab,c])=>{const i=g.opts.findIndex(o=>o[0]===v);return `<label class="opt"><input type="checkbox" data-x="${g.k}" data-xv="${esc(v)}" checked>${c?`<span class="sw" style="background:${c}"></span>`:''}${esc(lab)}<span class="n" data-n-x="${g.k}-${i}"></span></label>`;}).join('');});
+ document.querySelectorAll('[data-x]').forEach(cb=>cb.onchange=()=>{const S=state.x[cb.dataset.x];cb.checked?S.add(cb.dataset.xv):S.delete(cb.dataset.xv);apply();});
  document.querySelectorAll('[data-cond]').forEach(cb=>cb.onchange=()=>{cb.checked?state.conds.add(cb.dataset.cond):state.conds.delete(cb.dataset.cond);apply();});
  document.querySelectorAll('[data-colby]').forEach(b=>b.onclick=()=>{state.colby=b.dataset.colby;document.querySelectorAll('[data-colby]').forEach(x=>x.classList.toggle('on',x===b));markers.forEach(m=>m.setStyle(style(m.feature.properties)));});
  if(matchMedia('(hover:hover)').matches)fv.querySelectorAll('img[data-v]').forEach(im=>{im.addEventListener('mouseenter',()=>vprev(im,true));im.addEventListener('mouseleave',()=>vprev(im,false));});
