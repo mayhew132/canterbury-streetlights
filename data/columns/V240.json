@@ -10,11 +10,11 @@
   "FTBV003"
  ],
  "candidate_distances": "FTBV003 (1 m)",
- "confidence": "Probable",
+ "confidence": "Confirmed",
  "basis": "Painted number, partly legible + GPS",
  "painted": "??V???",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-15",
  "variant": "A1",
  "gps": [
   51.2830616,
@@ -41,5 +41,6 @@
  "cond_check": [],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 233
+ "order": 233,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-15"
 }
