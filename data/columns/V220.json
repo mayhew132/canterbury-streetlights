@@ -7,15 +7,14 @@
  "asset": "FRGS006",
  "owner": "KCC",
  "candidates": [
-  "FRGS006",
-  "FRGS005"
+  "FRGS006"
  ],
  "candidate_distances": "FRGS006 (5 m); FRGS005 (19 m)",
- "confidence": "Likely",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "Small-door pattern (A4) confirmed by Guy",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-15",
  "variant": "A4",
  "gps": [
   51.2837916,
