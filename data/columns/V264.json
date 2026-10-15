@@ -10,15 +10,15 @@
   "FOEB004"
  ],
  "candidate_distances": "FOEB004 (6 m)",
- "confidence": "Probable",
+ "confidence": "Confirmed",
  "basis": "Painted number, partly legible + GPS",
  "painted": "O?????",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-15",
  "variant": "B1",
  "gps": [
-  51.284405,
-  1.0773933
+  51.284383,
+  1.077476
  ],
  "dates": [
   "2026-03-28"
@@ -34,7 +34,7 @@
   "structure": "Intact",
   "lantern": "Intact",
   "door": "Present",
-  "colour": "Other"
+  "colour": "Black"
  },
  "defects": "red primer/rust patches showing on base door panel and lower shaft (red streak); paint worn through to bare grey metal and rust along swan-neck bracket and bracket collar; rust on finial box",
  "cond_note": "Colour is dark slate blue-grey (125934). Large private 'Parking Enforcement in Operation' sign fixed to shaft below ladder bar (125944, 130017). Ladder bar ball ends present both sides. Lantern globe and shade intact (130000).",
@@ -43,5 +43,6 @@
  ],
  "cond_second_opinion": "colour=Black",
  "outcome": "",
- "order": 257
+ "order": 257,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-15"
 }
