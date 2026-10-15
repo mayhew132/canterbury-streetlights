@@ -10,11 +10,11 @@
   "FRGS007"
  ],
  "candidate_distances": "FRGS007 (4 m)",
- "confidence": "Probable",
+ "confidence": "Confirmed",
  "basis": "Hand-painted number \"7\" on shaft + GPS",
  "painted": "\"7\" (hand-painted)",
  "note": "Small-door pattern (A4) confirmed by Guy",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-15",
  "variant": "A4",
  "gps": [
   51.2838566,
@@ -41,5 +41,6 @@
  "cond_check": [],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 213
+ "order": 213,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-15"
 }
