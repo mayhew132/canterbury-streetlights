@@ -10,11 +10,11 @@
   "FRGS008"
  ],
  "candidate_distances": "FRGS008 (10 m)",
- "confidence": "Probable",
+ "confidence": "Confirmed",
  "basis": "Order along Riverside Walk between hand-painted 14 and 7 + GPS",
  "painted": "",
  "note": "Small-door pattern (A4) confirmed by Guy",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-15",
  "variant": "A4",
  "gps": [
   51.2841183,
@@ -41,5 +41,6 @@
  "cond_check": [],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 212
+ "order": 212,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-15"
 }
