@@ -4,17 +4,15 @@
   292
  ],
  "street": "Ambleside Place",
- "asset": "FAFG301",
- "owner": "KCC",
- "candidates": [
-  "FAFG301"
- ],
+ "asset": "00132683",
+ "owner": "CCC",
+ "candidates": [],
  "candidate_distances": "FAFG301 (37 m)",
- "confidence": "Likely",
+ "confidence": "Confirmed",
  "basis": "Order along footpath (KCC: 1st–5th towards Kingsmead Road) + GPS",
  "painted": "",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-15",
  "variant": "A1",
  "gps": [
   51.2862616,
@@ -44,5 +42,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 283
+ "order": 283,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-15"
 }
