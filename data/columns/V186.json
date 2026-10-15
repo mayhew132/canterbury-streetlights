@@ -33,7 +33,7 @@
   "paint": "Poor",
   "structure": "Damaged",
   "lantern": "None",
-  "door": "Missing",
+  "door": "Present",
   "colour": "Moss Green"
  },
  "defects": "column cut down to rusted base stub wrapped in hazard tape and plastic; no shaft, bracket or lantern",
@@ -44,5 +44,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 183
+ "order": 183,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-15"
 }
