@@ -4,10 +4,10 @@
   216
  ],
  "street": "Riverside Walk",
- "asset": "FRGS009",
+ "asset": "FRGS010",
  "owner": "KCC",
  "candidates": [
-  "FRGS009"
+  "FRGS010"
  ],
  "candidate_distances": "FRGS010 (32 m)",
  "confidence": "Confirmed",
@@ -17,8 +17,8 @@
  "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-15",
  "variant": "A1",
  "gps": [
-  51.284394,
-  1.08306
+  51.28438,
+  1.083044
  ],
  "dates": [
   "2026-03-18"
