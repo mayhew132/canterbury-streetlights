@@ -15,8 +15,8 @@
  "confirmed_by": "Guy (asset sheet, Oct 2026)",
  "variant": "A1",
  "gps": [
-  51.2865266,
-  1.0876633
+  51.286511,
+  1.087604
  ],
  "dates": [
   "2026-05-01"
@@ -44,5 +44,6 @@
  ],
  "cond_second_opinion": "overall=Good;lantern=Intact",
  "outcome": "",
- "order": 270
+ "order": 270,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-15"
 }
