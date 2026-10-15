@@ -10,11 +10,11 @@
   "FSRG003"
  ],
  "candidate_distances": "FSRG003 (3 m)",
- "confidence": "Likely",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-15",
  "variant": "B2",
  "gps": [
   51.2850533,
@@ -43,5 +43,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 266
+ "order": 266,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-15"
 }
