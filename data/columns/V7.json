@@ -10,11 +10,11 @@
   "FCKD002"
  ],
  "candidate_distances": "FCKD002 (4 m)",
- "confidence": "Probable",
+ "confidence": "Confirmed",
  "basis": "Hand-painted number \"2\" on shaft + GPS",
  "painted": "C?????, \"2\" (hand-painted)",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-15",
  "variant": "A1",
  "gps": [
   51.274029,
@@ -42,5 +42,5 @@
  "cond_second_opinion": "",
  "outcome": "",
  "order": 6,
- "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-15"
 }
