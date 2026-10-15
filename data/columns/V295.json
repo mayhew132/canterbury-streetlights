@@ -3,18 +3,16 @@
  "visits": [
   295
  ],
- "street": "Ambleside Place",
- "asset": "FAFG304",
- "owner": "KCC",
- "candidates": [
-  "FAFG304"
- ],
+ "street": "Kingsbrook Park",
+ "asset": "00132679",
+ "owner": "CCC",
+ "candidates": [],
  "candidate_distances": "FAFG304 (14 m)",
- "confidence": "Likely",
+ "confidence": "Confirmed",
  "basis": "Order along footpath (KCC: 1st–5th towards Kingsmead Road) + GPS",
  "painted": "",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-15",
  "variant": "A1",
  "gps": [
   51.2861481,
@@ -41,5 +39,6 @@
  "cond_check": [],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 286
+ "order": 286,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-15"
 }
