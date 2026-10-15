@@ -7,15 +7,14 @@
  "asset": "FKAZ009",
  "owner": "KCC",
  "candidates": [
-  "FKAZ009",
-  "FKAZ008"
+  "FKAZ009"
  ],
  "candidate_distances": "FKAZ009 (8 m); FKAZ008 (21 m)",
- "confidence": "Probable",
+ "confidence": "Confirmed",
  "basis": "Painted number, partly legible + GPS",
  "painted": "KAZ00?",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-15",
  "variant": "A1",
  "gps": [
   51.2807916,
@@ -45,5 +44,6 @@
  ],
  "cond_second_opinion": "overall=Good;paint=Good",
  "outcome": "",
- "order": 198
+ "order": 198,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-15"
 }
