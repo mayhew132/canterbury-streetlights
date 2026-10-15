@@ -10,15 +10,15 @@
   "FSKP001"
  ],
  "candidate_distances": "FSKP001 (painted; 34 m)",
- "confidence": "Strong",
+ "confidence": "Confirmed",
  "basis": "Painted number, partly legible (one match nearby)",
  "painted": "KP0?1",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-15",
  "variant": "A1",
  "gps": [
-  51.2827083,
-  1.0830866
+  51.282387,
+  1.083097
  ],
  "dates": [
   "2026-03-18"
@@ -44,5 +44,6 @@
  ],
  "cond_second_opinion": "overall=Poor;paint=Poor",
  "outcome": "",
- "order": 226
+ "order": 226,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-15"
 }
