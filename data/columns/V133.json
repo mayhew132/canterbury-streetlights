@@ -10,15 +10,15 @@
   "FYAH002"
  ],
  "candidate_distances": "FYAH002 (13 m)",
- "confidence": "Strong",
+ "confidence": "Confirmed",
  "basis": "Identified by Guy (local knowledge) + GPS",
  "painted": "",
  "note": "A2 fluted drum identified as FYAH002 by Guy",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-15",
  "variant": "A2",
  "gps": [
-  51.27332,
-  1.0726666
+  51.273206,
+  1.072749
  ],
  "dates": [
   "2026-03-04"
@@ -44,5 +44,5 @@
  "cond_second_opinion": "",
  "outcome": "",
  "order": 130,
- "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-15"
 }
