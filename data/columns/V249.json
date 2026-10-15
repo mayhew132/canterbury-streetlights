@@ -10,15 +10,15 @@
   "FSKI004"
  ],
  "candidate_distances": "FSKI004 (33 m)",
- "confidence": "Probable",
+ "confidence": "Confirmed",
  "basis": "Painted number, partly legible + GPS",
  "painted": "???004",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-15",
  "variant": "A1",
  "gps": [
-  51.2813166,
-  1.0783483
+  51.281401,
+  1.077894
  ],
  "dates": [
   "2026-03-19"
@@ -44,5 +44,6 @@
  ],
  "cond_second_opinion": "overall=Excellent;paint=Excellent",
  "outcome": "",
- "order": 242
+ "order": 242,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-15"
 }
