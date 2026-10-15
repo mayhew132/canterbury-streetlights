@@ -7,19 +7,18 @@
  "asset": "FOEB003",
  "owner": "KCC",
  "candidates": [
-  "FOEB003",
-  "FOEB004"
+  "FOEB003"
  ],
  "candidate_distances": "FOEB003 (9 m); FOEB004 (20 m)",
- "confidence": "Likely",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-15",
  "variant": "B1",
  "gps": [
-  51.2845083,
-  1.07769
+  51.284588,
+  1.077701
  ],
  "dates": [
   "2026-03-28"
@@ -35,7 +34,7 @@
   "structure": "Intact",
   "lantern": "Intact",
   "door": "Present",
-  "colour": "Other"
+  "colour": "Black"
  },
  "defects": "topcoat extensively flaked away exposing red primer over most of base, shaft and bracket collar; swan-neck bracket worn to bare grey metal; metal band strapped around base across top of door",
  "cond_note": "Remnant topcoat is dark slate blue-grey (130054, 130125); column now reads largely red/pink from exposed primer. DW Windsor maker's plate on base (130125). Ladder bar ball ends present both sides (130101). Lantern intact (130111). Stands between wheelie bins; weeds at base.",
@@ -44,5 +43,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 258
+ "order": 258,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-15"
 }
