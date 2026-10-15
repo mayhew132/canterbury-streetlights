@@ -11,11 +11,11 @@
   "FBJT006"
  ],
  "candidate_distances": "FBJT006 (5 m)",
- "confidence": "Probable",
+ "confidence": "Confirmed",
  "basis": "Hand-painted number \"6\" on shaft + GPS",
  "painted": "\"6\" (hand-painted)",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-15",
  "variant": "A2",
  "gps": [
   51.278626,
@@ -34,7 +34,7 @@
   "structure": "Intact",
   "lantern": "Intact",
   "door": "Present",
-  "colour": "Other"
+  "colour": "Moss Green"
  },
  "defects": "minor chips and rust spots at foot of base",
  "cond_note": "Painted blue/teal (clearly blue in sunlit base 133049, not green). Ladder bar acorns present both ends (133057). No access door visible in either base view. Pedestrian zone sign and menu poster attached to shaft. | Adjudicated: door seen on second check: Paint is a blue/teal (clearly blue in sunlit 133049, darker teal in 133020) - no",
@@ -45,5 +45,5 @@
  "cond_second_opinion": "",
  "outcome": "",
  "order": 2,
- "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-15"
 }
