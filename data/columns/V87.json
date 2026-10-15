@@ -14,7 +14,7 @@
  "basis": "Painted number, partly legible + GPS (one asset per visit per day)",
  "painted": "SHL00?",
  "note": "",
- "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
+ "confirmed_by": "Guy 2026-10-14",
  "variant": "A1",
  "gps": [
   51.283112,
@@ -45,5 +45,5 @@
  "cond_second_opinion": "overall=Good;paint=Good",
  "outcome": "",
  "order": 84,
- "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
+ "reviewed": "Guy 2026-10-14"
 }

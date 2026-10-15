@@ -14,7 +14,7 @@
  "basis": "GPS (nearest column)",
  "painted": "OE?, OEB??S8",
  "note": "",
- "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-15",
+ "confirmed_by": "Guy 2026-10-15",
  "variant": "B1",
  "gps": [
   51.283722,
@@ -45,5 +45,5 @@
  "cond_second_opinion": "colour=Black",
  "outcome": "",
  "order": 255,
- "reviewed": "guy.j.mayhew@gmail.com 2026-10-15"
+ "reviewed": "Guy 2026-10-15"
 }

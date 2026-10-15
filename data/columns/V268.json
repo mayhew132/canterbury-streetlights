@@ -14,7 +14,7 @@
  "basis": "GPS (one asset per visit per day)",
  "painted": "",
  "note": "",
- "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-14",
+ "confirmed_by": "Guy 2026-10-14",
  "variant": "B2",
  "gps": [
   51.281981,
@@ -45,5 +45,5 @@
  "cond_second_opinion": "door=Not seen;colour=Other",
  "outcome": "",
  "order": 260,
- "reviewed": "guy.j.mayhew@gmail.com 2026-10-14"
+ "reviewed": "Guy 2026-10-14"
 }
