@@ -10,15 +10,15 @@
   "FTBV001"
  ],
  "candidate_distances": "FTBV001 (painted; 6 m)",
- "confidence": "Strong",
+ "confidence": "Confirmed",
  "basis": "Painted number, partly legible (one match nearby)",
  "painted": "TBV0?1",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-15",
  "variant": "A1",
  "gps": [
-  51.2828416,
-  1.0790266
+  51.282776,
+  1.07909
  ],
  "dates": [
   "2026-03-19"
@@ -44,5 +44,6 @@
  ],
  "cond_second_opinion": "paint=Good;structure=Damaged",
  "outcome": "",
- "order": 235
+ "order": 235,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-15"
 }
