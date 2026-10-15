@@ -34,7 +34,7 @@
   "structure": "Intact",
   "lantern": "Intact",
   "door": "Present",
-  "colour": "Other"
+  "colour": "Moss Green"
  },
  "defects": "widespread chipping and flaking paint with rust on base, especially fluting and foot; black tape over door lock area; loose metal strap round base collar",
  "cond_note": "painted slate blue/blue-grey rather than green (base and shaft in 514(0)/133540); door with cypher present; both ladder bar finials present (133540); pedestrian zone sign and hanging-basket hook on shaft",
@@ -43,5 +43,6 @@
  ],
  "cond_second_opinion": "colour=Black",
  "outcome": "",
- "order": 188
+ "order": 188,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-15"
 }
