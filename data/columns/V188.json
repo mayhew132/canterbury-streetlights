@@ -10,11 +10,11 @@
   "FCCC007"
  ],
  "candidate_distances": "FCCC007 (painted; 4 m)",
- "confidence": "Strong",
+ "confidence": "Confirmed",
  "basis": "Painted number, partly legible (one match nearby)",
  "painted": "CCC?07",
  "note": "Small-door pattern (A4)",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-15",
  "variant": "A4",
  "gps": [
   51.2763516,
@@ -41,5 +41,6 @@
  "cond_check": [],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 185
+ "order": 185,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-15"
 }
