@@ -4,21 +4,21 @@
   216
  ],
  "street": "Riverside Walk",
- "asset": "FRGS010",
+ "asset": "FRGS009",
  "owner": "KCC",
  "candidates": [
-  "FRGS010"
+  "FRGS009"
  ],
  "candidate_distances": "FRGS010 (32 m)",
- "confidence": "Probable",
+ "confidence": "Confirmed",
  "basis": "Order along Riverside Walk between hand-painted 14 and 7 + GPS",
  "painted": "",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-15",
  "variant": "A1",
  "gps": [
-  51.2846566,
-  1.0831899
+  51.284394,
+  1.08306
  ],
  "dates": [
   "2026-03-18"
@@ -41,5 +41,6 @@
  "cond_check": [],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 210
+ "order": 210,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-15"
 }
