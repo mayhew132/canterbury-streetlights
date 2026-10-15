@@ -15,10 +15,10 @@
  "painted": "",
  "note": "",
  "confirmed_by": "Guy (asset sheet, Oct 2026)",
- "variant": "X-mod",
+ "variant": "A3",
  "gps": [
-  51.2752838,
-  1.075948
+  51.275253,
+  1.075866
  ],
  "dates": [
   "2026-03-28"
@@ -43,5 +43,6 @@
  ],
  "cond_second_opinion": "paint=Good;structure=Intact",
  "outcome": "",
- "order": 254
+ "order": 254,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-15"
 }
