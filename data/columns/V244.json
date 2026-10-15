@@ -10,15 +10,15 @@
   "FPEM011"
  ],
  "candidate_distances": "FPEM011 (13 m)",
- "confidence": "Probable",
+ "confidence": "Confirmed",
  "basis": "Painted number, partly legible + GPS",
  "painted": "???011",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-15",
  "variant": "A1",
  "gps": [
-  51.2826729,
-  1.079088
+  51.282709,
+  1.078908
  ],
  "dates": [
   "2026-03-19"
@@ -41,5 +41,6 @@
  "cond_check": [],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 237
+ "order": 237,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-15"
 }
