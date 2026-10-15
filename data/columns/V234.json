@@ -10,15 +10,15 @@
   "FKCB002"
  ],
  "candidate_distances": "FKCB002 (painted; 38 m)",
- "confidence": "Strong",
+ "confidence": "Confirmed",
  "basis": "Painted number, partly legible (one match nearby)",
  "painted": "KCB?02",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-15",
  "variant": "A1",
  "gps": [
-  51.2821999,
-  1.0824366
+  51.282239,
+  1.081896
  ],
  "dates": [
   "2026-03-18"
@@ -43,5 +43,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 228
+ "order": 228,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-15"
 }
