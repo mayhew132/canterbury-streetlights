@@ -7,16 +7,14 @@
  "asset": "FRGT004",
  "owner": "KCC",
  "candidates": [
-  "FRGT004",
-  "FRGT003",
-  "FRGT005"
+  "FRGT004"
  ],
  "candidate_distances": "FRGT004 (7 m); FRGT003 (21 m); FRGT005 (21 m)",
- "confidence": "Likely",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-15",
  "variant": "B2",
  "gps": [
   51.2825033,
@@ -44,5 +42,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 263
+ "order": 263,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-15"
 }
