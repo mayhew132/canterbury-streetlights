@@ -10,11 +10,11 @@
   "FSGV002"
  ],
  "candidate_distances": "FSGV002 (2 m)",
- "confidence": "Likely",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-15",
  "variant": "A1",
  "gps": [
   51.28083,
