@@ -10,11 +10,11 @@
   "FRGS015"
  ],
  "candidate_distances": "FRGS015 (4 m)",
- "confidence": "Likely",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "\"?5\" (hand-painted)",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-15",
  "variant": "A1",
  "gps": [
   51.2854916,
@@ -43,5 +43,6 @@
  ],
  "cond_second_opinion": "colour=Moss Green",
  "outcome": "",
- "order": 205
+ "order": 205,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-15"
 }
