@@ -6,15 +6,13 @@
  "street": "Barton Mill Road",
  "asset": "00132695",
  "owner": "CCC",
- "candidates": [
-  "FBAW308"
- ],
+ "candidates": [],
  "candidate_distances": "FBAW308 (4 m)",
- "confidence": "Likely",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-15",
  "variant": "A1",
  "gps": [
   51.2875976,
