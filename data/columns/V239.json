@@ -17,8 +17,8 @@
  "confirmed_by": "",
  "variant": "A1",
  "gps": [
-  51.2831649,
-  1.0786883
+  51.283176,
+  1.078688
  ],
  "dates": [
   "2026-03-19"
@@ -43,5 +43,6 @@
  ],
  "cond_second_opinion": "structure=Damaged",
  "outcome": "",
- "order": 232
+ "order": 232,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-15"
 }
