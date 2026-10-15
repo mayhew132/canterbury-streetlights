@@ -5,21 +5,21 @@
   263
  ],
  "street": "Orient Place",
- "asset": "FOEB006",
+ "asset": "FKBT010",
  "owner": "KCC",
  "candidates": [
-  "FOEB006"
+  "FKBT010"
  ],
  "candidate_distances": "FOEB006 (21 m)",
- "confidence": "Likely",
+ "confidence": "Confirmed",
  "basis": "Revisit of the 12:57 Orient Place column (same sticker) + GPS",
  "painted": "",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-15",
  "variant": "B1",
  "gps": [
-  51.28412,
-  1.0770266
+  51.284028,
+  1.077036
  ],
  "dates": [
   "2026-03-28"
@@ -33,7 +33,7 @@
   "structure": "Intact",
   "lantern": "Intact",
   "door": "Present",
-  "colour": "Other"
+  "colour": "Black"
  },
  "defects": "extensive red primer/rust showing around base foot and collar (130315); sticker residue on base; blue sticker/label on lower shaft; paint chips on acanthus section",
  "cond_note": "Colour is dark slate blue-grey (125741). Door present on base (125741). Ladder bar ends present both sides (125803). Lantern globe and shade intact.",
@@ -43,5 +43,6 @@
  ],
  "cond_second_opinion": "overall=Good;colour=Black",
  "outcome": "",
- "order": 256
+ "order": 256,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-15"
 }
