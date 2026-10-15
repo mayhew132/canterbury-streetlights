@@ -7,15 +7,14 @@
  "asset": "FBJT002",
  "owner": "KCC",
  "candidates": [
-  "FBJT002",
-  "FBJT001"
+  "FBJT002"
  ],
  "candidate_distances": "FBJT002 (3 m); FBJT001 (17 m)",
- "confidence": "Likely",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-15",
  "variant": "A2",
  "gps": [
   51.2782033,
@@ -30,7 +29,7 @@
   "20260312_132540.jpg"
  ],
  "condition": {
-  "overall": "Poor",
+  "overall": "Good",
   "paint": "Poor",
   "structure": "Intact",
   "lantern": "Intact",
@@ -44,5 +43,6 @@
  ],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 186
+ "order": 186,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-15"
 }
