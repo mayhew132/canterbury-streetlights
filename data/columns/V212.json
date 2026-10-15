@@ -10,15 +10,15 @@
   "FRGS014"
  ],
  "candidate_distances": "FRGS014 (9 m)",
- "confidence": "Probable",
+ "confidence": "Confirmed",
  "basis": "Hand-painted number \"14\" on shaft + GPS",
  "painted": "\"14\" (hand-painted)",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-15",
  "variant": "A1",
  "gps": [
-  51.2853733,
-  1.0841783
+  51.285309,
+  1.084111
  ],
  "dates": [
   "2026-03-18"
@@ -43,5 +43,6 @@
  ],
  "cond_second_opinion": "colour=Moss Green",
  "outcome": "",
- "order": 206
+ "order": 206,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-15"
 }
