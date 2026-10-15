@@ -10,11 +10,11 @@
   "FKCB001"
  ],
  "candidate_distances": "FKCB001 (21 m)",
- "confidence": "Likely",
+ "confidence": "Confirmed",
  "basis": "GPS (nearest column)",
  "painted": "",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-15",
  "variant": "A1",
  "gps": [
   51.2826033,
@@ -41,5 +41,6 @@
  "cond_check": [],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 227
+ "order": 227,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-15"
 }
