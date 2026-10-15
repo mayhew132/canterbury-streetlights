@@ -10,11 +10,11 @@
   "FKAZ005"
  ],
  "candidate_distances": "FKAZ005 (1 m)",
- "confidence": "Probable",
+ "confidence": "Confirmed",
  "basis": "Painted number, partly legible + GPS",
  "painted": "?A??0?",
  "note": "",
- "confirmed_by": "",
+ "confirmed_by": "guy.j.mayhew@gmail.com 2026-10-15",
  "variant": "A1",
  "gps": [
   51.2813083,
@@ -41,5 +41,6 @@
  "cond_check": [],
  "cond_second_opinion": "",
  "outcome": "",
- "order": 202
+ "order": 202,
+ "reviewed": "guy.j.mayhew@gmail.com 2026-10-15"
 }
