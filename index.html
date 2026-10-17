@@ -346,7 +346,7 @@ details.panel[open] summary{margin-bottom:10px}
     <div class="phs" id="smPhs"></div>
     <label class="drop" id="smDrop"><input type="file" id="smFile" accept="image/*" multiple><span id="smPick">Add photos <small>up to 4</small></span></label>
     <div id="smWhere">
-      <div class="lab">Where is it? <span class="hint">Drag the pin, or tap a street light to snap to it. Blue rings are KCC street lights, orange rings City Council ones; green dots are already in the atlas.</span></div>
+      <div class="lab">Where is it? <span class="hint">Drag the pin, or tap a street light to snap to it. Blue rings are KCC street lights, orange rings City Council ones; green dots are already in the atlas and yellow ones are reported but awaiting review.</span></div>
       <div id="smMap"></div>
       <div class="snap" id="smSnap" hidden></div>
       <button type="button" class="linkb" id="smLoc">Use my current location</button>
@@ -530,7 +530,9 @@ async function openSubmit(kind,p){
 // Snap to KCC street-lighting assets (the public KCC inventory already published as data/kcc.json)
 const kccTidy=t=>String(t||'').replace(/\s*\((?:LIVE|\d+)\)/gi,'').replace(/\s+/g,' ').trim().toLowerCase().replace(/(^|[\s,(-])([a-z])/g,(m,a,b)=>a+b.toUpperCase());
 const CCC_COLS=new Set(['Council Street Light','Lantern Light']);
-function loadKcc(){if(kccAll)return;kccAll=[];
+let pendA=new Set(),pendPts=[];
+function loadPending(){fetch(SUBMIT_URL.replace(/\/submit$/,'/pending')).then(r=>r.json()).then(j=>{pendA=new Set();pendPts=[];for(const x of j.pending||[]){if(x.a)pendA.add(x.a);else if(x.la!=null)pendPts.push(x);}drawKcc();}).catch(()=>{});}
+function loadKcc(){loadPending();if(kccAll)return;kccAll=[];
  Promise.all([fetch('data/kcc.json').then(r=>r.json()),fetch('data/ccc.json').then(r=>r.ok?r.json():{}).catch(()=>({}))]).then(([k,c])=>{
   const a1=Object.entries(k).map(([id,a])=>({id,lat:a[0],lon:a[1],loc:a[2]}));
   const a2=Object.entries(c).filter(([id,a])=>CCC_COLS.has(a[4])).map(([id,a])=>({id,lat:a[0],lon:a[1],loc:a[3]+(a[4]?' ('+a[4].toLowerCase()+')':''),ccc:1}));
@@ -538,13 +540,14 @@ function loadKcc(){if(kccAll)return;kccAll=[];
 const onMap=new Set();function knownAssets(){if(!onMap.size)feats.forEach(f=>{if(f.properties.asset)onMap.add(f.properties.asset);});return onMap;}
 function drawKcc(){if(!smMap||!kccLayer||!kccAll||!kccAll.length)return;kccLayer.clearLayers();if(smMap.getZoom()<16)return;
  const bb=smMap.getBounds().pad(0.1),known=knownAssets();let n=0;
+ for(const q of pendPts){if(!bb.contains([q.la,q.lo]))continue;L.circleMarker([q.la,q.lo],{radius:6,weight:2,color:'#8a6d00',fillColor:'#f5c518',fillOpacity:1,bubblingMouseEvents:false}).bindTooltip('Reported, awaiting review',{direction:'top',offset:[0,-4]}).addTo(kccLayer);}
  for(const a of kccAll){if(!bb.contains([a.lat,a.lon]))continue;if(++n>1500)break;const k=known.has(a.id);
-  const ring=a.ccc?'#c77700':'#2a78d6';const m=L.circleMarker([a.lat,a.lon],{radius:k?6:5,weight:k?2:1.5,color:k?'#1f7a4d':ring,fillColor:k?'#1f7a4d':'#fff',fillOpacity:k?.85:1,bubblingMouseEvents:false});
-  m.bindTooltip((a.ccc?'City Council '+a.id:a.id)+(k?' · already on the map':''),{direction:'top',offset:[0,-4]});m.on('click',()=>smSnapTo(a));m.addTo(kccLayer);}}
+  const pd=!k&&pendA.has(a.id),ring=a.ccc?'#c77700':'#2a78d6';const m=L.circleMarker([a.lat,a.lon],{radius:k||pd?6:5,weight:k||pd?2:1.5,color:k?'#1f7a4d':pd?'#8a6d00':ring,fillColor:k?'#1f7a4d':pd?'#f5c518':'#fff',fillOpacity:k?.85:1,bubblingMouseEvents:false});
+  m.bindTooltip((a.ccc?'City Council '+a.id:a.id)+(k?' · already on the map':pd?' · reported, awaiting review':''),{direction:'top',offset:[0,-4]});m.on('click',()=>smSnapTo(a));m.addTo(kccLayer);}}
 function smUnsnap(){sm.asset='';$s('smSnap').hidden=true;}
-function smSnapTo(a){sm.asset=a.id;smSetPin(a.lat,a.lon);const el=$s('smSnap'),known=knownAssets().has(a.id);
- el.className='snap'+(known?' warn':'');el.hidden=false;
- el.innerHTML=known?`This is <b>${esc(a.id)}</b>, which is already on the map. <button type="button" id="smSwitch">Send a photo of it instead</button>`
+function smSnapTo(a){sm.asset=a.id;smSetPin(a.lat,a.lon);const el=$s('smSnap'),known=knownAssets().has(a.id),pd=!known&&pendA.has(a.id);
+ el.className='snap'+(known||pd?' warn':'');el.hidden=false;
+ el.innerHTML=pd?`Someone has already reported <b>${esc(a.id)}</b> and it's awaiting review. You can still send it if you have more or better photos. <button type="button" id="smUn">Not this one</button>`:known?`This is <b>${esc(a.id)}</b>, which is already on the map. <button type="button" id="smSwitch">Send a photo of it instead</button>`
   :`Snapped to ${a.ccc?'City Council light':'KCC street light'} <b>${esc(a.id)}</b>${a.loc?' — '+esc(a.ccc?a.loc:kccTidy(a.loc)):''}. <button type="button" id="smUn">Not this one</button>`;
  const sw=$s('smSwitch');if(sw)sw.onclick=()=>{const f=feats.find(f=>f.properties.asset===a.id);if(f)openSubmit('photo',f.properties);};
  const un=$s('smUn');if(un)un.onclick=()=>{smUnsnap();};}
@@ -592,7 +595,7 @@ $s('smF').onsubmit=async e=>{e.preventDefault();if(smBusy)return;smErr('');
  smBusy=true;const go=$s('smGo');go.disabled=true;go.textContent='Sending…';
  try{const r=await fetch(SUBMIT_URL,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({kind:sm.kind,column:sm.col,lat:sm.kind==='missing'?sm.lat:null,lon:sm.kind==='missing'?sm.lon:null,note,jpegs:sm.jpegs,asset:sm.kind==='missing'?sm.asset:'',token})});
   const j=await r.json().catch(()=>({}));if(!r.ok||!j.ok)throw new Error(j.error||'Sorry, something went wrong. Please try again.');
-  $s('smF').hidden=true;$s('smDone').hidden=false;$s('smOk').focus();}
+  $s('smF').hidden=true;$s('smDone').hidden=false;$s('smOk').focus();if(sm.kind==='missing'){if(sm.asset)pendA.add(sm.asset);else if(sm.lat!=null)pendPts.push({la:sm.lat,lo:sm.lon});}}
  catch(err){smErr(err.message);go.disabled=false;go.textContent='Send';try{turnstile.reset(tsId);}catch(_){}}
  finally{smBusy=false;}};
 fetch('data/columns.geojson').then(r=>r.json()).then(gj=>{
