@@ -2,10 +2,10 @@
  "id": "N202610172011",
  "visits": [],
  "street": "Dane John",
- "asset": "FDAG026",
+ "asset": "FDAG027",
  "owner": "KCC",
  "candidates": [
-  "FDAG026"
+  "FDAG027"
  ],
  "candidate_distances": "",
  "confidence": "Probable",
@@ -15,8 +15,8 @@
  "confirmed_by": "",
  "variant": "U",
  "gps": [
-  51.275728,
-  1.080657
+  51.275562,
+  1.080217
  ],
  "dates": [
   "2026-10-17"
