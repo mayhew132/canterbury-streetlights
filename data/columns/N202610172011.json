@@ -1,0 +1,34 @@
+{
+ "id": "N202610172011",
+ "visits": [],
+ "street": "Dane John",
+ "asset": "FDAG027",
+ "owner": "KCC",
+ "candidates": [
+  "FDAG027"
+ ],
+ "candidate_distances": "",
+ "confidence": "Probable",
+ "basis": "Public report pinned to this KCC asset",
+ "painted": "",
+ "note": "",
+ "confirmed_by": "",
+ "variant": "U",
+ "gps": [
+  51.275562,
+  1.080217
+ ],
+ "dates": [
+  "2026-10-17"
+ ],
+ "photos": [
+  "N202610172011_20261017_201231.jpg",
+  "N202610172011_20261017_201220.jpg"
+ ],
+ "condition": {},
+ "defects": "",
+ "cond_note": "",
+ "cond_check": [],
+ "cond_second_opinion": "",
+ "outcome": ""
+}
