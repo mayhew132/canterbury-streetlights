@@ -199,7 +199,10 @@ details.panel[open] summary{margin-bottom:10px}
 </head>
 <body>
 <section id="intro" aria-label="Introduction">
-  <video autoplay muted loop playsinline preload="auto" poster="media/landing-poster.jpg" aria-hidden="true"><source src="media/landing.mp4" type="video/mp4"></video>
+  <video autoplay muted loop playsinline preload="auto" poster="media/landing-poster.jpg" aria-hidden="true"></video>
+  <script>(function(){var v=document.currentScript.previousElementSibling,mq=matchMedia('(orientation: portrait)');
+   function pick(){var src=mq.matches?'media/landing-portrait.mp4':'media/landing.mp4';if(v.getAttribute('src')===src)return;var t=v.currentTime||0,playing=!v.paused;v.setAttribute('src',src);if(t){v.addEventListener('loadedmetadata',function f(){v.removeEventListener('loadedmetadata',f);try{v.currentTime=t%v.duration;}catch(e){}},{once:true});}if(playing)v.play().catch(function(){});}
+   pick();if(mq.addEventListener)mq.addEventListener('change',pick);})();</script>
   <div class="in">
     <p class="eyebrow"><svg class="bound" viewBox="-2 -2 96.8 104.0" aria-hidden="true"><path d="M92.8 24.7 L87.3 23.3 L87.8 26.3 L83.6 27.5 L86.4 31.3 L78.8 38.8 L77.2 43.4 L81.0 47.8 L75.6 54.4 L75.0 60.4 L80.8 62.8 L72.8 79.9 L76.4 79.0 L84.1 85.1 L75.6 96.6 L71.3 93.4 L65.9 96.5 L62.9 93.2 L61.0 100.0 L51.3 94.8 L51.9 90.5 L49.1 95.2 L43.6 94.2 L33.4 86.2 L30.7 96.1 L16.6 98.6 L12.1 93.6 L17.0 84.5 L11.1 71.0 L14.8 63.3 L7.1 54.8 L17.2 47.3 L17.4 34.5 L20.6 32.9 L6.7 20.3 L2.4 20.5 L0.0 16.7 L17.0 14.9 L25.6 6.8 L64.8 2.3 L84.7 0.0 L84.9 0.0 L86.3 7.0 L81.2 6.6 L81.5 11.1 L92.8 24.7Z"/></svg>An interactive atlas</p>
     <h1>Canterbury’s Heritage Streetlights</h1>
