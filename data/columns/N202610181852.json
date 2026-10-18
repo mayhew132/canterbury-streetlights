@@ -2,16 +2,16 @@
  "id": "N202610181852",
  "visits": [],
  "street": "Dane John",
- "asset": "",
- "owner": "",
+ "asset": "FDAG025",
+ "owner": "CCC",
  "candidates": [],
  "candidate_distances": "",
- "confidence": "No match",
+ "confidence": "Confirmed",
  "basis": "Added via the admin page",
  "painted": "",
  "note": "",
- "confirmed_by": "",
- "variant": "U",
+ "confirmed_by": "Guy 2026-10-18",
+ "variant": "A3",
  "gps": [
   51.27548097889426,
   1.0799753665924074
@@ -22,13 +22,19 @@
  "photos": [
   "N202610181852_20261018_185437.jpg",
   "N202610181852_20261018_185406.jpg",
-  "N202610181852_20261018_185345.jpg",
   "N202610181852_20261018_185500.jpg"
  ],
- "condition": {},
+ "condition": {
+  "overall": "Excellent",
+  "paint": "Excellent",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Heritage Green"
+ },
  "defects": "",
  "cond_note": "",
  "cond_check": [],
  "cond_second_opinion": "",
- "outcome": ""
+ "outcome": "Confirmed on site"
 }
