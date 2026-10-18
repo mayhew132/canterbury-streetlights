@@ -162,8 +162,10 @@ details.panel[open] summary{margin-bottom:10px}
 .pp table{border-collapse:collapse;font-size:12.5px;width:100%;margin:6px 0}
 .pp td{padding:2px 0;vertical-align:top}
 .pp td:first-child{color:var(--mut);width:92px;padding-right:8px}
-.thumbs{display:flex;gap:4px;margin-top:8px}
-.thumbs img{width:96px;height:128px;object-fit:cover;border-radius:4px;cursor:zoom-in;background:#eee}
+.thumbs{display:flex;gap:6px;margin-top:8px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.thumbs::-webkit-scrollbar{display:none}
+.thumbs img{flex:0 0 calc((100% - 12px)/3);min-width:0;aspect-ratio:3/4;height:auto;object-fit:cover;border-radius:6px;cursor:zoom-in;background:#eee;scroll-snap-align:start}
+.pp .more{font-size:11.5px;color:var(--mut);margin-top:4px}
 .note{font-size:12px;color:#8a5a00;background:#fff7e6;border-radius:4px;padding:5px 7px;margin-top:6px}
 /* lightbox */
 #lb{position:fixed;inset:0;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;z-index:2000;flex-direction:column}
@@ -191,7 +193,6 @@ details.panel[open] summary{margin-bottom:10px}
   #homeFab{display:block;position:absolute;top:10px;left:126px;z-index:1000;background:#fff;border:1px solid #bbb;border-radius:6px;padding:7px 11px;font-size:14px;box-shadow:0 1px 4px rgba(0,0,0,.2)}
   #toggle{display:block;position:absolute;top:10px;left:56px;z-index:1000;background:#fff;border:1px solid #bbb;border-radius:6px;padding:7px 11px;font-size:14px;box-shadow:0 1px 4px rgba(0,0,0,.2)}
   .leaflet-popup-content{width:250px!important}
-  .thumbs img{width:78px;height:104px}
 }
 
 /* landing screen */
@@ -401,7 +402,7 @@ function popup(p){
   .map(r=>`<tr><td>${esc(r[0])}</td><td>${esc(r[1])}</td></tr>`).join('');
  return `<div class="pp"><h3>${esc(title)}</h3><div class="st">${esc(p.street)}</div>
  <span class="badge" style="background:${v?v.c:'#444'};color:#fff">${esc(p.variant)}</span>
- <table>${rows}</table>${p.note?`<div class="note">${esc(p.note)}</div>`:''}${condHtml(p)}<div class="thumbs">${ph}</div><button type="button" class="sendph">📷 Send us a photo of this column</button></div>`;}
+ <table>${rows}</table>${p.note?`<div class="note">${esc(p.note)}</div>`:''}${condHtml(p)}<div class="thumbs">${ph}</div>${p.photos.length>3?`<div class="more">${p.photos.length} photos · swipe for more</div>`:''}<button type="button" class="sendph">📷 Send us a photo of this column</button></div>`;}
 function condHtml(p){const c=p.condition;if(!c||!c.overall)return '';
  const bad=new Set(['Poor','Missing','Damaged']),good=new Set(['Excellent','Intact','Present']);
  const chip=(lab,val)=>val?`<span class="chip${bad.has(val)?' bad':good.has(val)?' ok':''}">${esc(lab)}${lab?': ':''}${esc(val)}</span>`:'';
@@ -607,7 +608,7 @@ fetch('data/columns.geojson').then(r=>r.json()).then(gj=>{
   const m=L.circleMarker([lat,lon],style(p));m.feature=f;
   m.bindPopup(()=>popup(p),{maxWidth:330,autoPanPaddingTopLeft:[60,70],autoPanPaddingBottomRight:[20,20]});
   m.bindTooltip(`${p.asset||'No KCC match'} · ${p.variant}`,{direction:'top',offset:[0,-6]});
-  m.on('popupopen',e=>{const el=e.popup.getElement();const sb=el.querySelector('.sendph');if(sb)sb.onclick=()=>{map.closePopup();openSubmit('photo',p);};el.querySelectorAll('.thumbs img').forEach(img=>img.onclick=()=>openLb(p,+img.dataset.i));
+  m.on('popupopen',e=>{const el=e.popup.getElement();const th=el.querySelector('.thumbs');if(th)L.DomEvent.on(th,'touchstart pointerdown mousedown wheel',L.DomEvent.stopPropagation);const sb=el.querySelector('.sendph');if(sb)sb.onclick=()=>{map.closePopup();openSubmit('photo',p);};el.querySelectorAll('.thumbs img').forEach(img=>img.onclick=()=>openLb(p,+img.dataset.i));
    if(p.asset)history.replaceState(null,'','#'+p.asset);});
   markers.push(m);
  });
