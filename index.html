@@ -310,8 +310,8 @@ details.panel[open] summary{margin-bottom:10px}
         <h3>The designs</h3>
         <ul class="dz">
           <li><img src="media/variants/A1.jpg" alt=""><span><b>Mather &amp; Smith Biggleston Replica (A1)</b> a replica of the Biggleston column, with the city’s CC monogram on the door</span></li>
+          <li><img src="media/variants/A2.jpg" alt=""><span><b>Biggleston Original (A2)</b> a short framed door, with fluting all round the base</span></li>
           <li><img src="media/variants/A3.jpg" alt=""><span><b>Sugg Biggleston Replica (A3)</b> a Sugg replica with a crossbar and swan-neck lantern</span></li>
-          <li><img src="media/variants/A4.jpg" alt=""><span><b>Biggleston Original (A4)</b> a short framed door, with fluting all round the base</span></li>
           <li><img src="media/variants/B1.jpg" alt=""><span><b>Reproductions (B1, B2)</b> modern heritage-style columns by DW Windsor</span></li>
           <li><img src="media/variants/B3.jpg" alt=""><span><b>Reproduction Cylinder Drum (B3)</b> a ribbed cylinder-drum column without the monogram, not a Biggleston pattern</span></li>
           <li><img src="media/variants/X-stub.jpg" alt=""><span><b>Stubs and replacements</b> shown where they now stand in place of an original</span></li>
@@ -371,8 +371,8 @@ details.panel[open] summary{margin-bottom:10px}
 <script>
 const VARS={
  'A1':{name:'A1 Mather & Smith Biggleston Replica',c:'#1f7a4d'},
+ 'A2':{name:'A2 Biggleston Original',c:'#c2185b'},
  'A3':{name:'A3 Sugg Biggleston Replica',c:'#c77d12'},
- 'A4':{name:'A4 Biggleston Original',c:'#c2185b'},
  'B1':{name:'B1 DW Windsor swan-neck',c:'#2a78d6'},
  'B2':{name:'B2 DW Windsor post-top',c:'#16a3b8'},
  'B3':{name:'B3 Reproduction Cylinder Drum',c:'#7b3fb5'},
@@ -380,7 +380,7 @@ const VARS={
  'X-mod':{name:'X-mod Modern replacement',c:'#777777'},
  'U':{name:'U Not yet classified',c:'#b0b0aa'}
 };
-const VLAB={'A1':'Mather & Smith Biggleston Replica','A3':'Sugg Biggleston Replica','A4':'Biggleston Original','B1':'Reproduction swan-neck','B2':'Reproduction post-top','B3':'Reproduction Cylinder Drum','X-stub':'Cut-down stub','X-mod':'Modern replacement','U':'Not yet classified'};
+const VLAB={'A1':'Mather & Smith Biggleston Replica','A2':'Biggleston Original','A3':'Sugg Biggleston Replica','B1':'Reproduction swan-neck','B2':'Reproduction post-top','B3':'Reproduction Cylinder Drum','X-stub':'Cut-down stub','X-mod':'Modern replacement','U':'Not yet classified'};
 const CONFS=['Confirmed','Strong','Probable','Likely','Uncertain','No match'];
 const HOLLOW=new Set(['Uncertain','No match']);
 const CONDS={'Excellent':'#1a9850','Good':'#91cf60','Poor':'#d73027','Missing':'#4d4d4d'};
@@ -437,7 +437,7 @@ function apply(){
  const cb=document.getElementById('clearF');if(cb)cb.onclick=clearFilters;
  counts();return shown;
 }
-const VIMG=new Set(['A1','A3','A4','B1','B2','B3','X-stub','X-mod']);
+const VIMG=new Set(['A1','A2','A3','B1','B2','B3','X-stub','X-mod']);
 function vprev(im,on){const p=document.getElementById('vprev');if(!on){p.style.display='none';return;}
  const k=im.dataset.v;p.dataset.v=k;p.innerHTML=`<img src="media/variants/${k}-lg.jpg" alt=""><div>${esc(VARS[k].name)}</div>`;
  const r=im.getBoundingClientRect();p.style.display='block';const h=p.offsetHeight;
