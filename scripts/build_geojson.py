@@ -58,7 +58,7 @@ def validate(kcc, recs):
 
 
 def position(r, kcc):
-    if r.get('owner') == 'KCC' and r.get('asset') in kcc and r.get('confidence') in ASSET_OK:
+    if r.get('owner') in ('KCC', 'CCC') and r.get('asset') in kcc and r.get('confidence') in ASSET_OK:
         a = kcc[r['asset']]
         return a[0], a[1], 'KCC asset position'
     return r['gps'][0], r['gps'][1], 'Photo GPS position'
