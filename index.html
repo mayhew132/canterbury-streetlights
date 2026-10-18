@@ -106,7 +106,6 @@ details.panel[open] summary{margin-bottom:10px}
 .about .dz b{display:block}
 
 .hint .lg{display:inline-flex;align-items:center;gap:5px;margin-right:10px}
-@media (max-width:760px){#toggle,#homeFab{top:auto!important;bottom:30px}#side.open~#toggle,#side.open~#homeFab{bottom:30px}}
 .sfoot{margin:14px 20px 0;font-size:12px;color:var(--mut);line-height:1.5}
 .sfoot p{margin:0 0 4px}
 @media (max-width:760px){#side{width:100%}#side .sh{padding:14px 16px 12px}.searchwrap{margin:12px 16px 0}.countbar{margin:8px 16px 4px}}
@@ -154,7 +153,7 @@ details.panel[open] summary{margin-bottom:10px}
 #sm .go2[disabled]{opacity:.55;cursor:default}
 #smTs{min-height:65px}
 @media (max-width:520px){#sm{padding:0;align-items:flex-end}#sm .box{border-radius:16px 16px 0 0;max-height:94dvh}}
-body.popopen #toggle,body.popopen #homeFab{display:none!important}
+.leaflet-top.leaflet-left .mfabs{clear:none;float:left;display:flex;gap:6px;margin:10px 0 0 8px}
 /* popup */
 .leaflet-popup-content{margin:12px 14px;width:300px!important}
 .pp h3{margin:0 0 2px;font-size:16px}
@@ -191,8 +190,7 @@ body.popopen #toggle,body.popopen #homeFab{display:none!important}
   #app{flex-direction:column}
   #side{width:100%;max-height:45%;border-right:0;border-bottom:1px solid var(--line);display:none}
   #side.open{display:block}
-  #homeFab{display:block;position:absolute;top:10px;left:126px;z-index:1000;background:#fff;border:1px solid #bbb;border-radius:6px;padding:7px 11px;font-size:14px;box-shadow:0 1px 4px rgba(0,0,0,.2)}
-  #toggle{display:block;position:absolute;top:10px;left:56px;z-index:1000;background:#fff;border:1px solid #bbb;border-radius:6px;padding:7px 11px;font-size:14px;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+  #homeFab,#toggle{display:block;position:static;background:#fff;border:1px solid #bbb;border-radius:6px;padding:7px 11px;font:inherit;font-size:14px;color:var(--accent);box-shadow:0 1px 4px rgba(0,0,0,.2);cursor:pointer}
   .leaflet-popup-content{width:250px!important}
 }
 
@@ -386,6 +384,8 @@ const HOLLOW=new Set(['Uncertain','No match']);
 const CONDS={'Excellent':'#1a9850','Good':'#91cf60','Poor':'#d73027','Missing':'#4d4d4d'};
 const map=L.map('map',{zoomControl:true,maxZoom:18}).setView([51.2795,1.0800],15);
 map.on('popupclose',()=>document.body.classList.remove('popopen'));
+// Filters / Home sit in the map's top-left corner beside the zoom buttons (phones only; hidden on desktop by CSS)
+(()=>{const C=L.Control.extend({options:{position:'topleft'},onAdd(){const d=L.DomUtil.create('div','mfabs');d.appendChild(document.getElementById('toggle'));d.appendChild(document.getElementById('homeFab'));L.DomEvent.disableClickPropagation(d);return d;}});map.addControl(new C());})();
 const carto=L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?key=cb1_4cu8_1_139fe088319c64207ae97f1a',{maxZoom:18,maxNativeZoom:18,subdomains:'abcd',attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'});
 const osm=L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'});
 carto.addTo(map);
@@ -410,7 +410,7 @@ function condHtml(p){const c=p.condition;if(!c||!c.overall)return '';
  const chip=(lab,val)=>val?`<span class="chip${bad.has(val)?' bad':good.has(val)?' ok':''}">${esc(lab)}${lab?': ':''}${esc(val)}</span>`:'';
  return `<div class="cond"><div class="h">Visual condition (from photos, 2026)</div><div class="chips">${chip('Overall',c.overall)}${chip('Paint',c.paint)}${chip('External structure',c.structure)}${chip('Lantern',c.lantern)}${chip('Door',c.door)}${chip('',c.colour)}</div>${p.defects?`<div class="defects">${esc(p.defects)}</div>`:''}</div>`;}
 const XG=[
- {k:'col',get:p=>(p.condition||{}).colour,opts:[['Moss Green','Moss green','#3d5a3a'],['Black','Black','#1d1d1b'],['Other','Another colour','#b39b6b']]},
+ {k:'col',get:p=>(p.condition||{}).colour,opts:[['Moss Green','Moss green','#3d5a3a'],['Heritage Green','Heritage green','#1e5b3f'],['Black','Black','#1d1d1b'],['Other','Another colour','#b39b6b']]},
  {k:'own',get:p=>p.owner,opts:[['Kent County Council','Kent County Council',null],['Canterbury City Council (not adopted)','Canterbury City Council',null]]}];
 state.x={};XG.forEach(g=>state.x[g.k]=new Set(g.opts.map(o=>o[0])));
 function xOk(p){return XG.every(g=>{const v=g.get(p);return !v||!g.opts.some(o=>o[0]===v)||state.x[g.k].has(v);});}

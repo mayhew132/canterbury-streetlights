@@ -26,7 +26,7 @@ COND = {
     'structure': {'Intact', 'Damaged'},
     'lantern': {'Intact', 'Damaged', 'None', 'Not seen'},
     'door': {'Present', 'Missing', 'Not seen'},
-    'colour': {'Moss Green', 'Black', 'Other'},
+    'colour': {'Moss Green', 'Heritage Green', 'Black', 'Other'},
 }
 OWNERS = {'KCC': 'Kent County Council', 'CCC': 'Canterbury City Council (not adopted)', '': ''}
 
