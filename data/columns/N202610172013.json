@@ -4,15 +4,13 @@
  "street": "Dane John",
  "asset": "FDAG026",
  "owner": "CCC",
- "candidates": [
-  "FDAG026"
- ],
+ "candidates": [],
  "candidate_distances": "",
  "confidence": "Confirmed",
  "basis": "Public report pinned to this KCC asset",
  "painted": "",
  "note": "",
- "confirmed_by": "Guy 2026-10-17",
+ "confirmed_by": "Guy 2026-10-18",
  "variant": "A1",
  "gps": [
   51.275728,
