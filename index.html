@@ -311,6 +311,7 @@ details.panel[open] summary{margin-bottom:10px}
         <ul class="dz">
           <li><img src="media/variants/A1.jpg" alt=""><span><b>Biggleston standard (A1)</b> the classic Canterbury column, with the city’s CC monogram on the door</span></li>
           <li><img src="media/variants/A2.jpg" alt=""><span><b>Fluted drum (A2)</b> a similar column without the monogram</span></li>
+          <li><img src="media/variants/A3.jpg" alt=""><span><b>Sugg LUF Replica (A3)</b> an ornate replica column with a crossbar and swan-neck lantern</span></li>
           <li><img src="media/variants/A4.jpg" alt=""><span><b>Small-door (A4)</b> a short framed door, with fluting all round the base</span></li>
           <li><img src="media/variants/B1.jpg" alt=""><span><b>Reproductions (B1, B2)</b> modern heritage-style columns by DW Windsor</span></li>
           <li><img src="media/variants/X-stub.jpg" alt=""><span><b>Stubs and replacements</b> shown where they now stand in place of an original</span></li>
@@ -371,6 +372,7 @@ details.panel[open] summary{margin-bottom:10px}
 const VARS={
  'A1':{name:'A1 Biggleston standard',c:'#1f7a4d'},
  'A2':{name:'A2 Fluted drum (no cypher)',c:'#7b3fb5'},
+ 'A3':{name:'A3 Sugg LUF Replica',c:'#c77d12'},
  'A4':{name:'A4 Small-door',c:'#c2185b'},
  'B1':{name:'B1 DW Windsor swan-neck',c:'#2a78d6'},
  'B2':{name:'B2 DW Windsor post-top',c:'#16a3b8'},
@@ -378,7 +380,7 @@ const VARS={
  'X-mod':{name:'X-mod Modern replacement',c:'#777777'},
  'U':{name:'U Not yet classified',c:'#b0b0aa'}
 };
-const VLAB={'A1':'Biggleston standard','A2':'Fluted drum','A4':'Small-door','B1':'Reproduction swan-neck','B2':'Reproduction post-top','X-stub':'Cut-down stub','X-mod':'Modern replacement','U':'Not yet classified'};
+const VLAB={'A1':'Biggleston standard','A2':'Fluted drum','A3':'Sugg LUF Replica','A4':'Small-door','B1':'Reproduction swan-neck','B2':'Reproduction post-top','X-stub':'Cut-down stub','X-mod':'Modern replacement','U':'Not yet classified'};
 const CONFS=['Confirmed','Strong','Probable','Likely','Uncertain','No match'];
 const HOLLOW=new Set(['Uncertain','No match']);
 const CONDS={'Excellent':'#1a9850','Good':'#91cf60','Poor':'#d73027','Missing':'#4d4d4d'};
@@ -435,7 +437,7 @@ function apply(){
  const cb=document.getElementById('clearF');if(cb)cb.onclick=clearFilters;
  counts();return shown;
 }
-const VIMG=new Set(['A1','A2','A4','B1','B2','X-stub','X-mod']);
+const VIMG=new Set(['A1','A2','A3','A4','B1','B2','X-stub','X-mod']);
 function vprev(im,on){const p=document.getElementById('vprev');if(!on){p.style.display='none';return;}
  const k=im.dataset.v;p.dataset.v=k;p.innerHTML=`<img src="media/variants/${k}-lg.jpg" alt=""><div>${esc(VARS[k].name)}</div>`;
  const r=im.getBoundingClientRect();p.style.display='block';const h=p.offsetHeight;
