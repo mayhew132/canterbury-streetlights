@@ -8,12 +8,12 @@
   "FDAG027"
  ],
  "candidate_distances": "",
- "confidence": "Probable",
+ "confidence": "Confirmed",
  "basis": "Public report pinned to this KCC asset",
  "painted": "",
  "note": "",
- "confirmed_by": "",
- "variant": "U",
+ "confirmed_by": "Guy 2026-10-17",
+ "variant": "A1",
  "gps": [
   51.275562,
   1.080217
@@ -22,10 +22,19 @@
   "2026-10-17"
  ],
  "photos": [
+  "N202610172011_20261017_201259.jpg",
+  "N202610172011_20261017_201253.jpg",
   "N202610172011_20261017_201231.jpg",
   "N202610172011_20261017_201220.jpg"
  ],
- "condition": {},
+ "condition": {
+  "overall": "Excellent",
+  "paint": "Excellent",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Other"
+ },
  "defects": "",
  "cond_note": "",
  "cond_check": [],
