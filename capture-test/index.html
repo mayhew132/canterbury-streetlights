@@ -29,6 +29,11 @@ p{line-height:1.5;margin:0 0 12px}
 .btn{display:block;width:100%;padding:14px 16px;border:0;border-radius:12px;background:var(--green);color:#fff;font:inherit;font-size:16px;font-weight:600;cursor:pointer;text-align:center;text-decoration:none}
 .btn.sec{background:#fff;color:var(--ink);border:1px solid #d5d3cc}
 .btn.exit{background:#b3261e;color:#fff}
+.leave{margin-top:12px;padding:14px;border:1px solid #e8b4ae;background:#fdf1ef;border-radius:12px}
+.leave b{font-size:16px}
+.leave p{margin:6px 0 0;font-size:14.5px;color:#5a2a25}
+.leave .nav{margin-top:12px}
+.leave .nav .btn,.leave .nav .btn.sec{flex:1 1 0;display:flex;align-items:center;justify-content:center;white-space:nowrap}
 .btn:disabled{opacity:.45;cursor:default}
 .btn+.btn{margin-top:10px}
 .colhead{background:#eef5ee;color:#1f4d2e;border-radius:10px;padding:10px 12px;font-size:14.5px;line-height:1.4;margin:0 0 14px}
@@ -190,7 +195,12 @@ pre{white-space:pre-wrap;word-break:break-word;background:#f1f0eb;border-radius:
   <p class="small">What the live version would send (photo data left out):</p>
   <pre id="payload"></pre>
   <div class="nav"><button class="btn sec" id="doneBack" type="button">Back</button><button class="btn" id="again" type="button">Start again</button></div>
-  <a class="btn exit" href="../?map" style="margin-top:10px">Exit to Map</a>
+  <button class="btn exit" id="exit" type="button" style="margin-top:10px">Exit to Map</button>
+  <div class="leave" id="leave" hidden role="alertdialog" aria-labelledby="leaveT" aria-describedby="leaveD">
+    <b id="leaveT">Leave without sending?</b>
+    <p id="leaveD">Your four photos and answers haven't been sent and will be lost.</p>
+    <div class="nav"><button class="btn sec" id="stay" type="button">Keep going</button><a class="btn exit" id="leaveGo" href="../?map">Leave</a></div>
+  </div>
 </div></section>
 
 <script src="../lib/leaflet.js"></script>
@@ -367,7 +377,7 @@ $('locNext').onclick=()=>{if(!st.pin){$('locErr').textContent='Please place the 
 /* summary and payload preview */
 function metres(a,b){const R=6371000,r=Math.PI/180,dl=(b.lat-a.lat)*r,dn=(b.lon-a.lon)*r,x=Math.sin(dl/2)**2+Math.cos(a.lat*r)*Math.cos(b.lat*r)*Math.sin(dn/2)**2;return Math.round(2*R*Math.asin(Math.sqrt(x)));}
 const label=id=>{const s=$(id);return s.options[s.selectedIndex].text;};
-function done(){stopGps();
+function done(){stopGps();$('leave').hidden=true;$('exit').hidden=false;
  $('doneThumbs').innerHTML=st.shots.map((s,i)=>`<button type="button" class="th" data-i="${i}" aria-label="Retake: ${esc(STEPS[i].name)}"><figure><img src="${s.url}" alt=""><figcaption>${esc(STEPS[i].name)}</figcaption></figure></button>`).join('');
  $('doneThumbs').querySelectorAll('button').forEach(b=>b.onclick=()=>{st.ret=true;openCam(+b.dataset.i);});
  const known=st.mode==='known',where=known?{lat:st.col.lat,lon:st.col.lon}:st.pin,fix=st.fix||st.best;
@@ -382,6 +392,8 @@ function done(){stopGps();
   obs:{colour:$('oColour').value,damage:$('oDamage').value,lamp:$('oLamp').value},note:$('oNote').value.trim(),
   shots:st.shots.map(s=>({role:s.role,source:s.src,width:s.w,height:s.h,kb:Math.round(s.url.length*.75/1024)}))};
  $('payload').textContent=JSON.stringify(payload,null,2);show('sDone');}
+$('exit').onclick=()=>{$('exit').hidden=true;$('leave').hidden=false;$('stay').focus();$('leave').scrollIntoView({block:'nearest'});};
+$('stay').onclick=()=>{$('leave').hidden=true;$('exit').hidden=false;$('exit').focus();};
 $('doneBack').onclick=()=>{st.ret=false;if(st.mode==='missing')openLoc();else show('sObs');};
 $('again').onclick=()=>{st.ret=false;st.shots=[null,null,null,null];st.fix=null;st.pin=null;unsnap();['oColour','oDamage','oLamp','oNote'].forEach(id=>$(id).value='');$('go').textContent='Start';drawStepList();show('sStart');};
 
