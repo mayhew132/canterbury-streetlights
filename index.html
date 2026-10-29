@@ -230,9 +230,8 @@ details.panel[open] summary{margin-bottom:10px}
 #tour .t-inv h2{font-size:26px;margin:0}
 #tour .t-inv .t-btn{width:100%;min-height:48px;font-size:16px}
 #tour .t-inv .t-fine{text-align:center;margin:0}
-.tour-link{display:none;margin:0 0 10px}
+.tour-link{margin:0 0 10px}
 #tourStart{background:none;border:0;padding:0;font:inherit;font-weight:600;color:var(--accent);text-decoration:underline;text-underline-offset:2px;cursor:pointer}
-@media (max-width:760px){.tour-link{display:block}}
 
 /* landing screen */
 #intro{position:fixed;inset:0;z-index:3000;background:#1b1a17 url(media/landing-poster.jpg) center/cover no-repeat;color:#fff;overflow:hidden;
@@ -657,7 +656,7 @@ const Tour=(()=>{
  const box=pts=>({left:Math.min(...pts.map(p=>p.x))-14,right:Math.max(...pts.map(p=>p.x))+14,top:Math.min(...pts.map(p=>p.y))-14,bottom:Math.max(...pts.map(p=>p.y))+14});
  const el=id=>{const e=document.getElementById(id);return e?e.getBoundingClientRect():null;};
  function closeAll(){map.closePopup();if(side().classList.contains('open')){side().classList.remove('open');map.invalidateSize();}}
- const STEPS=[
+ const PHONE=[
   {t:'Every dot is a column',b:'<p>Each dot is one of Canterbury\'s cast-iron lighting columns, recorded street by street in the 2026 survey. Its colour shows the design: green for the Mather &amp; Smith replica, pink for a Biggleston original.</p>',
    before:async()=>{closeAll();map.setView(CENTRE,16,{animate:false});await sleep(250);},
    rect:()=>{const c=cluster();pick=c;return c?box(c.n):null;}},
@@ -685,15 +684,50 @@ const Tour=(()=>{
   {t:'That\'s the tour',b:'<p>Home takes you back to the introduction at any time. You can replay this tour from About this atlas in the Filters panel.</p>',
    before:async()=>{closeAll();await sleep(150);},rect:()=>el('homeFab'),last:true}
  ];
- function place(r){const vw=innerWidth,vh=innerHeight;
-  if(!r||!r.right){root.classList.remove('spot');card.style.top=Math.max(16,(vh-card.offsetHeight)/2)+'px';arrow.style.display='none';return;}
+ // desktop and tablet: the panel stays open on the left, so the stops point into it
+ const sideTo=e=>{const sd=side();if(e)sd.scrollTop=Math.max(0,e.getBoundingClientRect().top-sd.getBoundingClientRect().top+sd.scrollTop-12);else sd.scrollTop=0;};
+ const DESK=[
+  {t:'Every dot is a column',b:PHONE[0].b,before:PHONE[0].before,rect:PHONE[0].rect},
+  {t:'Click a dot to see the column',b:'<p>Its card shows the photos, the design, the owner and its condition. Click a photo to see it full size.</p>',
+   before:async()=>{map.closePopup();const c=pick||cluster();let m=null;
+     if(c){const withPh=c.n.filter(o=>(o.m.feature.properties.photos||[]).length>1);const pool=withPh.length?withPh:c.n;
+      m=pool.sort((a,b)=>Math.hypot(a.x-c.o.x,a.y-c.o.y)-Math.hypot(b.x-c.o.x,b.y-c.o.y))[0].m;}
+     if(m){m.openPopup();await sleep(700);const pe=document.querySelector('.leaflet-popup');
+      if(pe){const r=pe.getBoundingClientRect(),mb=mbox();map.panBy([r.left-(mb.left+14),r.top-(mb.top+24)],{animate:false});await sleep(200);}}},
+   rect:PHONE[1].rect},
+  {t:'Search',b:'<p>The panel on the left stays open. Search for a street, an asset number or a map ID, and the count below shows how many columns match.</p>',
+   before:async()=>{map.closePopup();sideTo(null);await sleep(100);},
+   rect:()=>{const a=document.querySelector('.searchwrap'),b=document.getElementById('count');if(!a)return null;const r1=a.getBoundingClientRect(),r2=b?b.getBoundingClientRect():r1;
+     return {left:Math.min(r1.left,r2.left),right:Math.max(r1.right,r2.right),top:r1.top,bottom:Math.max(r1.bottom,r2.bottom)};}},
+  {t:'Designs and colours',b:'<p>Each card is one design, with a picture and how many there are. Click a card to hide or show those columns. Colour points by switches the dots between design and visual condition. Further down are filters for condition, paint colour and owner.</p>',
+   before:async()=>{map.closePopup();sideTo(side().querySelector('.panel'));await sleep(120);},
+   rect:PHONE[3].rect},
+  {t:'Grey dots: already reported',b:'',before:PHONE[4].before,rect:PHONE[4].rect,round:true},
+  {t:'Report a missing column',b:'<p>Seen a heritage column that isn\'t on the map? Report it here: four photos, each lined up with an outline on the camera, then three quick questions. It works best on a phone, standing at the column.</p><div class="t-shots"><figure><img src="media/tour/whole.jpg" alt="Example: the whole column"><figcaption>Whole column</figcaption></figure><figure><img src="media/tour/base.jpg" alt="Example: the base"><figcaption>Base</figcaption></figure><figure><img src="media/tour/ladder.jpg" alt="Example: the ladder bar"><figcaption>Ladder bar</figcaption></figure><figure><img src="media/tour/top.jpg" alt="Example: the neck and lantern"><figcaption>Neck and lantern</figcaption></figure></div><p class="t-fine">To add photos of a column already on the map, use the button on its card.</p>',
+   before:async()=>{map.closePopup();sideTo(side().querySelector('.panel.help'));await sleep(120);},
+   rect:()=>{const e=side().querySelector('.panel.help');return e?e.getBoundingClientRect():null;}},
+  {t:'That\'s the tour',b:'<p>The house button takes you back to the introduction at any time. You can replay this tour from About this atlas, further down this panel.</p>',
+   before:async()=>{map.closePopup();sideTo(null);await sleep(100);},rect:()=>el('navHome'),round:true,last:true}
+ ];
+ let STEPS=PHONE;
+ function place(r){const vw=innerWidth,vh=innerHeight,cw=Math.min(400,vw-32),wide=vw>760;
+  Object.assign(card.style,{width:cw+'px',right:'auto',margin:'0'});
+  Object.assign(arrow.style,{top:'auto',bottom:'auto',left:'auto',right:'auto'});
+  if(!r||!r.right){root.classList.remove('spot');card.style.left=((vw-cw)/2)+'px';card.style.top=Math.max(16,(vh-card.offsetHeight)/2)+'px';arrow.style.display='none';return;}
   root.classList.add('spot');const s={l:Math.max(4,r.left-6),t:Math.max(4,r.top-6),r:Math.min(vw-4,r.right+6),b:Math.min(vh-4,r.bottom+6)};
   const w=s.r-s.l,h=s.b-s.t;Object.assign(spot.style,{left:s.l+'px',top:s.t+'px',width:w+'px',height:h+'px',borderRadius:(STEPS[i].round?Math.min(w,h)/2:12)+'px'});
-  const ch=card.offsetHeight,gap=14;let top,below;
-  if(vh-s.b-gap-12>=ch){top=s.b+gap;below=true;}else if(s.t-gap-12>=ch){top=s.t-gap-ch;below=false;}else{top=Math.max(12,vh-ch-12);below=null;}
-  card.style.top=top+'px';const cb=card.getBoundingClientRect(),cx=(s.l+s.r)/2;
-  if(below===null)arrow.style.display='none';
-  else{arrow.style.display='block';arrow.style.left=Math.min(cb.width-28,Math.max(12,cx-cb.left-8))+'px';arrow.style.top=below?'-8px':'auto';arrow.style.bottom=below?'auto':'-8px';}}
+  const ch=card.offsetHeight,gap=14,cx=(s.l+s.r)/2,cy=(s.t+s.b)/2;
+  const hx=x=>Math.min(vw-cw-16,Math.max(16,x)),vy=y=>Math.min(vh-ch-12,Math.max(12,y));let L,T,at;
+  const roomR=vw-s.r-gap-16;
+  if(wide&&roomR>=280){const nw=Math.min(cw,roomR);if(nw!==cw){card.style.width=nw+'px';}const nh=card.offsetHeight;L=s.r+gap;T=Math.min(vh-nh-12,Math.max(12,cy-nh/2));at='left';}
+  else if(vh-s.b-gap-12>=ch){L=hx(cx-cw/2);T=s.b+gap;at='top';}
+  else if(s.t-gap-12>=ch){L=hx(cx-cw/2);T=s.t-gap-ch;at='bottom';}
+  else if(wide&&s.l-gap-16>=cw){L=s.l-gap-cw;T=vy(cy-ch/2);at='right';}
+  else{L=hx(cx-cw/2);T=Math.max(12,vh-ch-12);at=null;}
+  card.style.left=L+'px';card.style.top=T+'px';
+  if(!at){arrow.style.display='none';return;}arrow.style.display='block';
+  if(at==='top'||at==='bottom'){arrow.style[at]='-8px';arrow.style.left=Math.min(cw-28,Math.max(12,cx-L-8))+'px';}
+  else{arrow.style[at]='-8px';arrow.style.top=Math.min(card.offsetHeight-28,Math.max(12,cy-T-8))+'px';}}
  async function go(n){if(busy||n<0)return;if(n>=STEPS.length)return end();busy=true;i=n;const st=STEPS[n];card.style.visibility='hidden';
   try{await st.before();}catch(e){}
   card.querySelector('.t-eb').textContent=`Quick tour · ${n+1} of ${STEPS.length}`;card.querySelector('#tourH').textContent=st.t;
@@ -701,13 +735,13 @@ const Tour=(()=>{
   card.querySelector('.t-dots').innerHTML=STEPS.map((_,k)=>`<i class="${k===n?'c':k<n?'p':''}"></i>`).join('');
   card.querySelector('[data-go="back"]').hidden=n===0;const nx=card.querySelector('[data-go="next"]');nx.textContent=st.last?'Start exploring':'Next';
   inv.hidden=true;card.hidden=false;place(st.rect());card.style.visibility='';busy=false;nx.focus({preventScroll:true});}
- function start(){if(!saved)saved={c:map.getCenter(),z:map.getZoom(),h:location.hash};go(0);}
+ function start(){STEPS=isPhone()?PHONE:DESK;if(!saved)saved={c:map.getCenter(),z:map.getZoom(),h:location.hash};go(0);}
  function end(){if(!root||root.hidden)return;root.hidden=true;root.classList.remove('spot');i=-1;busy=false;closeAll();
   if(saved){map.setView(saved.c,saved.z,{animate:false});if(location.hash!==saved.h)history.replaceState(null,'',location.pathname+location.search+saved.h);saved=null;}lsSet(KEY,'1');}
- function open(withInvite){build();if(!isPhone())return;lsSet(KEY,'1');saved=null;root.hidden=false;
+ function open(withInvite){build();lsSet(KEY,'1');saved=null;root.hidden=false;
   if(withInvite){root.classList.remove('spot');card.hidden=true;inv.hidden=false;inv.style.top=Math.max(16,(innerHeight-inv.offsetHeight)/2)+'px';inv.querySelector('[data-go="start"]').focus({preventScroll:true});}
   else start();}
- function maybe(){if(dataReady&&introDone&&isPhone()&&!lsGet(KEY)&&location.hash.length<2)setTimeout(()=>open(true),400);}
+ function maybe(){if(dataReady&&introDone&&!lsGet(KEY)&&location.hash.length<2)setTimeout(()=>open(true),400);}
  const ts=document.getElementById('tourStart');if(ts)ts.onclick=()=>open(false);
  return {ready(){dataReady=true;if(document.getElementById('intro').classList.contains('gone'))introDone=true;maybe();},introGone(){introDone=true;maybe();},open};
 })();
