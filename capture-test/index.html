@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#000000">
+<title>Photograph a column · test</title>
+<link rel="stylesheet" href="../lib/leaflet.css">
+<style>
+:root{--ink:#1d1d1b;--sec:#5a5955;--mut:#8a8984;--line:#e3e2dc;--bg:#fbfaf7;--green:#1f7a4d;--warnbg:#fff4e0;--warn:#6b4300}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);-webkit-text-size-adjust:100%}
+[hidden]{display:none!important}
+.scr{display:none}
+.scr.on{display:block}
+.wrap{max-width:520px;margin:0 auto;padding:calc(18px + env(safe-area-inset-top)) 18px calc(28px + env(safe-area-inset-bottom))}
+.test{background:var(--warnbg);color:var(--warn);font-size:13px;padding:8px 12px;border-radius:8px;margin-bottom:14px;line-height:1.4}
+h1,h2{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-weight:400;margin:4px 0 10px}
+h1{font-size:29px;line-height:1.12}
+h2{font-size:24px;line-height:1.15}
+p{line-height:1.5;margin:0 0 12px}
+.lead{color:var(--sec);font-size:15.5px}
+.small{font-size:13.5px;color:var(--sec);line-height:1.45}
+.steps{list-style:none;padding:0;margin:16px 0 18px;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.steps li{text-align:center;font-size:12px;color:var(--sec);line-height:1.3}
+.steps svg{display:block;width:100%;height:104px;background:#262622;border-radius:10px;margin-bottom:6px}
+.steps li.done svg{background:#1f4d2e}
+.btn{display:block;width:100%;padding:14px 16px;border:0;border-radius:12px;background:var(--green);color:#fff;font:inherit;font-size:16px;font-weight:600;cursor:pointer;text-align:center;text-decoration:none}
+.btn.sec{background:#fff;color:var(--ink);border:1px solid #d5d3cc}
+.btn:disabled{opacity:.45;cursor:default}
+.btn+.btn{margin-top:10px}
+.colhead{background:#eef5ee;color:#1f4d2e;border-radius:10px;padding:10px 12px;font-size:14.5px;line-height:1.4;margin:0 0 14px}
+.colhead.warn{background:var(--warnbg);color:var(--warn)}
+details.opts{margin-top:22px;border-top:1px solid var(--line);padding-top:12px}
+details.opts summary{font-size:13.5px;color:var(--sec);cursor:pointer}
+.row{display:flex;gap:8px;margin-top:10px}
+.row input{flex:1;min-width:0;padding:11px 12px;border:1px solid #d5d3cc;border-radius:10px;font:inherit;font-size:16px;text-transform:uppercase}
+.row .btn{width:auto;padding:11px 16px;font-size:15px}
+label.f{display:block;font-size:15px;font-weight:600;margin:18px 0 6px}
+label.f span{font-weight:400;color:var(--mut);font-size:13.5px}
+select,textarea{width:100%;padding:12px;border:1px solid #d5d3cc;border-radius:10px;font:inherit;font-size:16px;background:#fff;color:var(--ink)}
+select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,#5a5955 50%),linear-gradient(135deg,#5a5955 50%,transparent 50%);background-position:calc(100% - 20px) 52%,calc(100% - 14px) 52%;background-size:6px 6px;background-repeat:no-repeat;padding-right:36px}
+textarea{min-height:84px;resize:vertical}
+.err{color:#a3261f;font-size:14px;margin:10px 0 0;min-height:1.2em}
+.nav{display:flex;gap:10px;margin-top:22px}
+.nav .btn{margin:0}
+.nav .btn.sec{flex:0 0 34%}
+
+/* camera */
+#cam{position:fixed;inset:0;background:#000;color:#fff;overflow:hidden;z-index:10}
+#vid,#still{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000}
+#still{display:none}
+#cam.review #still{display:block}
+#cam.review #vid{visibility:hidden}
+.ovl{position:absolute;left:0;right:0;top:0;width:100%;height:100%;pointer-events:none}
+#cam.review .ovl{opacity:.5}
+#cam.gal .ovl{display:none}
+#cam.gal #still{object-fit:contain}
+.top{position:absolute;left:0;right:0;top:0;padding:calc(10px + env(safe-area-inset-top)) 60px 26px 16px;background:linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,0))}
+.pills{display:flex;gap:6px;margin:4px 0 10px}
+.pills button{flex:1;height:6px;border:0;border-radius:3px;background:rgba(255,255,255,.28);padding:0;cursor:pointer}
+.pills button.done{background:#7fd1a3}
+.pills button.cur{background:#fff}
+.top .t{font-size:12.5px;opacity:.8;letter-spacing:.06em;text-transform:uppercase}
+.top .h{font-size:21px;font-weight:600;margin:2px 0 4px}
+.top .i{font-size:15px;line-height:1.4;opacity:.95;max-width:470px}
+.x{position:absolute;right:12px;top:calc(10px + env(safe-area-inset-top));width:40px;height:40px;border:0;background:rgba(0,0,0,.4);color:#fff;border-radius:50%;font-size:26px;line-height:1;cursor:pointer}
+.bot{position:absolute;left:0;right:0;bottom:0;padding:30px 16px calc(18px + env(safe-area-inset-bottom));background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.78))}
+.cap{display:flex;align-items:center;justify-content:space-between;max-width:470px;margin:0 auto}
+.shut{width:76px;height:76px;border-radius:50%;border:4px solid #fff;background:rgba(255,255,255,.22);cursor:pointer;flex:none;padding:0}
+.shut:active{background:rgba(255,255,255,.6)}
+.side{width:92px;color:#fff;font:inherit;font-size:13.5px;background:none;border:0;cursor:pointer;text-align:center;line-height:1.25;padding:6px 0}
+.side svg{display:block;width:26px;height:26px;margin:0 auto 4px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.rv{display:none;gap:10px;max-width:470px;margin:0 auto}
+#cam.review .rv{display:flex}
+#cam.review .cap{display:none}
+.rv .btn{flex:1;margin:0}
+.rv .btn.sec{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.5)}
+.msg{position:absolute;left:20px;right:20px;top:42%;text-align:center;font-size:15.5px;line-height:1.45;display:none}
+#cam.nocam .msg{display:block}
+#cam.nocam .shut{opacity:.25;pointer-events:none}
+#cam.nocam.review .msg{display:none}
+
+/* summary */
+.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:8px 0 16px}
+.thumbs figure{margin:0}
+.thumbs img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:8px;background:#ddd;display:block}
+.thumbs figcaption{font-size:11.5px;color:var(--sec);text-align:center;margin-top:4px;line-height:1.25}
+dl.sum{display:grid;grid-template-columns:auto 1fr;gap:7px 14px;font-size:14.5px;margin:0 0 16px}
+dl.sum dt{color:var(--sec)}
+dl.sum dd{margin:0}
+#map{height:280px;border-radius:12px;border:1px solid var(--line);margin:10px 0 0}
+.snap{margin-top:10px;padding:9px 11px;border-radius:9px;background:#eef5ee;color:#1f4d2e;font-size:14px;line-height:1.4}
+.snap.warn{background:var(--warnbg);color:var(--warn)}
+.snap button{background:none;border:0;padding:0;margin-left:4px;color:inherit;font:inherit;text-decoration:underline;cursor:pointer}
+.smpin{width:26px;height:26px;border-radius:50% 50% 50% 0;background:#d0342c;transform:rotate(-45deg);border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35)}
+.linkbtn{background:none;border:0;padding:0;font:inherit;font-size:14px;color:#2a78d6;text-decoration:underline;cursor:pointer;margin-top:8px}
+pre{white-space:pre-wrap;word-break:break-word;background:#f1f0eb;border-radius:10px;padding:12px;font-size:12.5px;line-height:1.4;margin:6px 0 16px}
+</style>
+</head>
+<body>
+
+<!-- 1. start -->
+<section class="scr on" id="sStart"><div class="wrap">
+  <div class="test">Test version. Nothing you take here is sent anywhere.</div>
+  <h1>Photograph a column</h1>
+  <p class="lead">Four photos, taken the same way every time, so columns can be compared across the city.</p>
+  <div class="colhead" id="colhead" hidden></div>
+  <ol class="steps" id="stepList"></ol>
+  <p class="small">The camera shows an outline for each photo. Columns vary, so it won't match exactly. Just line up the part named in each step.</p>
+  <button class="btn" id="go">Start</button>
+  <p class="small" style="margin-top:14px">Photos are resized and re-saved on your phone, so no hidden location or camera details go with them. Your location is used only to place the column.</p>
+  <details class="opts"><summary>Testing options</summary>
+    <p class="small" style="margin:10px 0 0">Test the flow for a column already on the map (enter its asset number, e.g. FLAD005), or for a missing column.</p>
+    <div class="row"><input id="tAsset" placeholder="Asset number" autocomplete="off" aria-label="Asset number"><button class="btn sec" id="tKnown" type="button">Use</button></div>
+    <button class="linkbtn" id="tMissing" type="button">Test reporting a missing column</button>
+  </details>
+</div></section>
+
+<!-- 2. camera -->
+<section id="cam" hidden aria-live="polite">
+  <video id="vid" playsinline muted autoplay></video>
+  <img id="still" alt="">
+  <svg class="ovl" id="ovl" aria-hidden="true"></svg>
+  <div class="msg" id="camMsg"></div>
+  <div class="top">
+    <div class="pills" id="pills"></div>
+    <div class="t" id="stT"></div>
+    <div class="h" id="stH"></div>
+    <div class="i" id="stI"></div>
+  </div>
+  <button class="x" id="camX" type="button" aria-label="Close the camera">×</button>
+  <div class="bot">
+    <div class="cap">
+      <label class="side"><input type="file" accept="image/*" id="gal" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>Choose from gallery</label>
+      <button class="shut" id="shut" type="button" aria-label="Take photo"></button>
+      <span class="side" aria-hidden="true"></span>
+    </div>
+    <div class="rv">
+      <button class="btn sec" id="retake" type="button">Retake</button>
+      <button class="btn" id="use" type="button">Use this photo</button>
+    </div>
+  </div>
+</section>
+
+<!-- 3. observations -->
+<section class="scr" id="sObs"><div class="wrap">
+  <div class="test">Test version. Nothing is sent.</div>
+  <h2>What did you notice?</h2>
+  <p class="small">Your best guess is fine. Choose "Can't tell" if you're not sure.</p>
+  <div class="thumbs" id="obsThumbs"></div>
+  <label class="f" for="oColour">Colour of the column</label>
+  <select id="oColour"><option value="">Choose…</option><option value="green">Green</option><option value="black">Black</option><option value="other">Another colour</option><option value="unknown">Can't tell</option></select>
+  <label class="f" for="oDamage">Any damage?</label>
+  <select id="oDamage"><option value="">Choose…</option><option value="none">None that I could see</option><option value="some">Some, e.g. cracks, rust or a missing part</option><option value="bad">Badly damaged or leaning</option><option value="unknown">Can't tell</option></select>
+  <label class="f" for="oLamp">Is the lamp working?</label>
+  <select id="oLamp"><option value="">Choose…</option><option value="works">Yes, it's lit at night</option><option value="out">No, it's out at night</option><option value="day">It's on during the day</option><option value="unknown">Don't know</option></select>
+  <label class="f" for="oNote">Anything else? <span>(optional)</span></label>
+  <textarea id="oNote" maxlength="500" placeholder="For example: there's a plaque, or the door is missing"></textarea>
+  <p class="err" id="obsErr"></p>
+  <div class="nav"><button class="btn sec" id="obsBack" type="button">Back</button><button class="btn" id="obsNext" type="button">Next</button></div>
+</div></section>
+
+<!-- 4. location (missing columns) -->
+<section class="scr" id="sLoc"><div class="wrap">
+  <div class="test">Test version. Nothing is sent.</div>
+  <h2>Where is the column?</h2>
+  <p class="small">We've put the pin where your phone was when you took the first photo. Drag it onto the column, or tap a street light on the map.</p>
+  <div id="map"></div>
+  <button class="linkbtn" id="useLoc" type="button">Use my current location</button>
+  <div class="snap" id="snap" hidden></div>
+  <p class="err" id="locErr"></p>
+  <div class="nav"><button class="btn sec" id="locBack" type="button">Back</button><button class="btn" id="locNext" type="button">Next</button></div>
+</div></section>
+
+<!-- 5. done -->
+<section class="scr" id="sDone"><div class="wrap">
+  <div class="test">Test version. This is what would be sent. Nothing has left your phone.</div>
+  <h2>Ready to send</h2>
+  <div class="colhead warn" id="distWarn" hidden></div>
+  <div class="thumbs" id="doneThumbs"></div>
+  <dl class="sum" id="sum"></dl>
+  <p class="small">What the live version would send (photo data left out):</p>
+  <pre id="payload"></pre>
+  <button class="btn" id="again" type="button">Start again</button>
+  <a class="btn sec" href="../?map">Back to the map</a>
+</div></section>
+
+<script src="../lib/leaflet.js"></script>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const DATA='../data/';
+const CARTO='https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?key=cb1_4cu8_1_139fe088319c64207ae97f1a';
+
+/* ---------- generic Biggleston outline (mm; y measured up from the pavement, drawn with Y = TOPY - y) ---------- */
+const TOPY=4100;
+// half-widths up the column, measured from the FLAD005 survey photo and Sugg's drawings
+const PROF=[[0,150],[45,150],[55,138],[90,138],[100,122],[150,122],[160,128],[185,128],[195,106],[220,106],[230,116],[255,116],[265,100],[540,82],[555,94],[580,94],[590,77],[620,77],[630,94],[655,94],[665,80],[700,80],[710,96],[730,96],[740,76],[760,76],[860,90],[875,90],[885,84],[905,84],[915,72],[925,62],[1350,56],[2560,48],[2560,62],[2590,62],[2595,50],[2700,62],[2800,92],[2845,96],[2850,55],[2896,55],[2896,62],[2940,62],[2940,40],[3060,40]];
+const body='M'+PROF.map(([y,h])=>h+' '+(TOPY-y)).join(' L')+' L'+PROF.slice().reverse().map(([y,h])=>(-h)+' '+(TOPY-y)).join(' L')+'Z';
+const SHAPES=`<path d="${body}"/>
+<rect x="-290" y="${TOPY-2896}" width="580" height="44" rx="12"/>
+<circle cx="-290" cy="${TOPY-2874}" r="30"/><circle cx="290" cy="${TOPY-2874}" r="30"/>
+<path d="M0 1050 C10 850 90 770 80 620 C70 500 120 400 110 300 C100 170 40 140 0 170" fill="none" stroke="#fff" stroke-width="38" stroke-linecap="round"/>
+<rect x="-22" y="170" width="44" height="60"/>
+<rect x="-35" y="230" width="70" height="150"/>
+<polygon points="-200,543 200,543 70,380 -70,380"/>
+<path d="M-110 543 L110 543 Q110 680 0 716 Q-110 680 -110 543 Z"/>
+<rect x="-10" y="115" width="20" height="60"/><circle cx="0" cy="115" r="26"/>`;
+
+const STEPS=[
+ {role:'whole',name:'Whole column',hint:'Stand back until the whole column, from the pavement to the top of the lantern, fits inside the outline.',vb:[-650,40,1300,4120]},
+ {role:'base',name:'Base',hint:'Move in close. Fill the outline with the base, from the pavement up past the door.',vb:[-450,2800,900,1340]},
+ {role:'ladder',name:'Ladder bar',hint:'Point up at the crossbar below the lantern and line its arms up with the outline.',vb:[-450,950,900,700]},
+ {role:'top',name:'Neck and lantern',hint:'Frame the top of the column: the curved neck and the lantern. On a column with the lantern on top, just the lantern.',vb:[-450,40,900,1160]}
+];
+let fid=0;
+function outlineSVG(svg,vb,pxPerMm){
+ const id='ol'+(++fid),r1=2.2/pxPerMm,r2=r1+2/pxPerMm;
+ svg.setAttribute('viewBox',vb.join(' '));svg.setAttribute('preserveAspectRatio','xMidYMid meet');
+ svg.innerHTML=`<defs><filter id="${id}" x="-15%" y="-5%" width="130%" height="110%">
+<feMorphology in="SourceAlpha" operator="dilate" radius="${r1}" result="d1"/><feMorphology in="SourceAlpha" operator="dilate" radius="${r2}" result="d2"/>
+<feComposite in="d1" in2="SourceAlpha" operator="out" result="ring"/><feComposite in="d2" in2="d1" operator="out" result="halo"/>
+<feFlood flood-color="#fff" result="w"/><feComposite in="w" in2="ring" operator="in" result="wr"/>
+<feFlood flood-color="#000" flood-opacity=".55" result="k"/><feComposite in="k" in2="halo" operator="in" result="kh"/>
+<feFlood flood-color="#fff" flood-opacity=".13" result="f"/><feComposite in="f" in2="SourceAlpha" operator="in" result="fi"/>
+<feMerge><feMergeNode in="kh"/><feMergeNode in="fi"/><feMergeNode in="wr"/></feMerge></filter></defs>
+<g filter="url(#${id})" fill="#fff">${SHAPES}</g>`;}
+function fitOutline(svg,vb){const w=svg.clientWidth||300,h=svg.clientHeight||500;outlineSVG(svg,vb,Math.min(w/vb[2],h/vb[3]));}
+// keep the camera outline in the clear space between the instructions and the shutter
+function placeOvl(){const o=$('ovl'),t=document.querySelector('#cam .top').getBoundingClientRect().bottom-14,b=document.querySelector('#cam .bot').getBoundingClientRect().top+22;
+ o.style.top=Math.max(0,t)+'px';o.style.height=Math.max(120,b-t)+'px';fitOutline(o,STEPS[st.step].vb);}
+
+/* ---------- state ---------- */
+const P=new URLSearchParams(location.search);
+const st={mode:P.get('asset')?'known':'missing',col:null,shots:[null,null,null,null],step:0,fix:null,best:null,watch:null,stream:null,pending:null,pin:null,snapId:''};
+let feats=null,assets=null,map=null,pinM=null,assetLayer=null;
+
+function show(id){document.querySelectorAll('.scr').forEach(s=>s.classList.toggle('on',s.id===id));$('cam').hidden=id!=='cam';window.scrollTo(0,0);}
+
+/* start screen */
+function drawStepList(){$('stepList').innerHTML=STEPS.map((s,i)=>`<li class="${st.shots[i]?'done':''}"><svg></svg>${i+1}. ${s.name}</li>`).join('');
+ document.querySelectorAll('#stepList svg').forEach((svg,i)=>fitOutline(svg,STEPS[i].vb));}
+function loadFeats(){return feats?Promise.resolve(feats):fetch(DATA+'columns.geojson').then(r=>r.json()).then(g=>feats=g.features);}
+async function initStart(){
+ drawStepList();
+ if(st.mode==='known'){const a=P.get('asset').trim().toUpperCase();const h=$('colhead');h.hidden=false;h.textContent='Loading column '+a+'…';
+  try{await loadFeats();const f=feats.find(f=>(f.properties.asset||'').toUpperCase()===a||String(f.properties.id).toUpperCase()===a);
+   if(!f)throw 0;st.col={...f.properties,lat:f.geometry.coordinates[1],lon:f.geometry.coordinates[0]};
+   h.innerHTML=`You're photographing <b>${esc(st.col.asset||st.col.id)}</b>${st.col.street?', '+esc(st.col.street):''}.`;}
+  catch(e){h.className='colhead warn';h.textContent='Column '+a+' isn\'t on the map, so this will be treated as a missing column.';st.mode='missing';}}
+}
+$('tKnown').onclick=()=>{const v=$('tAsset').value.trim();if(v)location.search='?asset='+encodeURIComponent(v);};
+$('tAsset').onkeydown=e=>{if(e.key==='Enter')$('tKnown').click();};
+$('tMissing').onclick=()=>{location.search='';};
+
+/* location fixes */
+function startGps(){if(st.watch!==null||!navigator.geolocation)return;
+ st.watch=navigator.geolocation.watchPosition(p=>{const c=p.coords;const f={lat:+c.latitude.toFixed(6),lon:+c.longitude.toFixed(6),acc:Math.round(c.accuracy),t:Date.now()};
+  if(!st.best||f.acc<=st.best.acc||Date.now()-st.best.t>20000)st.best=f;},()=>{},{enableHighAccuracy:true,maximumAge:5000,timeout:20000});}
+function stopGps(){if(st.watch!==null){navigator.geolocation.clearWatch(st.watch);st.watch=null;}}
+
+/* camera */
+async function openCam(){
+ show('cam');const cam=$('cam');cam.classList.remove('review','gal','nocam');
+ setStep(st.shots.findIndex(s=>!s)<0?0:st.shots.findIndex(s=>!s));
+ startGps();
+ if(st.stream)return;
+ try{if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia)throw {name:'NoCamera'};
+  st.stream=await navigator.mediaDevices.getUserMedia({audio:false,video:{facingMode:{ideal:'environment'},width:{ideal:2560},height:{ideal:1920}}});
+  const v=$('vid');v.srcObject=st.stream;await v.play().catch(()=>{});}
+ catch(e){cam.classList.add('nocam');
+  $('camMsg').textContent=e&&e.name==='NotAllowedError'?'Camera access is blocked. You can choose photos from your gallery instead, or allow the camera in your browser settings and start again.':'There is no camera this page can use. You can choose photos from your gallery instead.';}
+}
+function stopCam(){if(st.stream){st.stream.getTracks().forEach(t=>t.stop());st.stream=null;}$('vid').srcObject=null;}
+function setStep(i){st.step=i;const s=STEPS[i];
+ $('stT').textContent=`Photo ${i+1} of 4`;$('stH').textContent=s.name;$('stI').textContent=s.hint;
+ $('pills').innerHTML=STEPS.map((x,j)=>`<button type="button" class="${j===i?'cur':st.shots[j]?'done':''}" aria-label="Photo ${j+1}: ${x.name}${st.shots[j]?' (taken)':''}"></button>`).join('');
+ $('pills').querySelectorAll('button').forEach((b,j)=>b.onclick=()=>{if(st.shots[j]||j===i||j===nextEmpty()){$('cam').classList.remove('review','gal');setStep(j);}});
+ requestAnimationFrame(placeOvl);}
+function nextEmpty(){return st.shots.findIndex(s=>!s);}
+window.addEventListener('resize',()=>{if(!$('cam').hidden)placeOvl();});
+function encode(c){let q=.85,u=c.toDataURL('image/jpeg',q);while(u.length>2.2e6&&q>.5){q-=.1;u=c.toDataURL('image/jpeg',q);}return {url:u,w:c.width,h:c.height};}
+function grab(){const v=$('vid'),vw=v.videoWidth,vh=v.videoHeight;if(!vw||!vh)return null;
+ const W=$('cam').clientWidth,H=$('cam').clientHeight,s=Math.max(W/vw,H/vh),sw=W/s,sh=H/s,sx=(vw-sw)/2,sy=(vh-sh)/2;
+ const k=Math.min(1,1600/Math.max(sw,sh)),c=document.createElement('canvas');c.width=Math.round(sw*k);c.height=Math.round(sh*k);
+ c.getContext('2d').drawImage(v,sx,sy,sw,sh,0,0,c.width,c.height);return encode(c);}
+function review(img,src){st.pending={...img,src,role:STEPS[st.step].role,fix:st.best?{...st.best}:null};
+ $('still').src=img.url;$('cam').classList.add('review');$('cam').classList.toggle('gal',src==='gallery');$('use').focus();}
+$('shut').onclick=()=>{const g=grab();if(g)review(g,'camera');};
+$('retake').onclick=()=>{st.pending=null;$('cam').classList.remove('review','gal');};
+$('use').onclick=()=>{const p=st.pending;if(!p)return;st.shots[st.step]=p;st.pending=null;
+ if(st.step===0||!st.fix)st.fix=p.fix||st.fix;
+ $('cam').classList.remove('review','gal');const n=nextEmpty();if(n<0)finishCapture();else setStep(n);};
+$('camX').onclick=()=>{stopCam();show('sStart');$('go').textContent=nextEmpty()<0?'Retake photos':st.shots.some(Boolean)?'Carry on':'Start';drawStepList();};
+
+/* gallery fallback: reads photo GPS only to place the pin; the image itself is re-encoded so no metadata is kept */
+async function exifGps(file){try{const b=new DataView(await file.slice(0,262144).arrayBuffer());if(b.getUint16(0)!==0xFFD8)return null;let o=2;
+ while(o<b.byteLength-10){const mk=b.getUint16(o),L=b.getUint16(o+2);if((mk&0xFF00)!==0xFF00)return null;
+  if(mk===0xFFE1&&b.getUint32(o+4)===0x45786966){const t=o+10,le=b.getUint16(t)===0x4949,u16=x=>b.getUint16(t+x,le),u32=x=>b.getUint32(t+x,le);
+   const find=(off,tag)=>{const n=u16(off);for(let i=0;i<n;i++){const e=off+2+i*12;if(u16(e)===tag)return e;}return -1;};
+   const ge=find(u32(4),0x8825);if(ge<0)return null;const g=u32(ge+8);
+   const deg=en=>{const off=u32(en+8);let v=0;for(let i=0;i<3;i++){const d=u32(off+i*8+4);if(d)v+=u32(off+i*8)/d/[1,60,3600][i];}return v;};
+   const ref=tag=>{const en=find(g,tag);return en<0?'':String.fromCharCode(b.getUint8(t+en+8));};
+   const la=find(g,2),lo=find(g,4);if(la<0||lo<0)return null;let lat=deg(la),lon=deg(lo);if(ref(1)==='S')lat=-lat;if(ref(3)==='W')lon=-lon;return {lat:+lat.toFixed(6),lon:+lon.toFixed(6),acc:null,exif:true};}
+  if(mk===0xFFDA)return null;o+=2+L;}}catch(e){}return null;}
+async function shrink(file){let bmp;
+ try{bmp=await createImageBitmap(file,{imageOrientation:'from-image'});}
+ catch(e){bmp=await new Promise((res,rej)=>{const im=new Image();im.onload=()=>res(im);im.onerror=()=>rej(new Error('That photo format can\'t be read here. Please try a JPEG.'));im.src=URL.createObjectURL(file);});}
+ const w=bmp.width,h=bmp.height,k=Math.min(1,1600/Math.max(w,h)),c=document.createElement('canvas');c.width=Math.round(w*k);c.height=Math.round(h*k);
+ c.getContext('2d').drawImage(bmp,0,0,c.width,c.height);return encode(c);}
+$('gal').onchange=async e=>{const f=e.target.files[0];e.target.value='';if(!f)return;
+ try{const img=await shrink(f);const g=await exifGps(f);review(img,'gallery');
+  if(g&&g.lat>51.15&&g.lat<51.4&&g.lon>0.9&&g.lon<1.25)st.pending.fix=g;}
+ catch(err){$('camMsg').textContent=err.message;$('cam').classList.add('nocam');}};
+
+/* after the four photos */
+function thumbs(el){el.innerHTML=st.shots.map((s,i)=>`<figure><img src="${s.url}" alt="${esc(STEPS[i].name)}"><figcaption>${esc(STEPS[i].name)}</figcaption></figure>`).join('');}
+function finishCapture(){stopCam();thumbs($('obsThumbs'));show('sObs');}
+$('go').onclick=()=>openCam();
+$('obsBack').onclick=()=>openCam();
+$('obsNext').onclick=()=>{const miss=['oColour','oDamage','oLamp'].filter(id=>!$(id).value);
+ if(miss.length){$('obsErr').textContent='Please answer all three questions. "Can\'t tell" is fine.';$(miss[0]).focus();return;}
+ $('obsErr').textContent='';if(st.mode==='missing')openLoc();else done();};
+
+/* location step (missing columns): pin from the first photo's GPS, snapped to the nearest KCC or City Council light */
+const CCC_COLS=new Set(['Council Street Light','Lantern Light']);
+const kccTidy=t=>String(t||'').replace(/\s*\((?:LIVE|\d+)\)/gi,'').replace(/\s+/g,' ').trim().toLowerCase().replace(/(^|[\s,(-])([a-z])/g,(m,a,b)=>a+b.toUpperCase());
+function loadAssets(){if(assets)return Promise.resolve(assets);
+ return Promise.all([fetch(DATA+'kcc.json').then(r=>r.json()),fetch(DATA+'ccc.json').then(r=>r.ok?r.json():{}).catch(()=>({})),loadFeats()]).then(([k,c])=>{
+  assets=Object.entries(k).map(([id,a])=>({id,lat:a[0],lon:a[1],loc:a[2]})).concat(Object.entries(c).filter(([,a])=>CCC_COLS.has(a[4])).map(([id,a])=>({id,lat:a[0],lon:a[1],loc:a[3],ccc:1})));
+  return assets;});}
+const onMap=()=>new Set((feats||[]).map(f=>f.properties.asset).filter(Boolean));
+function setPin(lat,lon,zoom){st.pin={lat:+lat.toFixed(6),lon:+lon.toFixed(6)};pinM.setLatLng([lat,lon]);if(zoom)map.setView([lat,lon],zoom);}
+function unsnap(){st.snapId='';$('snap').hidden=true;}
+function snapTo(a){st.snapId=a.id;setPin(a.lat,a.lon);const el=$('snap'),known=onMap().has(a.id);el.hidden=false;el.className='snap'+(known?' warn':'');
+ el.innerHTML=known?`This is <b>${esc(a.id)}</b>, which is already on the map. <a href="?asset=${encodeURIComponent(a.id)}">Photograph it as a known column instead</a>`
+  :`Matched to ${a.ccc?'City Council light':'KCC street light'} <b>${esc(a.id)}</b>${a.loc?', '+esc(a.ccc?a.loc:kccTidy(a.loc)):''}. <button type="button" id="unsnap">Not this one</button>`;
+ const u=$('unsnap');if(u)u.onclick=unsnap;}
+function place(lat,lon){setPin(lat,lon);if(!assets)return unsnap();let best=null,bd=1e9;const cl=Math.cos(lat*Math.PI/180);
+ for(const a of assets){const dy=(a.lat-lat)*111320,dx=(a.lon-lon)*111320*cl;if(Math.abs(dy)>40||Math.abs(dx)>40)continue;const d=Math.hypot(dx,dy);if(d<bd){bd=d;best=a;}}
+ if(best&&bd<=15)snapTo(best);else unsnap();}
+function drawAssets(){if(!map||!assets)return;assetLayer.clearLayers();if(map.getZoom()<16)return;const bb=map.getBounds().pad(.1),known=onMap();let n=0;
+ for(const a of assets){if(!bb.contains([a.lat,a.lon]))continue;if(++n>1500)break;const k=known.has(a.id);
+  L.circleMarker([a.lat,a.lon],{radius:k?6:5,weight:k?2:1.5,color:k?'#1f7a4d':a.ccc?'#c77700':'#2a78d6',fillColor:k?'#1f7a4d':'#fff',fillOpacity:k?.85:1,bubblingMouseEvents:false})
+   .bindTooltip((a.ccc?'City Council ':'')+a.id+(k?' · already on the map':''),{direction:'top',offset:[0,-4]}).on('click',()=>snapTo(a)).addTo(assetLayer);}}
+async function openLoc(){show('sLoc');const start=st.pin||st.fix||st.best||{lat:51.2802,lon:1.0789};
+ if(!map){map=L.map('map',{maxZoom:18,attributionControl:false});L.tileLayer(CARTO,{maxZoom:18,maxNativeZoom:18,subdomains:'abcd'}).addTo(map);
+  pinM=L.marker([start.lat,start.lon],{draggable:true,autoPan:true,keyboard:true,title:'Drag onto the column',icon:L.divIcon({className:'',html:'<div class="smpin"></div>',iconSize:[26,26],iconAnchor:[13,30]})}).addTo(map);
+  pinM.on('dragend',()=>{const p=pinM.getLatLng();place(p.lat,p.lng);});map.on('click',e=>place(e.latlng.lat,e.latlng.lng));
+  assetLayer=L.layerGroup().addTo(map);map.on('moveend',drawAssets);}
+ setTimeout(()=>map.invalidateSize(),30);map.setView([start.lat,start.lon],(st.fix||st.best)?18:15);setPin(start.lat,start.lon);
+ $('locErr').textContent=(st.fix||st.best)?'':'We couldn\'t get your location, so please drag the pin onto the column.';
+ try{await loadAssets();drawAssets();if(!st.snapId&&(st.fix||st.best))place(start.lat,start.lon);}catch(e){}}
+$('useLoc').onclick=()=>{const b=st.best;if(b){map.setView([b.lat,b.lon],18);place(b.lat,b.lon);}else $('locErr').textContent='Still waiting for your location. Check location access is allowed for this page.';};
+$('locBack').onclick=()=>show('sObs');
+$('locNext').onclick=()=>{if(!st.pin){$('locErr').textContent='Please place the pin on the column.';return;}done();};
+
+/* summary and payload preview */
+function metres(a,b){const R=6371000,r=Math.PI/180,dl=(b.lat-a.lat)*r,dn=(b.lon-a.lon)*r,x=Math.sin(dl/2)**2+Math.cos(a.lat*r)*Math.cos(b.lat*r)*Math.sin(dn/2)**2;return Math.round(2*R*Math.asin(Math.sqrt(x)));}
+const label=id=>{const s=$(id);return s.options[s.selectedIndex].text;};
+function done(){stopGps();thumbs($('doneThumbs'));
+ const known=st.mode==='known',where=known?{lat:st.col.lat,lon:st.col.lon}:st.pin,fix=st.fix||st.best;
+ const w=$('distWarn');w.hidden=true;
+ if(known&&fix){const d=metres(fix,where);if(d>50){w.hidden=false;w.textContent=`Your phone was about ${d} m from ${st.col.asset||st.col.id} when you took the first photo. Is this the right column?`;}}
+ $('sum').innerHTML=`<dt>Column</dt><dd>${known?esc(st.col.asset||st.col.id)+(st.col.street?', '+esc(st.col.street):''):st.snapId?'New: matches '+esc(st.snapId):'New: no street light matched'}</dd>
+<dt>Colour</dt><dd>${esc(label('oColour'))}</dd><dt>Damage</dt><dd>${esc(label('oDamage'))}</dd><dt>Lamp</dt><dd>${esc(label('oLamp'))}</dd>${$('oNote').value.trim()?`<dt>Note</dt><dd>${esc($('oNote').value.trim())}</dd>`:''}`;
+ const payload={kind:known?'photo':'missing',column:known?st.col.id:null,asset:known?(st.col.asset||''):st.snapId,
+  lat:known?null:st.pin.lat,lon:known?null:st.pin.lon,gps:fix?{lat:fix.lat,lon:fix.lon,accuracy_m:fix.acc}:null,
+  obs:{colour:$('oColour').value,damage:$('oDamage').value,lamp:$('oLamp').value},note:$('oNote').value.trim(),
+  shots:st.shots.map(s=>({role:s.role,source:s.src,width:s.w,height:s.h,kb:Math.round(s.url.length*.75/1024)}))};
+ $('payload').textContent=JSON.stringify(payload,null,2);show('sDone');}
+$('again').onclick=()=>{st.shots=[null,null,null,null];st.fix=null;st.pin=null;unsnap();['oColour','oDamage','oLamp','oNote'].forEach(id=>$(id).value='');$('go').textContent='Start';drawStepList();show('sStart');};
+
+initStart();
+</script>
+</body>
+</html>
