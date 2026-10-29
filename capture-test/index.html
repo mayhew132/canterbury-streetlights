@@ -96,6 +96,10 @@ dl.sum dd{margin:0}
 .snap button{background:none;border:0;padding:0;margin-left:4px;color:inherit;font:inherit;text-decoration:underline;cursor:pointer}
 .smpin{width:26px;height:26px;border-radius:50% 50% 50% 0;background:#d0342c;transform:rotate(-45deg);border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35)}
 .linkbtn{background:none;border:0;padding:0;font:inherit;font-size:14px;color:#2a78d6;text-decoration:underline;cursor:pointer;margin-top:8px}
+button.th{display:block;align-self:start;border:0;padding:0;background:none;cursor:pointer;font:inherit;text-align:center;width:100%;color:inherit}
+.chg{background:none;border:0;padding:0;margin-left:8px;font:inherit;font-size:13.5px;color:#2a78d6;text-decoration:underline;cursor:pointer}
+.sechead{display:flex;align-items:baseline;justify-content:space-between;margin-top:6px}
+.sechead b{font-size:14.5px}
 pre{white-space:pre-wrap;word-break:break-word;background:#f1f0eb;border-radius:10px;padding:12px;font-size:12.5px;line-height:1.4;margin:6px 0 16px}
 </style>
 </head>
@@ -179,12 +183,13 @@ pre{white-space:pre-wrap;word-break:break-word;background:#f1f0eb;border-radius:
   <div class="test">Test version. This is what would be sent. Nothing has left your phone.</div>
   <h2>Ready to send</h2>
   <div class="colhead warn" id="distWarn" hidden></div>
+  <div class="sechead"><b>Photos</b><span class="small">Tap a photo to retake it</span></div>
   <div class="thumbs" id="doneThumbs"></div>
   <dl class="sum" id="sum"></dl>
   <p class="small">What the live version would send (photo data left out):</p>
   <pre id="payload"></pre>
-  <button class="btn" id="again" type="button">Start again</button>
-  <a class="btn sec" href="../?map">Back to the map</a>
+  <div class="nav"><button class="btn sec" id="doneBack" type="button">Back</button><button class="btn" id="again" type="button">Start again</button></div>
+  <a class="btn sec" href="../?map" style="margin-top:10px">Back to the map</a>
 </div></section>
 
 <script src="../lib/leaflet.js"></script>
@@ -263,9 +268,9 @@ function startGps(){if(st.watch!==null||!navigator.geolocation)return;
 function stopGps(){if(st.watch!==null){navigator.geolocation.clearWatch(st.watch);st.watch=null;}}
 
 /* camera */
-async function openCam(){
+async function openCam(at){
  show('cam');const cam=$('cam');cam.classList.remove('review','gal','nocam');
- setStep(st.shots.findIndex(s=>!s)<0?0:st.shots.findIndex(s=>!s));
+ setStep(Number.isInteger(at)?at:nextEmpty()<0?0:nextEmpty());
  startGps();
  if(st.stream)return;
  try{if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia)throw {name:'NoCamera'};
@@ -293,8 +298,8 @@ $('shut').onclick=()=>{const g=grab();if(g)review(g,'camera');};
 $('retake').onclick=()=>{st.pending=null;$('cam').classList.remove('review','gal');};
 $('use').onclick=()=>{const p=st.pending;if(!p)return;st.shots[st.step]=p;st.pending=null;
  if(st.step===0||!st.fix)st.fix=p.fix||st.fix;
- $('cam').classList.remove('review','gal');const n=nextEmpty();if(n<0)finishCapture();else setStep(n);};
-$('camX').onclick=()=>{stopCam();show('sStart');$('go').textContent=nextEmpty()<0?'Retake photos':st.shots.some(Boolean)?'Carry on':'Start';drawStepList();};
+ $('cam').classList.remove('review','gal');const n=nextEmpty();if(n>=0)return setStep(n);if(st.ret){st.ret=false;stopCam();done();}else finishCapture();};
+$('camX').onclick=()=>{stopCam();if(st.ret){st.ret=false;return done();}show('sStart');$('go').textContent=nextEmpty()<0?'Retake photos':st.shots.some(Boolean)?'Carry on':'Start';drawStepList();};
 
 /* gallery fallback: reads photo GPS only to place the pin; the image itself is re-encoded so no metadata is kept */
 async function exifGps(file){try{const b=new DataView(await file.slice(0,262144).arrayBuffer());if(b.getUint16(0)!==0xFFD8)return null;let o=2;
@@ -319,11 +324,11 @@ $('gal').onchange=async e=>{const f=e.target.files[0];e.target.value='';if(!f)re
 /* after the four photos */
 function thumbs(el){el.innerHTML=st.shots.map((s,i)=>`<figure><img src="${s.url}" alt="${esc(STEPS[i].name)}"><figcaption>${esc(STEPS[i].name)}</figcaption></figure>`).join('');}
 function finishCapture(){stopCam();thumbs($('obsThumbs'));show('sObs');}
-$('go').onclick=()=>openCam();
-$('obsBack').onclick=()=>openCam();
+$('go').onclick=()=>{st.ret=false;openCam();};
+$('obsBack').onclick=()=>{if(st.ret){st.ret=false;return done();}openCam();};
 $('obsNext').onclick=()=>{const miss=['oColour','oDamage','oLamp'].filter(id=>!$(id).value);
  if(miss.length){$('obsErr').textContent='Please answer all three questions. "Can\'t tell" is fine.';$(miss[0]).focus();return;}
- $('obsErr').textContent='';if(st.mode==='missing')openLoc();else done();};
+ $('obsErr').textContent='';if(st.ret||st.mode!=='missing'){st.ret=false;done();}else openLoc();};
 
 /* location step (missing columns): pin from the first photo's GPS, snapped to the nearest KCC or City Council light */
 const CCC_COLS=new Set(['Council Street Light','Lantern Light']);
@@ -346,7 +351,7 @@ function drawAssets(){if(!map||!assets)return;assetLayer.clearLayers();if(map.ge
  for(const a of assets){if(!bb.contains([a.lat,a.lon]))continue;if(++n>1500)break;const k=known.has(a.id);
   L.circleMarker([a.lat,a.lon],{radius:k?6:5,weight:k?2:1.5,color:k?'#1f7a4d':a.ccc?'#c77700':'#2a78d6',fillColor:k?'#1f7a4d':'#fff',fillOpacity:k?.85:1,bubblingMouseEvents:false})
    .bindTooltip((a.ccc?'City Council ':'')+a.id+(k?' · already on the map':''),{direction:'top',offset:[0,-4]}).on('click',()=>snapTo(a)).addTo(assetLayer);}}
-async function openLoc(){show('sLoc');const start=st.pin||st.fix||st.best||{lat:51.2802,lon:1.0789};
+async function openLoc(){show('sLoc');startGps();const start=st.pin||st.fix||st.best||{lat:51.2802,lon:1.0789};
  if(!map){map=L.map('map',{maxZoom:18,attributionControl:false});L.tileLayer(CARTO,{maxZoom:18,maxNativeZoom:18,subdomains:'abcd'}).addTo(map);
   pinM=L.marker([start.lat,start.lon],{draggable:true,autoPan:true,keyboard:true,title:'Drag onto the column',icon:L.divIcon({className:'',html:'<div class="smpin"></div>',iconSize:[26,26],iconAnchor:[13,30]})}).addTo(map);
   pinM.on('dragend',()=>{const p=pinM.getLatLng();place(p.lat,p.lng);});map.on('click',e=>place(e.latlng.lat,e.latlng.lng));
@@ -355,24 +360,29 @@ async function openLoc(){show('sLoc');const start=st.pin||st.fix||st.best||{lat:
  $('locErr').textContent=(st.fix||st.best)?'':'We couldn\'t get your location, so please drag the pin onto the column.';
  try{await loadAssets();drawAssets();if(!st.snapId&&(st.fix||st.best))place(start.lat,start.lon);}catch(e){}}
 $('useLoc').onclick=()=>{const b=st.best;if(b){map.setView([b.lat,b.lon],18);place(b.lat,b.lon);}else $('locErr').textContent='Still waiting for your location. Check location access is allowed for this page.';};
-$('locBack').onclick=()=>show('sObs');
+$('locBack').onclick=()=>{if(st.ret){st.ret=false;return done();}show('sObs');};
 $('locNext').onclick=()=>{if(!st.pin){$('locErr').textContent='Please place the pin on the column.';return;}done();};
 
 /* summary and payload preview */
 function metres(a,b){const R=6371000,r=Math.PI/180,dl=(b.lat-a.lat)*r,dn=(b.lon-a.lon)*r,x=Math.sin(dl/2)**2+Math.cos(a.lat*r)*Math.cos(b.lat*r)*Math.sin(dn/2)**2;return Math.round(2*R*Math.asin(Math.sqrt(x)));}
 const label=id=>{const s=$(id);return s.options[s.selectedIndex].text;};
-function done(){stopGps();thumbs($('doneThumbs'));
+function done(){stopGps();
+ $('doneThumbs').innerHTML=st.shots.map((s,i)=>`<button type="button" class="th" data-i="${i}" aria-label="Retake: ${esc(STEPS[i].name)}"><figure><img src="${s.url}" alt=""><figcaption>${esc(STEPS[i].name)}</figcaption></figure></button>`).join('');
+ $('doneThumbs').querySelectorAll('button').forEach(b=>b.onclick=()=>{st.ret=true;openCam(+b.dataset.i);});
  const known=st.mode==='known',where=known?{lat:st.col.lat,lon:st.col.lon}:st.pin,fix=st.fix||st.best;
  const w=$('distWarn');w.hidden=true;
  if(known&&fix){const d=metres(fix,where);if(d>50){w.hidden=false;w.textContent=`Your phone was about ${d} m from ${st.col.asset||st.col.id} when you took the first photo. Is this the right column?`;}}
- $('sum').innerHTML=`<dt>Column</dt><dd>${known?esc(st.col.asset||st.col.id)+(st.col.street?', '+esc(st.col.street):''):st.snapId?'New: matches '+esc(st.snapId):'New: no street light matched'}</dd>
-<dt>Colour</dt><dd>${esc(label('oColour'))}</dd><dt>Damage</dt><dd>${esc(label('oDamage'))}</dd><dt>Lamp</dt><dd>${esc(label('oLamp'))}</dd>${$('oNote').value.trim()?`<dt>Note</dt><dd>${esc($('oNote').value.trim())}</dd>`:''}`;
+ const chg=(go,f)=>`<button type="button" class="chg" data-go="${go}" data-f="${f||''}">Change</button>`;
+ $('sum').innerHTML=`<dt>Column</dt><dd>${known?esc(st.col.asset||st.col.id)+(st.col.street?', '+esc(st.col.street):''):(st.snapId?'New: matches '+esc(st.snapId):'New: no street light matched')+chg('loc')}</dd>
+<dt>Colour</dt><dd>${esc(label('oColour'))}${chg('obs','oColour')}</dd><dt>Damage</dt><dd>${esc(label('oDamage'))}${chg('obs','oDamage')}</dd><dt>Lamp</dt><dd>${esc(label('oLamp'))}${chg('obs','oLamp')}</dd><dt>Note</dt><dd>${$('oNote').value.trim()?esc($('oNote').value.trim()):'<span class="small">None</span>'}${chg('obs','oNote')}</dd>`;
+ $('sum').querySelectorAll('.chg').forEach(b=>b.onclick=()=>{st.ret=true;if(b.dataset.go==='loc')openLoc();else{show('sObs');const f=$(b.dataset.f);if(f)setTimeout(()=>{f.scrollIntoView({block:'center'});f.focus();},50);}});
  const payload={kind:known?'photo':'missing',column:known?st.col.id:null,asset:known?(st.col.asset||''):st.snapId,
   lat:known?null:st.pin.lat,lon:known?null:st.pin.lon,gps:fix?{lat:fix.lat,lon:fix.lon,accuracy_m:fix.acc}:null,
   obs:{colour:$('oColour').value,damage:$('oDamage').value,lamp:$('oLamp').value},note:$('oNote').value.trim(),
   shots:st.shots.map(s=>({role:s.role,source:s.src,width:s.w,height:s.h,kb:Math.round(s.url.length*.75/1024)}))};
  $('payload').textContent=JSON.stringify(payload,null,2);show('sDone');}
-$('again').onclick=()=>{st.shots=[null,null,null,null];st.fix=null;st.pin=null;unsnap();['oColour','oDamage','oLamp','oNote'].forEach(id=>$(id).value='');$('go').textContent='Start';drawStepList();show('sStart');};
+$('doneBack').onclick=()=>{st.ret=false;if(st.mode==='missing')openLoc();else show('sObs');};
+$('again').onclick=()=>{st.ret=false;st.shots=[null,null,null,null];st.fix=null;st.pin=null;unsnap();['oColour','oDamage','oLamp','oNote'].forEach(id=>$(id).value='');$('go').textContent='Start';drawStepList();show('sStart');};
 
 initStart();
 </script>
