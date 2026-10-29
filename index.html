@@ -327,6 +327,7 @@ details.panel[open] summary{margin-bottom:10px}
       <h2>Help complete the atlas</h2>
       <p class="hint">Spotted a heritage column we've missed, or have a better photo of one? Send it in. Everything is checked before it appears.</p>
       <button type="button" class="hbtn" id="suggestMissing">Report a missing column</button>
+      <p class="hint" id="pendNote" hidden style="margin:10px 0 0"></p>
     </section>
 
     <footer class="sfoot">
@@ -570,6 +571,18 @@ $s('smOk').onclick=closeSubmit;
 $s('sm').addEventListener('click',e=>{if(e.target.id==='sm')closeSubmit();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$s('sm').hidden)closeSubmit();});
 $s('suggestMissing').onclick=()=>{location.href='submit/';};
+// Public reports of missing columns awaiting review: grey dots, so people don't report the same column twice
+const pendLayer=L.layerGroup().addTo(map);
+function loadPendingPins(){fetch(SUBMIT_URL.replace(/\/submit$/,'/pending'),{cache:'no-store'}).then(r=>r.json()).then(j=>{
+ pendLayer.clearLayers();const known=new Set(feats.map(f=>f.properties.asset).filter(Boolean)),seen=new Set();let n=0;
+ for(const x of j.pending||[]){if(x.la==null||x.lo==null||(x.a&&known.has(x.a)))continue;
+  const key=x.a||(+x.la).toFixed(4)+','+(+x.lo).toFixed(4);if(seen.has(key))continue;seen.add(key);n++;
+  L.circleMarker([x.la,x.lo],{radius:7,color:'#fff',weight:1.5,fillColor:'#8f8e89',fillOpacity:.95})
+   .bindTooltip('Reported, awaiting review'+(x.a?' · '+x.a:''),{direction:'top',offset:[0,-6]})
+   .bindPopup(`<div class="pp"><b>Reported column, awaiting review</b><p style="margin:6px 0 0;line-height:1.45">Someone has already sent photos of a column here${x.a?' (street light '+esc(x.a)+')':''}. It will appear on the map once it has been checked, so there's no need to report it again.</p></div>`,{maxWidth:280})
+   .addTo(pendLayer);}
+ const el=document.getElementById('pendNote');if(el){el.hidden=!n;el.innerHTML=`<span class="lg"><span class="sw" style="background:#8f8e89"></span>Grey dots: ${n} reported column${n===1?'':'s'} awaiting review</span>`;}
+}).catch(()=>{});}
 $s('addFab').onclick=()=>{location.href='submit/';};
 $s('smLoc').onclick=()=>{if(!navigator.geolocation){smErr('Your browser cannot share its location.');return;}
  navigator.geolocation.getCurrentPosition(g=>{smErr('');smSetPin(g.coords.latitude,g.coords.longitude,18);},()=>smErr('Could not get your location. You can drag the pin instead.'),{enableHighAccuracy:true,timeout:10000});};
@@ -618,7 +631,7 @@ fetch('data/columns.geojson').then(r=>r.json()).then(gj=>{
    if(p.asset)history.replaceState(null,'','#'+p.asset);});
   markers.push(m);
  });
- buildFilters();apply();
+ buildFilters();apply();loadPendingPins();
  map.fitBounds(L.featureGroup(markers).getBounds().pad(0.05));
  const h=decodeURIComponent(location.hash.slice(1));
  if(h){const m=markers.find(m=>m.feature.properties.asset===h);if(m){map.setView(m.getLatLng(),18);m.openPopup();}}
