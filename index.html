@@ -194,6 +194,46 @@ details.panel[open] summary{margin-bottom:10px}
   .leaflet-popup-content{width:250px!important}
 }
 
+/* ---- quick tour (phones) ---- */
+#tour{position:fixed;inset:0;z-index:2600;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+#tour[hidden]{display:none}
+#tour .t-dim{position:absolute;inset:0;background:rgba(20,19,16,.62)}
+#tour.spot .t-dim{background:transparent}
+#tour .t-spot{position:absolute;display:none;border-radius:12px;box-shadow:0 0 0 3px #fff,0 0 0 4000px rgba(20,19,16,.62);pointer-events:none;transition:left .3s,top .3s,width .3s,height .3s}
+#tour.spot .t-spot{display:block}
+#tour .t-card{position:absolute;left:16px;right:16px;max-width:420px;margin:0 auto;box-sizing:border-box;background:#fbfaf7;border-radius:16px;padding:16px 18px 14px;box-shadow:0 12px 40px rgba(0,0,0,.35);color:#1d1d1b}
+#tour .t-card[hidden]{display:none}
+#tour .t-arrow{position:absolute;width:16px;height:16px;background:#fbfaf7;transform:rotate(45deg)}
+#tour .t-top{display:flex;align-items:center;justify-content:space-between}
+#tour .t-eb{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#5a5955}
+#tour .t-x{width:44px;height:44px;margin:-12px -12px -12px 0;border:0;background:none;font-size:26px;line-height:1;color:#5a5955;cursor:pointer}
+#tour h2{margin:6px 0 8px;font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-weight:400;font-size:23px;line-height:1.2;color:#1d1d1b;text-transform:none;letter-spacing:0}
+#tour p{margin:0;font-size:15px;line-height:1.5;color:#3d3c38}
+#tour p.t-fine{font-size:13px;color:#5a5955;margin-top:10px}
+#tour .t-foot{display:flex;align-items:center;justify-content:space-between;margin-top:14px;gap:10px}
+#tour .t-dots{display:flex;gap:6px}
+#tour .t-dots i{width:7px;height:7px;border-radius:4px;background:#d5d3cc}
+#tour .t-dots i.p{background:#8a8984}
+#tour .t-dots i.c{width:18px;background:#1d1d1b}
+#tour .t-btns{display:flex;gap:8px}
+#tour .t-btn{min-height:44px;padding:0 20px;border:0;border-radius:10px;background:#1f7a4d;color:#fff;font:inherit;font-size:15px;font-weight:600;cursor:pointer;white-space:nowrap}
+#tour .t-btn.sec{background:#fff;color:#1d1d1b;border:1px solid #d5d3cc;padding:0 16px}
+#tour .t-btn[hidden]{display:none}
+#tour .t-shots{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:12px}
+#tour .t-shots figure{margin:0}
+#tour .t-shots img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:8px;display:block;background:#ddd}
+#tour .t-shots figcaption{font-size:11.5px;color:#5a5955;text-align:center;margin-top:4px;line-height:1.25}
+#tour .t-grey{display:inline-block;width:12px;height:12px;border-radius:50%;background:#8f8e89;border:2px solid #fff;box-shadow:0 0 0 1px #8f8e89;vertical-align:-1px}
+#tour .t-inv{padding:0;overflow:hidden}
+#tour .t-inv img{display:block;width:100%;height:160px;object-fit:cover}
+#tour .t-inv .t-in{padding:18px 20px 16px;display:flex;flex-direction:column;gap:10px}
+#tour .t-inv h2{font-size:26px;margin:0}
+#tour .t-inv .t-btn{width:100%;min-height:48px;font-size:16px}
+#tour .t-inv .t-fine{text-align:center;margin:0}
+.tour-link{display:none;margin:0 0 10px}
+#tourStart{background:none;border:0;padding:0;font:inherit;font-weight:600;color:var(--accent);text-decoration:underline;text-underline-offset:2px;cursor:pointer}
+@media (max-width:760px){.tour-link{display:block}}
+
 /* landing screen */
 #intro{position:fixed;inset:0;z-index:3000;background:#1b1a17 url(media/landing-poster.jpg) center/cover no-repeat;color:#fff;overflow:hidden;
  transition:opacity .7s ease,transform .7s ease}
@@ -301,6 +341,7 @@ details.panel[open] summary{margin-bottom:10px}
     <details class="panel about">
       <summary><h2>About this atlas</h2></summary>
       <div class="small">
+        <p class="tour-link"><button type="button" id="tourStart">Take the quick tour</button></p>
         <h3>What the map shows</h3>
         <p>Each dot is one street lighting column that has been photographed. Select a dot to see its photos, design, condition and asset number.</p>
 
@@ -492,7 +533,7 @@ document.getElementById('toggle').onclick=()=>{document.getElementById('side').c
  const skip=location.hash.length>1||/[?&]map\b/.test(location.search);
  const save=navigator.connection&&navigator.connection.saveData;
  if(save||matchMedia('(prefers-reduced-motion: reduce)').matches){vid.removeAttribute('autoplay');vid.preload='none';vid.pause();}
- function hide(){intro.classList.add('out');setTimeout(()=>{intro.classList.add('gone');vid.pause();map.invalidateSize();},700);}
+ function hide(){intro.classList.add('out');setTimeout(()=>{intro.classList.add('gone');vid.pause();map.invalidateSize();if(typeof Tour!=='undefined')Tour.introGone();},700);}
  function show(){intro.classList.remove('gone');void intro.offsetWidth;intro.classList.remove('out');if(!save)vid.play().catch(()=>{});}
  if(skip){intro.classList.add('out','gone');vid.pause();}
  document.getElementById('go').onclick=hide;
@@ -583,6 +624,93 @@ function loadPendingPins(){fetch(SUBMIT_URL.replace(/\/submit$/,'/pending'),{cac
    .addTo(pendLayer);}
  const el=document.getElementById('pendNote');if(el){el.hidden=!n;el.innerHTML=`<span class="lg"><span class="sw" style="background:#8f8e89"></span>Grey dots: ${n} reported column${n===1?'':'s'} awaiting review</span>`;}
 }).catch(()=>{});}
+// Quick tour (phones): offered once after the landing screen; can be replayed from About this atlas
+const Tour=(()=>{
+ const KEY='atlasTourOffered',CENTRE=[51.2801,1.0802];
+ const lsGet=k=>{try{return localStorage.getItem(k);}catch(e){return null;}},lsSet=(k,v)=>{try{localStorage.setItem(k,v);}catch(e){}};
+ const isPhone=()=>matchMedia('(max-width:760px)').matches;
+ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+ const side=()=>document.getElementById('side');
+ let root,spot,card,inv,arrow,i=-1,busy=false,dataReady=false,introDone=false,saved=null,pick=null;
+ function build(){if(root)return;root=document.createElement('div');root.id='tour';root.hidden=true;
+  root.innerHTML=`<div class="t-dim"></div><div class="t-spot"></div>
+<div class="t-card t-inv" role="dialog" aria-modal="true" aria-labelledby="tourInvH" hidden><img src="media/landing-poster.jpg" alt="Aerial view of Canterbury and its cathedral"><div class="t-in">
+<div class="t-eb">Welcome to the atlas</div><h2 id="tourInvH">Find your way around in a minute</h2>
+<p>Seven quick stops: what the dots mean, how to see a column's photos, the filters, and how to add a column we've missed.</p>
+<button type="button" class="t-btn" data-go="start">Take the tour</button><button type="button" class="t-btn sec" data-go="close">Not now</button>
+<p class="t-fine">You can take it any time from About this atlas.</p></div></div>
+<div class="t-card t-step" role="dialog" aria-modal="true" aria-labelledby="tourH" hidden><div class="t-arrow"></div>
+<div class="t-top"><span class="t-eb"></span><button type="button" class="t-x" data-go="close" aria-label="Close the tour">×</button></div>
+<h2 id="tourH"></h2><div class="t-body"></div>
+<div class="t-foot"><div class="t-dots" aria-hidden="true"></div><div class="t-btns"><button type="button" class="t-btn sec" data-go="back">Back</button><button type="button" class="t-btn" data-go="next">Next</button></div></div></div>`;
+  document.body.appendChild(root);spot=root.querySelector('.t-spot');card=root.querySelector('.t-step');inv=root.querySelector('.t-inv');arrow=card.querySelector('.t-arrow');
+  root.addEventListener('click',e=>{const b=e.target.closest('[data-go]');if(!b)return;const g=b.dataset.go;
+   if(g==='start')start();else if(g==='close')end();else if(g==='back')go(i-1);else if(g==='next')go(i+1);});
+  document.addEventListener('keydown',e=>{if(!root.hidden&&e.key==='Escape')end();});
+  window.addEventListener('resize',()=>{if(!root.hidden&&i>=0&&!busy)place(STEPS[i].rect());});}
+ // geometry helpers
+ const mbox=()=>map.getContainer().getBoundingClientRect();
+ function scr(ll){const p=map.latLngToContainerPoint(ll),b=mbox();return {x:b.left+p.x,y:b.top+p.y};}
+ function cluster(){const b=mbox(),ms=markers.filter(m=>map.hasLayer(m)).map(m=>({m,...scr(m.getLatLng())}))
+   .filter(o=>o.x>b.left+24&&o.x<b.right-24&&o.y>b.top+80&&o.y<b.bottom-80);
+  let best=null;for(const o of ms){const n=ms.filter(q=>Math.hypot(q.x-o.x,q.y-o.y)<75);if(!best||n.length>best.n.length)best={o,n};}return best;}
+ const box=pts=>({left:Math.min(...pts.map(p=>p.x))-14,right:Math.max(...pts.map(p=>p.x))+14,top:Math.min(...pts.map(p=>p.y))-14,bottom:Math.max(...pts.map(p=>p.y))+14});
+ const el=id=>{const e=document.getElementById(id);return e?e.getBoundingClientRect():null;};
+ function closeAll(){map.closePopup();if(side().classList.contains('open')){side().classList.remove('open');map.invalidateSize();}}
+ const STEPS=[
+  {t:'Every dot is a column',b:'<p>Each dot is one of Canterbury\'s cast-iron lighting columns, recorded street by street in the 2026 survey. Its colour shows the design: green for the Mather &amp; Smith replica, pink for a Biggleston original.</p>',
+   before:async()=>{closeAll();map.setView(CENTRE,16,{animate:false});await sleep(250);},
+   rect:()=>{const c=cluster();pick=c;return c?box(c.n):null;}},
+  {t:'Tap a dot to see the column',b:'<p>Its card shows the photos, the design, the owner and its condition. Tap a photo to see it full size.</p>',
+   before:async()=>{closeAll();const c=pick||cluster();let m=null;
+     if(c){const withPh=c.n.filter(o=>(o.m.feature.properties.photos||[]).length>1);const pool=withPh.length?withPh:c.n;
+      m=pool.sort((a,b)=>Math.hypot(a.x-c.o.x,a.y-c.o.y)-Math.hypot(b.x-c.o.x,b.y-c.o.y))[0].m;}
+     if(m){m.openPopup();await sleep(700);const pe=document.querySelector('.leaflet-popup'),pc=pe&&pe.querySelector('.leaflet-popup-content');
+      if(pe&&pc){const room=innerHeight-86-250;if(pe.offsetHeight>room){pc.style.maxHeight=Math.max(180,pc.clientHeight-(pe.offsetHeight-room))+'px';m.getPopup().update();await sleep(80);}
+       const top=pe.getBoundingClientRect().top;if(Math.abs(top-86)>4){map.panBy([0,top-86],{animate:false});await sleep(150);}}}},
+   rect:()=>{const p=document.querySelector('.leaflet-popup');return p?p.getBoundingClientRect():null;}},
+  {t:'Filters',b:'<p>Opens the atlas panel. Search for a street or an asset number, or show only the designs, conditions, paint colours and owners you want.</p>',
+   before:async()=>{closeAll();await sleep(150);},rect:()=>el('toggle')},
+  {t:'Designs and colours',b:'<p>Each card is one design, with a picture and how many there are. Tap a card to hide or show those columns. Colour points by switches the dots between design and visual condition.</p>',
+   before:async()=>{map.closePopup();const s=side();s.classList.add('open');await sleep(60);map.invalidateSize();
+     const p=s.querySelectorAll('.panel');if(p[0])s.scrollTop=Math.max(0,p[0].offsetTop-8);await sleep(120);},
+   rect:()=>{const s=side(),p=s.querySelectorAll('.panel');if(!p[0])return null;const sr=s.getBoundingClientRect(),a=p[0].getBoundingClientRect(),b=(p[1]||p[0]).getBoundingClientRect();
+     return {left:Math.min(a.left,b.left),right:Math.max(a.right,b.right),top:Math.max(sr.top,a.top),bottom:Math.min(sr.bottom,b.bottom)};}},
+  {t:'Grey dots: already reported',b:'',
+   before:async()=>{closeAll();const g=pendLayer.getLayers()[0];
+     if(g){map.setView(g.getLatLng(),Math.max(16,map.getZoom()),{animate:false});await sleep(300);}},
+   rect:()=>{const g=pendLayer.getLayers()[0];if(!g)return null;const p=scr(g.getLatLng());return {left:p.x-14,right:p.x+14,top:p.y-14,bottom:p.y+14};},round:true},
+  {t:'Add New: help complete the atlas',b:'<p>Seen a heritage column that isn\'t on the map? Add New guides you through four photos, lined up with an outline on the camera, then three quick questions.</p><div class="t-shots"><figure><img src="media/tour/whole.jpg" alt="Example: the whole column"><figcaption>Whole column</figcaption></figure><figure><img src="media/tour/base.jpg" alt="Example: the base"><figcaption>Base</figcaption></figure><figure><img src="media/tour/ladder.jpg" alt="Example: the ladder bar"><figcaption>Ladder bar</figcaption></figure><figure><img src="media/tour/top.jpg" alt="Example: the neck and lantern"><figcaption>Neck and lantern</figcaption></figure></div><p class="t-fine">To add photos of a column already on the map, use the button on its card.</p>',
+   before:async()=>{closeAll();await sleep(150);},rect:()=>el('addFab')},
+  {t:'That\'s the tour',b:'<p>Home takes you back to the introduction at any time. You can replay this tour from About this atlas in the Filters panel.</p>',
+   before:async()=>{closeAll();await sleep(150);},rect:()=>el('homeFab'),last:true}
+ ];
+ function place(r){const vw=innerWidth,vh=innerHeight;
+  if(!r||!r.right){root.classList.remove('spot');card.style.top=Math.max(16,(vh-card.offsetHeight)/2)+'px';arrow.style.display='none';return;}
+  root.classList.add('spot');const s={l:Math.max(4,r.left-6),t:Math.max(4,r.top-6),r:Math.min(vw-4,r.right+6),b:Math.min(vh-4,r.bottom+6)};
+  const w=s.r-s.l,h=s.b-s.t;Object.assign(spot.style,{left:s.l+'px',top:s.t+'px',width:w+'px',height:h+'px',borderRadius:(STEPS[i].round?Math.min(w,h)/2:12)+'px'});
+  const ch=card.offsetHeight,gap=14;let top,below;
+  if(vh-s.b-gap-12>=ch){top=s.b+gap;below=true;}else if(s.t-gap-12>=ch){top=s.t-gap-ch;below=false;}else{top=Math.max(12,vh-ch-12);below=null;}
+  card.style.top=top+'px';const cb=card.getBoundingClientRect(),cx=(s.l+s.r)/2;
+  if(below===null)arrow.style.display='none';
+  else{arrow.style.display='block';arrow.style.left=Math.min(cb.width-28,Math.max(12,cx-cb.left-8))+'px';arrow.style.top=below?'-8px':'auto';arrow.style.bottom=below?'auto':'-8px';}}
+ async function go(n){if(busy||n<0)return;if(n>=STEPS.length)return end();busy=true;i=n;const st=STEPS[n];card.style.visibility='hidden';
+  try{await st.before();}catch(e){}
+  card.querySelector('.t-eb').textContent=`Quick tour · ${n+1} of ${STEPS.length}`;card.querySelector('#tourH').textContent=st.t;
+  card.querySelector('.t-body').innerHTML=n===4?'<p>A grey dot <span class="t-grey" aria-hidden="true"></span> is a column someone has reported that we haven\'t checked yet. It joins the map once it\'s checked, so there\'s no need to report it again.'+(pendLayer.getLayers().length?'':' There are none at the moment.')+'</p>':st.b;
+  card.querySelector('.t-dots').innerHTML=STEPS.map((_,k)=>`<i class="${k===n?'c':k<n?'p':''}"></i>`).join('');
+  card.querySelector('[data-go="back"]').hidden=n===0;const nx=card.querySelector('[data-go="next"]');nx.textContent=st.last?'Start exploring':'Next';
+  inv.hidden=true;card.hidden=false;place(st.rect());card.style.visibility='';busy=false;nx.focus({preventScroll:true});}
+ function start(){if(!saved)saved={c:map.getCenter(),z:map.getZoom(),h:location.hash};go(0);}
+ function end(){if(!root||root.hidden)return;root.hidden=true;root.classList.remove('spot');i=-1;busy=false;closeAll();
+  if(saved){map.setView(saved.c,saved.z,{animate:false});if(location.hash!==saved.h)history.replaceState(null,'',location.pathname+location.search+saved.h);saved=null;}lsSet(KEY,'1');}
+ function open(withInvite){build();if(!isPhone())return;lsSet(KEY,'1');saved=null;root.hidden=false;
+  if(withInvite){root.classList.remove('spot');card.hidden=true;inv.hidden=false;inv.style.top=Math.max(16,(innerHeight-inv.offsetHeight)/2)+'px';inv.querySelector('[data-go="start"]').focus({preventScroll:true});}
+  else start();}
+ function maybe(){if(dataReady&&introDone&&isPhone()&&!lsGet(KEY)&&location.hash.length<2)setTimeout(()=>open(true),400);}
+ const ts=document.getElementById('tourStart');if(ts)ts.onclick=()=>open(false);
+ return {ready(){dataReady=true;if(document.getElementById('intro').classList.contains('gone'))introDone=true;maybe();},introGone(){introDone=true;maybe();},open};
+})();
 $s('addFab').onclick=()=>{location.href='submit/';};
 $s('smLoc').onclick=()=>{if(!navigator.geolocation){smErr('Your browser cannot share its location.');return;}
  navigator.geolocation.getCurrentPosition(g=>{smErr('');smSetPin(g.coords.latitude,g.coords.longitude,18);},()=>smErr('Could not get your location. You can drag the pin instead.'),{enableHighAccuracy:true,timeout:10000});};
@@ -631,7 +759,7 @@ fetch('data/columns.geojson').then(r=>r.json()).then(gj=>{
    if(p.asset)history.replaceState(null,'','#'+p.asset);});
   markers.push(m);
  });
- buildFilters();apply();loadPendingPins();
+ buildFilters();apply();loadPendingPins();Tour.ready();
  map.fitBounds(L.featureGroup(markers).getBounds().pad(0.05));
  const h=decodeURIComponent(location.hash.slice(1));
  if(h){const m=markers.find(m=>m.feature.properties.asset===h);if(m){map.setView(m.getLatLng(),18);m.openPopup();}}
