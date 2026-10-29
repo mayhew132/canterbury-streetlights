@@ -28,6 +28,7 @@ p{line-height:1.5;margin:0 0 12px}
 .steps li.done svg{background:#1f4d2e}
 .btn{display:block;width:100%;padding:14px 16px;border:0;border-radius:12px;background:var(--green);color:#fff;font:inherit;font-size:16px;font-weight:600;cursor:pointer;text-align:center;text-decoration:none}
 .btn.sec{background:#fff;color:var(--ink);border:1px solid #d5d3cc}
+.btn.exit{background:#b3261e;color:#fff}
 .btn:disabled{opacity:.45;cursor:default}
 .btn+.btn{margin-top:10px}
 .colhead{background:#eef5ee;color:#1f4d2e;border-radius:10px;padding:10px 12px;font-size:14.5px;line-height:1.4;margin:0 0 14px}
@@ -189,7 +190,7 @@ pre{white-space:pre-wrap;word-break:break-word;background:#f1f0eb;border-radius:
   <p class="small">What the live version would send (photo data left out):</p>
   <pre id="payload"></pre>
   <div class="nav"><button class="btn sec" id="doneBack" type="button">Back</button><button class="btn" id="again" type="button">Start again</button></div>
-  <a class="btn sec" href="../?map" style="margin-top:10px">Back to the map</a>
+  <a class="btn exit" href="../?map" style="margin-top:10px">Exit to Map</a>
 </div></section>
 
 <script src="../lib/leaflet.js"></script>
