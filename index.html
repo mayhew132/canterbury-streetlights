@@ -223,7 +223,7 @@ details.panel[open] summary{margin-bottom:10px}
 #tour .t-shots figure{margin:0}
 #tour .t-shots img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:8px;display:block;background:#ddd}
 #tour .t-shots figcaption{font-size:11.5px;color:#5a5955;text-align:center;margin-top:4px;line-height:1.25}
-#tour .t-grey{display:inline-block;width:12px;height:12px;border-radius:50%;background:#8f8e89;border:2px solid #fff;box-shadow:0 0 0 1px #8f8e89;vertical-align:-1px}
+#tour .t-grey{display:inline-block;width:13px;height:13px;box-sizing:border-box;border-radius:50%;background:#fff;border:2px dashed #1d1d1b;vertical-align:-2px}
 #tour .t-inv{padding:0;overflow:hidden}
 #tour .t-inv img{display:block;width:100%;height:160px;object-fit:cover}
 #tour .t-inv .t-in{padding:18px 20px 16px;display:flex;flex-direction:column;gap:10px}
@@ -611,17 +611,17 @@ $s('smOk').onclick=closeSubmit;
 $s('sm').addEventListener('click',e=>{if(e.target.id==='sm')closeSubmit();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$s('sm').hidden)closeSubmit();});
 $s('suggestMissing').onclick=()=>{location.href='submit/';};
-// Public reports of missing columns awaiting review: grey dots, so people don't report the same column twice
+// Public reports of missing columns awaiting review: dashed hollow rings (a status, so not a fill colour), so people don't report the same column twice
 const pendLayer=L.layerGroup().addTo(map);
 function loadPendingPins(){fetch(SUBMIT_URL.replace(/\/submit$/,'/pending'),{cache:'no-store'}).then(r=>r.json()).then(j=>{
  pendLayer.clearLayers();const known=new Set(feats.map(f=>f.properties.asset).filter(Boolean)),seen=new Set();let n=0;
  for(const x of j.pending||[]){if(x.la==null||x.lo==null||(x.a&&known.has(x.a)))continue;
   const key=x.a||(+x.la).toFixed(4)+','+(+x.lo).toFixed(4);if(seen.has(key))continue;seen.add(key);n++;
-  L.circleMarker([x.la,x.lo],{radius:7,color:'#fff',weight:1.5,fillColor:'#8f8e89',fillOpacity:.95})
+  L.circleMarker([x.la,x.lo],{radius:7,color:'#1d1d1b',weight:2,dashArray:'3 3',fillColor:'#ffffff',fillOpacity:1})
    .bindTooltip('Reported, awaiting review'+(x.a?' · '+x.a:''),{direction:'top',offset:[0,-6]})
    .bindPopup(`<div class="pp"><b>Reported column, awaiting review</b><p style="margin:6px 0 0;line-height:1.45">Someone has already sent photos of a column here${x.a?' (street light '+esc(x.a)+')':''}. It will appear on the map once it has been checked, so there's no need to report it again.</p></div>`,{maxWidth:280})
    .addTo(pendLayer);}
- const el=document.getElementById('pendNote');if(el){el.hidden=!n;el.innerHTML=`<span class="lg"><span class="sw" style="background:#8f8e89"></span>Grey dots: ${n} reported column${n===1?'':'s'} awaiting review</span>`;}
+ const el=document.getElementById('pendNote');if(el){el.hidden=!n;el.innerHTML=`<span class="lg"><span class="sw hollow" style="border-color:#1d1d1b"></span>Dashed rings: ${n} reported column${n===1?'':'s'} awaiting review</span>`;}
 }).catch(()=>{});}
 // Quick tour (phones): offered once after the landing screen; can be replayed from About this atlas
 const Tour=(()=>{
@@ -675,7 +675,7 @@ const Tour=(()=>{
      const p=s.querySelectorAll('.panel');if(p[0])s.scrollTop=Math.max(0,p[0].offsetTop-8);await sleep(120);},
    rect:()=>{const s=side(),p=s.querySelectorAll('.panel');if(!p[0])return null;const sr=s.getBoundingClientRect(),a=p[0].getBoundingClientRect(),b=(p[1]||p[0]).getBoundingClientRect();
      return {left:Math.min(a.left,b.left),right:Math.max(a.right,b.right),top:Math.max(sr.top,a.top),bottom:Math.min(sr.bottom,b.bottom)};}},
-  {t:'Grey dots: already reported',b:'',
+  {t:'Dashed rings: already reported',b:'',
    before:async()=>{closeAll();const g=pendLayer.getLayers()[0];
      if(g){map.setView(g.getLatLng(),Math.max(16,map.getZoom()),{animate:false});await sleep(300);}},
    rect:()=>{const g=pendLayer.getLayers()[0];if(!g)return null;const p=scr(g.getLatLng());return {left:p.x-14,right:p.x+14,top:p.y-14,bottom:p.y+14};},round:true},
@@ -702,7 +702,7 @@ const Tour=(()=>{
   {t:'Designs and colours',b:'<p>Each card is one design, with a picture and how many there are. Click a card to hide or show those columns. Colour points by switches the dots between design and visual condition. Further down are filters for condition, paint colour and owner.</p>',
    before:async()=>{map.closePopup();sideTo(side().querySelector('.panel'));await sleep(120);},
    rect:PHONE[3].rect},
-  {t:'Grey dots: already reported',b:'',before:PHONE[4].before,rect:PHONE[4].rect,round:true},
+  {t:'Dashed rings: already reported',b:'',before:PHONE[4].before,rect:PHONE[4].rect,round:true},
   {t:'Report a missing column',b:'<p>Seen a heritage column that isn\'t on the map? Report it here: four photos, each lined up with an outline on the camera, then three quick questions. It works best on a phone, standing at the column.</p><div class="t-shots"><figure><img src="media/tour/whole.jpg" alt="Example: the whole column"><figcaption>Whole column</figcaption></figure><figure><img src="media/tour/base.jpg" alt="Example: the base"><figcaption>Base</figcaption></figure><figure><img src="media/tour/ladder.jpg" alt="Example: the ladder bar"><figcaption>Ladder bar</figcaption></figure><figure><img src="media/tour/top.jpg" alt="Example: the neck and lantern"><figcaption>Neck and lantern</figcaption></figure></div><p class="t-fine">To add photos of a column already on the map, use the button on its card.</p>',
    before:async()=>{map.closePopup();sideTo(side().querySelector('.panel.help'));await sleep(120);},
    rect:()=>{const e=side().querySelector('.panel.help');return e?e.getBoundingClientRect():null;}},
@@ -731,7 +731,7 @@ const Tour=(()=>{
  async function go(n){if(busy||n<0)return;if(n>=STEPS.length)return end();busy=true;i=n;const st=STEPS[n];card.style.visibility='hidden';
   try{await st.before();}catch(e){}
   card.querySelector('.t-eb').textContent=`Quick tour · ${n+1} of ${STEPS.length}`;card.querySelector('#tourH').textContent=st.t;
-  card.querySelector('.t-body').innerHTML=n===4?'<p>A grey dot <span class="t-grey" aria-hidden="true"></span> is a column someone has reported that we haven\'t checked yet. It joins the map once it\'s checked, so there\'s no need to report it again.'+(pendLayer.getLayers().length?'':' There are none at the moment.')+'</p>':st.b;
+  card.querySelector('.t-body').innerHTML=n===4?'<p>A dashed ring <span class="t-grey" aria-hidden="true"></span> is a column someone has reported that we haven\'t checked yet. It joins the map once it\'s checked, so there\'s no need to report it again.'+(pendLayer.getLayers().length?'':' There are none at the moment.')+'</p>':st.b;
   card.querySelector('.t-dots').innerHTML=STEPS.map((_,k)=>`<i class="${k===n?'c':k<n?'p':''}"></i>`).join('');
   card.querySelector('[data-go="back"]').hidden=n===0;const nx=card.querySelector('[data-go="next"]');nx.textContent=st.last?'Start exploring':'Next';
   inv.hidden=true;card.hidden=false;place(st.rect());card.style.visibility='';busy=false;nx.focus({preventScroll:true});}
