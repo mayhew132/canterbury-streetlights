@@ -326,6 +326,7 @@ details.panel[open] summary{margin-bottom:10px}
         <h3>Good to know</h3>
         <p>The riverside path columns near Westwood Drive and Ambleside Place belong to Canterbury City Council, not KCC, so their numbers start with CCC and their dots sit where they were photographed.</p>
         <p>Asset numbers come from KCC’s list of 26 September 2026 and may occasionally be wrong. Faces and number plates in the photos have been blurred.</p>
+        <p>The atlas keeps simple daily totals of how it is used, such as how many times it is opened and which columns are viewed. No cookies are set and nothing that identifies you is stored.</p>
       </div>
     </details>
 
@@ -471,7 +472,7 @@ document.getElementById('toggle').onclick=()=>{document.getElementById('side').c
  const skip=location.hash.length>1||/[?&]map\b/.test(location.search);
  const save=navigator.connection&&navigator.connection.saveData;
  if(save||matchMedia('(prefers-reduced-motion: reduce)').matches){vid.removeAttribute('autoplay');vid.preload='none';vid.pause();}
- function hide(){intro.classList.add('out');setTimeout(()=>{intro.classList.add('gone');vid.pause();map.invalidateSize();if(typeof Tour!=='undefined')Tour.introGone();},700);}
+ function hide(){intro.classList.add('out');setTimeout(()=>{intro.classList.add('gone');vid.pause();map.invalidateSize();if(typeof Tour!=='undefined')Tour.introGone();if(typeof Stat!=='undefined')Stat.hit('map');},700);}
  function show(){intro.classList.remove('gone');void intro.offsetWidth;intro.classList.remove('out');if(!save)vid.play().catch(()=>{});}
  if(skip){intro.classList.add('out','gone');vid.pause();}
  document.getElementById('go').onclick=hide;
@@ -487,6 +488,16 @@ document.getElementById('toggle').onclick=()=>{document.getElementById('side').c
 // ---- public submissions: photo of a column / missing column -> private moderation queue
 const SUBMIT_URL='https://streetlights-submit.guy-j-mayhew.workers.dev/submit';
 const $s=id=>document.getElementById(id);
+// ---- anonymous usage counts: totals only, sent once when the page is hidden; no cookies, identifiers or addresses are kept
+const Stat=(()=>{const e={},c={};let n=0;const U=SUBMIT_URL.replace(/\/submit$/,'/t');
+ function send(){if(!n)return;const b=JSON.stringify({e,c});for(const k in e)delete e[k];for(const k in c)delete c[k];n=0;
+  try{navigator.sendBeacon(U,new Blob([b],{type:'text/plain'}));}catch(x){}}
+ document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')send();});addEventListener('pagehide',send);
+ return {hit(k,id){e[k]=(e[k]||0)+1;if(id)c[id]=(c[id]||0)+1;n++;}};})();
+Stat.hit('view');if(document.getElementById('intro').classList.contains('gone'))Stat.hit('map');
+(()=>{let f=false,q=false;const side=document.getElementById('side');
+ side.addEventListener('change',ev=>{if(!f&&ev.target.matches('input[type=checkbox],input[type=radio],select')){f=true;Stat.hit('filter');}});
+ side.addEventListener('input',ev=>{if(!q&&ev.target.id==='q'&&ev.target.value.trim().length>1){q=true;Stat.hit('search');}});})();
 $s('suggestMissing').onclick=()=>{location.href='submit/';};
 // Public reports of missing columns awaiting review: dashed hollow rings (a status, so not a fill colour), so people don't report the same column twice
 const pendLayer=L.layerGroup().addTo(map);
@@ -605,14 +616,14 @@ const Tour=(()=>{
   if(!at){arrow.style.display='none';return;}arrow.style.display='block';
   if(at==='top'||at==='bottom'){arrow.style[at]='-8px';arrow.style.left=Math.min(cw-28,Math.max(12,cx-L-8))+'px';}
   else{arrow.style[at]='-8px';arrow.style.top=Math.min(card.offsetHeight-28,Math.max(12,cy-T-8))+'px';}}
- async function go(n){if(busy||n<0)return;if(n>=STEPS.length)return end();busy=true;i=n;const st=STEPS[n];card.style.visibility='hidden';
+ async function go(n){if(busy||n<0)return;if(n>=STEPS.length){Stat.hit('tour_done');return end();}busy=true;i=n;const st=STEPS[n];card.style.visibility='hidden';
   try{await st.before();}catch(e){}
   card.querySelector('.t-eb').textContent=`Quick tour · ${n+1} of ${STEPS.length}`;card.querySelector('#tourH').textContent=st.t;
   card.querySelector('.t-body').innerHTML=n===4?'<p>A dashed ring <span class="t-grey" aria-hidden="true"></span> is a column someone has reported that we haven\'t checked yet. It joins the map once it\'s checked, so there\'s no need to report it again.'+(pendLayer.getLayers().length?'':' There are none at the moment.')+'</p>':st.b;
   card.querySelector('.t-dots').innerHTML=STEPS.map((_,k)=>`<i class="${k===n?'c':k<n?'p':''}"></i>`).join('');
   card.querySelector('[data-go="back"]').hidden=n===0;const nx=card.querySelector('[data-go="next"]');nx.textContent=st.last?'Start exploring':'Next';
   inv.hidden=true;card.hidden=false;place(st.rect());card.style.visibility='';busy=false;nx.focus({preventScroll:true});}
- function start(){STEPS=isPhone()?PHONE:DESK;if(!saved)saved={c:map.getCenter(),z:map.getZoom(),h:location.hash};go(0);}
+ function start(){Stat.hit('tour_start');STEPS=isPhone()?PHONE:DESK;if(!saved)saved={c:map.getCenter(),z:map.getZoom(),h:location.hash};go(0);}
  function end(){if(!root||root.hidden)return;root.hidden=true;root.classList.remove('spot');i=-1;busy=false;closeAll();
   if(saved){map.setView(saved.c,saved.z,{animate:false});if(location.hash!==saved.h)history.replaceState(null,'',location.pathname+location.search+saved.h);saved=null;}lsSet(KEY,'1');}
  function open(withInvite){build();lsSet(KEY,'1');saved=null;root.hidden=false;
@@ -632,7 +643,7 @@ fetch('data/columns.geojson').then(r=>r.json()).then(gj=>{
   const m=L.circleMarker([lat,lon],style(p));m.feature=f;
   m.bindPopup(()=>popup(p),{maxWidth:330,autoPanPaddingTopLeft:[60,70],autoPanPaddingBottomRight:[20,20]});
   m.bindTooltip(`${p.asset||'No KCC match'} · ${p.variant}`,{direction:'top',offset:[0,-6]});
-  m.on('popupopen',e=>{const el=e.popup.getElement();const pc=el.querySelector('.leaflet-popup-content');if(pc){const mob=matchMedia('(max-width:760px)').matches;if(mob){e.popup.options.autoPanPaddingTopLeft=L.point(10,12);e.popup.options.autoPanPaddingBottomRight=L.point(10,12);}pc.style.maxHeight=Math.max(150,map.getSize().y-(mob?95:150))+'px';pc.style.overflowY='auto';pc.style.overscrollBehavior='contain';pc.style.webkitOverflowScrolling='touch';L.DomEvent.on(pc,'touchstart touchmove pointerdown mousedown wheel',L.DomEvent.stopPropagation);e.popup.update();setTimeout(()=>{const mr=map.getContainer().getBoundingClientRect(),pr=el.getBoundingClientRect();let dy=0,dx=0;if(pr.top<mr.top+12)dy=pr.top-mr.top-12;else if(pr.bottom>mr.bottom-12)dy=pr.bottom-mr.bottom+12;if(pr.left<mr.left+8)dx=pr.left-mr.left-8;else if(pr.right>mr.right-8)dx=pr.right-mr.right+8;if(dx||dy)map.panBy([dx,dy],{animate:true});},60);}document.body.classList.add('popopen');const th=el.querySelector('.thumbs');if(th)L.DomEvent.on(th,'touchstart pointerdown mousedown wheel',L.DomEvent.stopPropagation);const sb=el.querySelector('.sendph');if(sb)sb.onclick=()=>{location.href='submit/?col='+encodeURIComponent(p.id);};el.querySelectorAll('.thumbs img').forEach(img=>img.onclick=()=>openLb(p,+img.dataset.i));
+  m.on('popupopen',e=>{Stat.hit('col',p.id);const el=e.popup.getElement();const pc=el.querySelector('.leaflet-popup-content');if(pc){const mob=matchMedia('(max-width:760px)').matches;if(mob){e.popup.options.autoPanPaddingTopLeft=L.point(10,12);e.popup.options.autoPanPaddingBottomRight=L.point(10,12);}pc.style.maxHeight=Math.max(150,map.getSize().y-(mob?95:150))+'px';pc.style.overflowY='auto';pc.style.overscrollBehavior='contain';pc.style.webkitOverflowScrolling='touch';L.DomEvent.on(pc,'touchstart touchmove pointerdown mousedown wheel',L.DomEvent.stopPropagation);e.popup.update();setTimeout(()=>{const mr=map.getContainer().getBoundingClientRect(),pr=el.getBoundingClientRect();let dy=0,dx=0;if(pr.top<mr.top+12)dy=pr.top-mr.top-12;else if(pr.bottom>mr.bottom-12)dy=pr.bottom-mr.bottom+12;if(pr.left<mr.left+8)dx=pr.left-mr.left-8;else if(pr.right>mr.right-8)dx=pr.right-mr.right+8;if(dx||dy)map.panBy([dx,dy],{animate:true});},60);}document.body.classList.add('popopen');const th=el.querySelector('.thumbs');if(th)L.DomEvent.on(th,'touchstart pointerdown mousedown wheel',L.DomEvent.stopPropagation);const sb=el.querySelector('.sendph');if(sb)sb.onclick=()=>{location.href='submit/?col='+encodeURIComponent(p.id);};el.querySelectorAll('.thumbs img').forEach(img=>img.onclick=()=>openLb(p,+img.dataset.i));
    if(p.asset)history.replaceState(null,'','#'+p.asset);});
   markers.push(m);
  });

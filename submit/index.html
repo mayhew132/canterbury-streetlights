@@ -279,8 +279,14 @@ function startGps(){if(st.watch!==null||!navigator.geolocation)return;
 function stopGps(){if(st.watch!==null){navigator.geolocation.clearWatch(st.watch);st.watch=null;}}
 
 /* camera */
+// anonymous usage counts (totals only; see About this atlas)
+const Stat=(()=>{const e={};let n=0;const U=SUBMIT_URL.replace(/\/submit$/,'/t');
+ function send(){if(!n)return;const b=JSON.stringify({e});for(const k in e)delete e[k];n=0;try{navigator.sendBeacon(U,new Blob([b],{type:'text/plain'}));}catch(x){}}
+ document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')send();});addEventListener('pagehide',send);
+ const did=new Set();return {hit(k){e[k]=(e[k]||0)+1;n++;},once(k){if(!did.has(k)){did.add(k);this.hit(k);}}};})();
+Stat.hit('add_open');
 async function openCam(at){
- show('cam');const cam=$('cam');cam.classList.remove('review','gal','nocam');
+ Stat.once('add_start');show('cam');const cam=$('cam');cam.classList.remove('review','gal','nocam');
  setStep(Number.isInteger(at)?at:nextEmpty()<0?0:nextEmpty());
  startGps();
  if(st.stream)return;
@@ -410,7 +416,7 @@ $('send').onclick=async()=>{if(busy)return;$('sendErr').textContent='';
  busy=true;const b=$('send');b.disabled=true;b.textContent='Sending…';
  try{const r=await fetch(SUBMIT_URL,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({...st.req,token})});
   const j=await r.json().catch(()=>({}));if(!r.ok||!j.ok)throw new Error(j.error||'Sorry, something went wrong. Please try again.');
-  st.shots=[null,null,null,null];show('sThanks');}
+  st.shots=[null,null,null,null];Stat.hit('add_sent');show('sThanks');}
  catch(err){$('sendErr').textContent=err.message;b.disabled=false;b.textContent='Send';try{turnstile.reset(tsId);}catch(_){}}
  finally{busy=false;}};
 
