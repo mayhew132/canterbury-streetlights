@@ -3,18 +3,19 @@
  "visits": [
   112
  ],
- "street": "Heaton Road",
- "asset": "FHCP011",
+ "street": "Zealand Road",
+ "asset": "FZAA014",
  "owner": "KCC",
  "candidates": [
+  "FZAA014",
   "FHCP011"
  ],
  "candidate_distances": "FHCP011 (25 m); FZAA014 (11 m)",
  "confidence": "Confirmed",
- "basis": "Confirmed by Guy (asset confirmation sheet, Oct 2026)",
+ "basis": "Corrected to FZAA014 (was FHCP011) from public feedback, 18 Nov 2026; FZAA014 is also the nearer light to the photo position (11 m against 25 m)",
  "painted": "",
  "note": "Small-door pattern (A4)",
- "confirmed_by": "Guy (asset sheet, Oct 2026)",
+ "confirmed_by": "Guy (public feedback, 18 Nov 2026)",
  "variant": "A2",
  "gps": [
   51.270075,
