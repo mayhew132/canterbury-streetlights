@@ -17,7 +17,7 @@ ROOT = Path(__file__).resolve().parent.parent
 COLS = ROOT / 'data' / 'columns'
 KCC = ROOT / 'data' / 'kcc.json'
 
-VARIANTS = {'A1', 'A2', 'A3', 'B1', 'B2', 'B3', 'C', 'X-stub', 'X-mod', 'U'}
+VARIANTS = {'A1', 'A2', 'A3', 'B1', 'B2', 'B3', 'C', 'X-stub', 'X-mod', 'W', 'U'}   # W = light on a wall bracket
 CONF_ORDER = ['Confirmed', 'Strong', 'Probable', 'Likely', 'Uncertain', 'No match']
 ASSET_OK = {'Confirmed', 'Strong', 'Probable', 'Likely'}   # secure enough to sit at the KCC position
 COND = {
@@ -28,7 +28,12 @@ COND = {
     'door': {'Present', 'Missing', 'Not seen'},
     'colour': {'Moss Green', 'Heritage Green', 'Black', 'Other'},
 }
-OWNERS = {'KCC': 'Kent County Council', 'CCC': 'Canterbury City Council (not adopted)', '': ''}
+OWNERS = {'KCC': 'Kent County Council', 'CCC': 'Canterbury City Council (not adopted)',
+          'Cathedral': 'Canterbury Cathedral', 'Private': 'Privately owned', '': ''}
+# The city's cypher: on a column's door, or on the cover of a wall light's box
+CYPHER = {'', 'Present', 'Plain', 'Replacement', 'Not seen'}
+# Optional fields, written to the map data only when filled in
+EXTRA = ('cypher', 'bracket', 'lantern', 'box', 'marks', 'plate')
 
 
 def load():
@@ -45,7 +50,8 @@ def validate(kcc, recs):
         seen.add(i)
         if r.get('variant') not in VARIANTS: errs.append(f"{i}: unknown variant {r.get('variant')!r}")
         if r.get('confidence') not in CONF_ORDER: errs.append(f"{i}: unknown confidence {r.get('confidence')!r}")
-        if r.get('owner') not in OWNERS: errs.append(f"{i}: owner must be KCC, CCC or blank")
+        if r.get('owner') not in OWNERS: errs.append(f"{i}: owner must be KCC, CCC, Cathedral, Private or blank")
+        if r.get('cypher', '') not in CYPHER: errs.append(f"{i}: cypher {r.get('cypher')!r} not one of {sorted(CYPHER)}")
         if r.get('owner') == 'KCC' and r.get('asset') and r['asset'] not in kcc:
             errs.append(f"{i}: asset {r['asset']} is not in the KCC extract")
         for c in r.get('candidates', []):
@@ -73,6 +79,7 @@ def feature(r, kcc):
         confidence=r['confidence'], basis=r.get('basis', ''), painted=r.get('painted', ''), note=r.get('note', ''),
         placed=placed, dates=r.get('dates', []), visits=r.get('visits', []), photos=r.get('photos', []),
         condition=r.get('condition', {}), defects=r.get('defects', ''))
+    props.update({k: r[k] for k in EXTRA if r.get(k)})
     return dict(type='Feature', geometry=dict(type='Point', coordinates=[round(lon, 6), round(lat, 6)]), properties=props)
 
 

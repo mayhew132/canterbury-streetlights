@@ -44,5 +44,6 @@
  "cond_second_opinion": "structure=Damaged",
  "outcome": "",
  "order": 40,
- "reviewed": "Guy 2026-10-14"
+ "reviewed": "Guy 2026-10-14",
+ "cypher": "Present"
 }

@@ -26,6 +26,9 @@ p{line-height:1.5;margin:0 0 12px}
 .steps li{text-align:center;font-size:12px;color:var(--sec);line-height:1.3}
 .steps svg{display:block;width:100%;height:104px;background:#262622;border-radius:10px;margin-bottom:6px}
 .steps li.done svg{background:#1f4d2e}
+.kind{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0 2px}
+.kind button{padding:12px 8px;border:1.5px solid #d5d3cc;border-radius:12px;background:#fff;color:var(--ink);font:inherit;font-size:15px;font-weight:600;cursor:pointer}
+.kind button.on{border-color:var(--green);background:#eef5ee;color:#1f4d2e}
 .btn{display:block;width:100%;padding:14px 16px;border:0;border-radius:12px;background:var(--green);color:#fff;font:inherit;font-size:16px;font-weight:600;cursor:pointer;text-align:center;text-decoration:none}
 .btn.sec{background:#fff;color:var(--ink);border:1px solid #d5d3cc}
 .btn.exit{background:#b3261e;color:#fff}
@@ -45,7 +48,7 @@ details.opts summary{font-size:13.5px;color:var(--sec);cursor:pointer}
 .row .btn{width:auto;padding:11px 16px;font-size:15px}
 label.f{display:block;font-size:15px;font-weight:600;margin:18px 0 6px}
 label.f span{font-weight:400;color:var(--mut);font-size:13.5px}
-select,textarea{width:100%;padding:12px;border:1px solid #d5d3cc;border-radius:10px;font:inherit;font-size:16px;background:#fff;color:var(--ink)}
+select,textarea,#oMarks{width:100%;padding:12px;border:1px solid #d5d3cc;border-radius:10px;font:inherit;font-size:16px;background:#fff;color:var(--ink)}
 select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,#5a5955 50%),linear-gradient(135deg,#5a5955 50%,transparent 50%);background-position:calc(100% - 20px) 52%,calc(100% - 14px) 52%;background-size:6px 6px;background-repeat:no-repeat;padding-right:36px}
 textarea{min-height:84px;resize:vertical}
 .err{color:#a3261f;font-size:14px;margin:10px 0 0;min-height:1.2em}
@@ -113,13 +116,14 @@ pre{white-space:pre-wrap;word-break:break-word;background:#f1f0eb;border-radius:
 
 <!-- 1. start -->
 <section class="scr on" id="sStart"><div class="wrap">
-  <h1>Photograph a column</h1>
-  <p class="lead">Four photos, taken the same way every time, so columns can be compared across the city.</p>
+  <h1 id="startH">Photograph a column</h1>
+  <p class="lead" id="startLead">Four photos, taken the same way every time, so columns can be compared across the city.</p>
   <div class="colhead" id="colhead" hidden></div>
+  <div class="kind" id="kindPick" role="group" aria-label="What are you photographing?"><button type="button" data-kind="column" class="on" aria-pressed="true">A lamp post</button><button type="button" data-kind="wall" aria-pressed="false">A light on a wall</button></div>
   <ol class="steps" id="stepList"></ol>
-  <p class="small">The camera shows an outline for each photo. Columns vary, so it won't match exactly. Just line up the part named in each step.</p>
+  <p class="small" id="startHint">The camera shows an outline for each photo. Columns vary, so it won't match exactly. Just line up the part named in each step.</p>
   <button class="btn" id="go">Start</button>
-  <p class="small" style="margin-top:14px">Photos are resized and re-saved on your phone, so no hidden location or camera details go with them. Your location is used only to place the column.</p>
+  <p class="small" style="margin-top:14px">Photos are resized and re-saved on your phone, so no hidden location or camera details go with them. Your location is used only to place it on the map.</p>
   <a class="btn sec" id="startExit" href="../?map" style="margin-top:14px">Back to the map</a>
 </div></section>
 
@@ -140,7 +144,7 @@ pre{white-space:pre-wrap;word-break:break-word;background:#f1f0eb;border-radius:
     <div class="cap">
       <label class="side"><input type="file" accept="image/*" id="gal" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>Choose from gallery</label>
       <button class="shut" id="shut" type="button" aria-label="Take photo"></button>
-      <span class="side" aria-hidden="true"></span>
+      <button class="side" id="flip" type="button" style="visibility:hidden" aria-hidden="true" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h18M7 8l-4 4 4 4M17 8l4 4-4 4"/></svg>Flip outline</button>
     </div>
     <div class="rv">
       <button class="btn sec" id="retake" type="button">Retake</button>
@@ -154,12 +158,20 @@ pre{white-space:pre-wrap;word-break:break-word;background:#f1f0eb;border-radius:
   <h2>What did you notice?</h2>
   <p class="small">Your best guess is fine. Choose "Can't tell" if you're not sure.</p>
   <div class="thumbs" id="obsThumbs"></div>
-  <label class="f" for="oColour">Colour of the column</label>
+  <label class="f" for="oColour" id="oColourL">Colour of the column</label>
   <select id="oColour"><option value="">Choose…</option><option value="green">Green</option><option value="black">Black</option><option value="other">Another colour</option><option value="unknown">Can't tell</option></select>
   <label class="f" for="oDamage">Any damage?</label>
   <select id="oDamage"><option value="">Choose…</option><option value="none">None that I could see</option><option value="some">Some, e.g. cracks, rust or a missing part</option><option value="bad">Badly damaged or leaning</option><option value="unknown">Can't tell</option></select>
   <label class="f" for="oLamp">Is the lamp working?</label>
   <select id="oLamp"><option value="">Choose…</option><option value="works">Yes, it's lit at night</option><option value="out">No, it's out at night</option><option value="day">It's on during the day</option><option value="unknown">Don't know</option></select>
+  <div id="wallObs" hidden>
+  <label class="f" for="oBox">Is there a box or plate under the light?</label>
+  <select id="oBox"><option value="">Choose…</option><option value="box">Yes, a box</option><option value="plate">Yes, a number plate</option><option value="both">Both</option><option value="none">No</option><option value="unknown">Can't tell</option></select>
+  <label class="f" for="oCover">What's on the box cover?</label>
+  <select id="oCover"><option value="">Choose…</option><option value="cypher">The city's cypher (a curly C monogram)</option><option value="letters">Lettering</option><option value="plain">Nothing, it's plain</option><option value="nobox">There's no box</option><option value="unknown">Can't tell</option></select>
+  <label class="f" for="oMarks">Any lettering or numbers you can read? <span>(optional)</span></label>
+  <input id="oMarks" maxlength="80" autocomplete="off" placeholder="For example: ESLA HARRISON TYPE, or 11A on a plate">
+  </div>
   <label class="f" for="oNote">Anything else? <span>(optional)</span></label>
   <textarea id="oNote" maxlength="320" placeholder="For example: there's a plaque, or the door is missing"></textarea>
   <p class="err" id="obsErr"></p>
@@ -168,8 +180,8 @@ pre{white-space:pre-wrap;word-break:break-word;background:#f1f0eb;border-radius:
 
 <!-- 4. location (missing columns) -->
 <section class="scr" id="sLoc"><div class="wrap">
-  <h2>Where is the column?</h2>
-  <p class="small">We've put the pin where your phone was when you took the first photo. Drag it onto the column, or tap a street light on the map. Green dots are already on the map; dashed rings have been reported and are awaiting review.</p>
+  <h2 id="locH">Where is the column?</h2>
+  <p class="small" id="locP">We've put the pin where your phone was when you took the first photo. Drag it onto the column, or tap a street light on the map. Green dots are already on the map; dashed rings have been reported and are awaiting review.</p>
   <div id="map"></div>
   <button class="linkbtn" id="useLoc" type="button">Use my current location</button>
   <div class="snap" id="snap" hidden></div>
@@ -217,7 +229,7 @@ const TOPY=4100;
 // half-widths up the column, measured from the FLAD005 survey photo and Sugg's drawings
 const PROF=[[0,150],[45,150],[55,138],[90,138],[100,122],[150,122],[160,128],[185,128],[195,106],[220,106],[230,116],[255,116],[265,100],[540,82],[555,94],[580,94],[590,77],[620,77],[630,94],[655,94],[665,80],[700,80],[710,96],[730,96],[740,76],[760,76],[860,90],[875,90],[885,84],[905,84],[915,72],[925,62],[1350,56],[2560,48],[2560,62],[2590,62],[2595,50],[2700,62],[2800,92],[2845,96],[2850,55],[2896,55],[2896,62],[2940,62],[2940,40],[3060,40]];
 const body='M'+PROF.map(([y,h])=>h+' '+(TOPY-y)).join(' L')+' L'+PROF.slice().reverse().map(([y,h])=>(-h)+' '+(TOPY-y)).join(' L')+'Z';
-const SHAPES=`<path d="${body}"/>
+const COL_SHAPES=`<path d="${body}"/>
 <rect x="-290" y="${TOPY-2896}" width="580" height="44" rx="12"/>
 <circle cx="-290" cy="${TOPY-2874}" r="30"/><circle cx="290" cy="${TOPY-2874}" r="30"/>
 <path d="M0 1050 C10 850 90 770 80 620 C70 500 120 400 110 300 C100 170 40 140 0 170" fill="none" stroke="#fff" stroke-width="38" stroke-linecap="round"/>
@@ -226,16 +238,40 @@ const SHAPES=`<path d="${body}"/>
 <polygon points="-200,543 200,543 70,380 -70,380"/>
 <path d="M-110 543 L110 543 Q110 680 0 716 Q-110 680 -110 543 Z"/>
 <rect x="-10" y="115" width="20" height="60"/><circle cx="0" cy="115" r="26"/>`;
+/* ---------- generic wall light (mm, y down): wall on the right, a scrolled bracket with a stay, a hanging lantern,
+   and, drawn separately below, the box under the light seen face-on for the close-up ---------- */
+const WALL_SHAPES=`<rect x="472" y="170" width="10" height="1380"/>
+<rect x="400" y="250" width="64" height="1050" rx="12"/><circle cx="432" cy="310" r="20"/><circle cx="432" cy="1240" r="20"/>
+<path d="M404 1000 L-372 962 L-372 1046" fill="none" stroke="#fff" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M404 430 C150 560 -110 760 -236 930" fill="none" stroke="#fff" stroke-width="30" stroke-linecap="round"/>
+<circle cx="-262" cy="872" r="48" fill="none" stroke="#fff" stroke-width="26"/>
+<rect x="-388" y="1040" width="32" height="56"/>
+<polygon points="-560,1096 -184,1096 -132,1176 -612,1176"/>
+<polygon points="-556,1176 -188,1176 -236,1456 -508,1456"/>
+<circle cx="-372" cy="1486" r="24"/>
+<rect x="-210" y="1640" width="420" height="380" rx="14" fill="none" stroke="#fff" stroke-width="24"/>
+<circle cx="-160" cy="1690" r="20"/><circle cx="160" cy="1690" r="20"/><circle cx="-160" cy="1970" r="20"/><circle cx="160" cy="1970" r="20"/>
+<polygon points="-46,1689 46,1689 111,1754 111,1846 46,1911 -46,1911 -111,1846 -111,1754"/>
+<rect x="-26" y="1911" width="52" height="190"/><rect x="-160" y="2040" width="110" height="80" rx="10"/>`;
+let SHAPES=COL_SHAPES;
 
-const STEPS=[
+const COL_STEPS=[
  {role:'whole',name:'Whole column',hint:'Stand back until the whole column, from the pavement to the top of the lantern, fits inside the outline.',vb:[-650,40,1300,4120]},
  {role:'base',name:'Base',hint:'Move in close. Fill the outline with the base, from the pavement up past the door.',vb:[-450,2800,900,1340]},
  {role:'ladder',name:'Ladder bar',hint:'Point up at the crossbar below the lantern and line its arms up with the outline.',vb:[-450,950,900,700]},
  {role:'top',name:'Neck and lantern',hint:'Frame the top of the column: the curved neck and the lantern. On a column with the lantern on top, just the lantern.',vb:[-450,40,900,1160]}
 ];
+const WALL_STEPS=[
+ {role:'wall',name:'Light and wall',hint:'Stand back, across the street if you can, so the light and the wall around it fit the outline.',vb:[-700,150,1250,1370]},
+ {role:'bracket',name:'Bracket from the side',hint:'Stand to one side so the bracket shows in profile. Tap Flip outline if it points the other way.',vb:[-470,330,1000,770]},
+ {role:'lantern',name:'Lantern from below',hint:'Point up from below so the lantern fills the outline.',vb:[-660,1010,580,510]},
+ {role:'fixing',name:'Fixing and marks',hint:'The box or plate under the light, or where the bracket meets the wall, close enough to read any lettering. Too high? Zoom with your phone\'s own camera, then use Choose from gallery.',vb:[-260,1600,520,540]}
+];
+let STEPS=COL_STEPS;
 let fid=0;
 function outlineSVG(svg,vb,pxPerMm){
- const id='ol'+(++fid),r1=2.2/pxPerMm,r2=r1+2/pxPerMm;
+ const id='ol'+(++fid),r1=2.2/pxPerMm,r2=r1+2/pxPerMm,flip=SHAPES===WALL_SHAPES&&st.flip;
+ if(flip)vb=[-(vb[0]+vb[2]),vb[1],vb[2],vb[3]];
  svg.setAttribute('viewBox',vb.join(' '));svg.setAttribute('preserveAspectRatio','xMidYMid meet');
  svg.innerHTML=`<defs><filter id="${id}" x="-15%" y="-5%" width="130%" height="110%">
 <feMorphology in="SourceAlpha" operator="dilate" radius="${r1}" result="d1"/><feMorphology in="SourceAlpha" operator="dilate" radius="${r2}" result="d2"/>
@@ -244,7 +280,7 @@ function outlineSVG(svg,vb,pxPerMm){
 <feFlood flood-color="#000" flood-opacity=".55" result="k"/><feComposite in="k" in2="halo" operator="in" result="kh"/>
 <feFlood flood-color="#fff" flood-opacity=".13" result="f"/><feComposite in="f" in2="SourceAlpha" operator="in" result="fi"/>
 <feMerge><feMergeNode in="kh"/><feMergeNode in="fi"/><feMergeNode in="wr"/></feMerge></filter></defs>
-<g filter="url(#${id})" fill="#fff">${SHAPES}</g>`;}
+<g filter="url(#${id})" fill="#fff"><g${flip?' transform="scale(-1 1)"':''}>${SHAPES}</g></g>`;}
 function fitOutline(svg,vb){const w=svg.clientWidth||300,h=svg.clientHeight||500;outlineSVG(svg,vb,Math.min(w/vb[2],h/vb[3]));}
 // keep the camera outline in the clear space between the instructions and the shutter
 function placeOvl(){const o=$('ovl'),t=document.querySelector('#cam .top').getBoundingClientRect().bottom-14,b=document.querySelector('#cam .bot').getBoundingClientRect().top+22;
@@ -253,10 +289,27 @@ function placeOvl(){const o=$('ovl'),t=document.querySelector('#cam .top').getBo
 /* ---------- state ---------- */
 const P=new URLSearchParams(location.search);
 const COLQ=(P.get('col')||P.get('asset')||'').trim();
-const st={mode:COLQ?'known':'missing',col:null,shots:[null,null,null,null],step:0,fix:null,best:null,watch:null,stream:null,pending:null,pin:null,snapId:''};
+const st={mode:COLQ?'known':'missing',kind:'column',flip:false,col:null,shots:[null,null,null,null],step:0,fix:null,best:null,watch:null,stream:null,pending:null,pin:null,snapId:''};
 let feats=null,assets=null,map=null,pinM=null,assetLayer=null;
 
 function show(id){document.querySelectorAll('.scr').forEach(s=>s.classList.toggle('on',s.id===id));$('cam').hidden=id!=='cam';window.scrollTo(0,0);}
+
+/* a lamp post or a light on a wall: each has its own four steps, outline and questions */
+const LOC_P_COL=$('locP').textContent;
+function setKind(k){st.kind=k==='wall'?'wall':'column';const w=st.kind==='wall';
+ STEPS=w?WALL_STEPS:COL_STEPS;SHAPES=w?WALL_SHAPES:COL_SHAPES;
+ document.querySelectorAll('#kindPick button').forEach(b=>{const on=b.dataset.kind===st.kind;b.classList.toggle('on',on);b.setAttribute('aria-pressed',String(on));});
+ $('startH').textContent=w?'Photograph a wall light':'Photograph a column';
+ $('startLead').textContent=`Four photos, taken the same way every time, so ${w?'wall lights':'columns'} can be compared across the city.`;
+ $('startHint').textContent=w?'The camera shows an outline for each photo. Brackets vary, so it won\'t match exactly. Just line up the part named in each step. Please stay on the pavement: there\'s no need to climb.':'The camera shows an outline for each photo. Columns vary, so it won\'t match exactly. Just line up the part named in each step.';
+ $('oColourL').textContent=w?'Colour of the bracket':'Colour of the column';$('wallObs').hidden=!w;
+ $('oNote').placeholder=w?'For example: there\'s a plaque, or the box is missing':'For example: there\'s a plaque, or the door is missing';
+ $('locH').textContent=w?'Where is the light?':'Where is the column?';
+ $('locP').textContent=w?'We\'ve put the pin where your phone was when you took the first photo. Drag it onto the wall where the light is, or tap a council wall light on the map. Many wall lights belong to the Cathedral or to the building\'s owner, so it\'s fine if none matches.':LOC_P_COL;
+ const f=$('flip');f.style.visibility=w?'visible':'hidden';f.setAttribute('aria-hidden',String(!w));f.tabIndex=w?0:-1;
+ drawStepList();}
+document.querySelectorAll('#kindPick button').forEach(b=>b.onclick=()=>{if(!st.shots.some(Boolean))setKind(b.dataset.kind);});
+$('flip').onclick=()=>{st.flip=!st.flip;placeOvl();};
 
 /* start screen */
 function drawStepList(){$('stepList').innerHTML=STEPS.map((s,i)=>`<li class="${st.shots[i]?'done':''}"><svg></svg>${i+1}. ${s.name}</li>`).join('');
@@ -264,12 +317,13 @@ function drawStepList(){$('stepList').innerHTML=STEPS.map((s,i)=>`<li class="${s
 function loadFeats(){return feats?Promise.resolve(feats):fetch(DATA+'columns.geojson').then(r=>r.json()).then(g=>feats=g.features);}
 async function initStart(){
  drawStepList();
- if(st.mode==='known'){const a=COLQ.toUpperCase();const h=$('colhead');h.hidden=false;h.textContent='Loading column '+a+'…';
+ if(st.mode==='known'){const a=COLQ.toUpperCase();const h=$('colhead');h.hidden=false;h.textContent='Loading column '+a+'…';$('kindPick').hidden=true;
   try{await loadFeats();const f=feats.find(f=>(f.properties.asset||'').toUpperCase()===a||String(f.properties.id).toUpperCase()===a);
    if(!f)throw 0;st.col={...f.properties,lat:f.geometry.coordinates[1],lon:f.geometry.coordinates[0]};
+   if(st.col.variant==='W')setKind('wall');
    const back='../?map'+(st.col.asset?'#'+encodeURIComponent(st.col.asset):'');$('startExit').href=back;$('leaveGo').href=back;$('thanksMap').href=back;
    h.innerHTML=`You're photographing <b>${esc(st.col.asset||st.col.id)}</b>${st.col.street?', '+esc(st.col.street):''}.`;}
-  catch(e){h.className='colhead warn';h.textContent='Column '+a+' isn\'t on the map, so this will be treated as a missing column.';st.mode='missing';}}
+  catch(e){h.className='colhead warn';h.textContent='Column '+a+' isn\'t on the map, so this will be treated as a missing column.';st.mode='missing';$('kindPick').hidden=false;}}
 }
 
 /* location fixes */
@@ -316,7 +370,7 @@ $('retake').onclick=()=>{st.pending=null;$('cam').classList.remove('review','gal
 $('use').onclick=()=>{const p=st.pending;if(!p)return;st.shots[st.step]=p;st.pending=null;
  if(st.step===0||!st.fix)st.fix=p.fix||st.fix;
  $('cam').classList.remove('review','gal');const n=nextEmpty();if(n>=0)return setStep(n);if(st.ret){st.ret=false;stopCam();done();}else finishCapture();};
-$('camX').onclick=()=>{stopCam();if(st.ret){st.ret=false;return done();}show('sStart');$('go').textContent=nextEmpty()<0?'Retake photos':st.shots.some(Boolean)?'Carry on':'Start';drawStepList();};
+$('camX').onclick=()=>{stopCam();if(st.ret){st.ret=false;return done();}show('sStart');$('go').textContent=nextEmpty()<0?'Retake photos':st.shots.some(Boolean)?'Carry on':'Start';$('kindPick').hidden=st.mode==='known'||st.shots.some(Boolean);drawStepList();};
 
 /* gallery fallback: reads photo GPS only to place the pin; the image itself is re-encoded so no metadata is kept */
 async function exifGps(file){try{const b=new DataView(await file.slice(0,262144).arrayBuffer());if(b.getUint16(0)!==0xFFD8)return null;let o=2;
@@ -343,8 +397,8 @@ function thumbs(el){el.innerHTML=st.shots.map((s,i)=>`<figure><img src="${s.url}
 function finishCapture(){stopCam();thumbs($('obsThumbs'));show('sObs');}
 $('go').onclick=()=>{st.ret=false;openCam();};
 $('obsBack').onclick=()=>{if(st.ret){st.ret=false;return done();}openCam();};
-$('obsNext').onclick=()=>{const miss=['oColour','oDamage','oLamp'].filter(id=>!$(id).value);
- if(miss.length){$('obsErr').textContent='Please answer all three questions. "Can\'t tell" is fine.';$(miss[0]).focus();return;}
+$('obsNext').onclick=()=>{const w=st.kind==='wall',miss=['oColour','oDamage','oLamp'].concat(w?['oBox','oCover']:[]).filter(id=>!$(id).value);
+ if(miss.length){$('obsErr').textContent=`Please answer all ${w?'five':'three'} questions. "Can't tell" is fine.`;$(miss[0]).focus();return;}
  $('obsErr').textContent='';if(st.ret||st.mode!=='missing'){st.ret=false;done();}else openLoc();};
 
 /* location step (missing columns): pin from the first photo's GPS, snapped to the nearest KCC or City Council light */
@@ -352,24 +406,29 @@ const CCC_COLS=new Set(['Council Street Light','Lantern Light']);
 const kccTidy=t=>String(t||'').replace(/\s*\((?:LIVE|\d+)\)/gi,'').replace(/\s+/g,' ').trim().toLowerCase().replace(/(^|[\s,(-])([a-z])/g,(m,a,b)=>a+b.toUpperCase());
 function loadAssets(){if(assets)return Promise.resolve(assets);
  return Promise.all([fetch(DATA+'kcc.json').then(r=>r.json()),fetch(DATA+'ccc.json').then(r=>r.ok?r.json():{}).catch(()=>({})),loadFeats()]).then(([k,c])=>{
-  assets=Object.entries(k).map(([id,a])=>({id,lat:a[0],lon:a[1],loc:a[2]})).concat(Object.entries(c).filter(([,a])=>CCC_COLS.has(a[4])).map(([id,a])=>({id,lat:a[0],lon:a[1],loc:a[3],ccc:1})));
+  assets=Object.entries(k).map(([id,a])=>({id,lat:a[0],lon:a[1],loc:a[2],wall:WALL_RE.test(a[2]||'')})).concat(Object.entries(c).filter(([,a])=>CCC_COLS.has(a[4])||a[4]==='Wall Light').map(([id,a])=>({id,lat:a[0],lon:a[1],loc:a[3],ccc:1,wall:a[4]==='Wall Light'})));
   return assets;});}
+// KCC's location notes say when a light is on a wall ("ON WALL OF 29-31", "2ND WALL BRKT"); the City Council's list has a Wall Light type.
+// The pin snaps by itself only to the same kind of light (a wall light to a wall light, a column to a column); any light shown can still be tapped.
+const WALL_RE=/\bON (?:THE )?WALL|WALL BR(?:AC)?KE?T|\bON [A-Z' ]*BUILDING|WALL MOUNTED/i;
+const snappable=a=>st.kind==='wall'?a.wall:!a.wall;
+const usable=a=>st.kind==='wall'||!(a.ccc&&a.wall);   // the City Council's own wall lights are shown only when photographing a wall light
 let pendA=new Set(),pendPts=[];fetch(SUBMIT_URL.replace(/\/submit$/,'/pending'),{cache:'no-store'}).then(r=>r.json()).then(j=>{for(const x of j.pending||[]){if(x.a)pendA.add(x.a);else if(x.la!=null)pendPts.push(x);}drawAssets();}).catch(()=>{});
 const onMap=()=>new Set((feats||[]).map(f=>f.properties.asset).filter(Boolean));
 function setPin(lat,lon,zoom){st.pin={lat:+lat.toFixed(6),lon:+lon.toFixed(6)};pinM.setLatLng([lat,lon]);if(zoom)map.setView([lat,lon],zoom);}
 function unsnap(){st.snapId='';$('snap').hidden=true;}
 function snapTo(a){st.snapId=a.id;setPin(a.lat,a.lon);const el=$('snap'),known=onMap().has(a.id),pd=!known&&pendA.has(a.id);el.hidden=false;el.className='snap'+(known||pd?' warn':'');
  el.innerHTML=pd?`Someone has already reported <b>${esc(a.id)}</b> and it's awaiting review. You can still send yours. <button type="button" id="unsnap">Not this one</button>`:known?`This is <b>${esc(a.id)}</b>, which is already on the map. <a href="?col=${encodeURIComponent(a.id)}">Photograph it as a known column instead</a>`
-  :`Matched to ${a.ccc?'City Council light':'KCC street light'} <b>${esc(a.id)}</b>${a.loc?', '+esc(a.ccc?a.loc:kccTidy(a.loc)):''}. <button type="button" id="unsnap">Not this one</button>`;
+  :`Matched to ${a.ccc?'City Council light':a.wall?'KCC wall light':'KCC street light'} <b>${esc(a.id)}</b>${a.loc?', '+esc(a.ccc?a.loc:kccTidy(a.loc)):''}. <button type="button" id="unsnap">Not this one</button>`;
  const u=$('unsnap');if(u)u.onclick=unsnap;}
 function place(lat,lon){setPin(lat,lon);if(!assets)return unsnap();let best=null,bd=1e9;const cl=Math.cos(lat*Math.PI/180);
- for(const a of assets){const dy=(a.lat-lat)*111320,dx=(a.lon-lon)*111320*cl;if(Math.abs(dy)>40||Math.abs(dx)>40)continue;const d=Math.hypot(dx,dy);if(d<bd){bd=d;best=a;}}
+ for(const a of assets){if(!snappable(a))continue;const dy=(a.lat-lat)*111320,dx=(a.lon-lon)*111320*cl;if(Math.abs(dy)>40||Math.abs(dx)>40)continue;const d=Math.hypot(dx,dy);if(d<bd){bd=d;best=a;}}
  if(best&&bd<=15)snapTo(best);else unsnap();}
 function drawAssets(){if(!map||!assets)return;assetLayer.clearLayers();if(map.getZoom()<16)return;const bb=map.getBounds().pad(.1),known=onMap();let n=0;
  for(const q of pendPts){if(!bb.contains([q.la,q.lo]))continue;L.circleMarker([q.la,q.lo],{radius:6,weight:2,color:'#1d1d1b',dashArray:'3 3',fillColor:'#ffffff',fillOpacity:1,bubblingMouseEvents:false}).bindTooltip('Reported, awaiting review',{direction:'top',offset:[0,-4]}).addTo(assetLayer);}
- for(const a of assets){if(!bb.contains([a.lat,a.lon]))continue;if(++n>1500)break;const k=known.has(a.id),pd=!k&&pendA.has(a.id);
+ for(const a of assets){if(!usable(a)||!bb.contains([a.lat,a.lon]))continue;if(++n>1500)break;const k=known.has(a.id),pd=!k&&pendA.has(a.id);
   L.circleMarker([a.lat,a.lon],{radius:k||pd?6:5,weight:k||pd?2:1.5,color:k?'#1f7a4d':pd?'#1d1d1b':a.ccc?'#c77700':'#2a78d6',dashArray:pd?'3 3':null,fillColor:k?'#1f7a4d':'#fff',fillOpacity:k?.85:1,bubblingMouseEvents:false})
-   .bindTooltip((a.ccc?'City Council ':'')+a.id+(k?' · already on the map':pd?' · reported, awaiting review':''),{direction:'top',offset:[0,-4]}).on('click',()=>snapTo(a)).addTo(assetLayer);}}
+   .bindTooltip((a.ccc?'City Council ':'')+a.id+(a.wall?' · on a wall':'')+(k?' · already on the map':pd?' · reported, awaiting review':''),{direction:'top',offset:[0,-4]}).on('click',()=>snapTo(a)).addTo(assetLayer);}}
 async function openLoc(){show('sLoc');startGps();const start=st.pin||st.fix||st.best||{lat:51.2802,lon:1.0789};
  if(!map){map=L.map('map',{maxZoom:18,attributionControl:false});L.tileLayer(CARTO,{maxZoom:18,maxNativeZoom:18,subdomains:'abcd'}).addTo(map);
   pinM=L.marker([start.lat,start.lon],{draggable:true,autoPan:true,keyboard:true,title:'Drag onto the column',icon:L.divIcon({className:'',html:'<div class="smpin"></div>',iconSize:[26,26],iconAnchor:[13,30]})}).addTo(map);
@@ -390,20 +449,25 @@ function done(){stopGps();$('leave').hidden=true;$('exit').hidden=false;
  $('doneThumbs').querySelectorAll('button').forEach(b=>b.onclick=()=>{st.ret=true;openCam(+b.dataset.i);});
  const known=st.mode==='known',where=known?{lat:st.col.lat,lon:st.col.lon}:st.pin,fix=st.fix||st.best;
  const w=$('distWarn');w.hidden=true;
- if(known&&fix){const d=metres(fix,where);if(d>50){w.hidden=false;w.textContent=`Your phone was about ${d} m from ${st.col.asset||st.col.id} when you took the first photo. Is this the right column?`;}}
+ const wl=st.kind==='wall';
+ if(known&&fix){const d=metres(fix,where);if(d>50){w.hidden=false;w.textContent=`Your phone was about ${d} m from ${st.col.asset||st.col.id} when you took the first photo. Is this the right ${wl?'light':'column'}?`;}}
  const chg=(go,f)=>`<button type="button" class="chg" data-go="${go}" data-f="${f||''}">Change</button>`;
- $('sum').innerHTML=`<dt>Column</dt><dd>${known?esc(st.col.asset||st.col.id)+(st.col.street?', '+esc(st.col.street):''):(st.snapId?'New: matches '+esc(st.snapId):'New: no street light matched')+chg('loc')}</dd>
-<dt>Colour</dt><dd>${esc(label('oColour'))}${chg('obs','oColour')}</dd><dt>Damage</dt><dd>${esc(label('oDamage'))}${chg('obs','oDamage')}</dd><dt>Lamp</dt><dd>${esc(label('oLamp'))}${chg('obs','oLamp')}</dd><dt>Note</dt><dd>${$('oNote').value.trim()?esc($('oNote').value.trim()):'<span class="small">None</span>'}${chg('obs','oNote')}</dd>`;
+ const mk=$('oMarks').value.trim();
+ $('sum').innerHTML=`<dt>${wl?'Light':'Column'}</dt><dd>${known?esc(st.col.asset||st.col.id)+(st.col.street?', '+esc(st.col.street):''):(st.snapId?'New: matches '+esc(st.snapId):wl?'New: no council wall light matched':'New: no street light matched')+chg('loc')}</dd>
+<dt>${wl?'Bracket colour':'Colour'}</dt><dd>${esc(label('oColour'))}${chg('obs','oColour')}</dd>${wl?`<dt>Box or plate</dt><dd>${esc(label('oBox'))}${chg('obs','oBox')}</dd><dt>Box cover</dt><dd>${esc(label('oCover'))}${chg('obs','oCover')}</dd><dt>Lettering</dt><dd>${mk?esc(mk):'<span class="small">None</span>'}${chg('obs','oMarks')}</dd>`:''}<dt>Damage</dt><dd>${esc(label('oDamage'))}${chg('obs','oDamage')}</dd><dt>Lamp</dt><dd>${esc(label('oLamp'))}${chg('obs','oLamp')}</dd><dt>Note</dt><dd>${$('oNote').value.trim()?esc($('oNote').value.trim()):'<span class="small">None</span>'}${chg('obs','oNote')}</dd>`;
  $('sum').querySelectorAll('.chg').forEach(b=>b.onclick=()=>{st.ret=true;if(b.dataset.go==='loc')openLoc();else{show('sObs');const f=$(b.dataset.f);if(f)setTimeout(()=>{f.scrollIntoView({block:'center'});f.focus();},50);}});
  st.req=buildReq(known,where,fix);
  $('sendErr').textContent='';$('send').disabled=false;$('send').textContent='Send';show('sDone');renderTs();}
 const OBS_SHORT={green:'Green',black:'Black',other:'Another colour',unknown:"Can't tell",none:'None seen',some:'Some',bad:'Badly damaged or leaning',works:'Lit at night',out:'Out at night',day:'On during the day'};
+const BOX_SHORT={box:'A box',plate:'A number plate',both:'Box and plate',none:'None',unknown:"Can't tell"},COVER_SHORT={cypher:"The city's cypher",letters:'Lettering',plain:'Plain',nobox:'No box',unknown:"Can't tell"};
 function buildReq(known,where,fix){
- const o={colour:$('oColour').value,damage:$('oDamage').value,lamp:$('oLamp').value};
- let gps='';if(fix&&known)gps=` | Phone ~${metres(fix,where)} m from column`;else if(fix&&!known)gps=` | Pin ${st.pinMoved?'placed by hand':'from phone GPS'}${fix.acc?' (±'+fix.acc+' m)':''}`;
- const head=`[Guided: whole, base, ladder bar, neck/lantern | Colour: ${OBS_SHORT[o.colour]} | Damage: ${OBS_SHORT[o.damage]} | Lamp: ${OBS_SHORT[o.lamp]}${o.lamp==='unknown'?'':''}${gps}]`;
+ const wl=st.kind==='wall',o={colour:$('oColour').value,damage:$('oDamage').value,lamp:$('oLamp').value};
+ if(wl){o.box=$('oBox').value;o.cover=$('oCover').value;o.marks=$('oMarks').value.trim().replace(/[\[\]|]/g,' ').slice(0,80);}
+ let gps='';if(fix&&known)gps=` | Phone ~${metres(fix,where)} m from ${wl?'light':'column'}`;else if(fix&&!known)gps=` | Pin ${st.pinMoved?'placed by hand':'from phone GPS'}${fix.acc?' (±'+fix.acc+' m)':''}`;
+ const head=wl?`[Guided wall light: light and wall, bracket, lantern, fixing | Bracket colour: ${OBS_SHORT[o.colour]} | Box: ${BOX_SHORT[o.box]} | Cover: ${COVER_SHORT[o.cover]}${o.marks?' | Lettering: '+o.marks:''} | Damage: ${OBS_SHORT[o.damage]} | Lamp: ${OBS_SHORT[o.lamp]}${gps}]`
+  :`[Guided: whole, base, ladder bar, neck/lantern | Colour: ${OBS_SHORT[o.colour]} | Damage: ${OBS_SHORT[o.damage]} | Lamp: ${OBS_SHORT[o.lamp]}${gps}]`;
  const user=$('oNote').value.trim();
- return {kind:known?'photo':'missing',column:known?String(st.col.id):null,lat:known?null:st.pin.lat,lon:known?null:st.pin.lon,asset:known?'':st.snapId,
+ return {kind:known?'photo':'missing',mount:wl?'wall':undefined,column:known?String(st.col.id):null,lat:known?null:st.pin.lat,lon:known?null:st.pin.lon,asset:known?'':st.snapId,
   note:(head+(user?' '+user:'')).slice(0,500),jpegs:st.shots.map(s=>s.url.split(',')[1]),
   obs:o,roles:st.shots.map(s=>s.role),sources:st.shots.map(s=>s.src),guided:1};}
 let tsId=null;

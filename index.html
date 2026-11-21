@@ -315,12 +315,13 @@ details.panel[open] summary{margin-bottom:10px}
 
         <h3>The designs</h3>
         <ul class="dz">
-          <li><img src="media/variants/A1.jpg" alt=""><span><b>Mather &amp; Smith Biggleston Replica (A1)</b> a replica of the Biggleston column, with the city’s CC monogram on the door</span></li>
+          <li><img src="media/variants/A1.jpg" alt=""><span><b>Mather &amp; Smith Biggleston Replica (A1)</b> a replica of the Biggleston column, with the city’s cypher on the door</span></li>
           <li><img src="media/variants/A2.jpg" alt=""><span><b>Biggleston Original (A2)</b> a short framed door, with fluting all round the base</span></li>
           <li><img src="media/variants/A3.jpg" alt=""><span><b>Sugg Biggleston Replica (A3)</b> a Sugg replica with a crossbar and swan-neck lantern</span></li>
           <li><img src="media/variants/B1.jpg" alt=""><span><b>Reproductions (B1, B2)</b> modern heritage-style columns by DW Windsor</span></li>
-          <li><img src="media/variants/B3.jpg" alt=""><span><b>Reproduction Cylinder Drum (B3)</b> a ribbed cylinder-drum column without the monogram, not a Biggleston pattern</span></li>
+          <li><img src="media/variants/B3.jpg" alt=""><span><b>Reproduction Cylinder Drum (B3)</b> a ribbed cylinder-drum column without the cypher, not a Biggleston pattern</span></li>
           <li><img src="media/variants/X-stub.jpg" alt=""><span><b>Stubs and replacements</b> shown where they now stand in place of an original</span></li>
+          <li><img src="media/variants/W.jpg" alt=""><span><b>Wall-mounted lights (W)</b> a lantern on a bracket fixed to a wall, often with a box beneath. Shown as squares</span></li>
         </ul>
 
         <h3>Good to know</h3>
@@ -360,9 +361,13 @@ const VARS={
  'B3':{name:'B3 Reproduction Cylinder Drum',c:'#7b3fb5'},
  'X-stub':{name:'X-stub Cut-down stub',c:'#b23b3b'},
  'X-mod':{name:'X-mod Modern replacement',c:'#777777'},
+ 'W':{name:'W Wall-mounted light',c:'#8a5a2b'},
  'U':{name:'U Not yet classified',c:'#b0b0aa'}
 };
-const VLAB={'A1':'Mather & Smith Biggleston Replica','A2':'Biggleston Original','A3':'Sugg Biggleston Replica','B1':'Reproduction swan-neck','B2':'Reproduction post-top','B3':'Reproduction Cylinder Drum','X-stub':'Cut-down stub','X-mod':'Modern replacement','U':'Not yet classified'};
+const VLAB={'A1':'Mather & Smith Biggleston Replica','A2':'Biggleston Original','A3':'Sugg Biggleston Replica','B1':'Reproduction swan-neck','B2':'Reproduction post-top','B3':'Reproduction Cylinder Drum','X-stub':'Cut-down stub','X-mod':'Modern replacement','W':'Wall-mounted light','U':'Not yet classified'};
+// wall-mounted lights are drawn as squares, so they read apart from the round column dots
+L.SVG.include({_updateSquare(l){const p=l._point,r=Math.max(1,Math.round(l._radius*0.9));this._setPath(l,l._empty()?'M0 0':`M${p.x-r},${p.y-r}h${2*r}v${2*r}h${-2*r}z`);}});
+const SquareMarker=L.CircleMarker.extend({_updatePath(){this._renderer._updateSquare(this);}});
 const CONFS=['Confirmed','Strong','Probable','Likely','Uncertain','No match'];
 const HOLLOW=new Set(['Uncertain','No match']);
 const CONDS={'Excellent':'#1a9850','Good':'#91cf60','Poor':'#d73027','Missing':'#4d4d4d'};
@@ -383,16 +388,22 @@ function style(p){const v=state.colby==='cond'?{c:CONDS[p.condition&&p.condition
 function popup(p){
  const v=VARS[p.variant];const title=p.asset?(p.owner&&p.owner.startsWith('Canterbury City')?'CCC '+p.asset:p.asset):'No KCC match';
  const ph=p.photos.map((f,i)=>`<img loading="lazy" src="photos/${esc(f)}" data-i="${i}" alt="Photo ${i+1} of ${esc(title)}">`).join('');
- const rows=[['Map ID',p.id||('V'+p.visits[0])],p.owner?['Owner',p.owner]:null,['Variant',v?v.name:p.variant],['Identified by',p.basis],p.painted?['Painted number',p.painted]:null,
+ const wall=p.variant==='W';
+ const rows=[['Map ID',p.id||('V'+p.visits[0])],p.owner?['Owner',p.owner]:null,['Variant',v?v.name:p.variant],
+  wall&&p.bracket?['Bracket',p.bracket]:null,wall&&p.lantern?['Lantern',p.lantern]:null,wall&&p.box?['Box',p.box]:null,
+  p.cypher?[wall?'Cypher on the box':'Cypher on the door',CYPH[p.cypher]||p.cypher]:null,p.marks?['Cast lettering',p.marks]:null,p.plate?['Number plate',p.plate]:null,
+  ['Identified by',p.basis],p.painted?['Painted number',p.painted]:null,
   p.candidates&&p.candidates!==p.asset?['Candidates',p.candidates]:null,['Position',p.placed],['Photographed',p.dates.map(ukDate).join(', ')]].filter(Boolean)
   .map(r=>`<tr><td>${esc(r[0])}</td><td>${esc(r[1])}</td></tr>`).join('');
  return `<div class="pp"><h3>${esc(title)}</h3><div class="st">${esc(p.street)}</div>
  <span class="badge" style="background:${v?v.c:'#444'};color:#fff">${esc(p.variant)}</span>
- <table>${rows}</table>${p.note?`<div class="note">${esc(p.note)}</div>`:''}${condHtml(p)}<div class="thumbs">${ph}</div>${p.photos.length>3?`<div class="more">${p.photos.length} photos · swipe for more</div>`:''}<button type="button" class="sendph">📷 Send us a photo of this column</button></div>`;}
+ <table>${rows}</table>${p.note?`<div class="note">${esc(p.note)}</div>`:''}${condHtml(p)}<div class="thumbs">${ph}</div>${p.photos.length>3?`<div class="more">${p.photos.length} photos · swipe for more</div>`:''}<button type="button" class="sendph">📷 Send us a photo of this ${wall?'light':'column'}</button></div>`;}
+const CYPH={'Present':'Yes, the city’s cypher','Plain':'No, a plain cover','Replacement':'No, a replacement cover','Not seen':'Not seen'};
 function condHtml(p){const c=p.condition;if(!c||!c.overall)return '';
  const bad=new Set(['Poor','Missing','Damaged']),good=new Set(['Excellent','Intact','Present']);
  const chip=(lab,val)=>val?`<span class="chip${bad.has(val)?' bad':good.has(val)?' ok':''}">${esc(lab)}${lab?': ':''}${esc(val)}</span>`:'';
- return `<div class="cond"><div class="h">Visual condition (from photos, 2026)</div><div class="chips">${chip('Overall',c.overall)}${chip('Paint',c.paint)}${chip('External structure',c.structure)}${chip('Lantern',c.lantern)}${chip('Door',c.door)}${chip('',c.colour)}</div>${p.defects?`<div class="defects">${esc(p.defects)}</div>`:''}</div>`;}
+ const wall=p.variant==='W';
+ return `<div class="cond"><div class="h">Visual condition (from photos, 2026)</div><div class="chips">${chip('Overall',c.overall)}${chip('Paint',c.paint)}${chip(wall?'Bracket':'External structure',c.structure)}${chip('Lantern',c.lantern)}${chip(wall?'Box':'Door',c.door)}${chip('',c.colour)}</div>${p.defects?`<div class="defects">${esc(p.defects)}</div>`:''}</div>`;}
 const XG=[
  {k:'col',get:p=>(p.condition||{}).colour,opts:[['Moss Green','Moss green','#3d5a3a'],['Heritage Green','Heritage green','#1e5b3f'],['Black','Black','#1d1d1b'],['Other','Another colour','#b39b6b']]},
  {k:'own',get:p=>p.owner,opts:[['Kent County Council','Kent County Council',null],['Canterbury City Council (not adopted)','Canterbury City Council',null]]}];
@@ -419,7 +430,7 @@ function apply(){
  const cb=document.getElementById('clearF');if(cb)cb.onclick=clearFilters;
  counts();return shown;
 }
-const VIMG=new Set(['A1','A2','A3','B1','B2','B3','X-stub','X-mod']);
+const VIMG=new Set(['A1','A2','A3','B1','B2','B3','X-stub','X-mod','W']);
 function vprev(im,on){const p=document.getElementById('vprev');if(!on){p.style.display='none';return;}
  const k=im.dataset.v;p.dataset.v=k;p.innerHTML=`<img src="media/variants/${k}-lg.jpg" alt=""><div>${esc(VARS[k].name)}</div>`;
  const r=im.getBoundingClientRect();p.style.display='block';const h=p.offsetHeight;
@@ -428,8 +439,8 @@ function vprev(im,on){const p=document.getElementById('vprev');if(!on){p.style.d
 document.addEventListener('click',()=>{const p=document.getElementById('vprev');if(p)p.style.display='none';});
 function buildFilters(){
  const fv=document.getElementById('fvar');
- const hasU=markers.some(m=>m.feature.properties.variant==='U');
- fv.innerHTML=Object.entries(VARS).filter(([k])=>k!=='U'||hasU).map(([k,v])=>`<label class="vcard" title="${esc(v.name)}"><input type="checkbox" data-var="${k}" checked>${VIMG.has(k)?`<img src="media/variants/${k}.jpg" alt="" data-v="${k}">`:'<span class="noimg"></span>'}<span class="vt"><span class="vn">${esc(VLAB[k]||v.name)}</span><span class="vc"><i style="background:${v.c}"></i>${esc(k)} · <span data-n-var="${k}"></span></span></span></label>`).join('');
+ const has=k=>markers.some(m=>m.feature.properties.variant===k);
+ fv.innerHTML=Object.entries(VARS).filter(([k])=>!['U','W'].includes(k)||has(k)).map(([k,v])=>`<label class="vcard" title="${esc(v.name)}"><input type="checkbox" data-var="${k}" checked>${VIMG.has(k)?`<img src="media/variants/${k}.jpg" alt="" data-v="${k}">`:'<span class="noimg"></span>'}<span class="vt"><span class="vn">${esc(VLAB[k]||v.name)}</span><span class="vc"><i style="background:${v.c}"></i>${esc(k)} · <span data-n-var="${k}"></span></span></span></label>`).join('');
  document.getElementById('fcond').innerHTML=Object.entries(CONDS).map(([k,c])=>`<label class="opt"><input type="checkbox" data-cond="${k}" checked><span class="sw" style="background:${c}"></span>${k}<span class="n" data-n-cond="${k}"></span></label>`).join('');
  XG.forEach(g=>{const el=document.getElementById('fx-'+g.k);if(!el)return;
   el.innerHTML=g.opts.filter(([v])=>feats.some(f=>g.get(f.properties)===v)).map(([v,lab,c])=>{const i=g.opts.findIndex(o=>o[0]===v);return `<label class="opt"><input type="checkbox" data-x="${g.k}" data-xv="${esc(v)}" checked>${c?`<span class="sw" style="background:${c}"></span>`:''}${esc(lab)}<span class="n" data-n-x="${g.k}-${i}"></span></label>`;}).join('');});
@@ -640,7 +651,7 @@ fetch('data/columns.geojson').then(r=>r.json()).then(gj=>{
  const order=f=>(HOLLOW.has(f.properties.confidence)?0:1);
  feats.slice().sort((a,b)=>order(a)-order(b)).forEach(f=>{
   const [lon,lat]=f.geometry.coordinates;const p=f.properties;
-  const m=L.circleMarker([lat,lon],style(p));m.feature=f;
+  const m=p.variant==='W'?new SquareMarker([lat,lon],style(p)):L.circleMarker([lat,lon],style(p));m.feature=f;
   m.bindPopup(()=>popup(p),{maxWidth:330,autoPanPaddingTopLeft:[60,70],autoPanPaddingBottomRight:[20,20]});
   m.bindTooltip(`${p.asset||'No KCC match'} · ${p.variant}`,{direction:'top',offset:[0,-6]});
   m.on('popupopen',e=>{Stat.hit('col',p.id);const el=e.popup.getElement();const pc=el.querySelector('.leaflet-popup-content');if(pc){const mob=matchMedia('(max-width:760px)').matches;if(mob){e.popup.options.autoPanPaddingTopLeft=L.point(10,12);e.popup.options.autoPanPaddingBottomRight=L.point(10,12);}pc.style.maxHeight=Math.max(150,map.getSize().y-(mob?95:150))+'px';pc.style.overflowY='auto';pc.style.overscrollBehavior='contain';pc.style.webkitOverflowScrolling='touch';L.DomEvent.on(pc,'touchstart touchmove pointerdown mousedown wheel',L.DomEvent.stopPropagation);e.popup.update();setTimeout(()=>{const mr=map.getContainer().getBoundingClientRect(),pr=el.getBoundingClientRect();let dy=0,dx=0;if(pr.top<mr.top+12)dy=pr.top-mr.top-12;else if(pr.bottom>mr.bottom-12)dy=pr.bottom-mr.bottom+12;if(pr.left<mr.left+8)dx=pr.left-mr.left-8;else if(pr.right>mr.right-8)dx=pr.right-mr.right+8;if(dx||dy)map.panBy([dx,dy],{animate:true});},60);}document.body.classList.add('popopen');const th=el.querySelector('.thumbs');if(th)L.DomEvent.on(th,'touchstart pointerdown mousedown wheel',L.DomEvent.stopPropagation);const sb=el.querySelector('.sendph');if(sb)sb.onclick=()=>{location.href='submit/?col='+encodeURIComponent(p.id);};el.querySelectorAll('.thumbs img').forEach(img=>img.onclick=()=>openLb(p,+img.dataset.i));
