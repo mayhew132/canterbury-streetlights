@@ -308,7 +308,7 @@ details.panel[open] summary{margin-bottom:10px}
         <p class="tour-link"><button type="button" id="tourStart">Take the quick tour</button></p>
         <h3>What the map shows</h3>
         <p>Each dot is one street lighting column that has been photographed. Select a dot to see its photos, design, condition and asset number.</p>
-        <p>A white dot with a dashed ring <span class="sw hollow" style="display:inline-block;vertical-align:-2px;border-color:#1d1d1b" aria-hidden="true"></span> is a column someone has reported that hasn't been checked yet. It joins the map once it has, so there's no need to report it again.</p>
+        <p>A white dot with a dashed ring <span class="sw hollow" style="display:inline-block;vertical-align:-2px;border-color:#1d1d1b" aria-hidden="true"></span> is a light someone has reported that hasn't been checked yet. It joins the map once it has, so there's no need to report it again.</p>
 
         <h3>Asset numbers</h3>
         <p>Kent County Council gives every column an asset number, and each dot sits on KCC’s mapped position for that column.</p>
@@ -333,8 +333,8 @@ details.panel[open] summary{margin-bottom:10px}
 
     <section class="panel help">
       <h2>Help complete the atlas</h2>
-      <p class="hint">Spotted a heritage column we've missed, or have a better photo of one? Send it in. Everything is checked before it appears.</p>
-      <button type="button" class="hbtn" id="suggestMissing">Report a missing column</button>
+      <p class="hint">Spotted a heritage column or wall light we've missed, or have a better photo of one? Send it in. Everything is checked before it appears.</p>
+      <button type="button" class="hbtn" id="suggestMissing">Add a missing light</button>
       <p class="hint" id="pendNote" hidden style="margin:10px 0 0"></p>
     </section>
 
@@ -348,7 +348,7 @@ details.panel[open] summary{margin-bottom:10px}
 <div id="vprev" aria-hidden="true"></div>
 <button id="toggle" aria-controls="side">Filters</button>
 <button id="homeFab" type="button">Home</button>
-<button id="addFab" type="button" title="Report a column that isn't on the map">Add New</button>
+<button id="addFab" type="button" title="Add a light that isn't on the map">Add New</button>
 <div id="lb" role="dialog" aria-modal="true"><button class="x" aria-label="Close">×</button><button class="nav prev" aria-label="Previous">‹</button><img alt=""><div class="cap"></div><button class="nav next" aria-label="Next">›</button></div>
 <script src="lib/leaflet.js"></script>
 <script>
@@ -518,9 +518,9 @@ function loadPendingPins(){fetch(SUBMIT_URL.replace(/\/submit$/,'/pending'),{cac
   const key=x.a||(+x.la).toFixed(4)+','+(+x.lo).toFixed(4);if(seen.has(key))continue;seen.add(key);n++;
   L.circleMarker([x.la,x.lo],{radius:7,color:'#1d1d1b',weight:2,dashArray:'3 3',fillColor:'#ffffff',fillOpacity:1})
    .bindTooltip('Reported, awaiting review'+(x.a?' · '+x.a:''),{direction:'top',offset:[0,-6]})
-   .bindPopup(`<div class="pp"><b>Reported column, awaiting review</b><p style="margin:6px 0 0;line-height:1.45">Someone has already sent photos of a column here${x.a?' (street light '+esc(x.a)+')':''}. It will appear on the map once it has been checked, so there's no need to report it again.</p></div>`,{maxWidth:280})
+   .bindPopup(`<div class="pp"><b>Reported light, awaiting review</b><p style="margin:6px 0 0;line-height:1.45">Someone has already sent photos of a light here${x.a?' (street light '+esc(x.a)+')':''}. It will appear on the map once it has been checked, so there's no need to report it again.</p></div>`,{maxWidth:280})
    .addTo(pendLayer);}
- const el=document.getElementById('pendNote');if(el){el.hidden=!n;el.innerHTML=`<span class="lg"><span class="sw hollow" style="border-color:#1d1d1b"></span>Dashed rings: ${n} reported column${n===1?'':'s'} awaiting review</span>`;}
+ const el=document.getElementById('pendNote');if(el){el.hidden=!n;el.innerHTML=`<span class="lg"><span class="sw hollow" style="border-color:#1d1d1b"></span>Dashed rings: ${n} reported light${n===1?'':'s'} awaiting review</span>`;}
 }).catch(()=>{});}
 // Quick tour (phones): offered once after the landing screen; can be replayed from About this atlas
 const Tour=(()=>{
@@ -534,7 +534,7 @@ const Tour=(()=>{
   root.innerHTML=`<div class="t-dim"></div><div class="t-spot"></div>
 <div class="t-card t-inv" role="dialog" aria-modal="true" aria-labelledby="tourInvH" hidden><img src="media/landing-poster.jpg" alt="Aerial view of Canterbury and its cathedral"><div class="t-in">
 <div class="t-eb">Welcome to the atlas</div><h2 id="tourInvH">Find your way around in a minute</h2>
-<p>Seven quick stops: what the dots mean, how to see a column's photos, the filters, and how to add a column we've missed.</p>
+<p>Seven quick stops: what the dots mean, how to see a column's photos, the filters, and how to add a light we've missed.</p>
 <button type="button" class="t-btn" data-go="start">Take the tour</button><button type="button" class="t-btn sec" data-go="close">Not now</button>
 <p class="t-fine">You can take it any time from About this atlas.</p></div></div>
 <div class="t-card t-step" role="dialog" aria-modal="true" aria-labelledby="tourH" hidden><div class="t-arrow"></div>
@@ -578,7 +578,7 @@ const Tour=(()=>{
    before:async()=>{closeAll();const g=pendLayer.getLayers()[0];
      if(g){map.setView(g.getLatLng(),Math.max(16,map.getZoom()),{animate:false});await sleep(300);}},
    rect:()=>{const g=pendLayer.getLayers()[0];if(!g)return null;const p=scr(g.getLatLng());return {left:p.x-14,right:p.x+14,top:p.y-14,bottom:p.y+14};},round:true},
-  {t:'Add New: help complete the atlas',b:'<p>Seen a heritage column that isn\'t on the map? Add New guides you through four photos, lined up with an outline on the camera, then three quick questions.</p><div class="t-shots"><figure><img src="media/tour/whole.jpg" alt="Example: the whole column"><figcaption>Whole column</figcaption></figure><figure><img src="media/tour/base.jpg" alt="Example: the base"><figcaption>Base</figcaption></figure><figure><img src="media/tour/ladder.jpg" alt="Example: the ladder bar"><figcaption>Ladder bar</figcaption></figure><figure><img src="media/tour/top.jpg" alt="Example: the neck and lantern"><figcaption>Neck and lantern</figcaption></figure></div><p class="t-fine">To add photos of a column already on the map, use the button on its card.</p>',
+  {t:'Add New: help complete the atlas',b:'<p>Seen a heritage column or wall light that isn\'t on the map? Add New asks which it is, then guides you through four photos, lined up with an outline on the camera, and a few quick questions. For a column, the four photos are:</p><div class="t-shots"><figure><img src="media/tour/whole.jpg" alt="Example: the whole column"><figcaption>Whole column</figcaption></figure><figure><img src="media/tour/base.jpg" alt="Example: the base"><figcaption>Base</figcaption></figure><figure><img src="media/tour/ladder.jpg" alt="Example: the ladder bar"><figcaption>Ladder bar</figcaption></figure><figure><img src="media/tour/top.jpg" alt="Example: the neck and lantern"><figcaption>Neck and lantern</figcaption></figure></div><p class="t-fine">To add photos of a light already on the map, use the button on its card.</p>',
    before:async()=>{closeAll();await sleep(150);},rect:()=>el('addFab')},
   {t:'That\'s the tour',b:'<p>Home takes you back to the introduction at any time. You can replay this tour from About this atlas in the Filters panel.</p>',
    before:async()=>{closeAll();await sleep(150);},rect:()=>el('homeFab'),last:true}
@@ -602,7 +602,7 @@ const Tour=(()=>{
    before:async()=>{map.closePopup();sideTo(side().querySelector('.panel'));await sleep(120);},
    rect:PHONE[3].rect},
   {t:'Dashed rings: already reported',b:'',before:PHONE[4].before,rect:PHONE[4].rect,round:true},
-  {t:'Report a missing column',b:'<p>Seen a heritage column that isn\'t on the map? Report it here: four photos, each lined up with an outline on the camera, then three quick questions. It works best on a phone, standing at the column.</p><div class="t-shots"><figure><img src="media/tour/whole.jpg" alt="Example: the whole column"><figcaption>Whole column</figcaption></figure><figure><img src="media/tour/base.jpg" alt="Example: the base"><figcaption>Base</figcaption></figure><figure><img src="media/tour/ladder.jpg" alt="Example: the ladder bar"><figcaption>Ladder bar</figcaption></figure><figure><img src="media/tour/top.jpg" alt="Example: the neck and lantern"><figcaption>Neck and lantern</figcaption></figure></div><p class="t-fine">To add photos of a column already on the map, use the button on its card.</p>',
+  {t:'Add a missing light',b:'<p>Seen a heritage column or wall light that isn\'t on the map? Add it here: say which it is, then take four photos, each lined up with an outline on the camera, and answer a few quick questions. It works best on a phone, standing in front of it. For a column, the four photos are:</p><div class="t-shots"><figure><img src="media/tour/whole.jpg" alt="Example: the whole column"><figcaption>Whole column</figcaption></figure><figure><img src="media/tour/base.jpg" alt="Example: the base"><figcaption>Base</figcaption></figure><figure><img src="media/tour/ladder.jpg" alt="Example: the ladder bar"><figcaption>Ladder bar</figcaption></figure><figure><img src="media/tour/top.jpg" alt="Example: the neck and lantern"><figcaption>Neck and lantern</figcaption></figure></div><p class="t-fine">To add photos of a light already on the map, use the button on its card.</p>',
    before:async()=>{map.closePopup();sideTo(side().querySelector('.panel.help'));await sleep(120);},
    rect:()=>{const e=side().querySelector('.panel.help');return e?e.getBoundingClientRect():null;}},
   {t:'That\'s the tour',b:'<p>The house button takes you back to the introduction at any time. You can replay this tour from About this atlas, further down this panel.</p>',
@@ -630,7 +630,7 @@ const Tour=(()=>{
  async function go(n){if(busy||n<0)return;if(n>=STEPS.length){Stat.hit('tour_done');return end();}busy=true;i=n;const st=STEPS[n];card.style.visibility='hidden';
   try{await st.before();}catch(e){}
   card.querySelector('.t-eb').textContent=`Quick tour · ${n+1} of ${STEPS.length}`;card.querySelector('#tourH').textContent=st.t;
-  card.querySelector('.t-body').innerHTML=n===4?'<p>A dashed ring <span class="t-grey" aria-hidden="true"></span> is a column someone has reported that we haven\'t checked yet. It joins the map once it\'s checked, so there\'s no need to report it again.'+(pendLayer.getLayers().length?'':' There are none at the moment.')+'</p>':st.b;
+  card.querySelector('.t-body').innerHTML=n===4?'<p>A dashed ring <span class="t-grey" aria-hidden="true"></span> is a light someone has reported that we haven\'t checked yet. It joins the map once it\'s checked, so there\'s no need to report it again.'+(pendLayer.getLayers().length?'':' There are none at the moment.')+'</p>':st.b;
   card.querySelector('.t-dots').innerHTML=STEPS.map((_,k)=>`<i class="${k===n?'c':k<n?'p':''}"></i>`).join('');
   card.querySelector('[data-go="back"]').hidden=n===0;const nx=card.querySelector('[data-go="next"]');nx.textContent=st.last?'Start exploring':'Next';
   inv.hidden=true;card.hidden=false;place(st.rect());card.style.visibility='';busy=false;nx.focus({preventScroll:true});}

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#000000">
-<title>Photograph a column · Canterbury’s Heritage Streetlights</title>
+<title>Add a missing light · Canterbury’s Heritage Streetlights</title>
 <link rel="stylesheet" href="../lib/leaflet.css">
 <style>
 :root{--ink:#1d1d1b;--sec:#5a5955;--mut:#8a8984;--line:#e3e2dc;--bg:#fbfaf7;--green:#1f7a4d;--warnbg:#fff4e0;--warn:#6b4300}
@@ -26,9 +26,12 @@ p{line-height:1.5;margin:0 0 12px}
 .steps li{text-align:center;font-size:12px;color:var(--sec);line-height:1.3}
 .steps svg{display:block;width:100%;height:104px;background:#262622;border-radius:10px;margin-bottom:6px}
 .steps li.done svg{background:#1f4d2e}
-.kind{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0 2px}
-.kind button{padding:12px 8px;border:1.5px solid #d5d3cc;border-radius:12px;background:#fff;color:var(--ink);font:inherit;font-size:15px;font-weight:600;cursor:pointer}
-.kind button.on{border-color:var(--green);background:#eef5ee;color:#1f4d2e}
+.q{font-size:16.5px;font-weight:600;margin:14px 0 0}
+.kind{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0 16px}
+.kind button{display:flex;flex-direction:column;align-items:stretch;gap:8px;padding:8px 8px 11px;border:1.5px solid #d5d3cc;border-radius:12px;background:#fff;color:var(--ink);font:inherit;font-size:15px;font-weight:600;cursor:pointer}
+.kind svg{display:block;width:100%;height:132px;background:#262622;border-radius:9px}
+.kind button.on{border-color:var(--green);background:#eef5ee;color:#1f4d2e;box-shadow:0 0 0 1.5px var(--green)}
+.kind button.on svg{background:#1f4d2e}
 .btn{display:block;width:100%;padding:14px 16px;border:0;border-radius:12px;background:var(--green);color:#fff;font:inherit;font-size:16px;font-weight:600;cursor:pointer;text-align:center;text-decoration:none}
 .btn.sec{background:#fff;color:var(--ink);border:1px solid #d5d3cc}
 .btn.exit{background:#b3261e;color:#fff}
@@ -116,13 +119,16 @@ pre{white-space:pre-wrap;word-break:break-word;background:#f1f0eb;border-radius:
 
 <!-- 1. start -->
 <section class="scr on" id="sStart"><div class="wrap">
-  <h1 id="startH">Photograph a column</h1>
-  <p class="lead" id="startLead">Four photos, taken the same way every time, so columns can be compared across the city.</p>
+  <h1 id="startH">Add a missing light</h1>
   <div class="colhead" id="colhead" hidden></div>
-  <div class="kind" id="kindPick" role="group" aria-label="What are you photographing?"><button type="button" data-kind="column" class="on" aria-pressed="true">A lamp post</button><button type="button" data-kind="wall" aria-pressed="false">A light on a wall</button></div>
+  <p class="q" id="kindQ">Is it on a lamp post, or fixed to a wall?</p>
+  <div class="kind" id="kindPick" role="group" aria-labelledby="kindQ"><button type="button" data-kind="column" aria-pressed="false"><svg aria-hidden="true"></svg>A lamp post</button><button type="button" data-kind="wall" aria-pressed="false"><svg aria-hidden="true"></svg>A light on a wall</button></div>
+  <div id="kindOn" hidden>
+  <p class="lead" id="startLead">Four photos, taken the same way every time, so columns can be compared across the city.</p>
   <ol class="steps" id="stepList"></ol>
   <p class="small" id="startHint">The camera shows an outline for each photo. Columns vary, so it won't match exactly. Just line up the part named in each step.</p>
   <button class="btn" id="go">Start</button>
+  </div>
   <p class="small" style="margin-top:14px">Photos are resized and re-saved on your phone, so no hidden location or camera details go with them. Your location is used only to place it on the map.</p>
   <a class="btn sec" id="startExit" href="../?map" style="margin-top:14px">Back to the map</a>
 </div></section>
@@ -212,7 +218,7 @@ pre{white-space:pre-wrap;word-break:break-word;background:#f1f0eb;border-radius:
   <h1>Thank you</h1>
   <p class="lead">We've received your photos and will check them before they appear on the map.</p>
   <a class="btn" id="thanksMap" href="../?map">Back to the map</a>
-  <a class="btn sec" href="./">Photograph another column</a>
+  <a class="btn sec" href="./">Add another light</a>
 </div></section>
 
 <script src="../lib/leaflet.js"></script>
@@ -289,17 +295,25 @@ function placeOvl(){const o=$('ovl'),t=document.querySelector('#cam .top').getBo
 /* ---------- state ---------- */
 const P=new URLSearchParams(location.search);
 const COLQ=(P.get('col')||P.get('asset')||'').trim();
-const st={mode:COLQ?'known':'missing',kind:'column',flip:false,col:null,shots:[null,null,null,null],step:0,fix:null,best:null,watch:null,stream:null,pending:null,pin:null,snapId:''};
+const st={mode:COLQ?'known':'missing',kind:'column',chosen:false,flip:false,col:null,shots:[null,null,null,null],step:0,fix:null,best:null,watch:null,stream:null,pending:null,pin:null,snapId:''};
 let feats=null,assets=null,map=null,pinM=null,assetLayer=null;
 
 function show(id){document.querySelectorAll('.scr').forEach(s=>s.classList.toggle('on',s.id===id));$('cam').hidden=id!=='cam';window.scrollTo(0,0);}
 
-/* a lamp post or a light on a wall: each has its own four steps, outline and questions */
+/* a lamp post or a light on a wall: each has its own four steps, outline and questions.
+   A missing light starts with the question unanswered, and the steps and Start button appear once it is answered. */
 const LOC_P_COL=$('locP').textContent;
-function setKind(k){st.kind=k==='wall'?'wall':'column';const w=st.kind==='wall';
+const what=()=>st.kind==='wall'?'light':'column';
+function startHead(){const t=st.mode==='known'?(st.kind==='wall'?'Photograph a wall light':'Photograph a column'):'Add a missing light';
+ $('startH').textContent=t;document.title=t+' · Canterbury’s Heritage Streetlights';}
+function kindIcons(){const keep=SHAPES;
+ document.querySelectorAll('#kindPick svg').forEach(svg=>{const w=svg.parentNode.dataset.kind==='wall';SHAPES=w?WALL_SHAPES:COL_SHAPES;fitOutline(svg,(w?WALL_STEPS:COL_STEPS)[0].vb);});
+ SHAPES=keep;}
+function showKindQ(on){$('kindQ').hidden=!on;$('kindPick').hidden=!on;if(on)kindIcons();}
+function setKind(k){st.kind=k==='wall'?'wall':'column';st.chosen=true;const w=st.kind==='wall';
  STEPS=w?WALL_STEPS:COL_STEPS;SHAPES=w?WALL_SHAPES:COL_SHAPES;
  document.querySelectorAll('#kindPick button').forEach(b=>{const on=b.dataset.kind===st.kind;b.classList.toggle('on',on);b.setAttribute('aria-pressed',String(on));});
- $('startH').textContent=w?'Photograph a wall light':'Photograph a column';
+ $('kindOn').hidden=false;startHead();
  $('startLead').textContent=`Four photos, taken the same way every time, so ${w?'wall lights':'columns'} can be compared across the city.`;
  $('startHint').textContent=w?'The camera shows an outline for each photo. Brackets vary, so it won\'t match exactly. Just line up the part named in each step. Please stay on the pavement: there\'s no need to climb.':'The camera shows an outline for each photo. Columns vary, so it won\'t match exactly. Just line up the part named in each step.';
  $('oColourL').textContent=w?'Colour of the bracket':'Colour of the column';$('wallObs').hidden=!w;
@@ -316,14 +330,14 @@ function drawStepList(){$('stepList').innerHTML=STEPS.map((s,i)=>`<li class="${s
  document.querySelectorAll('#stepList svg').forEach((svg,i)=>fitOutline(svg,STEPS[i].vb));}
 function loadFeats(){return feats?Promise.resolve(feats):fetch(DATA+'columns.geojson').then(r=>r.json()).then(g=>feats=g.features);}
 async function initStart(){
- drawStepList();
- if(st.mode==='known'){const a=COLQ.toUpperCase();const h=$('colhead');h.hidden=false;h.textContent='Loading column '+a+'…';$('kindPick').hidden=true;
+ if(st.mode!=='known'){startHead();showKindQ(true);return;}
+ {const a=COLQ.toUpperCase();const h=$('colhead');h.hidden=false;h.textContent='Loading '+a+'…';showKindQ(false);setKind('column');
   try{await loadFeats();const f=feats.find(f=>(f.properties.asset||'').toUpperCase()===a||String(f.properties.id).toUpperCase()===a);
    if(!f)throw 0;st.col={...f.properties,lat:f.geometry.coordinates[1],lon:f.geometry.coordinates[0]};
    if(st.col.variant==='W')setKind('wall');
    const back='../?map'+(st.col.asset?'#'+encodeURIComponent(st.col.asset):'');$('startExit').href=back;$('leaveGo').href=back;$('thanksMap').href=back;
    h.innerHTML=`You're photographing <b>${esc(st.col.asset||st.col.id)}</b>${st.col.street?', '+esc(st.col.street):''}.`;}
-  catch(e){h.className='colhead warn';h.textContent='Column '+a+' isn\'t on the map, so this will be treated as a missing column.';st.mode='missing';$('kindPick').hidden=false;}}
+  catch(e){h.className='colhead warn';h.textContent=a+' isn\'t on the map, so this will be treated as a missing light.';st.mode='missing';startHead();showKindQ(true);}}
 }
 
 /* location fixes */
@@ -370,7 +384,7 @@ $('retake').onclick=()=>{st.pending=null;$('cam').classList.remove('review','gal
 $('use').onclick=()=>{const p=st.pending;if(!p)return;st.shots[st.step]=p;st.pending=null;
  if(st.step===0||!st.fix)st.fix=p.fix||st.fix;
  $('cam').classList.remove('review','gal');const n=nextEmpty();if(n>=0)return setStep(n);if(st.ret){st.ret=false;stopCam();done();}else finishCapture();};
-$('camX').onclick=()=>{stopCam();if(st.ret){st.ret=false;return done();}show('sStart');$('go').textContent=nextEmpty()<0?'Retake photos':st.shots.some(Boolean)?'Carry on':'Start';$('kindPick').hidden=st.mode==='known'||st.shots.some(Boolean);drawStepList();};
+$('camX').onclick=()=>{stopCam();if(st.ret){st.ret=false;return done();}show('sStart');$('go').textContent=nextEmpty()<0?'Retake photos':st.shots.some(Boolean)?'Carry on':'Start';showKindQ(st.mode!=='known'&&!st.shots.some(Boolean));drawStepList();};
 
 /* gallery fallback: reads photo GPS only to place the pin; the image itself is re-encoded so no metadata is kept */
 async function exifGps(file){try{const b=new DataView(await file.slice(0,262144).arrayBuffer());if(b.getUint16(0)!==0xFFD8)return null;let o=2;
@@ -395,7 +409,7 @@ $('gal').onchange=async e=>{const f=e.target.files[0];e.target.value='';if(!f)re
 /* after the four photos */
 function thumbs(el){el.innerHTML=st.shots.map((s,i)=>`<figure><img src="${s.url}" alt="${esc(STEPS[i].name)}"><figcaption>${esc(STEPS[i].name)}</figcaption></figure>`).join('');}
 function finishCapture(){stopCam();thumbs($('obsThumbs'));show('sObs');}
-$('go').onclick=()=>{st.ret=false;openCam();};
+$('go').onclick=()=>{if(!st.chosen)return;st.ret=false;openCam();};
 $('obsBack').onclick=()=>{if(st.ret){st.ret=false;return done();}openCam();};
 $('obsNext').onclick=()=>{const w=st.kind==='wall',miss=['oColour','oDamage','oLamp'].concat(w?['oBox','oCover']:[]).filter(id=>!$(id).value);
  if(miss.length){$('obsErr').textContent=`Please answer all ${w?'five':'three'} questions. "Can't tell" is fine.`;$(miss[0]).focus();return;}
@@ -418,7 +432,7 @@ const onMap=()=>new Set((feats||[]).map(f=>f.properties.asset).filter(Boolean));
 function setPin(lat,lon,zoom){st.pin={lat:+lat.toFixed(6),lon:+lon.toFixed(6)};pinM.setLatLng([lat,lon]);if(zoom)map.setView([lat,lon],zoom);}
 function unsnap(){st.snapId='';$('snap').hidden=true;}
 function snapTo(a){st.snapId=a.id;setPin(a.lat,a.lon);const el=$('snap'),known=onMap().has(a.id),pd=!known&&pendA.has(a.id);el.hidden=false;el.className='snap'+(known||pd?' warn':'');
- el.innerHTML=pd?`Someone has already reported <b>${esc(a.id)}</b> and it's awaiting review. You can still send yours. <button type="button" id="unsnap">Not this one</button>`:known?`This is <b>${esc(a.id)}</b>, which is already on the map. <a href="?col=${encodeURIComponent(a.id)}">Photograph it as a known column instead</a>`
+ el.innerHTML=pd?`Someone has already reported <b>${esc(a.id)}</b> and it's awaiting review. You can still send yours. <button type="button" id="unsnap">Not this one</button>`:known?`This is <b>${esc(a.id)}</b>, which is already on the map. <a href="?col=${encodeURIComponent(a.id)}">Photograph it as a known ${what()} instead</a>`
   :`Matched to ${a.ccc?'City Council light':a.wall?'KCC wall light':'KCC street light'} <b>${esc(a.id)}</b>${a.loc?', '+esc(a.ccc?a.loc:kccTidy(a.loc)):''}. <button type="button" id="unsnap">Not this one</button>`;
  const u=$('unsnap');if(u)u.onclick=unsnap;}
 function place(lat,lon){setPin(lat,lon);if(!assets)return unsnap();let best=null,bd=1e9;const cl=Math.cos(lat*Math.PI/180);
@@ -431,15 +445,15 @@ function drawAssets(){if(!map||!assets)return;assetLayer.clearLayers();if(map.ge
    .bindTooltip((a.ccc?'City Council ':'')+a.id+(a.wall?' · on a wall':'')+(k?' · already on the map':pd?' · reported, awaiting review':''),{direction:'top',offset:[0,-4]}).on('click',()=>snapTo(a)).addTo(assetLayer);}}
 async function openLoc(){show('sLoc');startGps();const start=st.pin||st.fix||st.best||{lat:51.2802,lon:1.0789};
  if(!map){map=L.map('map',{maxZoom:18,attributionControl:false});L.tileLayer(CARTO,{maxZoom:18,maxNativeZoom:18,subdomains:'abcd'}).addTo(map);
-  pinM=L.marker([start.lat,start.lon],{draggable:true,autoPan:true,keyboard:true,title:'Drag onto the column',icon:L.divIcon({className:'',html:'<div class="smpin"></div>',iconSize:[26,26],iconAnchor:[13,30]})}).addTo(map);
+  pinM=L.marker([start.lat,start.lon],{draggable:true,autoPan:true,keyboard:true,title:'Drag onto the '+what(),icon:L.divIcon({className:'',html:'<div class="smpin"></div>',iconSize:[26,26],iconAnchor:[13,30]})}).addTo(map);
   pinM.on('dragend',()=>{st.pinMoved=true;const p=pinM.getLatLng();place(p.lat,p.lng);});map.on('click',e=>{st.pinMoved=true;place(e.latlng.lat,e.latlng.lng);});
   assetLayer=L.layerGroup().addTo(map);map.on('moveend',drawAssets);}
  setTimeout(()=>map.invalidateSize(),30);map.setView([start.lat,start.lon],(st.fix||st.best)?18:15);setPin(start.lat,start.lon);
- $('locErr').textContent=(st.fix||st.best)?'':'We couldn\'t get your location, so please drag the pin onto the column.';
+ $('locErr').textContent=(st.fix||st.best)?'':'We couldn\'t get your location, so please drag the pin onto the '+what()+'.';
  try{await loadAssets();drawAssets();if(!st.snapId&&(st.fix||st.best))place(start.lat,start.lon);}catch(e){}}
 $('useLoc').onclick=()=>{const b=st.best;if(b){map.setView([b.lat,b.lon],18);place(b.lat,b.lon);}else $('locErr').textContent='Still waiting for your location. Check location access is allowed for this page.';};
 $('locBack').onclick=()=>{if(st.ret){st.ret=false;return done();}show('sObs');};
-$('locNext').onclick=()=>{if(!st.pin){$('locErr').textContent='Please place the pin on the column.';return;}done();};
+$('locNext').onclick=()=>{if(!st.pin){$('locErr').textContent='Please place the pin on the '+what()+'.';return;}done();};
 
 /* summary and sending */
 function metres(a,b){const R=6371000,r=Math.PI/180,dl=(b.lat-a.lat)*r,dn=(b.lon-a.lon)*r,x=Math.sin(dl/2)**2+Math.cos(a.lat*r)*Math.cos(b.lat*r)*Math.sin(dn/2)**2;return Math.round(2*R*Math.asin(Math.sqrt(x)));}
