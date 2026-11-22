@@ -3,7 +3,7 @@
  "visits": [],
  "street": "Cathedral Precincts",
  "asset": "",
- "owner": "",
+ "owner": "Cathedral",
  "candidates": [],
  "candidate_distances": "",
  "confidence": "No match",
@@ -20,15 +20,22 @@
   "2026-11-22"
  ],
  "photos": [
-  "N202611220947_20261122_094749.jpg",
-  "N202611220947_20261122_094757.jpg",
   "N202611220947_20261122_094808.jpg",
-  "N202611220947_20261122_094813.jpg"
+  "N202611220947_20261122_094749.jpg",
+  "N202611220947_20261122_094757.jpg"
  ],
- "condition": {},
+ "condition": {
+  "overall": "Excellent",
+  "paint": "Excellent",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Moss Green"
+ },
  "defects": "",
  "cond_note": "",
  "cond_check": [],
  "cond_second_opinion": "",
- "outcome": ""
+ "outcome": "Confirmed on site",
+ "lantern": "ESLA"
 }
