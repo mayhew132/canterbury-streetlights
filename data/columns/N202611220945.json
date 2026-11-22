@@ -3,10 +3,10 @@
  "visits": [],
  "street": "Cathedral Precincts",
  "asset": "",
- "owner": "",
+ "owner": "Cathedral",
  "candidates": [],
  "candidate_distances": "",
- "confidence": "No match",
+ "confidence": "Confirmed",
  "basis": "Added via the admin page",
  "painted": "",
  "note": "",
@@ -25,10 +25,19 @@
   "N202611220945_20261122_094541.jpg",
   "N202611220945_20261122_094604.jpg"
  ],
- "condition": {},
+ "condition": {
+  "overall": "Good",
+  "paint": "Good",
+  "structure": "Intact",
+  "lantern": "Intact",
+  "door": "Present",
+  "colour": "Black"
+ },
  "defects": "",
  "cond_note": "",
  "cond_check": [],
  "cond_second_opinion": "",
- "outcome": ""
+ "outcome": "Confirmed on site",
+ "box": "ESLA Harrison Type Fuse Box",
+ "cypher": "Not seen"
 }
