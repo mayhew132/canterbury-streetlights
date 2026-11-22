@@ -299,7 +299,7 @@ details.panel[open] summary{margin-bottom:10px}
     <details class="panel" open>
       <summary><h2>Ownership</h2></summary>
       <div id="fx-own" class="rows"></div>
-      <p class="hint">City Council columns are those not adopted by KCC as part of their inventory, but may be maintained by KCC on their behalf as part of a maintenance contract.</p>
+      <p class="hint">City Council columns are those not adopted by KCC as part of their inventory, but may be maintained by KCC on their behalf as part of a maintenance contract. Private covers lights owned by anyone else, such as Canterbury Cathedral.</p>
     </details>
 
     <details class="panel about">
@@ -327,6 +327,7 @@ details.panel[open] summary{margin-bottom:10px}
 
         <h3>Good to know</h3>
         <p>The riverside path columns near Westwood Drive and Ambleside Place belong to Canterbury City Council, not KCC, so their numbers start with CCC and their dots sit where they were photographed.</p>
+        <p>Lights that belong to neither council, such as those at Canterbury Cathedral, are marked Private and have no council asset number.</p>
         <p>Asset numbers come from KCC’s list of 26 September 2026 and may occasionally be wrong. Faces and number plates in the photos have been blurred.</p>
         <p>The atlas keeps simple daily totals of how it is used, such as how many times it is opened and which columns are viewed. No cookies are set and nothing that identifies you is stored.</p>
       </div>
@@ -388,7 +389,7 @@ const state={vars:new Set(Object.keys(VARS)),confs:new Set(CONFS),conds:new Set(
 function style(p){const v=state.colby==='cond'?{c:CONDS[p.condition&&p.condition.overall]||'#999'}:(VARS[p.variant]||{c:'#444'});const h=HOLLOW.has(p.confidence);
  return {radius:h?6:7,color:h?v.c:'#fff',weight:h?2:1.5,dashArray:h?'3 2':null,fillColor:v.c,fillOpacity:h?0.25:0.95};}
 function popup(p){
- const v=VARS[p.variant];const title=p.asset?(p.owner&&p.owner.startsWith('Canterbury City')?'CCC '+p.asset:p.asset):'No KCC match';
+ const v=VARS[p.variant];const title=lightTag(p);
  const ph=p.photos.map((f,i)=>`<img loading="lazy" src="photos/${esc(f)}" data-i="${i}" alt="Photo ${i+1} of ${esc(title)}">`).join('');
  const wall=/^W/.test(p.variant);
  const rows=[['Map ID',p.id||('V'+p.visits[0])],p.owner?['Owner',p.owner]:null,['Variant',v?v.name:p.variant],
@@ -406,9 +407,14 @@ function condHtml(p){const c=p.condition;if(!c||!c.overall)return '';
  const chip=(lab,val)=>val?`<span class="chip${bad.has(val)?' bad':good.has(val)?' ok':''}">${esc(lab)}${lab?': ':''}${esc(val)}</span>`:'';
  const wall=/^W/.test(p.variant);
  return `<div class="cond"><div class="h">Visual condition (from photos, 2026)</div><div class="chips">${chip('Overall',c.overall)}${chip('Paint',c.paint)}${chip(wall?'Bracket':'External structure',c.structure)}${chip('Lantern',c.lantern)}${chip(wall?'Box':'Door',c.door)}${chip('',c.colour)}</div>${p.defects?`<div class="defects">${esc(p.defects)}</div>`:''}</div>`;}
+/* owners: the 2 councils, or Private for anyone else (the Cathedral, private owners); an empty owner is unknown */
+const isCouncil=o=>/^(Kent County Council|Canterbury City Council)/.test(o||'');
+const ownGroup=o=>!o?'':isCouncil(o)?o:'Private';
+function lightTag(p){if(p.owner&&!isCouncil(p.owner))return 'Private';
+ return p.asset?(p.owner&&p.owner.startsWith('Canterbury City')?'CCC '+p.asset:p.asset):'No KCC match';}
 const XG=[
  {k:'col',get:p=>(p.condition||{}).colour,opts:[['Moss Green','Moss green','#3d5a3a'],['Heritage Green','Heritage green','#1e5b3f'],['Black','Black','#1d1d1b'],['Other','Another colour','#b39b6b']]},
- {k:'own',get:p=>p.owner,opts:[['Kent County Council','Kent County Council',null],['Canterbury City Council (not adopted)','Canterbury City Council',null]]}];
+ {k:'own',get:p=>ownGroup(p.owner),opts:[['Kent County Council','Kent County Council',null],['Canterbury City Council (not adopted)','Canterbury City Council',null],['Private','Private',null]]}];
 state.x={};XG.forEach(g=>state.x[g.k]=new Set(g.opts.map(o=>o[0])));
 function xOk(p){return XG.every(g=>{const v=g.get(p);return !v||!g.opts.some(o=>o[0]===v)||state.x[g.k].has(v);});}
 function counts(){
@@ -459,7 +465,7 @@ function buildFilters(){
 }
 // lightbox
 const lb=document.getElementById('lb'),lbi=lb.querySelector('img'),lbc=lb.querySelector('.cap');let cur=null,ci=0;
-function show(){lbi.style.transform='';lbi.style.opacity='';lbi.src='photos/'+cur.photos[ci];[1,-1].forEach(d=>{const n=cur.photos[(ci+d+cur.photos.length)%cur.photos.length];if(n)new Image().src='photos/'+n;});lbc.textContent=`${cur.asset?(cur.owner&&cur.owner.startsWith('Canterbury City')?'CCC '+cur.asset:cur.asset):'No KCC match'} · ${cur.street} · photo ${ci+1} of ${cur.photos.length} · ${cur.photos[ci]}`;}
+function show(){lbi.style.transform='';lbi.style.opacity='';lbi.src='photos/'+cur.photos[ci];[1,-1].forEach(d=>{const n=cur.photos[(ci+d+cur.photos.length)%cur.photos.length];if(n)new Image().src='photos/'+n;});lbc.textContent=`${lightTag(cur)} · ${cur.street} · photo ${ci+1} of ${cur.photos.length} · ${cur.photos[ci]}`;}
 function openLb(p,i){cur=p;ci=i;show();lb.style.display='flex';}
 lb.querySelector('.x').onclick=()=>lb.style.display='none';
 lb.onclick=e=>{if(e.target===lb)lb.style.display='none';};
@@ -655,7 +661,7 @@ fetch('data/columns.geojson').then(r=>r.json()).then(gj=>{
   const [lon,lat]=f.geometry.coordinates;const p=f.properties;
   const m=/^W/.test(p.variant)?new SquareMarker([lat,lon],style(p)):L.circleMarker([lat,lon],style(p));m.feature=f;
   m.bindPopup(()=>popup(p),{maxWidth:330,autoPanPaddingTopLeft:[60,70],autoPanPaddingBottomRight:[20,20]});
-  m.bindTooltip(`${p.asset||'No KCC match'} · ${p.variant}`,{direction:'top',offset:[0,-6]});
+  m.bindTooltip(`${p.owner&&!isCouncil(p.owner)?'Private':(p.asset||'No KCC match')} · ${p.variant}`,{direction:'top',offset:[0,-6]});
   m.on('popupopen',e=>{Stat.hit('col',p.id);const el=e.popup.getElement();const pc=el.querySelector('.leaflet-popup-content');if(pc){const mob=matchMedia('(max-width:760px)').matches;if(mob){e.popup.options.autoPanPaddingTopLeft=L.point(10,12);e.popup.options.autoPanPaddingBottomRight=L.point(10,12);}pc.style.maxHeight=Math.max(150,map.getSize().y-(mob?95:150))+'px';pc.style.overflowY='auto';pc.style.overscrollBehavior='contain';pc.style.webkitOverflowScrolling='touch';L.DomEvent.on(pc,'touchstart touchmove pointerdown mousedown wheel',L.DomEvent.stopPropagation);e.popup.update();setTimeout(()=>{const mr=map.getContainer().getBoundingClientRect(),pr=el.getBoundingClientRect();let dy=0,dx=0;if(pr.top<mr.top+12)dy=pr.top-mr.top-12;else if(pr.bottom>mr.bottom-12)dy=pr.bottom-mr.bottom+12;if(pr.left<mr.left+8)dx=pr.left-mr.left-8;else if(pr.right>mr.right-8)dx=pr.right-mr.right+8;if(dx||dy)map.panBy([dx,dy],{animate:true});},60);}document.body.classList.add('popopen');const th=el.querySelector('.thumbs');if(th)L.DomEvent.on(th,'touchstart pointerdown mousedown wheel',L.DomEvent.stopPropagation);const sb=el.querySelector('.sendph');if(sb)sb.onclick=()=>{location.href='submit/?col='+encodeURIComponent(p.id);};el.querySelectorAll('.thumbs img').forEach(img=>img.onclick=()=>openLb(p,+img.dataset.i));
    if(p.asset)history.replaceState(null,'','#'+p.asset);});
   markers.push(m);
