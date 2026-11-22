@@ -22,7 +22,7 @@ h2{font-size:24px;line-height:1.15}
 p{line-height:1.5;margin:0 0 12px}
 .lead{color:var(--sec);font-size:15.5px}
 .small{font-size:13.5px;color:var(--sec);line-height:1.45}
-.steps{list-style:none;padding:0;margin:16px 0 18px;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.steps{list-style:none;padding:0;margin:16px 0 18px;display:grid;grid-template-columns:repeat(var(--n,4),1fr);gap:8px}
 .steps li{text-align:center;font-size:12px;color:var(--sec);line-height:1.3}
 .steps svg{display:block;width:100%;height:104px;background:#262622;border-radius:10px;margin-bottom:6px}
 .steps li.done svg{background:#1f4d2e}
@@ -95,7 +95,7 @@ textarea{min-height:84px;resize:vertical}
 #cam.nocam.review .msg{display:none}
 
 /* summary */
-.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:8px 0 16px}
+.thumbs{display:grid;grid-template-columns:repeat(var(--n,4),1fr);gap:8px;margin:8px 0 16px}
 .thumbs figure{margin:0}
 .thumbs img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:8px;background:#ddd;display:block}
 .thumbs figcaption{font-size:11.5px;color:var(--sec);text-align:center;margin-top:4px;line-height:1.25}
@@ -209,7 +209,7 @@ pre{white-space:pre-wrap;word-break:break-word;background:#f1f0eb;border-radius:
   <button class="btn exit" id="exit" type="button" style="margin-top:10px">Exit to Map</button>
   <div class="leave" id="leave" hidden role="alertdialog" aria-labelledby="leaveT" aria-describedby="leaveD">
     <b id="leaveT">Leave without sending?</b>
-    <p id="leaveD">Your four photos and answers haven't been sent and will be lost.</p>
+    <p id="leaveD">Your photos and answers haven't been sent and will be lost.</p>
     <div class="nav"><button class="btn sec" id="stay" type="button">Keep going</button><a class="btn exit" id="leaveGo" href="../?map">Leave</a></div>
   </div>
 </div></section>
@@ -244,8 +244,7 @@ const COL_SHAPES=`<path d="${body}"/>
 <polygon points="-200,543 200,543 70,380 -70,380"/>
 <path d="M-110 543 L110 543 Q110 680 0 716 Q-110 680 -110 543 Z"/>
 <rect x="-10" y="115" width="20" height="60"/><circle cx="0" cy="115" r="26"/>`;
-/* ---------- generic wall light (mm, y down): wall on the right, a scrolled bracket with a stay, a hanging lantern,
-   and, drawn separately below, the box under the light seen face-on for the close-up ---------- */
+/* ---------- generic wall light (mm, y down): wall on the right, a scrolled bracket with a stay, a hanging lantern ---------- */
 const WALL_SHAPES=`<rect x="472" y="170" width="10" height="1380"/>
 <rect x="400" y="250" width="64" height="1050" rx="12"/><circle cx="432" cy="310" r="20"/><circle cx="432" cy="1240" r="20"/>
 <path d="M404 1000 L-372 962 L-372 1046" fill="none" stroke="#fff" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
@@ -255,10 +254,11 @@ const WALL_SHAPES=`<rect x="472" y="170" width="10" height="1380"/>
 <polygon points="-560,1096 -184,1096 -132,1176 -612,1176"/>
 <polygon points="-556,1176 -188,1176 -236,1456 -508,1456"/>
 <circle cx="-372" cy="1486" r="24"/>
-<rect x="-210" y="1640" width="420" height="380" rx="14" fill="none" stroke="#fff" stroke-width="24"/>
-<circle cx="-160" cy="1690" r="20"/><circle cx="160" cy="1690" r="20"/><circle cx="-160" cy="1970" r="20"/><circle cx="160" cy="1970" r="20"/>
-<polygon points="-46,1689 46,1689 111,1754 111,1846 46,1911 -46,1911 -111,1846 -111,1754"/>
-<rect x="-26" y="1911" width="52" height="190"/><rect x="-160" y="2040" width="110" height="80" rx="10"/>`;
+`;
+/* ---------- the wall box cover, face on (mm, origin at the centre, y down): raised frame, a flower in each corner, two screw
+   holes on the right and the city's cypher, traced from a cover photographed in Canterbury. The cypher's strands are cut
+   where one passes under another, so the interlacing shows. Never flipped. ---------- */
+const BOX_SHAPES=`<path d="M-80 -153.7 L-80 153.7 L80 153.7 L80 -153.7ZM70 143.7 L-70 143.7 L-70 -143.7 L70 -143.7Z" fill-rule="evenodd"/><path d="M-51.4 -133.9 L-52 -136.2 L-53.3 -138.3 L-55 -139.9 L-57.2 -140.9 L-59.6 -141.3 L-62 -140.9 L-64.4 -139.8 L-66.1 -138.1 L-67.4 -135.7 L-67.8 -133.1 L-67.6 -131.2 L-67 -129.5 L-65.9 -127.9 L-64.5 -126.5 L-65.8 -125.3 L-66.7 -124 L-67.4 -122.5 L-67.7 -121 L-67.8 -119.4 L-67.5 -117.8 L-67 -116.3 L-66.1 -114.9 L-64.4 -113.2 L-62.2 -112.1 L-59.9 -111.7 L-57.7 -111.9 L-55.5 -112.8 L-53.4 -114.5 L-52 -116.8 L-51.4 -119.1 L-50 -119 L-48.6 -119.1 L-48.1 -117 L-47.1 -115.1 L-45.6 -113.6 L-43.8 -112.4 L-41.7 -111.8 L-39.6 -111.7 L-37.5 -112.2 L-35.4 -113.4 L-34.1 -114.7 L-33.2 -116 L-32.6 -117.5 L-32.2 -119.4 L-32.3 -121.2 L-32.9 -123.3 L-34.1 -125.1 L-35.5 -126.5 L-34.2 -127.7 L-33.3 -129 L-32.6 -130.5 L-32.3 -132 L-32.2 -133.6 L-32.5 -135.2 L-33 -136.7 L-33.9 -138.1 L-35.6 -139.8 L-37.8 -140.9 L-39.9 -141.3 L-42.3 -141.1 L-44.7 -140.1 L-46.6 -138.5 L-48 -136.2 L-48.6 -133.9Z" fill-rule="evenodd"/><path d="M-51.4 119.1 L-52 116.8 L-53.3 114.7 L-55 113.1 L-57.2 112.1 L-59.6 111.7 L-62 112.1 L-64.4 113.2 L-66.1 114.9 L-67.4 117.3 L-67.8 119.9 L-67.6 121.8 L-67 123.5 L-65.9 125.1 L-64.5 126.5 L-65.8 127.7 L-66.7 129 L-67.4 130.5 L-67.7 132 L-67.8 133.6 L-67.5 135.2 L-67 136.7 L-66.1 138.1 L-64.4 139.8 L-62.2 140.9 L-60.1 141.3 L-57.7 141.1 L-55.5 140.2 L-53.4 138.5 L-52 136.2 L-51.4 133.9 L-50 134 L-48.6 133.9 L-48.1 136 L-47.1 137.9 L-45.6 139.4 L-43.8 140.6 L-41.7 141.2 L-39.6 141.3 L-37.5 140.8 L-35.4 139.6 L-34.1 138.3 L-33.2 137 L-32.6 135.5 L-32.2 133.6 L-32.3 131.8 L-32.9 129.7 L-34.1 127.9 L-35.5 126.5 L-34.2 125.3 L-33.3 124 L-32.6 122.5 L-32.3 121 L-32.2 119.4 L-32.5 117.8 L-33 116.3 L-33.9 114.9 L-35.6 113.2 L-37.8 112.1 L-40.1 111.7 L-42.3 111.9 L-44.5 112.8 L-46.6 114.5 L-48 116.8 L-48.6 119.1Z" fill-rule="evenodd"/><path d="M48.6 -133.9 L48 -136.2 L46.7 -138.3 L45 -139.9 L42.8 -140.9 L40.4 -141.3 L38 -140.9 L35.6 -139.8 L33.9 -138.1 L32.6 -135.7 L32.2 -133.1 L32.4 -131.2 L33 -129.5 L34.1 -127.9 L35.5 -126.5 L34.2 -125.3 L33.3 -124 L32.6 -122.5 L32.3 -121 L32.2 -119.4 L32.5 -117.8 L33 -116.3 L33.9 -114.9 L35.6 -113.2 L37.8 -112.1 L40.1 -111.7 L42.3 -111.9 L44.5 -112.8 L46.6 -114.5 L48 -116.8 L48.6 -119.1 L50 -119 L51.4 -119.1 L51.9 -117 L52.9 -115.1 L54.4 -113.6 L56.2 -112.4 L58.3 -111.8 L60.4 -111.7 L62.5 -112.2 L64.6 -113.4 L65.9 -114.7 L66.8 -116 L67.4 -117.5 L67.8 -119.4 L67.7 -121.2 L67.1 -123.3 L65.9 -125.1 L64.5 -126.5 L65.8 -127.7 L66.7 -129 L67.4 -130.5 L67.7 -132 L67.8 -133.6 L67.5 -135.2 L67 -136.7 L66.1 -138.1 L64.4 -139.8 L62.2 -140.9 L60.1 -141.3 L57.7 -141.1 L55.3 -140.1 L53.4 -138.5 L52 -136.2 L51.4 -133.9Z" fill-rule="evenodd"/><path d="M48.6 119.1 L48 116.8 L46.7 114.7 L45 113.1 L42.8 112.1 L40.4 111.7 L38 112.1 L35.6 113.2 L33.9 114.9 L32.6 117.3 L32.2 119.9 L32.4 121.8 L33 123.5 L34.1 125.1 L35.5 126.5 L34.2 127.7 L33.3 129 L32.6 130.5 L32.3 132 L32.2 133.6 L32.5 135.2 L33 136.7 L33.9 138.1 L35.6 139.8 L37.8 140.9 L39.9 141.3 L42.3 141.1 L44.5 140.2 L46.6 138.5 L48 136.2 L48.6 133.9 L50 134 L51.4 133.9 L51.9 136 L52.9 137.9 L54.4 139.4 L56.2 140.6 L58.3 141.2 L60.4 141.3 L62.5 140.8 L64.6 139.6 L65.9 138.3 L66.8 137 L67.4 135.5 L67.8 133.6 L67.7 131.8 L67.1 129.7 L65.9 127.9 L64.5 126.5 L65.8 125.3 L66.7 124 L67.4 122.5 L67.7 121 L67.8 119.4 L67.5 117.8 L67 116.3 L66.1 114.9 L64.4 113.2 L62.2 112.1 L59.9 111.7 L57.7 111.9 L55.5 112.8 L53.4 114.5 L52 116.8 L51.4 119.1Z" fill-rule="evenodd"/><path d="M54.9 -93.7 L54.7 -95 L54.3 -96.1 L53.7 -97.2 L52.9 -98.2 L51.9 -98.9 L50.8 -99.5 L49.5 -99.8 L48.3 -99.9 L47 -99.7 L45.9 -99.3 L44.8 -98.7 L43.8 -97.9 L43.1 -96.9 L42.5 -95.8 L42.2 -94.5 L42.1 -93.3 L42.3 -92 L42.7 -90.9 L43.3 -89.8 L44.1 -88.8 L45.1 -88.1 L46.2 -87.5 L47.5 -87.2 L48.7 -87.1 L50 -87.3 L51.1 -87.7 L52.2 -88.3 L53.2 -89.1 L53.9 -90.1 L54.5 -91.2 L54.8 -92.5ZM51.4 -93.4 L51.1 -92.3 L50.5 -91.4 L49.5 -90.8 L48.4 -90.6 L47.3 -90.9 L46.4 -91.5 L45.8 -92.5 L45.6 -93.6 L45.9 -94.7 L46.5 -95.6 L47.5 -96.2 L48.6 -96.4 L49.7 -96.1 L50.6 -95.5 L51.2 -94.5Z" fill-rule="evenodd"/><path d="M54.9 93.3 L54.7 92 L54.3 90.9 L53.7 89.8 L52.9 88.8 L51.9 88.1 L50.8 87.5 L49.5 87.2 L48.3 87.1 L47 87.3 L45.9 87.7 L44.8 88.3 L43.8 89.1 L43.1 90.1 L42.5 91.2 L42.2 92.5 L42.1 93.7 L42.3 95 L42.7 96.1 L43.3 97.2 L44.1 98.2 L45.1 98.9 L46.2 99.5 L47.5 99.8 L48.7 99.9 L50 99.7 L51.1 99.3 L52.2 98.7 L53.2 97.9 L53.9 96.9 L54.5 95.8 L54.8 94.5ZM51.4 93.6 L51.1 94.7 L50.5 95.6 L49.5 96.2 L48.4 96.4 L47.3 96.1 L46.4 95.5 L45.8 94.5 L45.6 93.4 L45.9 92.3 L46.5 91.4 L47.5 90.8 L48.6 90.6 L49.7 90.9 L50.6 91.5 L51.2 92.5Z" fill-rule="evenodd"/><path d="M23.2 -46.3 L-10.3 -45.3 L-9 -39 L-7.3 -34.6 L-2.4 -35.4 L2.7 -35.6 L8.4 -35.4 L13.9 -34.6 L18.2 -33.4 L22.3 -31.9 L23.7 -31.1 L25.5 -29.6 L28.8 -27.7 L47.2 -20.1 L52.6 -18.9 L54.9 -20.1 L55.7 -21.2 L56.6 -24.9 L56.6 -28.1 L54.4 -37.3 L53.4 -39.1 L52 -40.4 L50.3 -41.6 L47.5 -42.9 L44.1 -44.1 L39.4 -45.3 L35.1 -46 L30.6 -46.3ZM-30.2 -40.5 L-48.3 -9.4 L-51.7 -5 L-57.6 1.3 L-49 13.5 L-42.4 23.6 L-39.7 27.1 L-36.7 30 L-25.4 39.3 L-22.7 41.1 L-19.6 42.8 L-14 45 L-7.4 46.8 L-2.2 47.7 L2.3 47.8 L8.2 47.3 L12.8 46.4 L17.3 45.2 L21.7 43.4 L26.2 40.8 L30.7 37.6 L35.9 33.3 L40.4 28.9 L42.8 26 L45 22.8 L49.9 14 L53.3 6 L55.2 -0.4 L50.4 -2.6 L47.2 -3.9 L33.2 -7.2 L32.2 -7.1 L31.2 -6.4 L32.6 -3.4 L35 0.1 L35.9 1.9 L36.9 5 L37.5 8 L37.8 11.5 L37.7 14.1 L37.4 16.6 L36.8 19 L35.8 21.4 L34.3 23.8 L33 25.6 L30.9 27.9 L26.5 31.8 L24.6 33.3 L18.7 36.5 L15.9 37.7 L12.9 38.5 L9.6 39.1 L6.1 39.4 L2.8 39.4 L0.7 39.2 L-2.4 38.6 L-6.3 37.5 L-11.2 35.7 L-15 33.5 L-17.3 31.5 L-22.8 26.1 L-28.6 21.5 L-30 20.2 L-31.7 17.8 L-32.9 15.1 L-33.9 12.4 L-34.9 8.8 L-35.5 5.3 L-35.6 2.6 L-35.4 -1 L-34.9 -3.6 L-33.9 -7.2 L-32.8 -9.9 L-30.9 -13.6 L-27.9 -18.2 L-22.2 -24.4 L-25.2 -28.5 L-28.1 -33.4 L-29.3 -36.4Z" fill-rule="evenodd"/><path d="M29.6 -69.7 L22.8 -71.9 L14 -73.7 L8.3 -74.2 L1.6 -74.1 L-4 -73.2 L-9.2 -71.4 L-14.8 -68.8 L-17.2 -67.2 L-18.6 -66 L-20.3 -64.2 L-22.3 -61.4 L-24.3 -58.1 L-25.7 -55.3 L-27.7 -50.1 L-28.4 -47 L-28.7 -44.7 L-28.6 -42.3 L-28.3 -39.9 L-27.6 -36.8 L-26.9 -34.8 L-24.2 -30 L-20.9 -25.5 L-19.5 -24.2 L-17.5 -22.7 L-15 -21.3 L-13.1 -20.6 L-3.5 -18.6 L0 -18.3 L3.5 -18.3 L9.5 -19 L12.7 -19.7 L14.7 -20.4 L17.4 -21.6 L21.3 -23.7 L26.1 -27.2 L24.1 -28.5 L22.8 -29.6 L13.6 -26.5 L10.8 -25.9 L7.2 -25.5 L3.6 -25.5 L1.1 -25.9 L-1.5 -26.6 L-4.4 -27.9 L-5.5 -28.7 L-6.7 -29.9 L-8.8 -33.8 L-9.7 -35.8 L-10.7 -38.6 L-11.7 -43.9 L-12.6 -46.9 L-12.8 -48.9 L-12.5 -51.6 L-12.1 -53.7 L-11.5 -55.6 L-10.3 -58 L-8.3 -60.6 L-6.6 -62 L-4.6 -63.2 L-2.4 -64.1 L0.4 -64.9 L2.7 -65.2 L6.1 -65.2 L11.4 -64.5 L29.4 -61.3 L30.7 -63.3 L31.1 -65.2 L31 -66.5Z" fill-rule="evenodd"/><path d="M31.5 24.8 L22.8 21.7 L13.9 19.3 L7.2 18.4 L1.6 18.2 L-0.4 18.4 L-3.2 19 L-11.3 21.7 L-16.2 24.2 L-17.4 25.2 L-19.3 27.2 L-14.7 31.6 L-12.6 33 L-10.2 34.3 L-9.6 33.1 L-8.8 32.1 L-6.2 30.4 L-2.4 28.9 L-0.4 28.4 L1.6 28.2 L6.1 28.4 L11.7 29.4 L13.8 30 L19.8 32.2 L22 32.9 L25.4 30.5 L29.1 27.2ZM-24.2 42.2 L-23.5 48 L-21.7 53.9 L-20.1 61 L-18.9 63.6 L-17.2 66.2 L-15.2 68.5 L-13.6 70 L-10 72.3 L-8 73.3 L-4.9 74.5 L-1.8 75.2 L0.2 75.4 L3.2 75.4 L6.2 75.2 L12.3 73.8 L15.3 72.7 L17.2 71.7 L20.6 69 L22.2 67.4 L24.4 64.8 L25.6 63 L26.7 60.9 L29.9 52.5 L31.2 46.8 L22 48 L21.2 53.8 L17.2 61.4 L16.1 62.8 L14.3 64.4 L11.6 65.9 L8.6 66.9 L5.1 67.4 L2.3 67.4 L-1.1 66.8 L-4.4 65.6 L-7.2 63.9 L-9.4 61.5 L-11.1 58.6 L-12.1 55.8 L-12.2 53.6 L-12.1 47.3 L-19.2 44.8Z" fill-rule="evenodd"/>`;
 let SHAPES=COL_SHAPES;
 
 const COL_STEPS=[
@@ -268,15 +268,14 @@ const COL_STEPS=[
  {role:'top',name:'Neck and lantern',hint:'Frame the top of the column: the curved neck and the lantern. On a column with the lantern on top, just the lantern.',vb:[-450,40,900,1160]}
 ];
 const WALL_STEPS=[
- {role:'wall',name:'Light and wall',hint:'Stand back, across the street if you can, so the light and the wall around it fit the outline.',vb:[-700,150,1250,1370]},
- {role:'bracket',name:'Bracket from the side',hint:'Stand to one side so the bracket shows in profile. Tap Flip outline if it points the other way.',vb:[-470,330,1000,770]},
- {role:'lantern',name:'Lantern from below',hint:'Point up from below so the lantern fills the outline.',vb:[-660,1010,580,510]},
- {role:'fixing',name:'Fixing and marks',hint:'The box or plate under the light, or where the bracket meets the wall, close enough to read any lettering. Too high? Zoom with your phone\'s own camera, then use Choose from gallery.',vb:[-260,1600,520,540]}
+ {role:'bracket',name:'The bracket',hint:'Stand to one side so the bracket shows in profile, with the lantern hanging from it. Tap Flip outline if it points the other way.',vb:[-700,150,1250,1370]},
+ {role:'lantern',name:'The lantern, close up',hint:'Fill the outline with the lantern. Too high to get close? Zoom with your phone\'s own camera, then use Choose from gallery.',vb:[-660,1010,580,510]},
+ {role:'box',name:'The wall box',hint:'Face the box on the wall and fill the outline with its cover, close enough to read any lettering. No box? Photograph where the bracket fixes to the wall instead.',vb:[-86,-159.7,172,319.4],sh:BOX_SHAPES}
 ];
 let STEPS=COL_STEPS;
 let fid=0;
-function outlineSVG(svg,vb,pxPerMm){
- const id='ol'+(++fid),r1=2.2/pxPerMm,r2=r1+2/pxPerMm,flip=SHAPES===WALL_SHAPES&&st.flip;
+function outlineSVG(svg,vb,pxPerMm,sh){
+ const S=sh||SHAPES,id='ol'+(++fid),r1=2.2/pxPerMm,r2=r1+2/pxPerMm,flip=S===WALL_SHAPES&&st.flip;
  if(flip)vb=[-(vb[0]+vb[2]),vb[1],vb[2],vb[3]];
  svg.setAttribute('viewBox',vb.join(' '));svg.setAttribute('preserveAspectRatio','xMidYMid meet');
  svg.innerHTML=`<defs><filter id="${id}" x="-15%" y="-5%" width="130%" height="110%">
@@ -286,11 +285,11 @@ function outlineSVG(svg,vb,pxPerMm){
 <feFlood flood-color="#000" flood-opacity=".55" result="k"/><feComposite in="k" in2="halo" operator="in" result="kh"/>
 <feFlood flood-color="#fff" flood-opacity=".13" result="f"/><feComposite in="f" in2="SourceAlpha" operator="in" result="fi"/>
 <feMerge><feMergeNode in="kh"/><feMergeNode in="fi"/><feMergeNode in="wr"/></feMerge></filter></defs>
-<g filter="url(#${id})" fill="#fff"><g${flip?' transform="scale(-1 1)"':''}>${SHAPES}</g></g>`;}
-function fitOutline(svg,vb){const w=svg.clientWidth||300,h=svg.clientHeight||500;outlineSVG(svg,vb,Math.min(w/vb[2],h/vb[3]));}
+<g filter="url(#${id})" fill="#fff"><g${flip?' transform="scale(-1 1)"':''}>${S}</g></g>`;}
+function fitOutline(svg,vb,sh){const w=svg.clientWidth||300,h=svg.clientHeight||500;outlineSVG(svg,vb,Math.min(w/vb[2],h/vb[3]),sh);}
 // keep the camera outline in the clear space between the instructions and the shutter
 function placeOvl(){const o=$('ovl'),t=document.querySelector('#cam .top').getBoundingClientRect().bottom-14,b=document.querySelector('#cam .bot').getBoundingClientRect().top+22;
- o.style.top=Math.max(0,t)+'px';o.style.height=Math.max(120,b-t)+'px';fitOutline(o,STEPS[st.step].vb);}
+ o.style.top=Math.max(0,t)+'px';o.style.height=Math.max(120,b-t)+'px';fitOutline(o,STEPS[st.step].vb,STEPS[st.step].sh);}
 
 /* ---------- state ---------- */
 const P=new URLSearchParams(location.search);
@@ -300,7 +299,7 @@ let feats=null,assets=null,map=null,pinM=null,assetLayer=null;
 
 function show(id){document.querySelectorAll('.scr').forEach(s=>s.classList.toggle('on',s.id===id));$('cam').hidden=id!=='cam';window.scrollTo(0,0);}
 
-/* a lamp post or a light on a wall: each has its own four steps, outline and questions.
+/* a lamp post or a light on a wall: each has its own steps (4 for a column, 3 for a wall light), outlines and questions.
    A missing light starts with the question unanswered, and the steps and Start button appear once it is answered. */
 const LOC_P_COL=$('locP').textContent;
 const what=()=>st.kind==='wall'?'light':'column';
@@ -311,30 +310,31 @@ function kindIcons(){const keep=SHAPES;
  SHAPES=keep;}
 function showKindQ(on){$('kindQ').hidden=!on;$('kindPick').hidden=!on;if(on)kindIcons();}
 function setKind(k){st.kind=k==='wall'?'wall':'column';st.chosen=true;const w=st.kind==='wall';
- STEPS=w?WALL_STEPS:COL_STEPS;SHAPES=w?WALL_SHAPES:COL_SHAPES;
+ STEPS=w?WALL_STEPS:COL_STEPS;SHAPES=w?WALL_SHAPES:COL_SHAPES;st.shots=STEPS.map(()=>null);
  document.querySelectorAll('#kindPick button').forEach(b=>{const on=b.dataset.kind===st.kind;b.classList.toggle('on',on);b.setAttribute('aria-pressed',String(on));});
  $('kindOn').hidden=false;startHead();
- $('startLead').textContent=`Four photos, taken the same way every time, so ${w?'wall lights':'columns'} can be compared across the city.`;
+ $('startLead').textContent=`${['','One','Two','Three','Four'][STEPS.length]} photos, taken the same way every time, so ${w?'wall lights':'columns'} can be compared across the city.`;
  $('startHint').textContent=w?'The camera shows an outline for each photo. Brackets vary, so it won\'t match exactly. Just line up the part named in each step. Please stay on the pavement: there\'s no need to climb.':'The camera shows an outline for each photo. Columns vary, so it won\'t match exactly. Just line up the part named in each step.';
  $('oColourL').textContent=w?'Colour of the bracket':'Colour of the column';$('wallObs').hidden=!w;
  $('oNote').placeholder=w?'For example: there\'s a plaque, or the box is missing':'For example: there\'s a plaque, or the door is missing';
  $('locH').textContent=w?'Where is the light?':'Where is the column?';
  $('locP').textContent=w?'We\'ve put the pin where your phone was when you took the first photo. Drag it onto the wall where the light is, or tap a council wall light on the map. Many wall lights belong to the Cathedral or to the building\'s owner, so it\'s fine if none matches.':LOC_P_COL;
- const f=$('flip');f.style.visibility=w?'visible':'hidden';f.setAttribute('aria-hidden',String(!w));f.tabIndex=w?0:-1;
+
  drawStepList();}
 document.querySelectorAll('#kindPick button').forEach(b=>b.onclick=()=>{if(!st.shots.some(Boolean))setKind(b.dataset.kind);});
 $('flip').onclick=()=>{st.flip=!st.flip;placeOvl();};
 
 /* start screen */
 function drawStepList(){$('stepList').innerHTML=STEPS.map((s,i)=>`<li class="${st.shots[i]?'done':''}"><svg></svg>${i+1}. ${s.name}</li>`).join('');
- document.querySelectorAll('#stepList svg').forEach((svg,i)=>fitOutline(svg,STEPS[i].vb));}
+ $('stepList').style.setProperty('--n',STEPS.length);
+ document.querySelectorAll('#stepList svg').forEach((svg,i)=>fitOutline(svg,STEPS[i].vb,STEPS[i].sh));}
 function loadFeats(){return feats?Promise.resolve(feats):fetch(DATA+'columns.geojson').then(r=>r.json()).then(g=>feats=g.features);}
 async function initStart(){
  if(st.mode!=='known'){startHead();showKindQ(true);return;}
  {const a=COLQ.toUpperCase();const h=$('colhead');h.hidden=false;h.textContent='Loading '+a+'…';showKindQ(false);setKind('column');
   try{await loadFeats();const f=feats.find(f=>(f.properties.asset||'').toUpperCase()===a||String(f.properties.id).toUpperCase()===a);
    if(!f)throw 0;st.col={...f.properties,lat:f.geometry.coordinates[1],lon:f.geometry.coordinates[0]};
-   if(st.col.variant==='W')setKind('wall');
+   if(/^W/.test(st.col.variant||''))setKind('wall');
    const back='../?map'+(st.col.asset?'#'+encodeURIComponent(st.col.asset):'');$('startExit').href=back;$('leaveGo').href=back;$('thanksMap').href=back;
    h.innerHTML=`You're photographing <b>${esc(st.col.asset||st.col.id)}</b>${st.col.street?', '+esc(st.col.street):''}.`;}
   catch(e){h.className='colhead warn';h.textContent=a+' isn\'t on the map, so this will be treated as a missing light.';st.mode='missing';startHead();showKindQ(true);}}
@@ -366,7 +366,8 @@ async function openCam(at){
 }
 function stopCam(){if(st.stream){st.stream.getTracks().forEach(t=>t.stop());st.stream=null;}$('vid').srcObject=null;}
 function setStep(i){st.step=i;const s=STEPS[i];
- $('stT').textContent=`Photo ${i+1} of 4`;$('stH').textContent=s.name;$('stI').textContent=s.hint;
+ {const f=$('flip'),fv=st.kind==='wall'&&!s.sh;f.style.visibility=fv?'visible':'hidden';f.setAttribute('aria-hidden',String(!fv));f.tabIndex=fv?0:-1;}
+ $('stT').textContent=`Photo ${i+1} of ${STEPS.length}`;$('stH').textContent=s.name;$('stI').textContent=s.hint;
  $('pills').innerHTML=STEPS.map((x,j)=>`<button type="button" class="${j===i?'cur':st.shots[j]?'done':''}" aria-label="Photo ${j+1}: ${x.name}${st.shots[j]?' (taken)':''}"></button>`).join('');
  $('pills').querySelectorAll('button').forEach((b,j)=>b.onclick=()=>{if(st.shots[j]||j===i||j===nextEmpty()){$('cam').classList.remove('review','gal');setStep(j);}});
  requestAnimationFrame(placeOvl);}
@@ -406,8 +407,8 @@ $('gal').onchange=async e=>{const f=e.target.files[0];e.target.value='';if(!f)re
   if(g&&g.lat>51.15&&g.lat<51.4&&g.lon>0.9&&g.lon<1.25)st.pending.fix=g;}
  catch(err){$('camMsg').textContent=err.message;$('cam').classList.add('nocam');}};
 
-/* after the four photos */
-function thumbs(el){el.innerHTML=st.shots.map((s,i)=>`<figure><img src="${s.url}" alt="${esc(STEPS[i].name)}"><figcaption>${esc(STEPS[i].name)}</figcaption></figure>`).join('');}
+/* after the photos */
+function thumbs(el){el.style.setProperty('--n',STEPS.length);el.innerHTML=st.shots.map((s,i)=>`<figure><img src="${s.url}" alt="${esc(STEPS[i].name)}"><figcaption>${esc(STEPS[i].name)}</figcaption></figure>`).join('');}
 function finishCapture(){stopCam();thumbs($('obsThumbs'));show('sObs');}
 $('go').onclick=()=>{if(!st.chosen)return;st.ret=false;openCam();};
 $('obsBack').onclick=()=>{if(st.ret){st.ret=false;return done();}openCam();};
@@ -459,7 +460,7 @@ $('locNext').onclick=()=>{if(!st.pin){$('locErr').textContent='Please place the 
 function metres(a,b){const R=6371000,r=Math.PI/180,dl=(b.lat-a.lat)*r,dn=(b.lon-a.lon)*r,x=Math.sin(dl/2)**2+Math.cos(a.lat*r)*Math.cos(b.lat*r)*Math.sin(dn/2)**2;return Math.round(2*R*Math.asin(Math.sqrt(x)));}
 const label=id=>{const s=$(id);return s.options[s.selectedIndex].text;};
 function done(){stopGps();$('leave').hidden=true;$('exit').hidden=false;
- $('doneThumbs').innerHTML=st.shots.map((s,i)=>`<button type="button" class="th" data-i="${i}" aria-label="Retake: ${esc(STEPS[i].name)}"><figure><img src="${s.url}" alt=""><figcaption>${esc(STEPS[i].name)}</figcaption></figure></button>`).join('');
+ $('doneThumbs').style.setProperty('--n',STEPS.length);$('doneThumbs').innerHTML=st.shots.map((s,i)=>`<button type="button" class="th" data-i="${i}" aria-label="Retake: ${esc(STEPS[i].name)}"><figure><img src="${s.url}" alt=""><figcaption>${esc(STEPS[i].name)}</figcaption></figure></button>`).join('');
  $('doneThumbs').querySelectorAll('button').forEach(b=>b.onclick=()=>{st.ret=true;openCam(+b.dataset.i);});
  const known=st.mode==='known',where=known?{lat:st.col.lat,lon:st.col.lon}:st.pin,fix=st.fix||st.best;
  const w=$('distWarn');w.hidden=true;
@@ -478,7 +479,7 @@ function buildReq(known,where,fix){
  const wl=st.kind==='wall',o={colour:$('oColour').value,damage:$('oDamage').value,lamp:$('oLamp').value};
  if(wl){o.box=$('oBox').value;o.cover=$('oCover').value;o.marks=$('oMarks').value.trim().replace(/[\[\]|]/g,' ').slice(0,80);}
  let gps='';if(fix&&known)gps=` | Phone ~${metres(fix,where)} m from ${wl?'light':'column'}`;else if(fix&&!known)gps=` | Pin ${st.pinMoved?'placed by hand':'from phone GPS'}${fix.acc?' (±'+fix.acc+' m)':''}`;
- const head=wl?`[Guided wall light: light and wall, bracket, lantern, fixing | Bracket colour: ${OBS_SHORT[o.colour]} | Box: ${BOX_SHORT[o.box]} | Cover: ${COVER_SHORT[o.cover]}${o.marks?' | Lettering: '+o.marks:''} | Damage: ${OBS_SHORT[o.damage]} | Lamp: ${OBS_SHORT[o.lamp]}${gps}]`
+ const head=wl?`[Guided wall light: bracket, lantern, box | Bracket colour: ${OBS_SHORT[o.colour]} | Box: ${BOX_SHORT[o.box]} | Cover: ${COVER_SHORT[o.cover]}${o.marks?' | Lettering: '+o.marks:''} | Damage: ${OBS_SHORT[o.damage]} | Lamp: ${OBS_SHORT[o.lamp]}${gps}]`
   :`[Guided: whole, base, ladder bar, neck/lantern | Colour: ${OBS_SHORT[o.colour]} | Damage: ${OBS_SHORT[o.damage]} | Lamp: ${OBS_SHORT[o.lamp]}${gps}]`;
  const user=$('oNote').value.trim();
  return {kind:known?'photo':'missing',mount:wl?'wall':undefined,column:known?String(st.col.id):null,lat:known?null:st.pin.lat,lon:known?null:st.pin.lon,asset:known?'':st.snapId,
@@ -494,7 +495,7 @@ $('send').onclick=async()=>{if(busy)return;$('sendErr').textContent='';
  busy=true;const b=$('send');b.disabled=true;b.textContent='Sending…';
  try{const r=await fetch(SUBMIT_URL,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({...st.req,token})});
   const j=await r.json().catch(()=>({}));if(!r.ok||!j.ok)throw new Error(j.error||'Sorry, something went wrong. Please try again.');
-  st.shots=[null,null,null,null];Stat.hit('add_sent');show('sThanks');}
+  st.shots=STEPS.map(()=>null);Stat.hit('add_sent');show('sThanks');}
  catch(err){$('sendErr').textContent=err.message;b.disabled=false;b.textContent='Send';try{turnstile.reset(tsId);}catch(_){}}
  finally{busy=false;}};
 

@@ -17,7 +17,9 @@ ROOT = Path(__file__).resolve().parent.parent
 COLS = ROOT / 'data' / 'columns'
 KCC = ROOT / 'data' / 'kcc.json'
 
-VARIANTS = {'A1', 'A2', 'A3', 'B1', 'B2', 'B3', 'C', 'X-stub', 'X-mod', 'W', 'U'}   # W = light on a wall bracket
+VARIANTS = {'A1', 'A2', 'A3', 'B1', 'B2', 'B3', 'C', 'X-stub', 'X-mod', 'W1', 'W2', 'W', 'U'}
+# Wall-mounted lights: W1 = ESLA lantern, W2 = Birkdale lantern. A plain W (from before the split) is shown as W1.
+WALL_DEFAULT = 'W1'
 CONF_ORDER = ['Confirmed', 'Strong', 'Probable', 'Likely', 'Uncertain', 'No match']
 ASSET_OK = {'Confirmed', 'Strong', 'Probable', 'Likely'}   # secure enough to sit at the KCC position
 COND = {
@@ -75,7 +77,7 @@ def feature(r, kcc):
     props = dict(
         id=r['id'], asset=r.get('asset', ''), owner=OWNERS.get(r.get('owner', ''), ''),
         confirmed_by_guy=bool(r.get('confirmed_by')),
-        candidates='; '.join(r.get('candidates', [])), street=r.get('street', ''), variant=r['variant'],
+        candidates='; '.join(r.get('candidates', [])), street=r.get('street', ''), variant=WALL_DEFAULT if r['variant'] == 'W' else r['variant'],
         confidence=r['confidence'], basis=r.get('basis', ''), painted=r.get('painted', ''), note=r.get('note', ''),
         placed=placed, dates=r.get('dates', []), visits=r.get('visits', []), photos=r.get('photos', []),
         condition=r.get('condition', {}), defects=r.get('defects', ''))
